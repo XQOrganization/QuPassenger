@@ -9,10 +9,12 @@
 #import "LoginViewController.h"
 #import "WXRegistViewController.h"
 @interface LoginViewController ()<UITextFieldDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *ibPhoneTf;
 @property (weak, nonatomic) IBOutlet UITextField *ibCodeTf;
 @property (weak, nonatomic) IBOutlet UIButton *ibLoginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *ibGetCodeBtn;
+@property (strong, nonatomic) dispatch_source_t timer;
 
 @end
 
@@ -38,6 +40,16 @@
     [_ibCodeTf addTarget:self action:@selector(codeTfChange) forControlEvents:UIControlEventEditingChanged];
 
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if (self.timer) {
+        dispatch_source_cancel(self.timer);
+    }
+}
+
 - (void)phoneTfChange{
   
     if (_ibPhoneTf.text.length >11) {
@@ -73,13 +85,14 @@
 // 开启倒计时
 -(void)openCountdown{
     
+    if (self.timer) {
+        dispatch_source_cancel(self.timer);
+    }
     __block NSInteger time = 59; //倒计时时间
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
-    
     dispatch_source_set_event_handler(_timer, ^{
         
         if(time <= 0){ //倒计时结束，关闭

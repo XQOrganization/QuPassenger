@@ -8,11 +8,14 @@
 
 #import "WXRegistViewController.h"
 @interface WXRegistViewController ()
+
 @property (weak, nonatomic) IBOutlet UIImageView *ibWxUserIconImg;
 @property (weak, nonatomic) IBOutlet UITextField *ibPhoneTf;
 @property (weak, nonatomic) IBOutlet UITextField *ibCodeTf;
 @property (weak, nonatomic) IBOutlet UIButton *ibGetCodeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *ibSureBtn;
+
+@property (strong, nonatomic) dispatch_source_t timer;
 
 @end
 
@@ -21,21 +24,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
-    [leftBtn setImage:[UIImage imageNamed:@"base_back_icon"] forState:UIControlStateNormal];
-    [self setLeftBarItemWithButton:leftBtn];
-    
     [_ibPhoneTf addTarget:self action:@selector(phoneTfChange) forControlEvents:UIControlEventEditingChanged];
     _ibPhoneTf.clearButtonMode=UITextFieldViewModeWhileEditing;
     [_ibCodeTf addTarget:self action:@selector(codeTfChange) forControlEvents:UIControlEventEditingChanged];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if (self.timer) {
+        dispatch_source_cancel(self.timer);
+    }
+}
+
 - (void)phoneTfChange{
     
     if (_ibPhoneTf.text.length >11) {
-        [SVProgressHUD showErrorWithStatus:@"手机号码超出范围"];
+        [QuHudHelper sv_showErrorWithStatus:@"手机号码超出范围"];
         [_ibPhoneTf endEditing:YES];
         _ibPhoneTf.text = [_ibPhoneTf.text substringToIndex:11];
-        [SVProgressHUD dismissWithDelay:1];
+        
     }
 }
 - (void)codeTfChange{
@@ -66,11 +75,13 @@
 // 开启倒计时
 -(void)openCountdown{
     
+    if (self.timer) {
+        dispatch_source_cancel(self.timer);
+    }
     __block NSInteger time = 59; //倒计时时间
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0*NSEC_PER_SEC, 0); //每秒执行
     
     dispatch_source_set_event_handler(_timer, ^{
@@ -102,10 +113,6 @@
 }
 
 #pragma mark btnClickAction
-- (void)leftBarButtonItemAction:(id)sender
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)even{
     [self.view endEditing:YES];
 }
