@@ -35,5 +35,8 @@
 + (void)sv_showErrorWithStatus:(NSString *)status;
 + (void)sv_showErrorWithStatus:(NSString *)status deley:(CGFloat)seconds;
 
+//custom
++ (void)qu_showMessage:(NSString *)message;
++ (void)qu_showMessage:(NSString *)message withEndBlock:(void(^)(void))endBlock;
 
 @end

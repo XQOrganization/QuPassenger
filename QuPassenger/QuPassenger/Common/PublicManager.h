@@ -22,13 +22,6 @@ float WidthForString(NSString *value,float fontSize,float height);
 //判断是否是偶数
 + (BOOL)evenNumberWithNumber:(NSInteger)number;
 
-/**
- *  自动消失的提示弹出框
- *
- *  @param message msg
- */
-+(void)showMessage:(NSString *)message;
-+(void)showMessage:(NSString *)message withEndBlock:(void(^)(void))endBlock;;
 
 /**
  *  警告提示框

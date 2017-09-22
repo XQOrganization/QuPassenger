@@ -27,8 +27,7 @@
     BaseNavigationController *mainVC = [MainViewController navigationControllerContainSelf];
     
     self.window.rootViewController = mainVC;
-    /////
-    ////
+
     //调用以下方法使self.window成为当前Application的主window和keywindow
     [self.window makeKeyAndVisible];
     

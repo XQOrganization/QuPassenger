@@ -86,53 +86,6 @@ float WidthForString(NSString *value,float fontSize,float height)
     return NO;
 }
 
-+(void)showMessage:(NSString *)message
-{
-    [self showMessage:message withEndBlock:nil];
-}
-
-+(void)showMessage:(NSString *)message withEndBlock:(void(^)(void))endBlock
-{
-    UIWindow * window = [UIApplication sharedApplication].keyWindow;
-    UIView *showview =  [[UIView alloc]init];
-    showview.backgroundColor = [UIColor blackColor];
-    showview.frame = CGRectMake(1, 1, 1, 1);
-    showview.alpha = .8f;
-    showview.layer.cornerRadius = 5.0f;
-    showview.layer.masksToBounds = YES;
-    [window addSubview:showview];
-    
-    UILabel *label = [[UILabel alloc]init];
-    label.text = message;
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    label.numberOfLines = 0;
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont boldSystemFontOfSize:15];
-    label.preferredMaxLayoutWidth = 200;
-    [label setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-    [showview addSubview:label];
-    
-    [label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(showview);
-    }];
-    
-    [showview mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(window);
-        
-        make.width.equalTo(label.mas_width).offset(20);
-        make.height.equalTo(label.mas_height).offset(20);
-    }];
-    
-    [UIView animateWithDuration:2 animations:^{
-        showview.alpha = 0;
-    } completion:^(BOOL finished) {
-        [showview removeFromSuperview];
-        if (endBlock) {
-            endBlock();
-        }
-    }];
-}
 
 
 +(void)showAlert:(NSString *)message

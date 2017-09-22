@@ -11,6 +11,7 @@
 #import <ShareSDKConnector/ShareSDKConnector.h>
 //微信SDK头文件
 #import "WXApi.h"
+#import "UMMobClick/MobClick.h"
 
 @implementation ThirdApiManager
 
@@ -27,7 +28,12 @@
 
 - (void)registerThirdApi
 {
+    //Umeng
+    UMConfigInstance.appKey = @"59c4baffc62dca631400014d";
+    UMConfigInstance.channelId = @"App Store";
+    [MobClick startWithConfigure:UMConfigInstance];//配置以上参数后调用此方法初始化SDK
     
+    //ShareSdk
     [ShareSDK registerActivePlatforms:@[@(SSDKPlatformTypeWechat)]
                              onImport:^(SSDKPlatformType platformType) {
                                  
