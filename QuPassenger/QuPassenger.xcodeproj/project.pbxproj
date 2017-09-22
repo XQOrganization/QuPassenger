@@ -23,14 +23,11 @@
 		BAB466CF1F738F3400F7DBCD /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466741F738F3400F7DBCD /* SDCollectionViewCell.m */; };
 		BAB466D01F738F3400F7DBCD /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466761F738F3400F7DBCD /* SDCycleScrollView.m */; };
 		BAB466D11F738F3400F7DBCD /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466781F738F3400F7DBCD /* UIView+SDExtension.m */; };
-		BAB466D21F738F3400F7DBCD /* ThirdPayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4667A1F738F3400F7DBCD /* ThirdPayManager.m */; };
 		BAB466D31F738F3400F7DBCD /* UIColor+Gradient.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4667D1F738F3400F7DBCD /* UIColor+Gradient.m */; };
 		BAB466D41F738F3400F7DBCD /* UIColor+HEX.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4667F1F738F3400F7DBCD /* UIColor+HEX.m */; };
 		BAB466D51F738F3400F7DBCD /* UIColor+Modify.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466811F738F3400F7DBCD /* UIColor+Modify.m */; };
 		BAB466D61F738F3400F7DBCD /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466831F738F3400F7DBCD /* UIColor+Random.m */; };
 		BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466851F738F3400F7DBCD /* UIColor+Web.m */; };
-		BAB466D81F738F3400F7DBCD /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466871F738F3400F7DBCD /* libWeChatSDK.a */; };
-		BAB466D91F738F3400F7DBCD /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BAB466881F738F3400F7DBCD /* README.txt */; };
 		BAB466DA1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4668F1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m */; };
 		BAB466DB1F738F3400F7DBCD /* UITabBarItem+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466911F738F3400F7DBCD /* UITabBarItem+WZLBadge.m */; };
 		BAB466DC1F738F3400F7DBCD /* CAAnimation+WAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466941F738F3400F7DBCD /* CAAnimation+WAnimation.m */; };
@@ -62,6 +59,7 @@
 		BAB466FC1F7396F500F7DBCD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466FB1F7396F500F7DBCD /* CFNetwork.framework */; };
 		BAB466FE1F7396FD00F7DBCD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466FD1F7396FD00F7DBCD /* CoreTelephony.framework */; };
 		BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467001F7495E400F7DBCD /* UIImage+Help.m */; };
+		BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,8 +95,6 @@
 		BAB466761F738F3400F7DBCD /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
 		BAB466771F738F3400F7DBCD /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		BAB466781F738F3400F7DBCD /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
-		BAB466791F738F3400F7DBCD /* ThirdPayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPayManager.h; sourceTree = "<group>"; };
-		BAB4667A1F738F3400F7DBCD /* ThirdPayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPayManager.m; sourceTree = "<group>"; };
 		BAB4667C1F738F3400F7DBCD /* UIColor+Gradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Gradient.h"; sourceTree = "<group>"; };
 		BAB4667D1F738F3400F7DBCD /* UIColor+Gradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Gradient.m"; sourceTree = "<group>"; };
 		BAB4667E1F738F3400F7DBCD /* UIColor+HEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HEX.h"; sourceTree = "<group>"; };
@@ -109,11 +105,6 @@
 		BAB466831F738F3400F7DBCD /* UIColor+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Random.m"; sourceTree = "<group>"; };
 		BAB466841F738F3400F7DBCD /* UIColor+Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Web.h"; sourceTree = "<group>"; };
 		BAB466851F738F3400F7DBCD /* UIColor+Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Web.m"; sourceTree = "<group>"; };
-		BAB466871F738F3400F7DBCD /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		BAB466881F738F3400F7DBCD /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		BAB466891F738F3400F7DBCD /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
-		BAB4668A1F738F3400F7DBCD /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		BAB4668B1F738F3400F7DBCD /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		BAB4668E1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WZLBadge.h"; sourceTree = "<group>"; };
 		BAB4668F1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WZLBadge.m"; sourceTree = "<group>"; };
 		BAB466901F738F3400F7DBCD /* UITabBarItem+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+WZLBadge.h"; sourceTree = "<group>"; };
@@ -169,6 +160,8 @@
 		BAB466FD1F7396FD00F7DBCD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		BAB466FF1F7495E400F7DBCD /* UIImage+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Help.h"; sourceTree = "<group>"; };
 		BAB467001F7495E400F7DBCD /* UIImage+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Help.m"; sourceTree = "<group>"; };
+		BAB467021F74AB7D00F7DBCD /* ThirdApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdApiManager.h; sourceTree = "<group>"; };
+		BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdApiManager.m; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -184,7 +177,6 @@
 				BAB466F61F7396B000F7DBCD /* libc++.tbd in Frameworks */,
 				BAB466F41F73968D00F7DBCD /* libsqlite3.0.tbd in Frameworks */,
 				BAB466F21F73967800F7DBCD /* libz.tbd in Frameworks */,
-				BAB466D81F738F3400F7DBCD /* libWeChatSDK.a in Frameworks */,
 				5B091DA924F825195E46FFA0 /* libPods-QuPassenger.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,11 +255,10 @@
 				BAB466661F738F3400F7DBCD /* MBHudHelper.m */,
 				BAB466671F738F3400F7DBCD /* PublicManager.h */,
 				BAB466681F738F3400F7DBCD /* PublicManager.m */,
+				BAB467021F74AB7D00F7DBCD /* ThirdApiManager.h */,
+				BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */,
 				BAB466691F738F3400F7DBCD /* SDCycleScrollView */,
-				BAB466791F738F3400F7DBCD /* ThirdPayManager.h */,
-				BAB4667A1F738F3400F7DBCD /* ThirdPayManager.m */,
 				BAB4667B1F738F3400F7DBCD /* UIColor */,
-				BAB466861F738F3400F7DBCD /* WXOpenSDK */,
 				BAB4668C1F738F3400F7DBCD /* WZLBadge */,
 				BAB4669B1F738F3400F7DBCD /* YLTextView */,
 			);
@@ -318,18 +309,6 @@
 				BAB466851F738F3400F7DBCD /* UIColor+Web.m */,
 			);
 			path = UIColor;
-			sourceTree = "<group>";
-		};
-		BAB466861F738F3400F7DBCD /* WXOpenSDK */ = {
-			isa = PBXGroup;
-			children = (
-				BAB466871F738F3400F7DBCD /* libWeChatSDK.a */,
-				BAB466881F738F3400F7DBCD /* README.txt */,
-				BAB466891F738F3400F7DBCD /* WechatAuthSDK.h */,
-				BAB4668A1F738F3400F7DBCD /* WXApi.h */,
-				BAB4668B1F738F3400F7DBCD /* WXApiObject.h */,
-			);
-			path = WXOpenSDK;
 			sourceTree = "<group>";
 		};
 		BAB4668C1F738F3400F7DBCD /* WZLBadge */ = {
@@ -552,7 +531,6 @@
 				BAB466581F73626C00F7DBCD /* LaunchScreen.storyboard in Resources */,
 				BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */,
 				BAB466EE1F738F3400F7DBCD /* LoginViewController.xib in Resources */,
-				BAB466D91F738F3400F7DBCD /* README.txt in Resources */,
 				BAB466F01F738F3400F7DBCD /* MainViewController.xib in Resources */,
 				BAB466E71F738F3400F7DBCD /* Resource.xcassets in Resources */,
 			);
@@ -617,6 +595,7 @@
 				BAB466ED1F738F3400F7DBCD /* LoginViewController.m in Sources */,
 				BAB466EF1F738F3400F7DBCD /* MainViewController.m in Sources */,
 				BAB466CB1F738F3400F7DBCD /* TAAbstractDotView.m in Sources */,
+				BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */,
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,
 				BAB466E81F738F3400F7DBCD /* AccountInfo.m in Sources */,
@@ -645,7 +624,6 @@
 				BAB466D61F738F3400F7DBCD /* UIColor+Random.m in Sources */,
 				BAB4664A1F73626C00F7DBCD /* main.m in Sources */,
 				BAB466DF1F738F3400F7DBCD /* NSString+Help.m in Sources */,
-				BAB466D21F738F3400F7DBCD /* ThirdPayManager.m in Sources */,
 				BAB466CC1F738F3400F7DBCD /* TAAnimatedDotView.m in Sources */,
 				BAB466E91F738F3400F7DBCD /* BaseInputVC.m in Sources */,
 				BAB466E11F738F3400F7DBCD /* UITextField+Help.m in Sources */,

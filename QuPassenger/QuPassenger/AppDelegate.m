@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[ThirdPayManager shareManager]registerThiryPay];
+    [[ThirdApiManager shareManager]registerThirdApi];
     
     [NetWorkReqManager getTokenRequestWithResponse:nil];
     

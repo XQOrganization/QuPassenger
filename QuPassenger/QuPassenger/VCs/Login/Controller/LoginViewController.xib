@@ -30,7 +30,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Hwu-rz-Rsd"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="10"/>
                     <state key="normal" title="登录即表示您同意《趣约车服务协议及隐私条款》">
                         <color key="titleColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                     </state>

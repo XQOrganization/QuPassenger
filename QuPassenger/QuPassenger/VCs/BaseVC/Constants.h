@@ -29,7 +29,7 @@
 #import "MJExtension.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
-#import "ThirdPayManager.h"
+#import "ThirdApiManager.h"
 #import "WZLBadgeImport.h"
 #import "IQKeyboardManager.h"
 #import "NSString+Help.h"
