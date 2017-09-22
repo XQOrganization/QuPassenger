@@ -1,26 +1,27 @@
 //
-//  MBHudHelper.m
-//  Entertainment_App
+//  QuHudHelper.m
+//  QuPassenger
 //
-//  Created by 朱青 on 2016/11/2.
-//  Copyright © 2016年 Entertainment. All rights reserved.
+//  Created by 朱青 on 2017/9/22.
+//  Copyright © 2017年 com.Qyueche. All rights reserved.
 //
 
-#import "MBHudHelper.h"
+#import "QuHudHelper.h"
 
-@implementation MBHudHelper
+@implementation QuHudHelper
 
-+ (MBProgressHUD *)loading
+#pragma mark mb
++ (MBProgressHUD *)mb_loading
 {
-    return [MBHudHelper loading:nil];
+    return [QuHudHelper mb_loading:nil];
 }
 
-+ (MBProgressHUD *)loading:(NSString *)msg
++ (MBProgressHUD *)mb_loading:(NSString *)msg
 {
-    return [MBHudHelper loading:msg inView:nil];
+    return [QuHudHelper mb_loading:msg inView:nil];
 }
 
-+ (MBProgressHUD *)loading:(NSString *)msg inView:(UIView *)view
++ (MBProgressHUD *)mb_loading:(NSString *)msg inView:(UIView *)view
 {
     UIView *inView = view ? view : [UIApplication sharedApplication].keyWindow;
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:inView];
@@ -41,7 +42,7 @@
     return hud;
 }
 
-+ (MBProgressHUD *)loading:(NSString *)msg inView:(UIView *)view delay:(CGFloat)seconds completion:(void (^)())completion
++ (MBProgressHUD *)mb_loading:(NSString *)msg inView:(UIView *)view delay:(CGFloat)seconds completion:(void (^)())completion
 {
     UIView *inView = view ? view : [UIApplication sharedApplication].keyWindow;
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:inView];
@@ -68,17 +69,17 @@
     return hud;
 }
 
-+ (void)dismiss
++ (void)mb_dismiss
 {
-    [MBHudHelper dismiss:nil];
+    [QuHudHelper mb_dismiss:nil];
 }
 
-+ (void)dismiss:(NSString *)msg
++ (void)mb_dismiss:(NSString *)msg
 {
-    [MBHudHelper dismiss:msg inView:nil];
+    [QuHudHelper mb_dismiss:msg inView:nil];
 }
 
-+ (void)dismiss:(NSString *)msg inView:(UIView *)view
++ (void)mb_dismiss:(NSString *)msg inView:(UIView *)view
 {
     UIView *inView = view ? view : [UIApplication sharedApplication].keyWindow;
     
@@ -93,10 +94,10 @@
     });
 }
 
-+ (void)dismiss:(NSString *)msg inView:(UIView *)view delay:(CGFloat)seconds completion:(void (^)())completion
++ (void)mb_dismiss:(NSString *)msg inView:(UIView *)view delay:(CGFloat)seconds completion:(void (^)())completion
 {
     UIView *inView = view ? view : [UIApplication sharedApplication].keyWindow;
-   
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         
         [MBProgressHUD hideHUDForView:inView animated:YES];
@@ -107,20 +108,19 @@
             }
         });
     });
-   
 }
 
-+ (void)stopLoading:(MBProgressHUD *)hud
++ (void)mb_stopLoading:(MBProgressHUD *)hud
 {
-    [MBHudHelper stopLoading:hud message:nil];
+    [QuHudHelper mb_stopLoading:hud message:nil];
 }
 
-+ (void)stopLoading:(MBProgressHUD *)hud message:(NSString *)msg
++ (void)mb_stopLoading:(MBProgressHUD *)hud message:(NSString *)msg
 {
-    [MBHudHelper stopLoading:hud message:msg delay:0 completion:nil];
+    [QuHudHelper mb_stopLoading:hud message:msg delay:0 completion:nil];
 }
 
-+ (void)stopLoading:(MBProgressHUD *)hud message:(NSString *)msg delay:(CGFloat)seconds completion:(void (^)())completion
++ (void)mb_stopLoading:(MBProgressHUD *)hud message:(NSString *)msg delay:(CGFloat)seconds completion:(void (^)())completion
 {
     if (hud && hud.superview){
         
@@ -133,7 +133,7 @@
             }
             
             [hud hideAnimated:YES afterDelay:seconds];
-
+            
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(seconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 if (completion)
                 {
@@ -142,31 +142,29 @@
             });
         });
     }
-    
+
 }
 
-
-+ (void)tipMessage:(NSString *)msg
++ (void)mb_tipMessage:(NSString *)msg
 {
-    [MBHudHelper tipMessage:msg delay:1];
+    [QuHudHelper mb_tipMessage:msg delay:1];
 }
 
-+ (void)tipMessage:(NSString *)msg delay:(CGFloat)seconds
++ (void)mb_tipMessage:(NSString *)msg delay:(CGFloat)seconds
 {
-    [MBHudHelper tipMessage:msg delay:seconds completion:nil];
-    
+    [QuHudHelper mb_tipMessage:msg delay:seconds completion:nil];
 }
 
-+ (void)tipMessage:(NSString *)msg delay:(CGFloat)seconds completion:(void (^)())completion
++ (void)mb_tipMessage:(NSString *)msg delay:(CGFloat)seconds completion:(void (^)())completion
 {
     NSString *string = [msg stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (string.length == 0){
-    
+        
         return;
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
- 
+        
         MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:[UIApplication sharedApplication].keyWindow];
         [[UIApplication sharedApplication].keyWindow addSubview:hud];
         hud.mode = MBProgressHUDModeText;
@@ -181,7 +179,18 @@
             }
         });
     });
+
 }
 
+#pragma mark sv
++ (void)sv_showErrorWithStatus:(NSString *)status
+{
+    [QuHudHelper sv_showErrorWithStatus:status deley:1.0f];
+}
 
++ (void)sv_showErrorWithStatus:(NSString *)status deley:(CGFloat)seconds
+{
+    [SVProgressHUD showErrorWithStatus:status];
+    [SVProgressHUD dismissWithDelay:seconds];
+}
 @end

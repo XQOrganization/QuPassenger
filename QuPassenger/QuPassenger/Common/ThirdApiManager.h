@@ -15,7 +15,13 @@
 
 + (ThirdApiManager *)shareManager;
 
+//注册第三方key
 - (void)registerThirdApi;
+
+//发送第三方支付
 - (void)sendThirdPayWithReq:(id)payModel success:(void (^)(void))paySuccessBlock fail:(void (^)(void))payFailBlock;
+
+//第三方授权登录
+- (void)getThirdUserInfoCompletion:(void (^)(NSString *uid))userBlock;
 
 @end

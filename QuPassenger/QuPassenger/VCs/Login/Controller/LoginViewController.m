@@ -38,15 +38,15 @@
         
     }
     if (_ibPhoneTf.text.length >11) {
-        [SVProgressHUD showErrorWithStatus:@"手机号码超出范围"];
-        [SVProgressHUD dismissWithDelay:1];
+    
+        [QuHudHelper sv_showErrorWithStatus:@"手机号码超出范围"];
     }
 }
 - (void)codeTfChange{
     
     if (_ibPhoneTf.text.length != 11) {
-        [SVProgressHUD showErrorWithStatus:@"请输入正确的11位手机号码"];
-        [SVProgressHUD dismissWithDelay:1];
+   
+        [QuHudHelper sv_showErrorWithStatus:@"请输入正确的11位手机号码"];
         return ;
     }
 }
@@ -65,7 +65,9 @@
 
 - (void)rightBarButtonItemAction:(id)sender
 {
-    
+    [[ThirdApiManager shareManager]getThirdUserInfoCompletion:^(NSString *uid) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
