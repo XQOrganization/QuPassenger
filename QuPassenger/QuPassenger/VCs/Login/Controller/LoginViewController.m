@@ -17,7 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
+    [leftBtn setImage:[UIImage imageNamed:@"base_back_icon"] forState:UIControlStateNormal];
+    [self setLeftBarItemWithButton:leftBtn];
+    
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 22)];
+    [rightBtn.titleLabel setFont:[UIFont systemFontOfSize:16.0f]];
+    [rightBtn setTitleColor:HEXCOLOR(@"404040") forState:UIControlStateNormal];
+    [rightBtn setTitle:@"微信登录" forState:UIControlStateNormal];
+    [self setRightBarItemWithButton:rightBtn];
 
+}
+
+#pragma mark btnClickAction
+- (void)leftBarButtonItemAction:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)rightBarButtonItemAction:(id)sender
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

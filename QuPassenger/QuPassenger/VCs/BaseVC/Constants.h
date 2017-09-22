@@ -27,7 +27,6 @@
 #import "AFNetworking.h"
 #import "UIColor+HEX.h"
 #import "MJExtension.h"
-//#import "DCNetWorkManager.h"
 #import "Masonry.h"
 #import "MJRefresh.h"
 #import "ThirdPayManager.h"
@@ -45,8 +44,8 @@
 #import "NetWorkRequestModel.h"
 #import "LoginViewController.h"
 #import "NetWorkReqManager.h"
-#import "UIView+SDExtension.h"
 #import "UITextField+Help.h"
+#import "UIImage+Help.h"
 
 #define ScreenWidthRatio [[UIScreen mainScreen] bounds].size.width/320.0
 

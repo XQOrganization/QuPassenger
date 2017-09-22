@@ -7,6 +7,7 @@
 //
 
 #import "BasicVC.h"
+#import "LoginViewController.h"
 
 @interface BasicVC ()<UIGestureRecognizerDelegate>
 
@@ -34,12 +35,12 @@
 
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc]init];
     backItem.title = @" ";
-    UIImage *image = [UIImage imageNamed:@"tool_back"];
+    UIImage *image = [UIImage imageNamed:@"base_back_icon"];
     [backItem setBackButtonBackgroundImage:[image resizableImageWithCapInsets:UIEdgeInsetsMake(0, image.size.width, 0, 0)] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [backItem setBackButtonTitlePositionAdjustment:UIOffsetMake(-400.f, 0) forBarMetrics:UIBarMetricsDefault];
     self.navigationItem.backBarButtonItem = backItem;
     
-    [self.view setBackgroundColor:COLOR_BACK];
+//    [self.view setBackgroundColor:COLOR_BACK];
 
 //    self.navigationController.interactivePopGestureRecognizer.delegate = self;
 //    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
@@ -58,33 +59,23 @@
 //    return YES;
 //}
 
-- (void)setBarItemWithLeftButton:(NSObject *)left rightButton:(NSObject *)right
+- (void)setLeftBarItemWithButton:(UIButton *)btn
 {
-    if (left) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setFrame:CGRectMake(0, 0, 24, 24)];
-//        [btn setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
-        [btn addTarget:self action:@selector(leftBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
-        [self.navigationItem setLeftBarButtonItem:item];
-        
-    }
-    if (right) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setFrame:CGRectMake(0, 0, 24, 24)];
-        if ([right isKindOfClass:[UIImage class]]) {
-            [btn setImage:(UIImage *)right forState:UIControlStateNormal];
-//            [btn setImageEdgeInsets:UIEdgeInsetsMake(10, 10, 10, 10)];
-        }
-        else{
-            [btn setTitle:(NSString *)right forState:UIControlStateNormal];
-            [btn.titleLabel setShadowColor:[UIColor blackColor]];
-            [btn.titleLabel setShadowOffset:CGSizeMake(1, 1)];
-        }
-        [btn addTarget:self action:@selector(rightBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
-        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
-        [self.navigationItem setRightBarButtonItem:item];
-    }
+    
+    [btn addTarget:self action:@selector(leftBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    [self.navigationItem setLeftBarButtonItem:item];
+
+    
+}
+
+- (void)setRightBarItemWithButton:(UIButton *)btn
+{
+    
+    [btn addTarget:self action:@selector(rightBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    [self.navigationItem setRightBarButtonItem:item];
+    
     
 }
 
@@ -95,10 +86,10 @@
 #pragma mark 弹出登陆页面
 - (void)presentLoginWithComplection:(void(^)(void))complectionBlock
 {
-//    BaseNavigationController *nav = [LoginViewController navigationControllerContainSelf];
+    BaseNavigationController *nav = [LoginViewController navigationControllerContainSelf];
 //    LoginViewController *controller = nav.viewControllers[0];
 //    controller.loginCompletionBlock = complectionBlock;
-//    [self presentViewController:nav animated:YES completion:nil];
+    [self presentViewController:nav animated:YES completion:nil];
     
 }
 

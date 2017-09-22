@@ -17,10 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationBar.barTintColor = HEXCOLOR(@"00a653");
-    self.navigationBar.translucent = NO;
     
-    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:HEXCOLOR(@"404040")};
+    
+    //去除导航栏下方的横线
+    [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor] size:CGSizeMake(SCREEN_WIDTH, 64)]
+                       forBarPosition:UIBarPositionAny
+                           barMetrics:UIBarMetricsDefault];
+    [self.navigationBar setShadowImage:[UIImage new]];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+
+    [super viewWillAppear:animated];
+    
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated

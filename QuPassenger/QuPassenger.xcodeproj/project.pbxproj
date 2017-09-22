@@ -61,6 +61,7 @@
 		BAB466FA1F7396DB00F7DBCD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466F91F7396DB00F7DBCD /* Security.framework */; };
 		BAB466FC1F7396F500F7DBCD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466FB1F7396F500F7DBCD /* CFNetwork.framework */; };
 		BAB466FE1F7396FD00F7DBCD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466FD1F7396FD00F7DBCD /* CoreTelephony.framework */; };
+		BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467001F7495E400F7DBCD /* UIImage+Help.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +167,8 @@
 		BAB466F91F7396DB00F7DBCD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BAB466FB1F7396F500F7DBCD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		BAB466FD1F7396FD00F7DBCD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BAB466FF1F7495E400F7DBCD /* UIImage+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Help.h"; sourceTree = "<group>"; };
+		BAB467001F7495E400F7DBCD /* UIImage+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Help.m"; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -398,6 +401,8 @@
 				BAB466A41F738F3400F7DBCD /* UITextField+Help.m */,
 				BAB466A51F738F3400F7DBCD /* UIView+Help.h */,
 				BAB466A61F738F3400F7DBCD /* UIView+Help.m */,
+				BAB466FF1F7495E400F7DBCD /* UIImage+Help.h */,
+				BAB467001F7495E400F7DBCD /* UIImage+Help.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 				BAB466C91F738F3400F7DBCD /* MBHudHelper.m in Sources */,
 				BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */,
 				BAB466DA1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m in Sources */,
+				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,
 				BAB466DB1F738F3400F7DBCD /* UITabBarItem+WZLBadge.m in Sources */,
 				BAB466D41F738F3400F7DBCD /* UIColor+HEX.m in Sources */,
 				BAB466E31F738F3400F7DBCD /* NetWorkEngine.m in Sources */,

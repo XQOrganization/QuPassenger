@@ -24,6 +24,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)loginClickAction:(id)sender
+{
+    [self presentLoginWithComplection:nil];
+}
+
 /*
 #pragma mark - Navigation
 

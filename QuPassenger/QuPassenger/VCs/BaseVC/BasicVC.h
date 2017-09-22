@@ -20,8 +20,8 @@
  @param right title或image
  */
 - (void)setBarItemWithLeftButton:(NSObject *)left rightButton:(NSObject *)right;
-- (void)leftBarButtonItemAction:(id)sender;
-- (void)rightBarButtonItemAction:(id)sender;
+- (void)setLeftBarItemWithButton:(UIButton *)btn;
+- (void)setRightBarItemWithButton:(UIButton *)btn;
 
 - (void)jumpWithTid:(NSInteger)eventId url:(NSString *)params;
 
