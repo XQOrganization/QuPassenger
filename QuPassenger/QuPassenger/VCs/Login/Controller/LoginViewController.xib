@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="ibCodeTf" destination="VRq-eo-qkv" id="xHP-u5-FJ9"/>
+                <outlet property="ibGetCodeBtn" destination="OJC-QS-GRP" id="eBn-0O-JV1"/>
+                <outlet property="ibLoginBtn" destination="6An-ee-V32" id="rVr-Bp-xjo"/>
                 <outlet property="ibPhoneTf" destination="zcI-SO-Zbc" id="Ygq-IT-3wy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -78,7 +80,7 @@
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="TT9-Xg-dxu"/>
                     </connections>
