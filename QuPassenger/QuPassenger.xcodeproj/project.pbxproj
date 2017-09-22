@@ -10,7 +10,6 @@
 		5B091DA924F825195E46FFA0 /* libPods-QuPassenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */; };
 		A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E2C401F74D4730008FE61 /* WXRegistViewController.m */; };
 		A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */; };
-		A53E2C4D1F74D79E0008FE61 /* UIViewController+Expand.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E2C4C1F74D79E0008FE61 /* UIViewController+Expand.m */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -70,8 +69,6 @@
 		A53E2C3F1F74D4730008FE61 /* WXRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXRegistViewController.h; sourceTree = "<group>"; };
 		A53E2C401F74D4730008FE61 /* WXRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXRegistViewController.m; sourceTree = "<group>"; };
 		A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXRegistViewController.xib; sourceTree = "<group>"; };
-		A53E2C4B1F74D79E0008FE61 /* UIViewController+Expand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Expand.h"; sourceTree = "<group>"; };
-		A53E2C4C1F74D79E0008FE61 /* UIViewController+Expand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Expand.m"; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -190,15 +187,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A53E2C4A1F74D69B0008FE61 /* Categorys */ = {
-			isa = PBXGroup;
-			children = (
-				A53E2C4B1F74D79E0008FE61 /* UIViewController+Expand.h */,
-				A53E2C4C1F74D79E0008FE61 /* UIViewController+Expand.m */,
-			);
-			path = Categorys;
-			sourceTree = "<group>";
-		};
 		B9C65842B7996E4E123B49F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,7 +229,6 @@
 				BAB466601F738F3400F7DBCD /* Common */,
 				BAB4669E1F738F3400F7DBCD /* Helper */,
 				BAB466B11F738F3400F7DBCD /* VCs */,
-				A53E2C4A1F74D69B0008FE61 /* Categorys */,
 				BAB466541F73626C00F7DBCD /* Assets.xcassets */,
 				BAB466B01F738F3400F7DBCD /* Resource.xcassets */,
 				BAB466591F73626C00F7DBCD /* Info.plist */,
@@ -639,7 +626,6 @@
 				BAB466D11F738F3400F7DBCD /* UIView+SDExtension.m in Sources */,
 				BAB466CE1F738F3400F7DBCD /* TAPageControl.m in Sources */,
 				BAB466E61F738F3400F7DBCD /* NetWorkRequestModel.m in Sources */,
-				A53E2C4D1F74D79E0008FE61 /* UIViewController+Expand.m in Sources */,
 				BAB466E51F738F3400F7DBCD /* NetWorkRequestDefine.m in Sources */,
 				BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */,
 				BAB466DA1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m in Sources */,

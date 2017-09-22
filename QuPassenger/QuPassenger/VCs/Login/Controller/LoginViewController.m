@@ -34,17 +34,17 @@
     [_ibPhoneTf addTarget:self action:@selector(phoneTfChange) forControlEvents:UIControlEventEditingChanged];
     _ibPhoneTf.clearButtonMode=UITextFieldViewModeWhileEditing;
 //    _ibPhoneTf.tintColor = HEXCOLOR(@"#FF5C41");
-    [[UITextField appearance] setTintColor:HEXCOLOR(@"#FF5C41")];
+    
     [_ibCodeTf addTarget:self action:@selector(codeTfChange) forControlEvents:UIControlEventEditingChanged];
 
 }
 - (void)phoneTfChange{
   
     if (_ibPhoneTf.text.length >11) {
-        [SVProgressHUD showErrorWithStatus:@"手机号码超出范围"];
+        [QuHudHelper sv_showErrorWithStatus:@"手机号码超出范围"];
         [_ibPhoneTf endEditing:YES];
         _ibPhoneTf.text = [_ibPhoneTf.text substringToIndex:11];
-        [SVProgressHUD dismissWithDelay:1];
+        
     }
 }
 - (void)codeTfChange{
@@ -118,8 +118,8 @@
 - (void)rightBarButtonItemAction:(id)sender
 {
 
-    BaseNavigationController *nav = [WXRegistViewController navigationControllerContainSelf];
-    [self presentViewController:nav animated:YES completion:nil];
+    WXRegistViewController *vc = [[WXRegistViewController alloc]initWithNibName:@"WXRegistViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
