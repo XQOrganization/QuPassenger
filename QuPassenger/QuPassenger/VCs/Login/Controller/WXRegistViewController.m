@@ -61,6 +61,7 @@
 }
 //确认
 - (IBAction)sureClick:(id)sender {
+
 }
 // 开启倒计时
 -(void)openCountdown{
@@ -108,4 +109,6 @@
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)even{
     [self.view endEditing:YES];
 }
+
+
 @end

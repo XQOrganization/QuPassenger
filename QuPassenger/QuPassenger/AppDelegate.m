@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [[ThirdApiManager shareManager]registerThirdApi];
-    
+    [[UITextField appearance] setTintColor:HEXCOLOR(@"#FF5C41")];
     [NetWorkReqManager getTokenRequestWithResponse:nil];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
