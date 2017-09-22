@@ -8,7 +8,9 @@
 
 #import "LoginViewController.h"
 
-@interface LoginViewController ()
+@interface LoginViewController ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *ibPhoneTf;
+@property (weak, nonatomic) IBOutlet UITextField *ibCodeTf;
 
 @end
 
@@ -26,7 +28,33 @@
     [rightBtn setTitleColor:HEXCOLOR(@"404040") forState:UIControlStateNormal];
     [rightBtn setTitle:@"微信登录" forState:UIControlStateNormal];
     [self setRightBarItemWithButton:rightBtn];
+    
+    [_ibPhoneTf addTarget:self action:@selector(phoneTfChange) forControlEvents:UIControlEventEditingChanged];
+    [_ibCodeTf addTarget:self action:@selector(codeTfChange) forControlEvents:UIControlEventEditingChanged];
 
+}
+- (void)phoneTfChange{
+    if (_ibPhoneTf.text.length > 1) {
+        
+    }
+    if (_ibPhoneTf.text.length >11) {
+        [SVProgressHUD showErrorWithStatus:@"手机号码超出范围"];
+        [SVProgressHUD dismissWithDelay:1];
+    }
+}
+- (void)codeTfChange{
+    
+    if (_ibPhoneTf.text.length != 11) {
+        [SVProgressHUD showErrorWithStatus:@"请输入正确的11位手机号码"];
+        [SVProgressHUD dismissWithDelay:1];
+        return ;
+    }
+}
+//获取验证码
+- (IBAction)getCodeBtnClick:(id)sender {
+}
+//登录方法
+- (IBAction)loginBtnClick:(id)sender {
 }
 
 #pragma mark btnClickAction
@@ -45,14 +73,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//MARK:--------UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
-*/
-
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)eve{
+    [self.view endEditing:YES];
+}
 @end
