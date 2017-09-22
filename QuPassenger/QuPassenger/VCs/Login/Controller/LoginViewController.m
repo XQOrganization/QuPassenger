@@ -61,8 +61,8 @@
 - (IBAction)getCodeBtnClick:(id)sender {
     //验证手机号码
     if (_ibPhoneTf.text.length != 11) {
-        [SVProgressHUD showErrorWithStatus:@"请输入正确的11位手机号码"];
-        [SVProgressHUD dismissWithDelay:1];
+   
+        [QuHudHelper sv_showErrorWithStatus:@"请输入正确的11位手机号码"];
         return ;
     }
     [self openCountdown];

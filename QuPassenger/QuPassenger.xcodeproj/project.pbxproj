@@ -14,10 +14,8 @@
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
-		BAB466581F73626C00F7DBCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAB466561F73626C00F7DBCD /* LaunchScreen.storyboard */; };
 		BAB466C71F738F3400F7DBCD /* CHAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466621F738F3400F7DBCD /* CHAlertView.m */; };
 		BAB466C81F738F3400F7DBCD /* LocalDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466641F738F3400F7DBCD /* LocalDataModel.m */; };
-		BAB466C91F738F3400F7DBCD /* MBHudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466661F738F3400F7DBCD /* MBHudHelper.m */; };
 		BAB466CA1F738F3400F7DBCD /* PublicManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466681F738F3400F7DBCD /* PublicManager.m */; };
 		BAB466CB1F738F3400F7DBCD /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4666C1F738F3400F7DBCD /* TAAbstractDotView.m */; };
 		BAB466CC1F738F3400F7DBCD /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4666E1F738F3400F7DBCD /* TAAnimatedDotView.m */; };
@@ -63,6 +61,7 @@
 		BAB466FE1F7396FD00F7DBCD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466FD1F7396FD00F7DBCD /* CoreTelephony.framework */; };
 		BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467001F7495E400F7DBCD /* UIImage+Help.m */; };
 		BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */; };
+		BAB467071F74BD0400F7DBCD /* QuHudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467061F74BD0400F7DBCD /* QuHudHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,15 +77,12 @@
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAB4664C1F73626C00F7DBCD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BAB466541F73626C00F7DBCD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BAB466571F73626C00F7DBCD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BAB466591F73626C00F7DBCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BAB4665F1F738ED000F7DBCD /* QuPassenger.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuPassenger.pch; sourceTree = "<group>"; };
 		BAB466611F738F3400F7DBCD /* CHAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHAlertView.h; sourceTree = "<group>"; };
 		BAB466621F738F3400F7DBCD /* CHAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHAlertView.m; sourceTree = "<group>"; };
 		BAB466631F738F3400F7DBCD /* LocalDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataModel.h; sourceTree = "<group>"; };
 		BAB466641F738F3400F7DBCD /* LocalDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataModel.m; sourceTree = "<group>"; };
-		BAB466651F738F3400F7DBCD /* MBHudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBHudHelper.h; sourceTree = "<group>"; };
-		BAB466661F738F3400F7DBCD /* MBHudHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBHudHelper.m; sourceTree = "<group>"; };
 		BAB466671F738F3400F7DBCD /* PublicManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicManager.h; sourceTree = "<group>"; };
 		BAB466681F738F3400F7DBCD /* PublicManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicManager.m; sourceTree = "<group>"; };
 		BAB4666B1F738F3400F7DBCD /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
@@ -170,6 +166,8 @@
 		BAB467001F7495E400F7DBCD /* UIImage+Help.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Help.m"; sourceTree = "<group>"; };
 		BAB467021F74AB7D00F7DBCD /* ThirdApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdApiManager.h; sourceTree = "<group>"; };
 		BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdApiManager.m; sourceTree = "<group>"; };
+		BAB467051F74BD0400F7DBCD /* QuHudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuHudHelper.h; sourceTree = "<group>"; };
+		BAB467061F74BD0400F7DBCD /* QuHudHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuHudHelper.m; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -246,7 +244,6 @@
 				A53E2C4A1F74D69B0008FE61 /* Categorys */,
 				BAB466541F73626C00F7DBCD /* Assets.xcassets */,
 				BAB466B01F738F3400F7DBCD /* Resource.xcassets */,
-				BAB466561F73626C00F7DBCD /* LaunchScreen.storyboard */,
 				BAB466591F73626C00F7DBCD /* Info.plist */,
 				BAB466481F73626C00F7DBCD /* Supporting Files */,
 			);
@@ -269,8 +266,8 @@
 				BAB466621F738F3400F7DBCD /* CHAlertView.m */,
 				BAB466631F738F3400F7DBCD /* LocalDataModel.h */,
 				BAB466641F738F3400F7DBCD /* LocalDataModel.m */,
-				BAB466651F738F3400F7DBCD /* MBHudHelper.h */,
-				BAB466661F738F3400F7DBCD /* MBHudHelper.m */,
+				BAB467051F74BD0400F7DBCD /* QuHudHelper.h */,
+				BAB467061F74BD0400F7DBCD /* QuHudHelper.m */,
 				BAB466671F738F3400F7DBCD /* PublicManager.h */,
 				BAB466681F738F3400F7DBCD /* PublicManager.m */,
 				BAB467021F74AB7D00F7DBCD /* ThirdApiManager.h */,
@@ -549,7 +546,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAB466581F73626C00F7DBCD /* LaunchScreen.storyboard in Resources */,
 				BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */,
 				BAB466EE1F738F3400F7DBCD /* LoginViewController.xib in Resources */,
 				BAB466F01F738F3400F7DBCD /* MainViewController.xib in Resources */,
@@ -645,7 +641,6 @@
 				BAB466E61F738F3400F7DBCD /* NetWorkRequestModel.m in Sources */,
 				A53E2C4D1F74D79E0008FE61 /* UIViewController+Expand.m in Sources */,
 				BAB466E51F738F3400F7DBCD /* NetWorkRequestDefine.m in Sources */,
-				BAB466C91F738F3400F7DBCD /* MBHudHelper.m in Sources */,
 				BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */,
 				BAB466DA1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m in Sources */,
 				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,
@@ -663,23 +658,13 @@
 				BAB466E11F738F3400F7DBCD /* UITextField+Help.m in Sources */,
 				BAB466EA1F738F3400F7DBCD /* BaseNavigationController.m in Sources */,
 				BAB466CD1F738F3400F7DBCD /* TADotView.m in Sources */,
+				BAB467071F74BD0400F7DBCD /* QuHudHelper.m in Sources */,
 				BAB466CF1F738F3400F7DBCD /* SDCollectionViewCell.m in Sources */,
 				BAB466DE1F738F3400F7DBCD /* UITextView+YLTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		BAB466561F73626C00F7DBCD /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BAB466571F73626C00F7DBCD /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BAB4665A1F73626C00F7DBCD /* Debug */ = {
