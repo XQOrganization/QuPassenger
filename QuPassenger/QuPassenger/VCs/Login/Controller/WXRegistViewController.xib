@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WXRegistViewController">
             <connections>
+                <outlet property="ibCodeTf" destination="cdV-Lf-dXc" id="8NJ-y7-PUv"/>
+                <outlet property="ibGetCodeBtn" destination="cvz-vS-TXV" id="vil-pB-IZJ"/>
+                <outlet property="ibPhoneTf" destination="t5r-aE-Eql" id="BfF-sw-Ypa"/>
+                <outlet property="ibSureBtn" destination="Gn7-Bn-bqt" id="RE8-ta-kEQ"/>
+                <outlet property="ibWxUserIconImg" destination="9kp-19-32F" id="9s9-vb-ehj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -80,7 +85,7 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p5P-yx-h3M">
-                    <rect key="frame" x="40" y="282" width="295" height="1"/>
+                    <rect key="frame" x="40" y="283" width="295" height="1"/>
                     <color key="backgroundColor" red="0.85884845259999998" green="0.85883229969999997" blue="0.85884326700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.5" id="N67-J2-jbW"/>
@@ -103,11 +108,14 @@
                     <rect key="frame" x="253" y="244" width="82" height="32"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <state key="normal" title="获取验证码">
-                        <color key="titleColor" red="0.85884845259999998" green="0.85883229969999997" blue="0.85884326700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.91797840595245361" green="0.40200793743133545" blue="0.2941652238368988" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
+                    <connections>
+                        <action selector="getCodeClick:" destination="-1" eventType="touchUpInside" id="F5O-6c-olK"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gn7-Bn-bqt">
-                    <rect key="frame" x="40" y="313" width="295" height="44"/>
+                    <rect key="frame" x="40" y="314" width="295" height="44"/>
                     <color key="backgroundColor" red="0.85884845259999998" green="0.85883229969999997" blue="0.85884326700000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="3Dw-ip-OOi"/>
@@ -122,6 +130,9 @@
                             <integer key="value" value="4"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="sureClick:" destination="-1" eventType="touchUpInside" id="TM3-wN-R4A"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -144,7 +155,7 @@
                 <constraint firstItem="t5r-aE-Eql" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="gBh-uN-knE"/>
                 <constraint firstItem="Gn7-Bn-bqt" firstAttribute="leading" secondItem="t5r-aE-Eql" secondAttribute="leading" id="hAV-eE-V32"/>
                 <constraint firstItem="9kp-19-32F" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l6P-hQ-X0V"/>
-                <constraint firstItem="p5P-yx-h3M" firstAttribute="top" secondItem="cdV-Lf-dXc" secondAttribute="bottom" constant="0.5" id="noc-H8-tMZ"/>
+                <constraint firstItem="p5P-yx-h3M" firstAttribute="top" secondItem="cdV-Lf-dXc" secondAttribute="bottom" constant="1" id="noc-H8-tMZ"/>
                 <constraint firstItem="p5P-yx-h3M" firstAttribute="leading" secondItem="t5r-aE-Eql" secondAttribute="leading" id="rNe-Kp-4EM"/>
                 <constraint firstItem="cdV-Lf-dXc" firstAttribute="leading" secondItem="t5r-aE-Eql" secondAttribute="leading" id="rhn-71-8tV"/>
                 <constraint firstItem="9kp-19-32F" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vbB-hx-Uca"/>
