@@ -30,7 +30,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1eu-Yu-VZV">
-                    <rect key="frame" x="75" y="637" width="225" height="30"/>
+                    <rect key="frame" x="75" y="350" width="225" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Hwu-rz-Rsd"/>
                     </constraints>
@@ -125,6 +125,22 @@
                         <action selector="loginBtnClick:" destination="-1" eventType="touchUpInside" id="aXP-nT-0Ko"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HlN-64-eZO">
+                    <rect key="frame" x="157.5" y="550" width="60" height="88"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="99R-zT-7b0"/>
+                        <constraint firstAttribute="height" constant="88" id="a33-mq-tI0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="titleEdgeInsets" minX="-60" minY="70" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="28"/>
+                    <state key="normal" title="微信登录" image="WechatLoginIcon">
+                        <color key="titleColor" red="0.46674254536628723" green="0.46673330664634705" blue="0.46673956513404846" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
+                    <connections>
+                        <action selector="wechatLoginBtnClick:" destination="-1" eventType="touchUpInside" id="Apv-b5-5Ew"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -137,20 +153,25 @@
                 <constraint firstItem="cuB-1Q-mga" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="D9c-as-Dy1"/>
                 <constraint firstItem="41D-kN-Ci4" firstAttribute="top" secondItem="VRq-eo-qkv" secondAttribute="bottom" constant="0.5" id="FaY-x7-VZh"/>
                 <constraint firstItem="JkD-tR-kGn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="Fe4-1x-Hyh"/>
-                <constraint firstAttribute="bottom" secondItem="1eu-Yu-VZV" secondAttribute="bottom" id="H8g-ae-T7g"/>
                 <constraint firstAttribute="trailing" secondItem="cuB-1Q-mga" secondAttribute="trailing" constant="40" id="KAJ-e9-D4z"/>
                 <constraint firstItem="6An-ee-V32" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="KJh-jt-Pad"/>
                 <constraint firstItem="VRq-eo-qkv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="KeD-HO-EOf"/>
                 <constraint firstAttribute="trailing" secondItem="JkD-tR-kGn" secondAttribute="trailing" constant="40" id="Ksy-e9-5DV"/>
                 <constraint firstAttribute="trailing" secondItem="41D-kN-Ci4" secondAttribute="trailing" constant="40" id="MOD-i4-e9D"/>
-                <constraint firstItem="1eu-Yu-VZV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="O8R-Uh-AS5"/>
                 <constraint firstItem="cuB-1Q-mga" firstAttribute="top" secondItem="zcI-SO-Zbc" secondAttribute="bottom" id="Sy7-B0-2s4"/>
                 <constraint firstItem="OJC-QS-GRP" firstAttribute="centerY" secondItem="VRq-eo-qkv" secondAttribute="centerY" id="VYU-Az-CUY"/>
+                <constraint firstItem="1eu-Yu-VZV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WYZ-rY-9w5"/>
+                <constraint firstItem="HlN-64-eZO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZGa-2a-aKD"/>
                 <constraint firstItem="6An-ee-V32" firstAttribute="top" secondItem="41D-kN-Ci4" secondAttribute="bottom" constant="30" id="alS-LD-A0q"/>
+                <constraint firstItem="1eu-Yu-VZV" firstAttribute="top" secondItem="6An-ee-V32" secondAttribute="bottom" constant="10" id="dMB-sM-17i"/>
                 <constraint firstItem="zcI-SO-Zbc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="fyI-aX-IPl"/>
+                <constraint firstAttribute="bottom" secondItem="HlN-64-eZO" secondAttribute="bottom" constant="29" id="gMa-tc-N8S"/>
                 <constraint firstAttribute="trailing" secondItem="OJC-QS-GRP" secondAttribute="trailing" constant="40" id="yaA-GD-vct"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="WechatLoginIcon" width="61" height="61"/>
+    </resources>
 </document>

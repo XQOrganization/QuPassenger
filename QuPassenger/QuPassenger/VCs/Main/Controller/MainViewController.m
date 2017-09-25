@@ -26,8 +26,6 @@
     UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
     [rightBtn setImage:[UIImage imageNamed:@"main_message_icon"] forState:UIControlStateNormal];
     [self setRightBarItemWithButton:rightBtn];
-    
-    self.title = @"苏州市";
 }
 
 #pragma mark btnClickAction

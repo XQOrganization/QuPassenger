@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:HEXCOLOR(@"030303"),NSFontAttributeName:[UIFont systemFontOfSize:16.0f]};
+    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:HEXCOLOR(@"404040")};
     
     //去除导航栏下方的横线
     [self.navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor] size:CGSizeMake(SCREEN_WIDTH, 64)]
