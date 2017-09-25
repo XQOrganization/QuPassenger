@@ -40,12 +40,12 @@
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-aR-OYy">
                         <rect key="frame" x="44" y="50" width="233" height="0.5"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="0.5" id="PAF-Hf-t2t"/>
                         </constraints>
                     </view>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="当前位置" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-Lf-qO1">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="当前位置" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-Lf-qO1">
                         <rect key="frame" x="44" y="0.0" width="233" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="dVE-aU-YCX"/>
@@ -54,7 +54,7 @@
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入目的地" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z61-rZ-uAm">
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入目的地" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z61-rZ-uAm">
                         <rect key="frame" x="44" y="50" width="233" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="Ovh-mc-vl2"/>

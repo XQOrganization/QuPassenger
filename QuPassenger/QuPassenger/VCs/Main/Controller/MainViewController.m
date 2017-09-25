@@ -138,6 +138,13 @@
 //        
 //        [cell.goodsImageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
         
+        NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:@"5"];
+        
+        NSAttributedString *tempAttributeString = [[NSAttributedString alloc] initWithString:@"元" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10]}];
+        [attributeString appendAttributedString:tempAttributeString];
+        
+        cell.priceLabel.attributedText = attributeString;
+        
         return cell;
     }
 

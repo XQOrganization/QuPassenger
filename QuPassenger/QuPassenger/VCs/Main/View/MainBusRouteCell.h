@@ -10,4 +10,10 @@
 
 @interface MainBusRouteCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *firstView;
+
+@property (weak, nonatomic) IBOutlet UIView *thirdView;
+
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+
 @end

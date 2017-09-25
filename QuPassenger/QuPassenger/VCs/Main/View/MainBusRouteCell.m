@@ -15,6 +15,8 @@
     // Initialization code
     
     [self setCornerRadius:4.0f AndBorder:0 borderColor:nil];
+    [self.firstView setCornerRadius:4.0f AndBorder:0 borderColor:nil];
+    [self.thirdView setCornerRadius:4.0f AndBorder:0 borderColor:nil];
     
     [self showShadowColor];
 }
