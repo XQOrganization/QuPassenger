@@ -28,10 +28,6 @@
 		BAB466D51F738F3400F7DBCD /* UIColor+Modify.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466811F738F3400F7DBCD /* UIColor+Modify.m */; };
 		BAB466D61F738F3400F7DBCD /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466831F738F3400F7DBCD /* UIColor+Random.m */; };
 		BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466851F738F3400F7DBCD /* UIColor+Web.m */; };
-		BAB466DA1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4668F1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m */; };
-		BAB466DB1F738F3400F7DBCD /* UITabBarItem+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466911F738F3400F7DBCD /* UITabBarItem+WZLBadge.m */; };
-		BAB466DC1F738F3400F7DBCD /* CAAnimation+WAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466941F738F3400F7DBCD /* CAAnimation+WAnimation.m */; };
-		BAB466DD1F738F3400F7DBCD /* UIView+WZLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466991F738F3400F7DBCD /* UIView+WZLBadge.m */; };
 		BAB466DE1F738F3400F7DBCD /* UITextView+YLTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4669D1F738F3400F7DBCD /* UITextView+YLTextView.m */; };
 		BAB466DF1F738F3400F7DBCD /* NSString+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466A01F738F3400F7DBCD /* NSString+Help.m */; };
 		BAB466E01F738F3400F7DBCD /* UITableView+FooterBlank.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466A21F738F3400F7DBCD /* UITableView+FooterBlank.m */; };
@@ -49,8 +45,6 @@
 		BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466BC1F738F3400F7DBCD /* BasicVC.m */; };
 		BAB466ED1F738F3400F7DBCD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466C11F738F3400F7DBCD /* LoginViewController.m */; };
 		BAB466EE1F738F3400F7DBCD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB466C21F738F3400F7DBCD /* LoginViewController.xib */; };
-		BAB466EF1F738F3400F7DBCD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466C51F738F3400F7DBCD /* MainViewController.m */; };
-		BAB466F01F738F3400F7DBCD /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB466C61F738F3400F7DBCD /* MainViewController.xib */; };
 		BAB466F21F73967800F7DBCD /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466F11F73967800F7DBCD /* libz.tbd */; };
 		BAB466F41F73968D00F7DBCD /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466F31F73968D00F7DBCD /* libsqlite3.0.tbd */; };
 		BAB466F61F7396B000F7DBCD /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB466F51F7396B000F7DBCD /* libc++.tbd */; };
@@ -61,6 +55,8 @@
 		BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467001F7495E400F7DBCD /* UIImage+Help.m */; };
 		BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */; };
 		BAB467071F74BD0400F7DBCD /* QuHudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467061F74BD0400F7DBCD /* QuHudHelper.m */; };
+		BAB467181F78CAA900F7DBCD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467161F78CAA900F7DBCD /* MainViewController.m */; };
+		BAB467191F78CAA900F7DBCD /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467171F78CAA900F7DBCD /* MainViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,16 +102,6 @@
 		BAB466831F738F3400F7DBCD /* UIColor+Random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Random.m"; sourceTree = "<group>"; };
 		BAB466841F738F3400F7DBCD /* UIColor+Web.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Web.h"; sourceTree = "<group>"; };
 		BAB466851F738F3400F7DBCD /* UIColor+Web.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Web.m"; sourceTree = "<group>"; };
-		BAB4668E1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+WZLBadge.h"; sourceTree = "<group>"; };
-		BAB4668F1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+WZLBadge.m"; sourceTree = "<group>"; };
-		BAB466901F738F3400F7DBCD /* UITabBarItem+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarItem+WZLBadge.h"; sourceTree = "<group>"; };
-		BAB466911F738F3400F7DBCD /* UITabBarItem+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarItem+WZLBadge.m"; sourceTree = "<group>"; };
-		BAB466931F738F3400F7DBCD /* CAAnimation+WAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+WAnimation.h"; sourceTree = "<group>"; };
-		BAB466941F738F3400F7DBCD /* CAAnimation+WAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+WAnimation.m"; sourceTree = "<group>"; };
-		BAB466961F738F3400F7DBCD /* WZLBadgeProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLBadgeProtocol.h; sourceTree = "<group>"; };
-		BAB466981F738F3400F7DBCD /* UIView+WZLBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WZLBadge.h"; sourceTree = "<group>"; };
-		BAB466991F738F3400F7DBCD /* UIView+WZLBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WZLBadge.m"; sourceTree = "<group>"; };
-		BAB4669A1F738F3400F7DBCD /* WZLBadgeImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WZLBadgeImport.h; sourceTree = "<group>"; };
 		BAB4669C1F738F3400F7DBCD /* UITextView+YLTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+YLTextView.h"; sourceTree = "<group>"; };
 		BAB4669D1F738F3400F7DBCD /* UITextView+YLTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+YLTextView.m"; sourceTree = "<group>"; };
 		BAB4669F1F738F3400F7DBCD /* NSString+Help.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Help.h"; sourceTree = "<group>"; };
@@ -149,9 +135,6 @@
 		BAB466C01F738F3400F7DBCD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		BAB466C11F738F3400F7DBCD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		BAB466C21F738F3400F7DBCD /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		BAB466C41F738F3400F7DBCD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		BAB466C51F738F3400F7DBCD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		BAB466C61F738F3400F7DBCD /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		BAB466F11F73967800F7DBCD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BAB466F31F73968D00F7DBCD /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		BAB466F51F7396B000F7DBCD /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -165,6 +148,9 @@
 		BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdApiManager.m; sourceTree = "<group>"; };
 		BAB467051F74BD0400F7DBCD /* QuHudHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuHudHelper.h; sourceTree = "<group>"; };
 		BAB467061F74BD0400F7DBCD /* QuHudHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuHudHelper.m; sourceTree = "<group>"; };
+		BAB467151F78CAA900F7DBCD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		BAB467161F78CAA900F7DBCD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		BAB467171F78CAA900F7DBCD /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -261,7 +247,6 @@
 				BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */,
 				BAB466691F738F3400F7DBCD /* SDCycleScrollView */,
 				BAB4667B1F738F3400F7DBCD /* UIColor */,
-				BAB4668C1F738F3400F7DBCD /* WZLBadge */,
 				BAB4669B1F738F3400F7DBCD /* YLTextView */,
 			);
 			path = Common;
@@ -311,55 +296,6 @@
 				BAB466851F738F3400F7DBCD /* UIColor+Web.m */,
 			);
 			path = UIColor;
-			sourceTree = "<group>";
-		};
-		BAB4668C1F738F3400F7DBCD /* WZLBadge */ = {
-			isa = PBXGroup;
-			children = (
-				BAB4668D1F738F3400F7DBCD /* BarItem */,
-				BAB466921F738F3400F7DBCD /* CategorySupport */,
-				BAB466951F738F3400F7DBCD /* Protocol */,
-				BAB466971F738F3400F7DBCD /* View */,
-				BAB4669A1F738F3400F7DBCD /* WZLBadgeImport.h */,
-			);
-			path = WZLBadge;
-			sourceTree = "<group>";
-		};
-		BAB4668D1F738F3400F7DBCD /* BarItem */ = {
-			isa = PBXGroup;
-			children = (
-				BAB4668E1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.h */,
-				BAB4668F1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m */,
-				BAB466901F738F3400F7DBCD /* UITabBarItem+WZLBadge.h */,
-				BAB466911F738F3400F7DBCD /* UITabBarItem+WZLBadge.m */,
-			);
-			path = BarItem;
-			sourceTree = "<group>";
-		};
-		BAB466921F738F3400F7DBCD /* CategorySupport */ = {
-			isa = PBXGroup;
-			children = (
-				BAB466931F738F3400F7DBCD /* CAAnimation+WAnimation.h */,
-				BAB466941F738F3400F7DBCD /* CAAnimation+WAnimation.m */,
-			);
-			path = CategorySupport;
-			sourceTree = "<group>";
-		};
-		BAB466951F738F3400F7DBCD /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				BAB466961F738F3400F7DBCD /* WZLBadgeProtocol.h */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		BAB466971F738F3400F7DBCD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BAB466981F738F3400F7DBCD /* UIView+WZLBadge.h */,
-				BAB466991F738F3400F7DBCD /* UIView+WZLBadge.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BAB4669B1F738F3400F7DBCD /* YLTextView */ = {
@@ -455,11 +391,27 @@
 		BAB466C31F738F3400F7DBCD /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				BAB466C41F738F3400F7DBCD /* MainViewController.h */,
-				BAB466C51F738F3400F7DBCD /* MainViewController.m */,
-				BAB466C61F738F3400F7DBCD /* MainViewController.xib */,
+				BAB467141F78CA6B00F7DBCD /* View */,
+				BAB467131F78CA5F00F7DBCD /* Controller */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		BAB467131F78CA5F00F7DBCD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAB467151F78CAA900F7DBCD /* MainViewController.h */,
+				BAB467161F78CAA900F7DBCD /* MainViewController.m */,
+				BAB467171F78CAA900F7DBCD /* MainViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BAB467141F78CA6B00F7DBCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E024D22352E7F7A2FD46EEF8 /* Pods */ = {
@@ -535,7 +487,7 @@
 			files = (
 				BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */,
 				BAB466EE1F738F3400F7DBCD /* LoginViewController.xib in Resources */,
-				BAB466F01F738F3400F7DBCD /* MainViewController.xib in Resources */,
+				BAB467191F78CAA900F7DBCD /* MainViewController.xib in Resources */,
 				BAB466E71F738F3400F7DBCD /* Resource.xcassets in Resources */,
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 			);
@@ -607,8 +559,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAB466E21F738F3400F7DBCD /* UIView+Help.m in Sources */,
+				BAB467181F78CAA900F7DBCD /* MainViewController.m in Sources */,
 				BAB466ED1F738F3400F7DBCD /* LoginViewController.m in Sources */,
-				BAB466EF1F738F3400F7DBCD /* MainViewController.m in Sources */,
 				BAB466CB1F738F3400F7DBCD /* TAAbstractDotView.m in Sources */,
 				BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */,
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
@@ -628,14 +580,10 @@
 				BAB466E61F738F3400F7DBCD /* NetWorkRequestModel.m in Sources */,
 				BAB466E51F738F3400F7DBCD /* NetWorkRequestDefine.m in Sources */,
 				BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */,
-				BAB466DA1F738F3400F7DBCD /* UIBarButtonItem+WZLBadge.m in Sources */,
 				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,
-				BAB466DB1F738F3400F7DBCD /* UITabBarItem+WZLBadge.m in Sources */,
 				BAB466D41F738F3400F7DBCD /* UIColor+HEX.m in Sources */,
 				BAB466E31F738F3400F7DBCD /* NetWorkEngine.m in Sources */,
-				BAB466DD1F738F3400F7DBCD /* UIView+WZLBadge.m in Sources */,
 				BAB466EB1F738F3400F7DBCD /* BaseWebViewController.m in Sources */,
-				BAB466DC1F738F3400F7DBCD /* CAAnimation+WAnimation.m in Sources */,
 				BAB466D61F738F3400F7DBCD /* UIColor+Random.m in Sources */,
 				BAB4664A1F73626C00F7DBCD /* main.m in Sources */,
 				BAB466DF1F738F3400F7DBCD /* NSString+Help.m in Sources */,
