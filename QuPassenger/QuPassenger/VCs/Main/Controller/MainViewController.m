@@ -10,6 +10,8 @@
 
 @interface MainViewController ()
 
+@property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
+
 @end
 
 @implementation MainViewController
@@ -17,6 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
+    [leftBtn setImage:[UIImage imageNamed:@"main_person_icon"] forState:UIControlStateNormal];
+    [self setLeftBarItemWithButton:leftBtn];
+    
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
+    [rightBtn setImage:[UIImage imageNamed:@"main_message_icon"] forState:UIControlStateNormal];
+    [self setRightBarItemWithButton:rightBtn];
+}
+
+#pragma mark btnClickAction
+- (void)leftBarButtonItemAction:(id)sender
+{
+    [self presentLoginWithComplection:nil];
+}
+
+- (void)rightBarButtonItemAction:(id)sender
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,10 +44,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)loginClickAction:(id)sender
-{
-    [self presentLoginWithComplection:nil];
-}
 
 /*
 #pragma mark - Navigation
