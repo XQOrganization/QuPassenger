@@ -10,6 +10,8 @@
 		5B091DA924F825195E46FFA0 /* libPods-QuPassenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */; };
 		A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E2C401F74D4730008FE61 /* WXRegistViewController.m */; };
 		A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */; };
+		BA309ABD1F78DBCF00EE25D5 /* MainRouteRecommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */; };
+		BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -61,6 +63,10 @@
 		BAB4672B1F78D1F500F7DBCD /* MainBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467261F78D1F500F7DBCD /* MainBannerCell.xib */; };
 		BAB4672C1F78D1F500F7DBCD /* MainSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467281F78D1F500F7DBCD /* MainSearchCell.m */; };
 		BAB4672D1F78D1F500F7DBCD /* MainSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467291F78D1F500F7DBCD /* MainSearchCell.xib */; };
+		BAB467311F78D33900F7DBCD /* MainChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4672F1F78D33900F7DBCD /* MainChannelCell.m */; };
+		BAB467321F78D33900F7DBCD /* MainChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467301F78D33900F7DBCD /* MainChannelCell.xib */; };
+		BAB467361F78D3FA00F7DBCD /* MainBusRouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467341F78D3FA00F7DBCD /* MainBusRouteCell.m */; };
+		BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467351F78D3FA00F7DBCD /* MainBusRouteCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +75,9 @@
 		A53E2C3F1F74D4730008FE61 /* WXRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXRegistViewController.h; sourceTree = "<group>"; };
 		A53E2C401F74D4730008FE61 /* WXRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXRegistViewController.m; sourceTree = "<group>"; };
 		A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXRegistViewController.xib; sourceTree = "<group>"; };
+		BA309ABA1F78DBCF00EE25D5 /* MainRouteRecommandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRouteRecommandView.h; sourceTree = "<group>"; };
+		BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRouteRecommandView.m; sourceTree = "<group>"; };
+		BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainRouteRecommandView.xib; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -161,6 +170,12 @@
 		BAB467271F78D1F500F7DBCD /* MainSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSearchCell.h; sourceTree = "<group>"; };
 		BAB467281F78D1F500F7DBCD /* MainSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSearchCell.m; sourceTree = "<group>"; };
 		BAB467291F78D1F500F7DBCD /* MainSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainSearchCell.xib; sourceTree = "<group>"; };
+		BAB4672E1F78D33900F7DBCD /* MainChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainChannelCell.h; sourceTree = "<group>"; };
+		BAB4672F1F78D33900F7DBCD /* MainChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainChannelCell.m; sourceTree = "<group>"; };
+		BAB467301F78D33900F7DBCD /* MainChannelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainChannelCell.xib; sourceTree = "<group>"; };
+		BAB467331F78D3FA00F7DBCD /* MainBusRouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBusRouteCell.h; sourceTree = "<group>"; };
+		BAB467341F78D3FA00F7DBCD /* MainBusRouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBusRouteCell.m; sourceTree = "<group>"; };
+		BAB467351F78D3FA00F7DBCD /* MainBusRouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBusRouteCell.xib; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -426,6 +441,15 @@
 				BAB467271F78D1F500F7DBCD /* MainSearchCell.h */,
 				BAB467281F78D1F500F7DBCD /* MainSearchCell.m */,
 				BAB467291F78D1F500F7DBCD /* MainSearchCell.xib */,
+				BAB4672E1F78D33900F7DBCD /* MainChannelCell.h */,
+				BAB4672F1F78D33900F7DBCD /* MainChannelCell.m */,
+				BAB467301F78D33900F7DBCD /* MainChannelCell.xib */,
+				BAB467331F78D3FA00F7DBCD /* MainBusRouteCell.h */,
+				BAB467341F78D3FA00F7DBCD /* MainBusRouteCell.m */,
+				BAB467351F78D3FA00F7DBCD /* MainBusRouteCell.xib */,
+				BA309ABA1F78DBCF00EE25D5 /* MainRouteRecommandView.h */,
+				BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */,
+				BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -503,10 +527,13 @@
 			files = (
 				BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */,
 				BAB466EE1F738F3400F7DBCD /* LoginViewController.xib in Resources */,
+				BAB467321F78D33900F7DBCD /* MainChannelCell.xib in Resources */,
 				BAB467191F78CAA900F7DBCD /* MainViewController.xib in Resources */,
+				BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */,
 				BAB466E71F738F3400F7DBCD /* Resource.xcassets in Resources */,
 				BAB4672B1F78D1F500F7DBCD /* MainBannerCell.xib in Resources */,
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
+				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
 				BAB4672D1F78D1F500F7DBCD /* MainSearchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,9 +605,11 @@
 			files = (
 				BAB466E21F738F3400F7DBCD /* UIView+Help.m in Sources */,
 				BAB467181F78CAA900F7DBCD /* MainViewController.m in Sources */,
+				BA309ABD1F78DBCF00EE25D5 /* MainRouteRecommandView.m in Sources */,
 				BAB466ED1F738F3400F7DBCD /* LoginViewController.m in Sources */,
 				BAB466CB1F738F3400F7DBCD /* TAAbstractDotView.m in Sources */,
 				BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */,
+				BAB467361F78D3FA00F7DBCD /* MainBusRouteCell.m in Sources */,
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
 				A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */,
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,
@@ -594,6 +623,7 @@
 				BAB466C81F738F3400F7DBCD /* LocalDataModel.m in Sources */,
 				BAB466E41F738F3400F7DBCD /* NetWorkReqManager.m in Sources */,
 				BAB466D11F738F3400F7DBCD /* UIView+SDExtension.m in Sources */,
+				BAB467311F78D33900F7DBCD /* MainChannelCell.m in Sources */,
 				BAB466CE1F738F3400F7DBCD /* TAPageControl.m in Sources */,
 				BAB466E61F738F3400F7DBCD /* NetWorkRequestModel.m in Sources */,
 				BAB4672A1F78D1F500F7DBCD /* MainBannerCell.m in Sources */,

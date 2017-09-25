@@ -10,4 +10,8 @@
 
 @interface MainSearchCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *searchBtn;
+@property (weak, nonatomic) IBOutlet UITextField *startTextField;
+@property (weak, nonatomic) IBOutlet UITextField *endTextField;
+
 @end
