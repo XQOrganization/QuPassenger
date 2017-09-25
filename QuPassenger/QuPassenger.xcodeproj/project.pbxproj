@@ -57,6 +57,10 @@
 		BAB467071F74BD0400F7DBCD /* QuHudHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467061F74BD0400F7DBCD /* QuHudHelper.m */; };
 		BAB467181F78CAA900F7DBCD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467161F78CAA900F7DBCD /* MainViewController.m */; };
 		BAB467191F78CAA900F7DBCD /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467171F78CAA900F7DBCD /* MainViewController.xib */; };
+		BAB4671D1F78CD5900F7DBCD /* MainBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4671B1F78CD5900F7DBCD /* MainBannerCell.m */; };
+		BAB4671E1F78CD5900F7DBCD /* MainBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB4671C1F78CD5900F7DBCD /* MainBannerCell.xib */; };
+		BAB467221F78CE3400F7DBCD /* MainSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467201F78CE3400F7DBCD /* MainSearchCell.m */; };
+		BAB467231F78CE3400F7DBCD /* MainSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467211F78CE3400F7DBCD /* MainSearchCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +155,12 @@
 		BAB467151F78CAA900F7DBCD /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		BAB467161F78CAA900F7DBCD /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		BAB467171F78CAA900F7DBCD /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		BAB4671A1F78CD5900F7DBCD /* MainBannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBannerCell.h; sourceTree = "<group>"; };
+		BAB4671B1F78CD5900F7DBCD /* MainBannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBannerCell.m; sourceTree = "<group>"; };
+		BAB4671C1F78CD5900F7DBCD /* MainBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBannerCell.xib; sourceTree = "<group>"; };
+		BAB4671F1F78CE3400F7DBCD /* MainSearchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainSearchCell.h; sourceTree = "<group>"; };
+		BAB467201F78CE3400F7DBCD /* MainSearchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainSearchCell.m; sourceTree = "<group>"; };
+		BAB467211F78CE3400F7DBCD /* MainSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainSearchCell.xib; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -410,6 +420,12 @@
 		BAB467141F78CA6B00F7DBCD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAB4671A1F78CD5900F7DBCD /* MainBannerCell.h */,
+				BAB4671B1F78CD5900F7DBCD /* MainBannerCell.m */,
+				BAB4671C1F78CD5900F7DBCD /* MainBannerCell.xib */,
+				BAB4671F1F78CE3400F7DBCD /* MainSearchCell.h */,
+				BAB467201F78CE3400F7DBCD /* MainSearchCell.m */,
+				BAB467211F78CE3400F7DBCD /* MainSearchCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -489,7 +505,9 @@
 				BAB466EE1F738F3400F7DBCD /* LoginViewController.xib in Resources */,
 				BAB467191F78CAA900F7DBCD /* MainViewController.xib in Resources */,
 				BAB466E71F738F3400F7DBCD /* Resource.xcassets in Resources */,
+				BAB4671E1F78CD5900F7DBCD /* MainBannerCell.xib in Resources */,
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
+				BAB467231F78CE3400F7DBCD /* MainSearchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,10 +596,12 @@
 				BAB466D11F738F3400F7DBCD /* UIView+SDExtension.m in Sources */,
 				BAB466CE1F738F3400F7DBCD /* TAPageControl.m in Sources */,
 				BAB466E61F738F3400F7DBCD /* NetWorkRequestModel.m in Sources */,
+				BAB4671D1F78CD5900F7DBCD /* MainBannerCell.m in Sources */,
 				BAB466E51F738F3400F7DBCD /* NetWorkRequestDefine.m in Sources */,
 				BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */,
 				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,
 				BAB466D41F738F3400F7DBCD /* UIColor+HEX.m in Sources */,
+				BAB467221F78CE3400F7DBCD /* MainSearchCell.m in Sources */,
 				BAB466E31F738F3400F7DBCD /* NetWorkEngine.m in Sources */,
 				BAB466EB1F738F3400F7DBCD /* BaseWebViewController.m in Sources */,
 				BAB466D61F738F3400F7DBCD /* UIColor+Random.m in Sources */,
