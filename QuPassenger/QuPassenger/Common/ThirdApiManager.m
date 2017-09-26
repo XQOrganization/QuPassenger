@@ -28,6 +28,10 @@
 
 - (void)registerThirdApi
 {
+    //tentcent map
+    [QMapServices sharedServices].apiKey = @"EGOBZ-LH43U-YATVV-BJQSB-XIFCH-47FNS";
+    [[QMSSearchServices sharedServices] setApiKey:@"EGOBZ-LH43U-YATVV-BJQSB-XIFCH-47FNS"];
+    
     //Umeng
     UMConfigInstance.appKey = @"59c4baffc62dca631400014d";
     UMConfigInstance.channelId = @"App Store";

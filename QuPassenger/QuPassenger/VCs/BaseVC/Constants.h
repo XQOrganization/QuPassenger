@@ -48,6 +48,9 @@
 #import "UIImage+Help.h"
 #import "UIView+Help.h"
 #import <SVProgressHUD.h>
+#import <QMapKit/QMapKit.h>
+#import <QMapSearchKit/QMapSearchKit.h>
+
 #define ScreenWidthRatio [[UIScreen mainScreen] bounds].size.width/375
 
 //防止block里引用self造成循环引用

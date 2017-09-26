@@ -184,10 +184,16 @@
                 make.left.equalTo(_leftView.mas_right).offset(5);
                 
             }
+            else{
+                make.left.equalTo(self.contentView).offset(5);
+            }
             
             if (_rightView) {
                 make.right.equalTo(_rightView.mas_left).offset(-5);
                 
+            }
+            else{
+                make.right.equalTo(self.contentView).offset(5);
             }
             
         }];
