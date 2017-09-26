@@ -11,7 +11,12 @@
 @interface MainSearchCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
+@property (weak, nonatomic) IBOutlet UIButton *exchangeBtn;
 @property (weak, nonatomic) IBOutlet UITextField *startTextField;
 @property (weak, nonatomic) IBOutlet UITextField *endTextField;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *startBottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *endTopConstraint;
+
+@property (assign, nonatomic) BOOL isCurrentTop;//当前位置在顶部
 
 @end

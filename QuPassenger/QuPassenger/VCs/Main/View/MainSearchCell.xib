@@ -37,7 +37,19 @@
                             <constraint firstAttribute="width" constant="44" id="hot-Gc-qit"/>
                         </constraints>
                         <state key="normal" image="main_turn_icon"/>
+                        <connections>
+                            <action selector="exchangeClickAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="EED-Nv-dFX"/>
+                        </connections>
                     </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="当前位置" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-Lf-qO1">
+                        <rect key="frame" x="44" y="1" width="233" height="49"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="49" id="dVE-aU-YCX"/>
+                        </constraints>
+                        <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-aR-OYy">
                         <rect key="frame" x="44" y="50" width="233" height="0.5"/>
                         <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -45,19 +57,10 @@
                             <constraint firstAttribute="height" constant="0.5" id="PAF-Hf-t2t"/>
                         </constraints>
                     </view>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="当前位置" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k3h-Lf-qO1">
-                        <rect key="frame" x="44" y="0.0" width="233" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="dVE-aU-YCX"/>
-                        </constraints>
-                        <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入目的地" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z61-rZ-uAm">
-                        <rect key="frame" x="44" y="50" width="233" height="50"/>
+                        <rect key="frame" x="44" y="51" width="233" height="49"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="Ovh-mc-vl2"/>
+                            <constraint firstAttribute="height" constant="49" id="Ovh-mc-vl2"/>
                         </constraints>
                         <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
@@ -71,19 +74,22 @@
                 <constraint firstItem="PwK-Mr-8yi" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="2fJ-JG-1K1"/>
                 <constraint firstItem="PGE-Tq-2Hn" firstAttribute="leading" secondItem="Z61-rZ-uAm" secondAttribute="trailing" constant="8" id="5AI-e8-wzB"/>
                 <constraint firstItem="PGE-Tq-2Hn" firstAttribute="leading" secondItem="k3h-Lf-qO1" secondAttribute="trailing" constant="8" id="Oe7-Kk-3Ao"/>
-                <constraint firstItem="Z61-rZ-uAm" firstAttribute="top" secondItem="k3h-Lf-qO1" secondAttribute="bottom" id="R1o-CZ-ryb"/>
                 <constraint firstItem="Z61-rZ-uAm" firstAttribute="leading" secondItem="PwK-Mr-8yi" secondAttribute="trailing" id="Xn4-GF-Jnc"/>
+                <constraint firstItem="Z61-rZ-uAm" firstAttribute="top" secondItem="vrF-aR-OYy" secondAttribute="bottom" constant="0.5" id="a4A-Jb-QaD"/>
                 <constraint firstItem="PwK-Mr-8yi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ddJ-8d-ThL"/>
                 <constraint firstItem="vrF-aR-OYy" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="dqI-NX-2CX"/>
                 <constraint firstItem="vrF-aR-OYy" firstAttribute="leading" secondItem="PwK-Mr-8yi" secondAttribute="trailing" id="gdu-g2-ap9"/>
-                <constraint firstItem="vrF-aR-OYy" firstAttribute="top" secondItem="k3h-Lf-qO1" secondAttribute="bottom" id="nOX-6m-zZA"/>
+                <constraint firstItem="vrF-aR-OYy" firstAttribute="top" secondItem="k3h-Lf-qO1" secondAttribute="bottom" constant="0.5" id="nOX-6m-zZA"/>
                 <constraint firstAttribute="trailing" secondItem="PGE-Tq-2Hn" secondAttribute="trailing" constant="10" id="pw8-8A-ZSc"/>
                 <constraint firstItem="PGE-Tq-2Hn" firstAttribute="leading" secondItem="vrF-aR-OYy" secondAttribute="trailing" constant="8" id="uTx-Vh-1bu"/>
                 <constraint firstItem="k3h-Lf-qO1" firstAttribute="leading" secondItem="PwK-Mr-8yi" secondAttribute="trailing" id="xBW-Er-x9j"/>
             </constraints>
             <connections>
                 <outlet property="endTextField" destination="Z61-rZ-uAm" id="y4Z-P3-1o3"/>
+                <outlet property="endTopConstraint" destination="a4A-Jb-QaD" id="BzM-6j-Zzz"/>
+                <outlet property="exchangeBtn" destination="PwK-Mr-8yi" id="P11-yX-eVe"/>
                 <outlet property="searchBtn" destination="PGE-Tq-2Hn" id="Aik-qv-p7o"/>
+                <outlet property="startBottomConstraint" destination="nOX-6m-zZA" id="l43-NW-b80"/>
                 <outlet property="startTextField" destination="k3h-Lf-qO1" id="sKk-l7-sSK"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="54"/>

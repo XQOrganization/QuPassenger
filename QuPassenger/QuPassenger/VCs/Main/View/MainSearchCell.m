@@ -17,6 +17,32 @@
     
     self.startTextField.borderStyle = UITextBorderStyleNone;
     self.endTextField.borderStyle = UITextBorderStyleNone;
+    
+    self.isCurrentTop = YES;
+}
+
+- (IBAction)exchangeClickAction:(id)sender
+{
+    if (self.isCurrentTop) {
+        
+        [UIView animateWithDuration:0.2f animations:^{
+            
+            self.startBottomConstraint.constant = -49.5;
+            self.endTopConstraint.constant = -49.5;
+            [self.contentView layoutIfNeeded];
+        }];
+        
+    }
+    else{
+        
+        [UIView animateWithDuration:0.2f animations:^{
+            
+            self.startBottomConstraint.constant = 0.5;
+            self.endTopConstraint.constant = 0.5;
+            [self.contentView layoutIfNeeded];
+        }];
+    }
+    self.isCurrentTop = !self.isCurrentTop;
 }
 
 @end
