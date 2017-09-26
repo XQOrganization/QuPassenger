@@ -12,6 +12,8 @@
 		A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */; };
 		BA309ABD1F78DBCF00EE25D5 /* MainRouteRecommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */; };
 		BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */; };
+		BA309AC21F79E0C800EE25D5 /* MainLeftCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309AC01F79E0C800EE25D5 /* MainLeftCateCell.m */; };
+		BA309AC31F79E0C800EE25D5 /* MainLeftCateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309AC11F79E0C800EE25D5 /* MainLeftCateCell.xib */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -78,6 +80,9 @@
 		BA309ABA1F78DBCF00EE25D5 /* MainRouteRecommandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRouteRecommandView.h; sourceTree = "<group>"; };
 		BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRouteRecommandView.m; sourceTree = "<group>"; };
 		BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainRouteRecommandView.xib; sourceTree = "<group>"; };
+		BA309ABF1F79E0C800EE25D5 /* MainLeftCateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLeftCateCell.h; sourceTree = "<group>"; };
+		BA309AC01F79E0C800EE25D5 /* MainLeftCateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLeftCateCell.m; sourceTree = "<group>"; };
+		BA309AC11F79E0C800EE25D5 /* MainLeftCateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainLeftCateCell.xib; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -450,6 +455,9 @@
 				BA309ABA1F78DBCF00EE25D5 /* MainRouteRecommandView.h */,
 				BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */,
 				BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */,
+				BA309ABF1F79E0C800EE25D5 /* MainLeftCateCell.h */,
+				BA309AC01F79E0C800EE25D5 /* MainLeftCateCell.m */,
+				BA309AC11F79E0C800EE25D5 /* MainLeftCateCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -535,6 +543,7 @@
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
 				BAB4672D1F78D1F500F7DBCD /* MainSearchCell.xib in Resources */,
+				BA309AC31F79E0C800EE25D5 /* MainLeftCateCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -638,6 +647,7 @@
 				BAB4664A1F73626C00F7DBCD /* main.m in Sources */,
 				BAB466DF1F738F3400F7DBCD /* NSString+Help.m in Sources */,
 				BAB466CC1F738F3400F7DBCD /* TAAnimatedDotView.m in Sources */,
+				BA309AC21F79E0C800EE25D5 /* MainLeftCateCell.m in Sources */,
 				BAB466E91F738F3400F7DBCD /* BaseInputVC.m in Sources */,
 				BAB466E11F738F3400F7DBCD /* UITextField+Help.m in Sources */,
 				BAB466EA1F738F3400F7DBCD /* BaseNavigationController.m in Sources */,
