@@ -13,6 +13,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    [self.searchBtn setCornerRadius:4.0f AndBorder:0 borderColor:nil];
+    
+    self.startTextField.borderStyle = UITextBorderStyleNone;
+    self.endTextField.borderStyle = UITextBorderStyleNone;
 }
 
 @end

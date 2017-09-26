@@ -46,8 +46,9 @@
 #import "NetWorkReqManager.h"
 #import "UITextField+Help.h"
 #import "UIImage+Help.h"
+#import "UIView+Help.h"
 #import <SVProgressHUD.h>
-#define ScreenWidthRatio [[UIScreen mainScreen] bounds].size.width/320.0
+#define ScreenWidthRatio [[UIScreen mainScreen] bounds].size.width/375
 
 //防止block里引用self造成循环引用
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;

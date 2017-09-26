@@ -10,6 +10,10 @@
 
 @interface UIView (Help)
 
+//展示圆角 线 颜色
 - (void)setCornerRadius:(CGFloat)radius AndBorder:(CGFloat)borderWidth borderColor:(UIColor *)color;
+
+//展示阴影
+- (void)showShadowColor;
 
 @end
