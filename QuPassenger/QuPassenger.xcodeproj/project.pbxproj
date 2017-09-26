@@ -18,6 +18,7 @@
 		BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309AC91F79F41A00EE25D5 /* JourneyViewController.xib */; };
 		BA309ACF1F79FBF900EE25D5 /* JourneyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309ACD1F79FBF900EE25D5 /* JourneyListCell.m */; };
 		BA309AD01F79FBF900EE25D5 /* JourneyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309ACE1F79FBF900EE25D5 /* JourneyListCell.xib */; };
+		BA309AD31F7A288E00EE25D5 /* QuNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309AD21F7A288E00EE25D5 /* QuNavigationBar.m */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -93,6 +94,8 @@
 		BA309ACC1F79FBF900EE25D5 /* JourneyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyListCell.h; sourceTree = "<group>"; };
 		BA309ACD1F79FBF900EE25D5 /* JourneyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyListCell.m; sourceTree = "<group>"; };
 		BA309ACE1F79FBF900EE25D5 /* JourneyListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JourneyListCell.xib; sourceTree = "<group>"; };
+		BA309AD11F7A288E00EE25D5 /* QuNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuNavigationBar.h; sourceTree = "<group>"; };
+		BA309AD21F7A288E00EE25D5 /* QuNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuNavigationBar.m; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -428,6 +431,8 @@
 				BAB466B61F738F3400F7DBCD /* BaseInputVC.m */,
 				BAB466B71F738F3400F7DBCD /* BaseNavigationController.h */,
 				BAB466B81F738F3400F7DBCD /* BaseNavigationController.m */,
+				BA309AD11F7A288E00EE25D5 /* QuNavigationBar.h */,
+				BA309AD21F7A288E00EE25D5 /* QuNavigationBar.m */,
 				BAB466B91F738F3400F7DBCD /* BaseWebViewController.h */,
 				BAB466BA1F738F3400F7DBCD /* BaseWebViewController.m */,
 				BAB466BB1F738F3400F7DBCD /* BasicVC.h */,
@@ -677,6 +682,7 @@
 				BAB466E41F738F3400F7DBCD /* NetWorkReqManager.m in Sources */,
 				BAB466D11F738F3400F7DBCD /* UIView+SDExtension.m in Sources */,
 				BAB467311F78D33900F7DBCD /* MainChannelCell.m in Sources */,
+				BA309AD31F7A288E00EE25D5 /* QuNavigationBar.m in Sources */,
 				BAB466CE1F738F3400F7DBCD /* TAPageControl.m in Sources */,
 				BAB466E61F738F3400F7DBCD /* NetWorkRequestModel.m in Sources */,
 				BAB4672A1F78D1F500F7DBCD /* MainBannerCell.m in Sources */,

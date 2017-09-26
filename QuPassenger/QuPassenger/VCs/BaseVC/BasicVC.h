@@ -7,18 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuNavigationBar.h"
 
 @interface BasicVC : UIViewController
+
+@property (strong, nonatomic) QuNavigationBar *quNavBar;
 
 + (BaseNavigationController *)navigationControllerContainSelf;
 - (void)presentLoginWithComplection:(void(^)(void))complectionBlock;
 
-/**
- 添加NAV 左右按钮
- 
- @param left title或image
- @param right title或image
- */
 
 - (void)setLeftBarItemWithButton:(UIButton *)btn;
 - (void)setRightBarItemWithButton:(UIButton *)btn;

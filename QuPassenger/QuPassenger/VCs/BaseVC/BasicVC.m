@@ -42,8 +42,8 @@
     
 //    [self.view setBackgroundColor:COLOR_BACK];
 
-//    self.navigationController.interactivePopGestureRecognizer.delegate = self;
-//    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
 
    
 }

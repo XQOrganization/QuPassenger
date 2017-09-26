@@ -20,7 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"行程";
+    //使用自定义导航栏
+    QuNavigationBar *bar = [QuNavigationBar showQuNavigationBarWithController:self];
+    self.quNavBar = bar;
+    self.quNavBar.title = @"行程";
     
     [self.journeyCollectionView setBackgroundColor:HEXCOLOR(@"f6f6f6")];
     [self.journeyCollectionView setAlwaysBounceVertical:YES];

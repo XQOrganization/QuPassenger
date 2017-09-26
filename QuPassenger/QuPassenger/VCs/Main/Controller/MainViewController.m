@@ -35,32 +35,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
+ 
+    //使用自定义导航栏
+    QuNavigationBar *bar = [QuNavigationBar showQuNavigationBarWithController:self];
+    self.quNavBar = bar;
+    self.quNavBar.title = @"苏州市";
+
+    UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [leftBtn setImage:[UIImage imageNamed:@"main_person_icon"] forState:UIControlStateNormal];
-    [self setLeftBarItemWithButton:leftBtn];
+    [leftBtn addTarget:self action:@selector(leftBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.quNavBar.leftView = leftBtn;
     
-    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
+    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [rightBtn setImage:[UIImage imageNamed:@"main_message_icon"] forState:UIControlStateNormal];
-    [self setRightBarItemWithButton:rightBtn];
-    
+    [rightBtn addTarget:self action:@selector(rightBarButtonItemAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.quNavBar.rightView = rightBtn;
     
     UIButton *blackBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [blackBtn setFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height)];
     blackBtn.alpha = 0.0f;
     [blackBtn addTarget:self action:@selector(categoryBackAction:) forControlEvents:UIControlEventTouchUpInside];
     blackBtn.backgroundColor = [UIColor blackColor];
-    [self.navigationController.view addSubview:blackBtn];
+    [self.view addSubview:blackBtn];
     self.bgBlackBtn = blackBtn;
     
     //添加侧边栏
     [self.leftView setFrame:CGRectMake(-CATEGORYWIDTH,0,CATEGORYWIDTH,SCREEN_HEIGHT)];
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     [self.leftView addGestureRecognizer:panGesture];
-    [self.navigationController.view addSubview:self.leftView];
+    [self.view addSubview:self.leftView];
     
-    
-    self.title = @"苏州市";
     
     [self.mainCollectionView setBackgroundColor:HEXCOLOR(@"f6f6f6")];
     
@@ -84,15 +88,9 @@
     self.leftArray = array;
     
     [self.leftHeadImageView setCornerRadius:self.leftHeadImageView.mj_w/2 AndBorder:0 borderColor:nil];
-//    self.navigationController.navigationBar.hidden = YES;
+
     
-//    for (NSLayoutConstraint *layout in self.view.constraints) {
-//        
-//        if ([layout.secondItem isEqual:self.view] && layout.secondAttribute == NSLayoutAttributeTop) {
-//            CGFloat contant = layout.constant;
-//            layout.constant = contant + 64;
-//        }
-//    }
+
  
 }
 
@@ -137,6 +135,7 @@
                     [self.leftView setFrame:CGRectMake(-CATEGORYWIDTH, 0, CATEGORYWIDTH, SCREEN_HEIGHT)];
                      
                     self.bgBlackBtn.alpha = 0.0f;
+                    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
                      
                 }completion:^(BOOL finished){
                      
@@ -194,7 +193,7 @@
     } completion:^(BOOL finished){
         
     }];
-//    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
 }
 
 - (void)dismissLeftView
@@ -207,7 +206,7 @@
     } completion:^(BOOL finished){
          
     }];
-//    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
 }
 
 #pragma mark UITableViewDataSource
@@ -288,6 +287,7 @@
     }
 
 //    [self categoryBackAction:nil];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
