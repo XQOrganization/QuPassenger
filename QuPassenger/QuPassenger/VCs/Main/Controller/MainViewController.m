@@ -11,11 +11,23 @@
 #import "MainBannerCell.h"
 #import "MainSearchCell.h"
 #import "MainBusRouteCell.h"
+#import "MainLeftCateCell.h"
 #import "MainRouteRecommandView.h"
+#import "WXRegistViewController.h"
+#import "JourneyViewController.h"
+
+#define CATEGORYWIDTH 188
 
 @interface MainViewController ()
 
 @property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
+@property (strong, nonatomic) IBOutlet UIView *leftView;
+@property (weak, nonatomic) IBOutlet UIView *leftHeaderView;
+@property (weak, nonatomic) IBOutlet UITableView *leftTableView;
+@property (weak, nonatomic) IBOutlet UILabel *leftNameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *leftHeadImageView;
+@property (strong, nonatomic) UIButton *bgBlackBtn;
+@property (strong, nonatomic) NSArray *leftArray;
 
 @end
 
@@ -31,6 +43,22 @@
     UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
     [rightBtn setImage:[UIImage imageNamed:@"main_message_icon"] forState:UIControlStateNormal];
     [self setRightBarItemWithButton:rightBtn];
+    
+    
+    UIButton *blackBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [blackBtn setFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height)];
+    blackBtn.alpha = 0.0f;
+    [blackBtn addTarget:self action:@selector(categoryBackAction:) forControlEvents:UIControlEventTouchUpInside];
+    blackBtn.backgroundColor = [UIColor blackColor];
+    [self.navigationController.view addSubview:blackBtn];
+    self.bgBlackBtn = blackBtn;
+    
+    //添加侧边栏
+    [self.leftView setFrame:CGRectMake(-CATEGORYWIDTH,0,CATEGORYWIDTH,SCREEN_HEIGHT)];
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
+    [self.leftView addGestureRecognizer:panGesture];
+    [self.navigationController.view addSubview:self.leftView];
+    
     
     self.title = @"苏州市";
     
@@ -49,13 +77,101 @@
     [self.mainCollectionView registerNib:goodsNib forCellWithReuseIdentifier:@"MainBusRouteCell"];
   
     [self.mainCollectionView registerNib:[UINib nibWithNibName:@"MainRouteRecommandView" bundle:nil] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MainRouteRecommandView"];
+    
+    [self.leftTableView registerNib:[UINib nibWithNibName:@"MainLeftCateCell" bundle:nil] forCellReuseIdentifier:@"MainLeftCateCell"];
 
+    NSArray *array = [LocalDataModel arrayForMainLeftCategory];
+    self.leftArray = array;
+    
+    [self.leftHeadImageView setCornerRadius:self.leftHeadImageView.mj_w/2 AndBorder:0 borderColor:nil];
+//    self.navigationController.navigationBar.hidden = YES;
+    
+//    for (NSLayoutConstraint *layout in self.view.constraints) {
+//        
+//        if ([layout.secondItem isEqual:self.view] && layout.secondAttribute == NSLayoutAttributeTop) {
+//            CGFloat contant = layout.constant;
+//            layout.constant = contant + 64;
+//        }
+//    }
+ 
+}
+
+#pragma mark gestureRecognizer
+- (void)handlePanGesture:(UIPanGestureRecognizer *)gesture
+{
+    CGPoint translation = [gesture translationInView:gesture.view];;
+    
+    switch (gesture.state){
+            
+        case UIGestureRecognizerStateBegan:{
+            
+            [self.leftView setFrame:CGRectMake(0, 0, CATEGORYWIDTH, SCREEN_HEIGHT)];
+            self.bgBlackBtn.alpha = 0.3f;
+        }
+            
+            break;
+            
+        case UIGestureRecognizerStateChanged:{
+            
+            if(translation.x > 0){
+                
+                [self.leftView setFrame:CGRectMake(0, 0, CATEGORYWIDTH, SCREEN_HEIGHT)];
+                self.bgBlackBtn.alpha = 0.3f;
+                
+            }
+            else if(translation.x < 0){
+                
+                [self.leftView setFrame:CGRectMake(translation.x, 0, CATEGORYWIDTH, SCREEN_HEIGHT)];
+                self.bgBlackBtn.alpha = 0.3f;
+                
+            }
+        }
+            break;
+            
+        case UIGestureRecognizerStateCancelled:
+        case UIGestureRecognizerStateEnded:{
+            
+            if (self.leftView.frame.origin.x < -90){
+                
+                [UIView animateWithDuration:0.2 animations:^(){
+                    [self.leftView setFrame:CGRectMake(-CATEGORYWIDTH, 0, CATEGORYWIDTH, SCREEN_HEIGHT)];
+                     
+                    self.bgBlackBtn.alpha = 0.0f;
+                     
+                }completion:^(BOOL finished){
+                     
+                }];
+            }
+            else{
+                
+                [UIView animateWithDuration:0.2 animations:^(){
+                     [self.leftView setFrame:CGRectMake(0, 0, CATEGORYWIDTH, SCREEN_HEIGHT)];
+                     
+                     self.bgBlackBtn.alpha = 0.3f;
+                     
+                }completion:^(BOOL finished){
+                     
+                }];
+            }
+            
+            [gesture setTranslation:CGPointMake(0, 0) inView:self.leftView];
+            
+            break;
+        }
+        default:
+            break;
+    }
+    
 }
 
 #pragma mark btnClickAction
 - (void)leftBarButtonItemAction:(id)sender
 {
-    [self presentLoginWithComplection:nil];
+    if (!ACCOUNTINFO.isLogin) {
+        [self presentLoginWithComplection:nil];
+        return;
+    }
+    [self showLeftView];
 }
 
 - (void)rightBarButtonItemAction:(id)sender
@@ -63,6 +179,117 @@
     
 }
 
+- (void)categoryBackAction:(UIButton *)sender
+{
+    [self dismissLeftView];
+}
+
+- (void)showLeftView
+{
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionOverrideInheritedCurve animations:^{
+        
+        self.leftView.frame = CGRectMake(0, 0, CATEGORYWIDTH, SCREEN_HEIGHT);
+        self.bgBlackBtn.alpha = 0.3f;
+        
+    } completion:^(BOOL finished){
+        
+    }];
+//    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+}
+
+- (void)dismissLeftView
+{
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionOverrideInheritedCurve animations:^{
+        
+        self.leftView.frame = CGRectMake(-CATEGORYWIDTH, 0, CATEGORYWIDTH, SCREEN_HEIGHT);
+        self.bgBlackBtn.alpha = 0.0f;
+        
+    } completion:^(BOOL finished){
+         
+    }];
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+}
+
+#pragma mark UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.leftArray count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    return 44.0f;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MainLeftCateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MainLeftCateCell"];
+    
+    LocalDataModel *listModel = self.leftArray[indexPath.row];
+    cell.cateLabel.text = listModel.name;
+    [cell.cateImageView setImage:[UIImage imageNamed:listModel.imageName]];
+    
+
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    LocalDataModel *model = self.leftArray[indexPath.row];
+    
+    switch (model.sign) {
+        case 0:{
+            //行程
+            if (!ACCOUNTINFO.isLogin) {
+                [self presentLoginWithComplection:nil];
+                return;
+            }
+            JourneyViewController *vc = [[JourneyViewController alloc]initWithNibName:@"JourneyViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+           
+        }
+            break;
+            
+        case 1:{
+            //绑定认证
+            if (!ACCOUNTINFO.isLogin) {
+                [self presentLoginWithComplection:nil];
+                return;
+            }
+        
+            WXRegistViewController *vc = [[WXRegistViewController alloc]initWithNibName:@"WXRegistViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        case 2:{
+            //关于我们
+            
+        }
+            break;
+            
+        case 3:{
+            //设置
+     
+        }
+            break;
+            
+        default:
+            break;
+    }
+
+//    [self categoryBackAction:nil];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 #pragma mark UICollectionViewDatasource/UICollectionViewDelegate
 //定义展示的UICollectionViewCell的个数
@@ -244,7 +471,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+//    [self showLeftView];
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 

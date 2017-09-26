@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="leftHeadImageView" destination="Bte-dq-3pA" id="x4e-YB-Wgt"/>
+                <outlet property="leftHeaderView" destination="6mc-ef-GVh" id="19z-Q4-AHO"/>
+                <outlet property="leftNameLabel" destination="U5H-Tz-CRP" id="7ey-rn-5o0"/>
+                <outlet property="leftTableView" destination="zT8-PS-ezz" id="WLr-aF-avL"/>
+                <outlet property="leftView" destination="gsk-KD-47E" id="wIH-sO-xxa"/>
                 <outlet property="mainCollectionView" destination="lqY-Bd-SU1" id="TeW-G6-HIw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -42,6 +47,69 @@
                 <constraint firstAttribute="bottom" secondItem="lqY-Bd-SU1" secondAttribute="bottom" id="KiU-Uk-t9s"/>
                 <constraint firstAttribute="trailing" secondItem="lqY-Bd-SU1" secondAttribute="trailing" id="np9-DC-6Tb"/>
             </constraints>
+        </view>
+        <view contentMode="scaleToFill" id="gsk-KD-47E">
+            <rect key="frame" x="0.0" y="0.0" width="188" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mc-ef-GVh">
+                    <rect key="frame" x="0.0" y="0.0" width="188" height="188"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bte-dq-3pA">
+                            <rect key="frame" x="64" y="60" width="60" height="60"/>
+                            <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="7NU-ka-0LC"/>
+                                <constraint firstAttribute="height" constant="60" id="i6q-9y-3Rj"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="小趣abc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5H-Tz-CRP">
+                            <rect key="frame" x="10" y="130" width="168" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="U5H-Tz-CRP" secondAttribute="trailing" constant="10" id="15M-T7-Lc5"/>
+                        <constraint firstItem="U5H-Tz-CRP" firstAttribute="top" secondItem="Bte-dq-3pA" secondAttribute="bottom" constant="10" id="C7B-dS-d2c"/>
+                        <constraint firstItem="U5H-Tz-CRP" firstAttribute="leading" secondItem="6mc-ef-GVh" secondAttribute="leading" constant="10" id="RkI-JT-nw7"/>
+                        <constraint firstItem="Bte-dq-3pA" firstAttribute="top" secondItem="6mc-ef-GVh" secondAttribute="top" constant="60" id="Y3S-dc-khU"/>
+                        <constraint firstItem="Bte-dq-3pA" firstAttribute="centerX" secondItem="6mc-ef-GVh" secondAttribute="centerX" id="cx9-XS-xT6"/>
+                        <constraint firstAttribute="height" constant="188" id="q8t-Xn-Fhp"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zT8-PS-ezz">
+                    <rect key="frame" x="0.0" y="188" width="188" height="479"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="kkE-CG-hl3"/>
+                        <outlet property="delegate" destination="-1" id="AQI-LS-NDY"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@2017 苏州小趣信息技术有限公司" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2CC-Ye-fAd">
+                    <rect key="frame" x="14" y="640" width="160" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="6mc-ef-GVh" firstAttribute="top" secondItem="gsk-KD-47E" secondAttribute="top" id="4IW-uB-mqi"/>
+                <constraint firstAttribute="bottom" secondItem="zT8-PS-ezz" secondAttribute="bottom" id="5Kp-6l-A2K"/>
+                <constraint firstAttribute="trailing" secondItem="2CC-Ye-fAd" secondAttribute="trailing" constant="14" id="Bcu-Id-3nb"/>
+                <constraint firstAttribute="trailing" secondItem="zT8-PS-ezz" secondAttribute="trailing" id="FGh-b3-nFL"/>
+                <constraint firstItem="zT8-PS-ezz" firstAttribute="top" secondItem="6mc-ef-GVh" secondAttribute="bottom" id="HOR-5c-z6a"/>
+                <constraint firstAttribute="trailing" secondItem="6mc-ef-GVh" secondAttribute="trailing" id="LIT-BO-MEe"/>
+                <constraint firstItem="zT8-PS-ezz" firstAttribute="leading" secondItem="gsk-KD-47E" secondAttribute="leading" id="NSR-Yx-ivZ"/>
+                <constraint firstItem="2CC-Ye-fAd" firstAttribute="leading" secondItem="gsk-KD-47E" secondAttribute="leading" constant="14" id="OiX-Jf-EXz"/>
+                <constraint firstItem="6mc-ef-GVh" firstAttribute="leading" secondItem="gsk-KD-47E" secondAttribute="leading" id="Zqs-ba-iG1"/>
+                <constraint firstAttribute="bottom" secondItem="2CC-Ye-fAd" secondAttribute="bottom" constant="15" id="mmO-4j-LoM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-95" y="614.5"/>
         </view>
     </objects>
 </document>

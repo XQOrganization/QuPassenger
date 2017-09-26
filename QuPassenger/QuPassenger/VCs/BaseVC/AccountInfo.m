@@ -16,7 +16,7 @@
     static AccountInfo *shared = nil;
     dispatch_once(&pred, ^{
         shared = [[self alloc]init];
-
+        shared.isLogin = YES;
         
     });
     return shared;

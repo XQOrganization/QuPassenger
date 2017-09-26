@@ -19,7 +19,7 @@
  @param left title或image
  @param right title或image
  */
-- (void)setBarItemWithLeftButton:(NSObject *)left rightButton:(NSObject *)right;
+
 - (void)setLeftBarItemWithButton:(UIButton *)btn;
 - (void)setRightBarItemWithButton:(UIButton *)btn;
 

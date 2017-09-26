@@ -12,6 +12,12 @@
 		A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */; };
 		BA309ABD1F78DBCF00EE25D5 /* MainRouteRecommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */; };
 		BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */; };
+		BA309AC21F79E0C800EE25D5 /* MainLeftCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309AC01F79E0C800EE25D5 /* MainLeftCateCell.m */; };
+		BA309AC31F79E0C800EE25D5 /* MainLeftCateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309AC11F79E0C800EE25D5 /* MainLeftCateCell.xib */; };
+		BA309ACA1F79F41A00EE25D5 /* JourneyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309AC81F79F41A00EE25D5 /* JourneyViewController.m */; };
+		BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309AC91F79F41A00EE25D5 /* JourneyViewController.xib */; };
+		BA309ACF1F79FBF900EE25D5 /* JourneyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309ACD1F79FBF900EE25D5 /* JourneyListCell.m */; };
+		BA309AD01F79FBF900EE25D5 /* JourneyListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309ACE1F79FBF900EE25D5 /* JourneyListCell.xib */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -78,6 +84,15 @@
 		BA309ABA1F78DBCF00EE25D5 /* MainRouteRecommandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRouteRecommandView.h; sourceTree = "<group>"; };
 		BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRouteRecommandView.m; sourceTree = "<group>"; };
 		BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainRouteRecommandView.xib; sourceTree = "<group>"; };
+		BA309ABF1F79E0C800EE25D5 /* MainLeftCateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainLeftCateCell.h; sourceTree = "<group>"; };
+		BA309AC01F79E0C800EE25D5 /* MainLeftCateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainLeftCateCell.m; sourceTree = "<group>"; };
+		BA309AC11F79E0C800EE25D5 /* MainLeftCateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainLeftCateCell.xib; sourceTree = "<group>"; };
+		BA309AC71F79F41A00EE25D5 /* JourneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyViewController.h; sourceTree = "<group>"; };
+		BA309AC81F79F41A00EE25D5 /* JourneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyViewController.m; sourceTree = "<group>"; };
+		BA309AC91F79F41A00EE25D5 /* JourneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JourneyViewController.xib; sourceTree = "<group>"; };
+		BA309ACC1F79FBF900EE25D5 /* JourneyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyListCell.h; sourceTree = "<group>"; };
+		BA309ACD1F79FBF900EE25D5 /* JourneyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyListCell.m; sourceTree = "<group>"; };
+		BA309ACE1F79FBF900EE25D5 /* JourneyListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JourneyListCell.xib; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -211,6 +226,35 @@
 				DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA309AC41F79F3AF00EE25D5 /* Journey */ = {
+			isa = PBXGroup;
+			children = (
+				BA309AC61F79F3D200EE25D5 /* View */,
+				BA309AC51F79F3C600EE25D5 /* Controller */,
+			);
+			path = Journey;
+			sourceTree = "<group>";
+		};
+		BA309AC51F79F3C600EE25D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA309AC71F79F41A00EE25D5 /* JourneyViewController.h */,
+				BA309AC81F79F41A00EE25D5 /* JourneyViewController.m */,
+				BA309AC91F79F41A00EE25D5 /* JourneyViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA309AC61F79F3D200EE25D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA309ACC1F79FBF900EE25D5 /* JourneyListCell.h */,
+				BA309ACD1F79FBF900EE25D5 /* JourneyListCell.m */,
+				BA309ACE1F79FBF900EE25D5 /* JourneyListCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BAB4663C1F73626C00F7DBCD = {
@@ -370,6 +414,7 @@
 				BAB466B21F738F3400F7DBCD /* BaseVC */,
 				BAB466BE1F738F3400F7DBCD /* Login */,
 				BAB466C31F738F3400F7DBCD /* Main */,
+				BA309AC41F79F3AF00EE25D5 /* Journey */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -450,6 +495,9 @@
 				BA309ABA1F78DBCF00EE25D5 /* MainRouteRecommandView.h */,
 				BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */,
 				BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */,
+				BA309ABF1F79E0C800EE25D5 /* MainLeftCateCell.h */,
+				BA309AC01F79E0C800EE25D5 /* MainLeftCateCell.m */,
+				BA309AC11F79E0C800EE25D5 /* MainLeftCateCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -534,7 +582,10 @@
 				BAB4672B1F78D1F500F7DBCD /* MainBannerCell.xib in Resources */,
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
+				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
 				BAB4672D1F78D1F500F7DBCD /* MainSearchCell.xib in Resources */,
+				BA309AD01F79FBF900EE25D5 /* JourneyListCell.xib in Resources */,
+				BA309AC31F79E0C800EE25D5 /* MainLeftCateCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,9 +664,11 @@
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
 				A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */,
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,
+				BA309ACF1F79FBF900EE25D5 /* JourneyListCell.m in Sources */,
 				BAB466E81F738F3400F7DBCD /* AccountInfo.m in Sources */,
 				BAB466D31F738F3400F7DBCD /* UIColor+Gradient.m in Sources */,
 				BAB466C71F738F3400F7DBCD /* CHAlertView.m in Sources */,
+				BA309ACA1F79F41A00EE25D5 /* JourneyViewController.m in Sources */,
 				BAB466D51F738F3400F7DBCD /* UIColor+Modify.m in Sources */,
 				BAB466E01F738F3400F7DBCD /* UITableView+FooterBlank.m in Sources */,
 				BAB466D01F738F3400F7DBCD /* SDCycleScrollView.m in Sources */,
@@ -638,6 +691,7 @@
 				BAB4664A1F73626C00F7DBCD /* main.m in Sources */,
 				BAB466DF1F738F3400F7DBCD /* NSString+Help.m in Sources */,
 				BAB466CC1F738F3400F7DBCD /* TAAnimatedDotView.m in Sources */,
+				BA309AC21F79E0C800EE25D5 /* MainLeftCateCell.m in Sources */,
 				BAB466E91F738F3400F7DBCD /* BaseInputVC.m in Sources */,
 				BAB466E11F738F3400F7DBCD /* UITextField+Help.m in Sources */,
 				BAB466EA1F738F3400F7DBCD /* BaseNavigationController.m in Sources */,
