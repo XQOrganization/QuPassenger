@@ -13,6 +13,8 @@
 #import "MainBusRouteCell.h"
 #import "MainLeftCateCell.h"
 #import "MainRouteRecommandView.h"
+#import "WXRegistViewController.h"
+#import "JourneyViewController.h"
 
 #define CATEGORYWIDTH 188
 
@@ -83,6 +85,14 @@
     
     [self.leftHeadImageView setCornerRadius:self.leftHeadImageView.mj_w/2 AndBorder:0 borderColor:nil];
 //    self.navigationController.navigationBar.hidden = YES;
+    
+//    for (NSLayoutConstraint *layout in self.view.constraints) {
+//        
+//        if ([layout.secondItem isEqual:self.view] && layout.secondAttribute == NSLayoutAttributeTop) {
+//            CGFloat contant = layout.constant;
+//            layout.constant = contant + 64;
+//        }
+//    }
  
 }
 
@@ -243,6 +253,8 @@
                 [self presentLoginWithComplection:nil];
                 return;
             }
+            JourneyViewController *vc = [[JourneyViewController alloc]initWithNibName:@"JourneyViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
            
         }
             break;
@@ -254,6 +266,8 @@
                 return;
             }
         
+            WXRegistViewController *vc = [[WXRegistViewController alloc]initWithNibName:@"WXRegistViewController" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
             
@@ -273,7 +287,7 @@
             break;
     }
 
-    [self categoryBackAction:nil];
+//    [self categoryBackAction:nil];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -457,7 +471,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self showLeftView];
+//    [self showLeftView];
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
