@@ -22,6 +22,13 @@
 		BA309AD71F7A4A6500EE25D5 /* QMapKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA309AD51F7A4A6500EE25D5 /* QMapKit.bundle */; };
 		BA309AD81F7A4A6500EE25D5 /* QMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AD61F7A4A6500EE25D5 /* QMapKit.framework */; };
 		BA309ADA1F7A4F9400EE25D5 /* QMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AD91F7A4F9400EE25D5 /* QMapSearchKit.framework */; };
+		BA309AE91F7A547C00EE25D5 /* RouteSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309AE71F7A547C00EE25D5 /* RouteSearchVC.m */; };
+		BA309AEA1F7A547C00EE25D5 /* RouteSearchVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309AE81F7A547C00EE25D5 /* RouteSearchVC.xib */; };
+		BA309AEC1F7B30D700EE25D5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AEB1F7B30D700EE25D5 /* CoreLocation.framework */; };
+		BA309AEE1F7B30E900EE25D5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AED1F7B30E900EE25D5 /* CoreGraphics.framework */; };
+		BA309AF01F7B30F800EE25D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AEF1F7B30F800EE25D5 /* Foundation.framework */; };
+		BA309AF21F7B310900EE25D5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AF11F7B310900EE25D5 /* libsqlite3.tbd */; };
+		BA309AF41F7B312C00EE25D5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AF31F7B312C00EE25D5 /* QuartzCore.framework */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -102,6 +109,14 @@
 		BA309AD51F7A4A6500EE25D5 /* QMapKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = QMapKit.bundle; sourceTree = "<group>"; };
 		BA309AD61F7A4A6500EE25D5 /* QMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QMapKit.framework; sourceTree = "<group>"; };
 		BA309AD91F7A4F9400EE25D5 /* QMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QMapSearchKit.framework; sourceTree = "<group>"; };
+		BA309AE61F7A547C00EE25D5 /* RouteSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteSearchVC.h; sourceTree = "<group>"; };
+		BA309AE71F7A547C00EE25D5 /* RouteSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteSearchVC.m; sourceTree = "<group>"; };
+		BA309AE81F7A547C00EE25D5 /* RouteSearchVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteSearchVC.xib; sourceTree = "<group>"; };
+		BA309AEB1F7B30D700EE25D5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BA309AED1F7B30E900EE25D5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BA309AEF1F7B30F800EE25D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BA309AF11F7B310900EE25D5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BA309AF31F7B312C00EE25D5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -208,6 +223,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA309AF41F7B312C00EE25D5 /* QuartzCore.framework in Frameworks */,
+				BAB466F21F73967800F7DBCD /* libz.tbd in Frameworks */,
+				BA309AF21F7B310900EE25D5 /* libsqlite3.tbd in Frameworks */,
+				BA309AF01F7B30F800EE25D5 /* Foundation.framework in Frameworks */,
+				BA309AEE1F7B30E900EE25D5 /* CoreGraphics.framework in Frameworks */,
+				BA309AEC1F7B30D700EE25D5 /* CoreLocation.framework in Frameworks */,
 				BAB466FE1F7396FD00F7DBCD /* CoreTelephony.framework in Frameworks */,
 				BAB466FC1F7396F500F7DBCD /* CFNetwork.framework in Frameworks */,
 				BAB466FA1F7396DB00F7DBCD /* Security.framework in Frameworks */,
@@ -215,7 +236,6 @@
 				BAB466F61F7396B000F7DBCD /* libc++.tbd in Frameworks */,
 				BAB466F41F73968D00F7DBCD /* libsqlite3.0.tbd in Frameworks */,
 				BA309AD81F7A4A6500EE25D5 /* QMapKit.framework in Frameworks */,
-				BAB466F21F73967800F7DBCD /* libz.tbd in Frameworks */,
 				BA309ADA1F7A4F9400EE25D5 /* QMapSearchKit.framework in Frameworks */,
 				5B091DA924F825195E46FFA0 /* libPods-QuPassenger.a in Frameworks */,
 			);
@@ -227,6 +247,11 @@
 		B9C65842B7996E4E123B49F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA309AF31F7B312C00EE25D5 /* QuartzCore.framework */,
+				BA309AF11F7B310900EE25D5 /* libsqlite3.tbd */,
+				BA309AEF1F7B30F800EE25D5 /* Foundation.framework */,
+				BA309AED1F7B30E900EE25D5 /* CoreGraphics.framework */,
+				BA309AEB1F7B30D700EE25D5 /* CoreLocation.framework */,
 				BAB466FD1F7396FD00F7DBCD /* CoreTelephony.framework */,
 				BAB466FB1F7396F500F7DBCD /* CFNetwork.framework */,
 				BAB466F91F7396DB00F7DBCD /* Security.framework */,
@@ -276,6 +301,32 @@
 				BA309AD61F7A4A6500EE25D5 /* QMapKit.framework */,
 			);
 			path = TencentMap;
+			sourceTree = "<group>";
+		};
+		BA309ADE1F7A541600EE25D5 /* Route */ = {
+			isa = PBXGroup;
+			children = (
+				BA309ADF1F7A541600EE25D5 /* Controller */,
+				BA309AE01F7A541600EE25D5 /* View */,
+			);
+			path = Route;
+			sourceTree = "<group>";
+		};
+		BA309ADF1F7A541600EE25D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA309AE61F7A547C00EE25D5 /* RouteSearchVC.h */,
+				BA309AE71F7A547C00EE25D5 /* RouteSearchVC.m */,
+				BA309AE81F7A547C00EE25D5 /* RouteSearchVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA309AE01F7A541600EE25D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BAB4663C1F73626C00F7DBCD = {
@@ -434,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB466B21F738F3400F7DBCD /* BaseVC */,
+				BA309ADE1F7A541600EE25D5 /* Route */,
 				BAB466BE1F738F3400F7DBCD /* Login */,
 				BAB466C31F738F3400F7DBCD /* Main */,
 				BA309AC41F79F3AF00EE25D5 /* Journey */,
@@ -608,6 +660,7 @@
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
+				BA309AEA1F7A547C00EE25D5 /* RouteSearchVC.xib in Resources */,
 				BAB4672D1F78D1F500F7DBCD /* MainSearchCell.xib in Resources */,
 				BA309AD01F79FBF900EE25D5 /* JourneyListCell.xib in Resources */,
 				BA309AC31F79E0C800EE25D5 /* MainLeftCateCell.xib in Resources */,
@@ -694,6 +747,7 @@
 				BAB466D31F738F3400F7DBCD /* UIColor+Gradient.m in Sources */,
 				BAB466C71F738F3400F7DBCD /* CHAlertView.m in Sources */,
 				BA309ACA1F79F41A00EE25D5 /* JourneyViewController.m in Sources */,
+				BA309AE91F7A547C00EE25D5 /* RouteSearchVC.m in Sources */,
 				BAB466D51F738F3400F7DBCD /* UIColor+Modify.m in Sources */,
 				BAB466E01F738F3400F7DBCD /* UITableView+FooterBlank.m in Sources */,
 				BAB466D01F738F3400F7DBCD /* SDCycleScrollView.m in Sources */,

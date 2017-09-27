@@ -19,4 +19,6 @@
 
 @property (assign, nonatomic) BOOL isCurrentTop;//当前位置在顶部
 
+@property (copy, nonatomic) void (^routeSearchBlock)(NSString *start,NSString *end);
+
 @end

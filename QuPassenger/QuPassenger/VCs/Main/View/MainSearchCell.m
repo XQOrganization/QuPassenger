@@ -45,4 +45,11 @@
     self.isCurrentTop = !self.isCurrentTop;
 }
 
+- (IBAction)searchClickAction:(id)sender
+{
+    if (self.routeSearchBlock) {
+        self.routeSearchBlock(self.startTextField.text, self.endTextField.text);
+    }
+}
+
 @end

@@ -15,6 +15,7 @@
 #import "MainRouteRecommandView.h"
 #import "WXRegistViewController.h"
 #import "JourneyViewController.h"
+#import "RouteSearchVC.h"
 
 #define CATEGORYWIDTH 188
 
@@ -339,10 +340,11 @@
         static NSString *aIdentifier = @"MainSearchCell";
         MainSearchCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:aIdentifier forIndexPath:indexPath];
         
-//        [cell addBannerWithArray:self.mainRsp.data_xsqg clickBlock:^(MainBuyModel *itemModel) {
-//            TimeBuyVC *vc = [[TimeBuyVC alloc]initWithNibName:@"TimeBuyVC" bundle:nil];
-//            [weakSelf.navigationController pushViewController:vc animated:YES];
-//        }];
+        cell.routeSearchBlock = ^(NSString *start, NSString *end) {
+            
+            RouteSearchVC *vc = [[RouteSearchVC alloc]initWithNibName:@"RouteSearchVC" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+        };
         
         return cell;
     }
