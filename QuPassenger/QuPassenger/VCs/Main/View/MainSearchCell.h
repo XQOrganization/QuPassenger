@@ -20,6 +20,6 @@
 @property (assign, nonatomic) BOOL isCurrentTop;//当前位置在顶部
 
 @property (copy, nonatomic) void (^routeSearchBlock)(NSString *start,NSString *end);
-@property (copy, nonatomic) void (^routeEditBlock)(NSString *start,NSString *end);
+@property (copy, nonatomic) void (^routeEditBlock)(NSString *start,NSString *end,NSInteger from);//from://1.出发地进入，2.目的地进入
 
 @end

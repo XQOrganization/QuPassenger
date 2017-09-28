@@ -346,9 +346,10 @@
             [self.navigationController pushViewController:vc animated:YES];
         };
         
-        cell.routeEditBlock  = ^(NSString *start, NSString *end) {
+        cell.routeEditBlock  = ^(NSString *start, NSString *end,NSInteger from) {
             
             RouteSearchVC *vc = [[RouteSearchVC alloc]initWithNibName:@"RouteSearchVC" bundle:nil];
+            vc.from = from;
             [self.navigationController pushViewController:vc animated:YES];
         };
         

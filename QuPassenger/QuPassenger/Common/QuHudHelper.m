@@ -183,6 +183,32 @@
 }
 
 #pragma mark sv
++ (void)sv_loading
+{
+    return [QuHudHelper sv_loading:nil];
+}
+
++ (void)sv_loading:(NSString *)msg
+{
+    if (msg.length > 0) {
+        [SVProgressHUD showWithStatus:msg];
+    }
+    else{
+        [SVProgressHUD show];
+    }
+ 
+}
+
++ (void)sv_dismiss
+{
+    [QuHudHelper sv_dismiss:0.0f];
+}
+
++ (void)sv_dismiss:(CGFloat)seconds
+{
+    [SVProgressHUD dismissWithDelay:seconds];
+}
+
 + (void)sv_showErrorWithStatus:(NSString *)status
 {
     [QuHudHelper sv_showErrorWithStatus:status deley:1.0f];

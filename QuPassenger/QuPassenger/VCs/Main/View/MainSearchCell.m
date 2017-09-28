@@ -58,9 +58,17 @@
 #pragma mark UITextFieldDelegate
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    if (self.routeEditBlock) {
-        self.routeEditBlock(self.startTextField.text, self.endTextField.text);
+    if (textField == self.startTextField) {
+        if (self.routeEditBlock) {
+            self.routeEditBlock(self.startTextField.text, self.endTextField.text,1);
+        }
     }
+    else{
+        if (self.routeEditBlock) {
+            self.routeEditBlock(self.startTextField.text, self.endTextField.text,2);
+        }
+    }
+    
     return NO;
 }
 

@@ -11,9 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RouteSearchVC">
             <connections>
+                <outlet property="bottomBtn" destination="OZb-6u-R5G" id="sCO-RN-NoE"/>
                 <outlet property="endTextField" destination="Esw-aJ-3G3" id="9Ya-NL-rLh"/>
+                <outlet property="routeCollectionView" destination="e2I-oe-oON" id="4cS-ji-oIl"/>
                 <outlet property="searchView" destination="Nrh-fP-yB6" id="SML-l4-we9"/>
                 <outlet property="startTextField" destination="gos-W7-d3n" id="vUc-uN-Wn6"/>
+                <outlet property="topBtn" destination="zvM-4E-t9w" id="Aqz-9O-rY6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -109,10 +112,28 @@
                         <constraint firstItem="zvM-4E-t9w" firstAttribute="leading" secondItem="Nrh-fP-yB6" secondAttribute="leading" id="ye2-jj-nZl"/>
                     </constraints>
                 </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="e2I-oe-oON">
+                    <rect key="frame" x="0.0" y="175" width="375" height="492"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TBf-OA-f2s">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="omU-YK-2S1"/>
+                        <outlet property="delegate" destination="-1" id="4gd-j2-087"/>
+                    </connections>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="e2I-oe-oON" secondAttribute="trailing" id="6Y6-91-k1X"/>
                 <constraint firstItem="Nrh-fP-yB6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="8sb-tb-SsV"/>
+                <constraint firstItem="e2I-oe-oON" firstAttribute="top" secondItem="Nrh-fP-yB6" secondAttribute="bottom" constant="50" id="KDO-fa-6A4"/>
+                <constraint firstItem="e2I-oe-oON" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SJU-Fk-rm2"/>
+                <constraint firstAttribute="bottom" secondItem="e2I-oe-oON" secondAttribute="bottom" id="Vpf-AD-QwW"/>
                 <constraint firstItem="Nrh-fP-yB6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="25" id="t0V-kH-SkD"/>
                 <constraint firstAttribute="trailing" secondItem="Nrh-fP-yB6" secondAttribute="trailing" constant="10" id="uO5-T9-27C"/>
             </constraints>
