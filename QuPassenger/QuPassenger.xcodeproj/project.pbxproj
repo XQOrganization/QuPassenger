@@ -31,6 +31,8 @@
 		BA309AF41F7B312C00EE25D5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AF31F7B312C00EE25D5 /* QuartzCore.framework */; };
 		BA309B0D1F7CC58600EE25D5 /* RouteHistoryTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309B0B1F7CC58600EE25D5 /* RouteHistoryTabCell.m */; };
 		BA309B0E1F7CC58600EE25D5 /* RouteHistoryTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */; };
+		BA309B121F7CD1D100EE25D5 /* RouteBusTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309B101F7CD1D100EE25D5 /* RouteBusTabCell.m */; };
+		BA309B131F7CD1D100EE25D5 /* RouteBusTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309B111F7CD1D100EE25D5 /* RouteBusTabCell.xib */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -122,6 +124,9 @@
 		BA309B0A1F7CC58600EE25D5 /* RouteHistoryTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteHistoryTabCell.h; sourceTree = "<group>"; };
 		BA309B0B1F7CC58600EE25D5 /* RouteHistoryTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteHistoryTabCell.m; sourceTree = "<group>"; };
 		BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteHistoryTabCell.xib; sourceTree = "<group>"; };
+		BA309B0F1F7CD1D100EE25D5 /* RouteBusTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteBusTabCell.h; sourceTree = "<group>"; };
+		BA309B101F7CD1D100EE25D5 /* RouteBusTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteBusTabCell.m; sourceTree = "<group>"; };
+		BA309B111F7CD1D100EE25D5 /* RouteBusTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteBusTabCell.xib; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -333,6 +338,9 @@
 				BA309B0A1F7CC58600EE25D5 /* RouteHistoryTabCell.h */,
 				BA309B0B1F7CC58600EE25D5 /* RouteHistoryTabCell.m */,
 				BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */,
+				BA309B0F1F7CD1D100EE25D5 /* RouteBusTabCell.h */,
+				BA309B101F7CD1D100EE25D5 /* RouteBusTabCell.m */,
+				BA309B111F7CD1D100EE25D5 /* RouteBusTabCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -669,6 +677,7 @@
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
+				BA309B131F7CD1D100EE25D5 /* RouteBusTabCell.xib in Resources */,
 				BA309AEA1F7A547C00EE25D5 /* RouteSearchVC.xib in Resources */,
 				BAB4672D1F78D1F500F7DBCD /* MainSearchCell.xib in Resources */,
 				BA309AD01F79FBF900EE25D5 /* JourneyListCell.xib in Resources */,
@@ -782,6 +791,7 @@
 				BAB466DF1F738F3400F7DBCD /* NSString+Help.m in Sources */,
 				BAB466CC1F738F3400F7DBCD /* TAAnimatedDotView.m in Sources */,
 				BA309AC21F79E0C800EE25D5 /* MainLeftCateCell.m in Sources */,
+				BA309B121F7CD1D100EE25D5 /* RouteBusTabCell.m in Sources */,
 				BAB466E91F738F3400F7DBCD /* BaseInputVC.m in Sources */,
 				BAB466E11F738F3400F7DBCD /* UITextField+Help.m in Sources */,
 				BAB466EA1F738F3400F7DBCD /* BaseNavigationController.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "RouteSearchVC.h"
 #import "RouteHistoryTabCell.h"
+#import "RouteBusTabCell.h"
 
 @interface RouteSearchVC ()<QMapViewDelegate>
 
@@ -20,6 +21,7 @@
 
 @property (strong, nonatomic) QMapView *mapView;
 @property (assign, nonatomic) BOOL isLocationSuccess;//是否定位成功
+@property (assign, nonatomic) NSInteger reloadState;//加载是哪一种cell 0://历史记录 1://班次
 
 @end
 
@@ -44,8 +46,8 @@
     self.startTextField.borderStyle = UITextBorderStyleNone;
     self.endTextField.borderStyle = UITextBorderStyleNone;
     
-    UINib *shareNib = [UINib nibWithNibName:@"RouteHistoryTabCell" bundle:nil];
-    [self.routeTableView registerNib:shareNib forCellReuseIdentifier:@"RouteHistoryTabCell"];
+    [self.routeTableView registerNib:[UINib nibWithNibName:@"RouteHistoryTabCell" bundle:nil] forCellReuseIdentifier:@"RouteHistoryTabCell"];
+    [self.routeTableView registerNib:[UINib nibWithNibName:@"RouteBusTabCell" bundle:nil] forCellReuseIdentifier:@"RouteBusTabCell"];
 }
 
 - (void)initMapView
@@ -106,39 +108,59 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    if (self.reloadState == 1) {
+        return 198.0f;
+    }
     return 90.0f;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    RouteHistoryTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteHistoryTabCell"];
-    
-    [cell.iconImageView setImage:[UIImage imageNamed:@"route_history_icon"]];
-    [cell.nameLabel setText:@"国际科技园"];
-    [cell.addressLabel setText:@"江苏省苏州市工业园区金鸡湖大道2135号"];
-    
-    
-    return cell;
+    if (self.reloadState == 0) {
+        
+        RouteHistoryTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteHistoryTabCell"];
+        
+        [cell.iconImageView setImage:[UIImage imageNamed:@"route_history_icon"]];
+        [cell.nameLabel setText:@"国际科技园"];
+        [cell.addressLabel setText:@"江苏省苏州市工业园区金鸡湖大道2135号"];
+        
+        
+        return cell;
+    }
+    else{
+        
+        RouteBusTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteBusTabCell"];
+        
+//        [cell.iconImageView setImage:[UIImage imageNamed:@"route_history_icon"]];
+//        [cell.nameLabel setText:@"国际科技园"];
+//        [cell.addressLabel setText:@"江苏省苏州市工业园区金鸡湖大道2135号"];
+        
+        
+        return cell;
+    }
+
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if (self.reloadState == 0) {
+        self.reloadState = 1;
+        [tableView reloadData];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 //要求委托方的编辑风格在表视图的一个特定的位置。
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    if (!self.isSearchStatus) {
+    if (self.reloadState == 0) {
         
         return UITableViewCellEditingStyleDelete;
-//        
-//    }
-//    return UITableViewCellEditingStyleNone;
+        
+    }
+    return UITableViewCellEditingStyleNone;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
