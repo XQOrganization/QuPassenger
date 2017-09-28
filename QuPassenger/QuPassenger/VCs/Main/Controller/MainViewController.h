@@ -6,8 +6,8 @@
 //  Copyright © 2017年 com.Qyueche. All rights reserved.
 //
 
-#import "BaseInputVC.h"
+#import "BasicVC.h"
 
-@interface MainViewController : BaseInputVC
+@interface MainViewController : BasicVC
 
 @end

@@ -346,6 +346,12 @@
             [self.navigationController pushViewController:vc animated:YES];
         };
         
+        cell.routeEditBlock  = ^(NSString *start, NSString *end) {
+            
+            RouteSearchVC *vc = [[RouteSearchVC alloc]initWithNibName:@"RouteSearchVC" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+        };
+        
         return cell;
     }
     else if (indexPath.section == 2){

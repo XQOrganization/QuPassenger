@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainSearchCell : UICollectionViewCell
+@interface MainSearchCell : UICollectionViewCell<UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
 @property (weak, nonatomic) IBOutlet UIButton *exchangeBtn;
@@ -20,5 +20,6 @@
 @property (assign, nonatomic) BOOL isCurrentTop;//当前位置在顶部
 
 @property (copy, nonatomic) void (^routeSearchBlock)(NSString *start,NSString *end);
+@property (copy, nonatomic) void (^routeEditBlock)(NSString *start,NSString *end);
 
 @end
