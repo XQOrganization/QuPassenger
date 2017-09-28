@@ -29,10 +29,8 @@
 		BA309AF01F7B30F800EE25D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AEF1F7B30F800EE25D5 /* Foundation.framework */; };
 		BA309AF21F7B310900EE25D5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AF11F7B310900EE25D5 /* libsqlite3.tbd */; };
 		BA309AF41F7B312C00EE25D5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AF31F7B312C00EE25D5 /* QuartzCore.framework */; };
-		BA309AFE1F7CA75200EE25D5 /* RouteHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309AFC1F7CA75200EE25D5 /* RouteHistoryCell.m */; };
-		BA309AFF1F7CA75200EE25D5 /* RouteHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309AFD1F7CA75200EE25D5 /* RouteHistoryCell.xib */; };
-		BA309B081F7CC34200EE25D5 /* RouteBusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309B061F7CC34200EE25D5 /* RouteBusCell.m */; };
-		BA309B091F7CC34200EE25D5 /* RouteBusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309B071F7CC34200EE25D5 /* RouteBusCell.xib */; };
+		BA309B0D1F7CC58600EE25D5 /* RouteHistoryTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309B0B1F7CC58600EE25D5 /* RouteHistoryTabCell.m */; };
+		BA309B0E1F7CC58600EE25D5 /* RouteHistoryTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -121,12 +119,9 @@
 		BA309AEF1F7B30F800EE25D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA309AF11F7B310900EE25D5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BA309AF31F7B312C00EE25D5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		BA309AFB1F7CA75200EE25D5 /* RouteHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteHistoryCell.h; sourceTree = "<group>"; };
-		BA309AFC1F7CA75200EE25D5 /* RouteHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteHistoryCell.m; sourceTree = "<group>"; };
-		BA309AFD1F7CA75200EE25D5 /* RouteHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteHistoryCell.xib; sourceTree = "<group>"; };
-		BA309B051F7CC34200EE25D5 /* RouteBusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteBusCell.h; sourceTree = "<group>"; };
-		BA309B061F7CC34200EE25D5 /* RouteBusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteBusCell.m; sourceTree = "<group>"; };
-		BA309B071F7CC34200EE25D5 /* RouteBusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteBusCell.xib; sourceTree = "<group>"; };
+		BA309B0A1F7CC58600EE25D5 /* RouteHistoryTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteHistoryTabCell.h; sourceTree = "<group>"; };
+		BA309B0B1F7CC58600EE25D5 /* RouteHistoryTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteHistoryTabCell.m; sourceTree = "<group>"; };
+		BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteHistoryTabCell.xib; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -335,12 +330,9 @@
 		BA309AE01F7A541600EE25D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BA309AFB1F7CA75200EE25D5 /* RouteHistoryCell.h */,
-				BA309AFC1F7CA75200EE25D5 /* RouteHistoryCell.m */,
-				BA309AFD1F7CA75200EE25D5 /* RouteHistoryCell.xib */,
-				BA309B051F7CC34200EE25D5 /* RouteBusCell.h */,
-				BA309B061F7CC34200EE25D5 /* RouteBusCell.m */,
-				BA309B071F7CC34200EE25D5 /* RouteBusCell.xib */,
+				BA309B0A1F7CC58600EE25D5 /* RouteHistoryTabCell.h */,
+				BA309B0B1F7CC58600EE25D5 /* RouteHistoryTabCell.m */,
+				BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -665,18 +657,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA309B0E1F7CC58600EE25D5 /* RouteHistoryTabCell.xib in Resources */,
 				BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */,
 				BAB466EE1F738F3400F7DBCD /* LoginViewController.xib in Resources */,
 				BAB467321F78D33900F7DBCD /* MainChannelCell.xib in Resources */,
 				BAB467191F78CAA900F7DBCD /* MainViewController.xib in Resources */,
 				BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */,
 				BAB466E71F738F3400F7DBCD /* Resource.xcassets in Resources */,
-				BA309AFF1F7CA75200EE25D5 /* RouteHistoryCell.xib in Resources */,
 				BAB4672B1F78D1F500F7DBCD /* MainBannerCell.xib in Resources */,
 				BA309AD71F7A4A6500EE25D5 /* QMapKit.bundle in Resources */,
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
-				BA309B091F7CC34200EE25D5 /* RouteBusCell.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
 				BA309AEA1F7A547C00EE25D5 /* RouteSearchVC.xib in Resources */,
 				BAB4672D1F78D1F500F7DBCD /* MainSearchCell.xib in Resources */,
@@ -780,10 +771,9 @@
 				BAB4672A1F78D1F500F7DBCD /* MainBannerCell.m in Sources */,
 				BAB466E51F738F3400F7DBCD /* NetWorkRequestDefine.m in Sources */,
 				BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */,
-				BA309AFE1F7CA75200EE25D5 /* RouteHistoryCell.m in Sources */,
 				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,
-				BA309B081F7CC34200EE25D5 /* RouteBusCell.m in Sources */,
 				BAB466D41F738F3400F7DBCD /* UIColor+HEX.m in Sources */,
+				BA309B0D1F7CC58600EE25D5 /* RouteHistoryTabCell.m in Sources */,
 				BAB4672C1F78D1F500F7DBCD /* MainSearchCell.m in Sources */,
 				BAB466E31F738F3400F7DBCD /* NetWorkEngine.m in Sources */,
 				BAB466EB1F738F3400F7DBCD /* BaseWebViewController.m in Sources */,

@@ -1,5 +1,5 @@
 //
-//  RouteHistoryCell.h
+//  RouteHistoryTabCell.h
 //  QuPassenger
 //
 //  Created by 朱青 on 2017/9/28.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RouteHistoryCell : UICollectionViewCell
+@interface RouteHistoryTabCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;

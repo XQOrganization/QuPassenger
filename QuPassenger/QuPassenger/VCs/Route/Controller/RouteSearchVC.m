@@ -7,8 +7,7 @@
 //
 
 #import "RouteSearchVC.h"
-#import "RouteHistoryCell.h"
-#import "RouteBusCell.h"
+#import "RouteHistoryTabCell.h"
 
 @interface RouteSearchVC ()<QMapViewDelegate>
 
@@ -17,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *endTextField;
 @property (weak, nonatomic) IBOutlet UIButton *topBtn;
 @property (weak, nonatomic) IBOutlet UIButton *bottomBtn;
-@property (weak, nonatomic) IBOutlet UICollectionView *routeCollectionView;
+@property (weak, nonatomic) IBOutlet UITableView *routeTableView;
 
 @property (strong, nonatomic) QMapView *mapView;
 @property (assign, nonatomic) BOOL isLocationSuccess;//是否定位成功
@@ -45,8 +44,8 @@
     self.startTextField.borderStyle = UITextBorderStyleNone;
     self.endTextField.borderStyle = UITextBorderStyleNone;
     
-    UINib *shareNib = [UINib nibWithNibName:@"RouteHistoryCell" bundle:nil];
-    [self.routeCollectionView registerNib:shareNib forCellWithReuseIdentifier:@"RouteHistoryCell"];
+    UINib *shareNib = [UINib nibWithNibName:@"RouteHistoryTabCell" bundle:nil];
+    [self.routeTableView registerNib:shareNib forCellReuseIdentifier:@"RouteHistoryTabCell"];
 }
 
 - (void)initMapView
@@ -94,68 +93,63 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-#pragma mark UICollectionViewDatasource/UICollectionViewDelegate
-//定义展示的UICollectionViewCell的个数
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    
-    return 3;
-}
-
-//定义展示的Section的个数
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
+#pragma mark UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return 1;
 }
 
-//每个UICollectionView展示的内容
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    static NSString *cIdentifier = @"RouteHistoryCell";
-    RouteHistoryCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cIdentifier forIndexPath:indexPath];
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    //        MainBannerModel *model = [self.mainRsp.data_bottom objectAtIndex:indexPath.item];
- 
+    
+    return 90.0f;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    RouteHistoryTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteHistoryTabCell"];
+    
     [cell.iconImageView setImage:[UIImage imageNamed:@"route_history_icon"]];
     [cell.nameLabel setText:@"国际科技园"];
     [cell.addressLabel setText:@"江苏省苏州市工业园区金鸡湖大道2135号"];
+    
     
     return cell;
     
 }
 
-//pragma mark --UICollectionViewDelegateFlowLayout
-//定义每个UICollectionView 的大小
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
-    return CGSizeMake(SCREEN_SIZE.width - 20, 80);
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-//定义每个UICollectionView 的 margin
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
+//要求委托方的编辑风格在表视图的一个特定的位置。
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return UIEdgeInsetsMake(10, 10, 10, 10);
-    
+//    if (!self.isSearchStatus) {
+        
+        return UITableViewCellEditingStyleDelete;
+//        
+//    }
+//    return UITableViewCellEditingStyleNone;
 }
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    return 0;
-    
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    
-    return 10;
-    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {//如果编辑样式为删除样式
+        
+            
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+            
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
