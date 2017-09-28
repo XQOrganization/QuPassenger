@@ -29,8 +29,8 @@
 - (void)registerThirdApi
 {
     //tentcent map
-    [QMapServices sharedServices].apiKey = @"EGOBZ-LH43U-YATVV-BJQSB-XIFCH-47FNS";
-    [[QMSSearchServices sharedServices] setApiKey:@"EGOBZ-LH43U-YATVV-BJQSB-XIFCH-47FNS"];
+    [QMapServices sharedServices].apiKey = TencentAppKey;
+    [[QMSSearchServices sharedServices] setApiKey:TencentAppKey];
     
     //Umeng
     UMConfigInstance.appKey = @"59c4baffc62dca631400014d";
@@ -57,7 +57,7 @@
                           {
                               case SSDKPlatformTypeWechat:
                                   [appInfo SSDKSetupWeChatByAppId:@"wx369d283e29d7eb9a"
-                                                        appSecret:@"64020361b8ec4c99936c0e3999a9f249"];
+                                                        appSecret:@"eec7d5a1e5aabb3aa48d8798891845e5"];
                                   break;
                               default:
                                   break;

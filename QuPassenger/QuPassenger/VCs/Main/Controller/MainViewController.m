@@ -91,7 +91,7 @@
     [self.leftHeadImageView setCornerRadius:self.leftHeadImageView.mj_w/2 AndBorder:0 borderColor:nil];
 
     
-
+    [[QuLocationManager shareManager]startUpdatingLocation];
  
 }
 

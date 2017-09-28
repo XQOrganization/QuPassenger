@@ -33,6 +33,8 @@
 		BA309B0E1F7CC58600EE25D5 /* RouteHistoryTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */; };
 		BA309B121F7CD1D100EE25D5 /* RouteBusTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309B101F7CD1D100EE25D5 /* RouteBusTabCell.m */; };
 		BA309B131F7CD1D100EE25D5 /* RouteBusTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309B111F7CD1D100EE25D5 /* RouteBusTabCell.xib */; };
+		BA309B151F7CFAB900EE25D5 /* TencentLBS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309B141F7CFAB900EE25D5 /* TencentLBS.framework */; };
+		BA309B181F7CFB8000EE25D5 /* QuLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309B171F7CFB8000EE25D5 /* QuLocationManager.m */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -127,6 +129,9 @@
 		BA309B0F1F7CD1D100EE25D5 /* RouteBusTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteBusTabCell.h; sourceTree = "<group>"; };
 		BA309B101F7CD1D100EE25D5 /* RouteBusTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteBusTabCell.m; sourceTree = "<group>"; };
 		BA309B111F7CD1D100EE25D5 /* RouteBusTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteBusTabCell.xib; sourceTree = "<group>"; };
+		BA309B141F7CFAB900EE25D5 /* TencentLBS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentLBS.framework; sourceTree = "<group>"; };
+		BA309B161F7CFB8000EE25D5 /* QuLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuLocationManager.h; sourceTree = "<group>"; };
+		BA309B171F7CFB8000EE25D5 /* QuLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuLocationManager.m; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -235,6 +240,7 @@
 			files = (
 				BA309AF41F7B312C00EE25D5 /* QuartzCore.framework in Frameworks */,
 				BAB466F21F73967800F7DBCD /* libz.tbd in Frameworks */,
+				BA309B151F7CFAB900EE25D5 /* TencentLBS.framework in Frameworks */,
 				BA309AF21F7B310900EE25D5 /* libsqlite3.tbd in Frameworks */,
 				BA309AF01F7B30F800EE25D5 /* Foundation.framework in Frameworks */,
 				BA309AEE1F7B30E900EE25D5 /* CoreGraphics.framework in Frameworks */,
@@ -306,6 +312,7 @@
 		BA309AD41F7A4A6500EE25D5 /* TencentMap */ = {
 			isa = PBXGroup;
 			children = (
+				BA309B141F7CFAB900EE25D5 /* TencentLBS.framework */,
 				BA309AD91F7A4F9400EE25D5 /* QMapSearchKit.framework */,
 				BA309AD51F7A4A6500EE25D5 /* QMapKit.bundle */,
 				BA309AD61F7A4A6500EE25D5 /* QMapKit.framework */,
@@ -403,6 +410,8 @@
 				BAB466681F738F3400F7DBCD /* PublicManager.m */,
 				BAB467021F74AB7D00F7DBCD /* ThirdApiManager.h */,
 				BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */,
+				BA309B161F7CFB8000EE25D5 /* QuLocationManager.h */,
+				BA309B171F7CFB8000EE25D5 /* QuLocationManager.m */,
 				BAB466691F738F3400F7DBCD /* SDCycleScrollView */,
 				BAB4667B1F738F3400F7DBCD /* UIColor */,
 				BAB4669B1F738F3400F7DBCD /* YLTextView */,
@@ -780,6 +789,7 @@
 				BAB4672A1F78D1F500F7DBCD /* MainBannerCell.m in Sources */,
 				BAB466E51F738F3400F7DBCD /* NetWorkRequestDefine.m in Sources */,
 				BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */,
+				BA309B181F7CFB8000EE25D5 /* QuLocationManager.m in Sources */,
 				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,
 				BAB466D41F738F3400F7DBCD /* UIColor+HEX.m in Sources */,
 				BA309B0D1F7CC58600EE25D5 /* RouteHistoryTabCell.m in Sources */,
