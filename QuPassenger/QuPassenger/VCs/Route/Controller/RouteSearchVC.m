@@ -32,6 +32,8 @@
     
     self.startTextField.borderStyle = UITextBorderStyleNone;
     self.endTextField.borderStyle = UITextBorderStyleNone;
+    
+    
 
 }
 
