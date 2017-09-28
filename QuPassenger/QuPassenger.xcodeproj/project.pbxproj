@@ -893,6 +893,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QuPassenger/Common/WXOpenSDK",
+					"$(PROJECT_DIR)/QuPassenger/Common/JPush",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qyueche.QuPassenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -917,6 +918,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QuPassenger/Common/WXOpenSDK",
+					"$(PROJECT_DIR)/QuPassenger/Common/JPush",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qyueche.QuPassenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";

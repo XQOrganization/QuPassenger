@@ -8,6 +8,7 @@ pod 'MJRefresh','~>3.1.12'
 pod 'MBProgressHUD','~>1.0.0'
 pod 'SDWebImage','~>4.0.0'
 pod 'SVProgressHUD'
+pod 'JPush'
 pod 'DZNEmptyDataSet', '~> 1.8.1'
 pod 'UMengAnalytics-NO-IDFA'
 # 主模块(必须)
