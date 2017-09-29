@@ -6,8 +6,10 @@
 //  Copyright © 2017年 com.Qyueche. All rights reserved.
 //
 
-#import "BasicVC.h"
+#import "BaseInputVC.h"
 
-@interface RouteSearchVC : BasicVC
+@interface RouteSearchVC : BaseInputVC
+
+@property (assign, nonatomic) NSInteger from;//判断从出发地还是目的地进入
 
 @end

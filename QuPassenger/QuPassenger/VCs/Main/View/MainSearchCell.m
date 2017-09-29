@@ -18,6 +18,9 @@
     self.startTextField.borderStyle = UITextBorderStyleNone;
     self.endTextField.borderStyle = UITextBorderStyleNone;
     
+    self.startTextField.delegate = self;
+    self.endTextField.delegate = self;
+    
     self.isCurrentTop = YES;
 }
 
@@ -50,6 +53,23 @@
     if (self.routeSearchBlock) {
         self.routeSearchBlock(self.startTextField.text, self.endTextField.text);
     }
+}
+
+#pragma mark UITextFieldDelegate
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    if (textField == self.startTextField) {
+        if (self.routeEditBlock) {
+            self.routeEditBlock(self.startTextField.text, self.endTextField.text,1);
+        }
+    }
+    else{
+        if (self.routeEditBlock) {
+            self.routeEditBlock(self.startTextField.text, self.endTextField.text,2);
+        }
+    }
+    
+    return NO;
 }
 
 @end

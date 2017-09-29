@@ -29,6 +29,12 @@
 		BA309AF01F7B30F800EE25D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AEF1F7B30F800EE25D5 /* Foundation.framework */; };
 		BA309AF21F7B310900EE25D5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AF11F7B310900EE25D5 /* libsqlite3.tbd */; };
 		BA309AF41F7B312C00EE25D5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309AF31F7B312C00EE25D5 /* QuartzCore.framework */; };
+		BA309B0D1F7CC58600EE25D5 /* RouteHistoryTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309B0B1F7CC58600EE25D5 /* RouteHistoryTabCell.m */; };
+		BA309B0E1F7CC58600EE25D5 /* RouteHistoryTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */; };
+		BA309B121F7CD1D100EE25D5 /* RouteBusTabCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309B101F7CD1D100EE25D5 /* RouteBusTabCell.m */; };
+		BA309B131F7CD1D100EE25D5 /* RouteBusTabCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309B111F7CD1D100EE25D5 /* RouteBusTabCell.xib */; };
+		BA309B151F7CFAB900EE25D5 /* TencentLBS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA309B141F7CFAB900EE25D5 /* TencentLBS.framework */; };
+		BA309B181F7CFB8000EE25D5 /* QuLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309B171F7CFB8000EE25D5 /* QuLocationManager.m */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -84,6 +90,7 @@
 		BAB467321F78D33900F7DBCD /* MainChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467301F78D33900F7DBCD /* MainChannelCell.xib */; };
 		BAB467361F78D3FA00F7DBCD /* MainBusRouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467341F78D3FA00F7DBCD /* MainBusRouteCell.m */; };
 		BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467351F78D3FA00F7DBCD /* MainBusRouteCell.xib */; };
+		BAC7D4FC1F7DE2EB0012898F /* QuCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D4FB1F7DE2EB0012898F /* QuCityModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +124,15 @@
 		BA309AEF1F7B30F800EE25D5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA309AF11F7B310900EE25D5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BA309AF31F7B312C00EE25D5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BA309B0A1F7CC58600EE25D5 /* RouteHistoryTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteHistoryTabCell.h; sourceTree = "<group>"; };
+		BA309B0B1F7CC58600EE25D5 /* RouteHistoryTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteHistoryTabCell.m; sourceTree = "<group>"; };
+		BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteHistoryTabCell.xib; sourceTree = "<group>"; };
+		BA309B0F1F7CD1D100EE25D5 /* RouteBusTabCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteBusTabCell.h; sourceTree = "<group>"; };
+		BA309B101F7CD1D100EE25D5 /* RouteBusTabCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteBusTabCell.m; sourceTree = "<group>"; };
+		BA309B111F7CD1D100EE25D5 /* RouteBusTabCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteBusTabCell.xib; sourceTree = "<group>"; };
+		BA309B141F7CFAB900EE25D5 /* TencentLBS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentLBS.framework; sourceTree = "<group>"; };
+		BA309B161F7CFB8000EE25D5 /* QuLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuLocationManager.h; sourceTree = "<group>"; };
+		BA309B171F7CFB8000EE25D5 /* QuLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuLocationManager.m; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -215,6 +231,8 @@
 		BAB467331F78D3FA00F7DBCD /* MainBusRouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBusRouteCell.h; sourceTree = "<group>"; };
 		BAB467341F78D3FA00F7DBCD /* MainBusRouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBusRouteCell.m; sourceTree = "<group>"; };
 		BAB467351F78D3FA00F7DBCD /* MainBusRouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBusRouteCell.xib; sourceTree = "<group>"; };
+		BAC7D4FA1F7DE2EB0012898F /* QuCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuCityModel.h; sourceTree = "<group>"; };
+		BAC7D4FB1F7DE2EB0012898F /* QuCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuCityModel.m; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -225,6 +243,7 @@
 			files = (
 				BA309AF41F7B312C00EE25D5 /* QuartzCore.framework in Frameworks */,
 				BAB466F21F73967800F7DBCD /* libz.tbd in Frameworks */,
+				BA309B151F7CFAB900EE25D5 /* TencentLBS.framework in Frameworks */,
 				BA309AF21F7B310900EE25D5 /* libsqlite3.tbd in Frameworks */,
 				BA309AF01F7B30F800EE25D5 /* Foundation.framework in Frameworks */,
 				BA309AEE1F7B30E900EE25D5 /* CoreGraphics.framework in Frameworks */,
@@ -296,6 +315,7 @@
 		BA309AD41F7A4A6500EE25D5 /* TencentMap */ = {
 			isa = PBXGroup;
 			children = (
+				BA309B141F7CFAB900EE25D5 /* TencentLBS.framework */,
 				BA309AD91F7A4F9400EE25D5 /* QMapSearchKit.framework */,
 				BA309AD51F7A4A6500EE25D5 /* QMapKit.bundle */,
 				BA309AD61F7A4A6500EE25D5 /* QMapKit.framework */,
@@ -325,6 +345,12 @@
 		BA309AE01F7A541600EE25D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BA309B0A1F7CC58600EE25D5 /* RouteHistoryTabCell.h */,
+				BA309B0B1F7CC58600EE25D5 /* RouteHistoryTabCell.m */,
+				BA309B0C1F7CC58600EE25D5 /* RouteHistoryTabCell.xib */,
+				BA309B0F1F7CD1D100EE25D5 /* RouteBusTabCell.h */,
+				BA309B101F7CD1D100EE25D5 /* RouteBusTabCell.m */,
+				BA309B111F7CD1D100EE25D5 /* RouteBusTabCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,8 +411,12 @@
 				BAB467061F74BD0400F7DBCD /* QuHudHelper.m */,
 				BAB466671F738F3400F7DBCD /* PublicManager.h */,
 				BAB466681F738F3400F7DBCD /* PublicManager.m */,
+				BAC7D4FA1F7DE2EB0012898F /* QuCityModel.h */,
+				BAC7D4FB1F7DE2EB0012898F /* QuCityModel.m */,
 				BAB467021F74AB7D00F7DBCD /* ThirdApiManager.h */,
 				BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */,
+				BA309B161F7CFB8000EE25D5 /* QuLocationManager.h */,
+				BA309B171F7CFB8000EE25D5 /* QuLocationManager.m */,
 				BAB466691F738F3400F7DBCD /* SDCycleScrollView */,
 				BAB4667B1F738F3400F7DBCD /* UIColor */,
 				BAB4669B1F738F3400F7DBCD /* YLTextView */,
@@ -649,6 +679,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA309B0E1F7CC58600EE25D5 /* RouteHistoryTabCell.xib in Resources */,
 				BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */,
 				BAB466EE1F738F3400F7DBCD /* LoginViewController.xib in Resources */,
 				BAB467321F78D33900F7DBCD /* MainChannelCell.xib in Resources */,
@@ -660,6 +691,7 @@
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
+				BA309B131F7CD1D100EE25D5 /* RouteBusTabCell.xib in Resources */,
 				BA309AEA1F7A547C00EE25D5 /* RouteSearchVC.xib in Resources */,
 				BAB4672D1F78D1F500F7DBCD /* MainSearchCell.xib in Resources */,
 				BA309AD01F79FBF900EE25D5 /* JourneyListCell.xib in Resources */,
@@ -739,6 +771,7 @@
 				BAB466CB1F738F3400F7DBCD /* TAAbstractDotView.m in Sources */,
 				BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */,
 				BAB467361F78D3FA00F7DBCD /* MainBusRouteCell.m in Sources */,
+				BAC7D4FC1F7DE2EB0012898F /* QuCityModel.m in Sources */,
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
 				A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */,
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,
@@ -762,8 +795,10 @@
 				BAB4672A1F78D1F500F7DBCD /* MainBannerCell.m in Sources */,
 				BAB466E51F738F3400F7DBCD /* NetWorkRequestDefine.m in Sources */,
 				BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */,
+				BA309B181F7CFB8000EE25D5 /* QuLocationManager.m in Sources */,
 				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,
 				BAB466D41F738F3400F7DBCD /* UIColor+HEX.m in Sources */,
+				BA309B0D1F7CC58600EE25D5 /* RouteHistoryTabCell.m in Sources */,
 				BAB4672C1F78D1F500F7DBCD /* MainSearchCell.m in Sources */,
 				BAB466E31F738F3400F7DBCD /* NetWorkEngine.m in Sources */,
 				BAB466EB1F738F3400F7DBCD /* BaseWebViewController.m in Sources */,
@@ -772,6 +807,7 @@
 				BAB466DF1F738F3400F7DBCD /* NSString+Help.m in Sources */,
 				BAB466CC1F738F3400F7DBCD /* TAAnimatedDotView.m in Sources */,
 				BA309AC21F79E0C800EE25D5 /* MainLeftCateCell.m in Sources */,
+				BA309B121F7CD1D100EE25D5 /* RouteBusTabCell.m in Sources */,
 				BAB466E91F738F3400F7DBCD /* BaseInputVC.m in Sources */,
 				BAB466E11F738F3400F7DBCD /* UITextField+Help.m in Sources */,
 				BAB466EA1F738F3400F7DBCD /* BaseNavigationController.m in Sources */,
@@ -893,6 +929,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QuPassenger/Common/WXOpenSDK",
+					"$(PROJECT_DIR)/QuPassenger/Common/JPush",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qyueche.QuPassenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -917,6 +954,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/QuPassenger/Common/WXOpenSDK",
+					"$(PROJECT_DIR)/QuPassenger/Common/JPush",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qyueche.QuPassenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -32,6 +32,12 @@
 + (void)mb_tipMessage:(NSString *)msg delay:(CGFloat)seconds completion:(void (^)())completion;
 
 //SVProgressHUD
++ (void)sv_loading;
++ (void)sv_loading:(NSString *)msg;
+
++ (void)sv_dismiss;
++ (void)sv_dismiss:(CGFloat)seconds;
+
 + (void)sv_showErrorWithStatus:(NSString *)status;
 + (void)sv_showErrorWithStatus:(NSString *)status deley:(CGFloat)seconds;
 

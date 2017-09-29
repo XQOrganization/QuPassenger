@@ -27,12 +27,6 @@
     [leftBtn setImage:[UIImage imageNamed:@"base_back_icon"] forState:UIControlStateNormal];
     [self setLeftBarItemWithButton:leftBtn];
     
-//    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 70, 22)];
-//    [rightBtn.titleLabel setFont:[UIFont systemFontOfSize:16.0f]];
-//    [rightBtn setTitleColor:HEXCOLOR(@"404040") forState:UIControlStateNormal];
-//    [rightBtn setTitle:@"微信登录" forState:UIControlStateNormal];
-//    [self setRightBarItemWithButton:rightBtn];
-    
     [_ibPhoneTf addTarget:self action:@selector(phoneTfChange) forControlEvents:UIControlEventEditingChanged];
     _ibPhoneTf.clearButtonMode=UITextFieldViewModeWhileEditing;
 //    _ibPhoneTf.tintColor = HEXCOLOR(@"#FF5C41");
@@ -72,8 +66,13 @@
 //微信登录操作
 - (IBAction)wechatLoginBtnClick:(id)sender {
     
-    WXRegistViewController *vc = [[WXRegistViewController alloc]initWithNibName:@"WXRegistViewController" bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
+    WS(weakSelf)
+    [[ThirdApiManager shareManager]getThirdUserInfoCompletion:^(NSString *uid) {
+        
+        WXRegistViewController *vc = [[WXRegistViewController alloc]initWithNibName:@"WXRegistViewController" bundle:nil];
+        [weakSelf.navigationController pushViewController:vc animated:YES];
+
+    }];
 }
 //获取验证码
 - (IBAction)getCodeBtnClick:(id)sender {

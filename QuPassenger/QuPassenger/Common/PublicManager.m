@@ -52,30 +52,56 @@ float WidthForString(NSString *value,float fontSize,float height)
 
 @implementation PublicManager
 
-+ (NSDictionary *)getMainDataFromLocal
++ (PublicManager *)shareManager
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    return [userDefaults objectForKey:@"MainData"];
+    static dispatch_once_t pred;
+    static PublicManager *shared = nil;
+    dispatch_once(&pred, ^{
+        
+        shared = [[self alloc]init];
+    });
+    return shared;
 }
 
-+ (void)saveMainDataToLocalWithDictionary:(NSDictionary *)dictionary
+- (id)init
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:dictionary forKey:@"MainData"];
-    //将数据即时写入
-    [userDefaults synchronize];
-    
+    self = [super init];
+    if(self){
+        
+        _cityModel = [[QuCityModel alloc]init];
+        _cityModel.cityName = @"苏州";
+        _cityModel.cityCode = @"320500";
+        
+        
+    }
+    return self;
 }
 
-+ (void)removeUserLocalToken
-{
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults removeObjectForKey:@"MainData"];
-    //将数据即时写入
-    [userDefaults synchronize];
-    
-}
+
+//+ (NSDictionary *)getMainDataFromLocal
+//{
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    
+//    return [userDefaults objectForKey:@"MainData"];
+//}
+//
+//+ (void)saveMainDataToLocalWithDictionary:(NSDictionary *)dictionary
+//{
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    [userDefaults setObject:dictionary forKey:@"MainData"];
+//    //将数据即时写入
+//    [userDefaults synchronize];
+//    
+//}
+//
+//+ (void)removeUserLocalToken
+//{
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    [userDefaults removeObjectForKey:@"MainData"];
+//    //将数据即时写入
+//    [userDefaults synchronize];
+//    
+//}
 
 
 + (BOOL)evenNumberWithNumber:(NSInteger)number

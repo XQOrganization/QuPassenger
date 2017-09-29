@@ -50,6 +50,7 @@
 #import <SVProgressHUD.h>
 #import <QMapKit/QMapKit.h>
 #import <QMapSearchKit/QMapSearchKit.h>
+#import "QuLocationManager.h"
 
 #define ScreenWidthRatio [[UIScreen mainScreen] bounds].size.width/375
 
@@ -68,6 +69,9 @@
 #define COLOR_BACK  HEXCOLOR(@"f6f6f6")
 //字体大小
 #define SYSTEMFONT(FONTSIZE)    [UIFont systemFontOfSize:FONTSIZE]
+
+//腾讯地图AppKey
+#define TencentAppKey @"EGOBZ-LH43U-YATVV-BJQSB-XIFCH-47FNS"
 
 //当前屏幕大小
 #define SCREEN_SIZE   [[UIScreen mainScreen] bounds].size

@@ -12,7 +12,7 @@
 
 + (NSMutableArray *)arrayForMainLeftCategory
 {
-    NSArray *nameArray = @[@"行程",@"绑定认证",@"关于我们",@"设置"];
+    NSArray *nameArray = @[@"行程",@"钱包",@"客服",@"设置"];
     NSArray *signArray = @[@"main_xch_icon",@"main_bdrzh_icon",@"main_gywm_icon",@"main_szh_icon"];
     NSArray *lineArray = @[@"0",@"1",@"2",@"3"];
     
