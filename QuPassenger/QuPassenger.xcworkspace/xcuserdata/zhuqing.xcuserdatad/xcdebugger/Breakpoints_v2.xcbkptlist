@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuPassenger/Common/PublicManager.h"
-            timestampString = "527766357.092126"
+            timestampString = "528344299.737597"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "@interface PublicManager"
             landmarkType = "2">
          </BreakpointContent>

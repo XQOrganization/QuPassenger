@@ -90,6 +90,7 @@
 		BAB467321F78D33900F7DBCD /* MainChannelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467301F78D33900F7DBCD /* MainChannelCell.xib */; };
 		BAB467361F78D3FA00F7DBCD /* MainBusRouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB467341F78D3FA00F7DBCD /* MainBusRouteCell.m */; };
 		BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAB467351F78D3FA00F7DBCD /* MainBusRouteCell.xib */; };
+		BAC7D4FC1F7DE2EB0012898F /* QuCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D4FB1F7DE2EB0012898F /* QuCityModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,6 +231,8 @@
 		BAB467331F78D3FA00F7DBCD /* MainBusRouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBusRouteCell.h; sourceTree = "<group>"; };
 		BAB467341F78D3FA00F7DBCD /* MainBusRouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBusRouteCell.m; sourceTree = "<group>"; };
 		BAB467351F78D3FA00F7DBCD /* MainBusRouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainBusRouteCell.xib; sourceTree = "<group>"; };
+		BAC7D4FA1F7DE2EB0012898F /* QuCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuCityModel.h; sourceTree = "<group>"; };
+		BAC7D4FB1F7DE2EB0012898F /* QuCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuCityModel.m; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -408,6 +411,8 @@
 				BAB467061F74BD0400F7DBCD /* QuHudHelper.m */,
 				BAB466671F738F3400F7DBCD /* PublicManager.h */,
 				BAB466681F738F3400F7DBCD /* PublicManager.m */,
+				BAC7D4FA1F7DE2EB0012898F /* QuCityModel.h */,
+				BAC7D4FB1F7DE2EB0012898F /* QuCityModel.m */,
 				BAB467021F74AB7D00F7DBCD /* ThirdApiManager.h */,
 				BAB467031F74AB7D00F7DBCD /* ThirdApiManager.m */,
 				BA309B161F7CFB8000EE25D5 /* QuLocationManager.h */,
@@ -766,6 +771,7 @@
 				BAB466CB1F738F3400F7DBCD /* TAAbstractDotView.m in Sources */,
 				BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */,
 				BAB467361F78D3FA00F7DBCD /* MainBusRouteCell.m in Sources */,
+				BAC7D4FC1F7DE2EB0012898F /* QuCityModel.m in Sources */,
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
 				A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */,
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,

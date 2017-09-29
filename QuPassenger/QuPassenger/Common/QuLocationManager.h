@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <TencentLBS/TencentLBS.h>
 
 @interface QuLocationManager : NSObject
 
+@property (strong, nonatomic) TencentLBSLocation *lbsLocation;
+@property (copy, nonatomic) void(^locationSuccessBlock)(TencentLBSLocation *lbsLocation);
+@property (copy, nonatomic) void(^locationFailBlock)(void);
+
 + (QuLocationManager *)shareManager;
 
-- (void)startUpdatingLocation;
+- (void)startUpdatingLocationWithSuccess:(void(^)(TencentLBSLocation *lbsLocation))successBlock fail:(void(^)(void))failBlock;
 
 @end

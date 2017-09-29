@@ -7,17 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "QuCityModel.h"
 
 float HeightForString(NSString *value,float fontSize,float width);
 float WidthForString(NSString *value,float fontSize,float height);
 
 @interface PublicManager : NSObject
 
-+ (NSDictionary *)getMainDataFromLocal;
+@property (strong, nonatomic) QuCityModel *cityModel;
 
-+ (void)saveMainDataToLocalWithDictionary:(NSDictionary *)dictionary;
++ (PublicManager *)shareManager;
 
-+ (void)removeUserLocalToken;
+//+ (NSDictionary *)getMainDataFromLocal;
+//
+//+ (void)saveMainDataToLocalWithDictionary:(NSDictionary *)dictionary;
+//
+//+ (void)removeUserLocalToken;
 
 //判断是否是偶数
 + (BOOL)evenNumberWithNumber:(NSInteger)number;

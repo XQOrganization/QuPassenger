@@ -40,7 +40,7 @@
     //使用自定义导航栏
     QuNavigationBar *bar = [QuNavigationBar showQuNavigationBarWithController:self];
     self.quNavBar = bar;
-    self.quNavBar.title = @"苏州市";
+    
 
     UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [leftBtn setImage:[UIImage imageNamed:@"main_person_icon"] forState:UIControlStateNormal];
@@ -91,7 +91,18 @@
     [self.leftHeadImageView setCornerRadius:self.leftHeadImageView.mj_w/2 AndBorder:0 borderColor:nil];
 
     
-    [[QuLocationManager shareManager]startUpdatingLocation];
+    WS(weakSelf)
+    __weak QuCityModel *cityModel = [PublicManager shareManager].cityModel;
+    
+    [[QuLocationManager shareManager]startUpdatingLocationWithSuccess:^(TencentLBSLocation *lbsLocation) {
+        
+        weakSelf.quNavBar.title = lbsLocation.city;
+        cityModel.cityName = [lbsLocation.city replace:@"市" withString:@""];
+//        cityModel.cityCode = 
+        
+    } fail:^{
+        
+    }];
  
 }
 
