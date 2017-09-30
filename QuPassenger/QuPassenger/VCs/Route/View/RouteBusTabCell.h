@@ -11,5 +11,7 @@
 @interface RouteBusTabCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *bgImageView;
+@property (weak, nonatomic) IBOutlet UIButton *buyBtn;
+@property (copy, nonatomic) void (^routeBuyBlock)(void);
 
 @end

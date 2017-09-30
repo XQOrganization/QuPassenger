@@ -18,7 +18,7 @@
 
 + (QuDBManager *)shareDataManger;
 
-//获取可支持的城市
+//获取所有城市
 - (NSMutableArray *)getTheCityAreaCodeWithProvinceCode:(NSString *)provinceCode;
 
 @end

@@ -14,8 +14,14 @@
     [super awakeFromNib];
     // Initialization code
     [self setCornerRadius:4.0f AndBorder:0 borderColor:nil];
+    [self.buyBtn setCornerRadius:4.0f AndBorder:0 borderColor:nil];
     [self.bgImageView setCornerRadius:4.0f AndBorder:0 borderColor:nil];
     [self showShadowColor];
+}
+
+- (IBAction)buyClickAction:(id)sender
+{
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

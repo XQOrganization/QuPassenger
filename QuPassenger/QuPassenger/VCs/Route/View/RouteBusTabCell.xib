@@ -140,19 +140,44 @@
                                     <constraint firstItem="YrQ-iB-ICt" firstAttribute="centerY" secondItem="GBz-7E-x00" secondAttribute="centerY" id="vpV-EQ-lcQ"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFb-B0-nCT">
+                                <rect key="frame" x="285" y="146" width="60" height="34"/>
+                                <color key="backgroundColor" red="1" green="0.36078431370000003" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="P9j-tT-Lyx"/>
+                                    <constraint firstAttribute="height" constant="34" id="yAb-Zh-8bT"/>
+                                </constraints>
+                                <state key="normal" title="购票">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyClickAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qjA-7v-CsF"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="约15分钟/班，路程约35分钟。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHP-vj-E2O">
+                                <rect key="frame" x="14" y="151" width="263" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VHP-vj-E2O" firstAttribute="leading" secondItem="eka-m7-h9C" secondAttribute="leading" constant="14" id="1KR-51-jcC"/>
                             <constraint firstAttribute="trailing" secondItem="iTd-rJ-cGv" secondAttribute="trailing" id="1n8-zq-pSA"/>
                             <constraint firstItem="wBf-OS-mbp" firstAttribute="top" secondItem="GBz-7E-x00" secondAttribute="bottom" id="6XD-u8-eXy"/>
+                            <constraint firstItem="VHP-vj-E2O" firstAttribute="top" secondItem="Zp1-yW-U7W" secondAttribute="bottom" constant="13" id="Dhu-Eq-u9G"/>
                             <constraint firstItem="Zp1-yW-U7W" firstAttribute="leading" secondItem="eka-m7-h9C" secondAttribute="leading" id="JjC-aE-Cih"/>
                             <constraint firstItem="iTd-rJ-cGv" firstAttribute="leading" secondItem="eka-m7-h9C" secondAttribute="leading" id="Roh-87-QyY"/>
                             <constraint firstItem="GBz-7E-x00" firstAttribute="top" secondItem="eka-m7-h9C" secondAttribute="top" id="StX-wm-z0w"/>
                             <constraint firstAttribute="trailing" secondItem="GBz-7E-x00" secondAttribute="trailing" id="TSM-Ch-gY4"/>
+                            <constraint firstAttribute="trailing" secondItem="RFb-B0-nCT" secondAttribute="trailing" constant="10" id="bJc-qJ-2EZ"/>
                             <constraint firstItem="Zp1-yW-U7W" firstAttribute="top" secondItem="wBf-OS-mbp" secondAttribute="bottom" id="cp3-ad-IBF"/>
                             <constraint firstAttribute="trailing" secondItem="Zp1-yW-U7W" secondAttribute="trailing" id="fWg-km-HQU"/>
+                            <constraint firstItem="RFb-B0-nCT" firstAttribute="leading" secondItem="VHP-vj-E2O" secondAttribute="trailing" constant="8" id="hwC-B9-eyy"/>
                             <constraint firstAttribute="height" constant="188" id="kKC-j7-qQY"/>
                             <constraint firstItem="wBf-OS-mbp" firstAttribute="leading" secondItem="eka-m7-h9C" secondAttribute="leading" id="ksw-go-Nqq"/>
+                            <constraint firstAttribute="bottom" secondItem="RFb-B0-nCT" secondAttribute="bottom" constant="8" id="lod-Ml-1Nc"/>
                             <constraint firstAttribute="bottom" secondItem="iTd-rJ-cGv" secondAttribute="bottom" id="lyN-Yn-kSR"/>
                             <constraint firstItem="iTd-rJ-cGv" firstAttribute="top" secondItem="eka-m7-h9C" secondAttribute="top" id="vbX-5H-25z"/>
                             <constraint firstItem="GBz-7E-x00" firstAttribute="leading" secondItem="eka-m7-h9C" secondAttribute="leading" id="yyk-aF-SZn"/>
@@ -170,7 +195,9 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="bgImageView" destination="iTd-rJ-cGv" id="1IE-kU-0ns"/>
+                <outlet property="buyBtn" destination="RFb-B0-nCT" id="hdC-bQ-nSo"/>
             </connections>
+            <point key="canvasLocation" x="33.5" y="54"/>
         </tableViewCell>
     </objects>
     <resources>

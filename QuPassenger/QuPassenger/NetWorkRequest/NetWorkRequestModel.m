@@ -30,12 +30,6 @@
 
 @implementation BaseResponse
 
-- (id)valueForUndefinedKey:(NSString *)key;
-{
-    return @"";
-}
-
-
 @end
 
 @implementation MainReq

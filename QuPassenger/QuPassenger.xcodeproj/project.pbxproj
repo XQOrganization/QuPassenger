@@ -102,6 +102,8 @@
 		BAC7D5471F7F41220012898F /* unicode_to_hanyu_pinyin.txt in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D5411F7F41220012898F /* unicode_to_hanyu_pinyin.txt */; };
 		BAC7D5491F7F459A0012898F /* City.db in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D5481F7F459A0012898F /* City.db */; };
 		BAC7D5511F7F76730012898F /* CitySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D5501F7F76730012898F /* CitySelectVC.m */; };
+		BAC7D5581F7F99360012898F /* TicketChooseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D5561F7F99360012898F /* TicketChooseVC.m */; };
+		BAC7D5591F7F99360012898F /* TicketChooseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D5571F7F99360012898F /* TicketChooseVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -264,6 +266,9 @@
 		BAC7D5481F7F459A0012898F /* City.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = City.db; sourceTree = "<group>"; };
 		BAC7D54F1F7F76730012898F /* CitySelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySelectVC.h; sourceTree = "<group>"; };
 		BAC7D5501F7F76730012898F /* CitySelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySelectVC.m; sourceTree = "<group>"; };
+		BAC7D5551F7F99360012898F /* TicketChooseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketChooseVC.h; sourceTree = "<group>"; };
+		BAC7D5561F7F99360012898F /* TicketChooseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketChooseVC.m; sourceTree = "<group>"; };
+		BAC7D5571F7F99360012898F /* TicketChooseVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketChooseVC.xib; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -554,6 +559,7 @@
 			isa = PBXGroup;
 			children = (
 				BAB466B21F738F3400F7DBCD /* BaseVC */,
+				BAC7D5521F7F98480012898F /* Ticket */,
 				BA309ADE1F7A541600EE25D5 /* Route */,
 				BAB466BE1F738F3400F7DBCD /* Login */,
 				BAB466C31F738F3400F7DBCD /* Main */,
@@ -684,6 +690,32 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BAC7D5521F7F98480012898F /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				BAC7D5531F7F98480012898F /* Controller */,
+				BAC7D5541F7F98480012898F /* View */,
+			);
+			path = Ticket;
+			sourceTree = "<group>";
+		};
+		BAC7D5531F7F98480012898F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BAC7D5551F7F99360012898F /* TicketChooseVC.h */,
+				BAC7D5561F7F99360012898F /* TicketChooseVC.m */,
+				BAC7D5571F7F99360012898F /* TicketChooseVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BAC7D5541F7F98480012898F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E024D22352E7F7A2FD46EEF8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -768,6 +800,7 @@
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
 				BAC7D5471F7F41220012898F /* unicode_to_hanyu_pinyin.txt in Resources */,
+				BAC7D5591F7F99360012898F /* TicketChooseVC.xib in Resources */,
 				BA309B131F7CD1D100EE25D5 /* RouteBusTabCell.xib in Resources */,
 				BAC7D5491F7F459A0012898F /* City.db in Resources */,
 				BA309AEA1F7A547C00EE25D5 /* RouteSearchVC.xib in Resources */,
@@ -863,6 +896,7 @@
 				BA309ACA1F79F41A00EE25D5 /* JourneyViewController.m in Sources */,
 				BA309AE91F7A547C00EE25D5 /* RouteSearchVC.m in Sources */,
 				BAB466D51F738F3400F7DBCD /* UIColor+Modify.m in Sources */,
+				BAC7D5581F7F99360012898F /* TicketChooseVC.m in Sources */,
 				BAB466E01F738F3400F7DBCD /* UITableView+FooterBlank.m in Sources */,
 				BAB466D01F738F3400F7DBCD /* SDCycleScrollView.m in Sources */,
 				BAB466CA1F738F3400F7DBCD /* PublicManager.m in Sources */,

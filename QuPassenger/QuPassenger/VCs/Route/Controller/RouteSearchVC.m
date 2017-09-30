@@ -136,6 +136,10 @@
 //        [cell.nameLabel setText:@"国际科技园"];
 //        [cell.addressLabel setText:@"江苏省苏州市工业园区金鸡湖大道2135号"];
         
+        cell.routeBuyBlock = ^{
+            
+        };
+        
         
         return cell;
     }
