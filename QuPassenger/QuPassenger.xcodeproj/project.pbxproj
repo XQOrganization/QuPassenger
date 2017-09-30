@@ -10,6 +10,9 @@
 		5B091DA924F825195E46FFA0 /* libPods-QuPassenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */; };
 		A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E2C401F74D4730008FE61 /* WXRegistViewController.m */; };
 		A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */; };
+		A5EAD2091F7F2D2A00B5F7C5 /* PersonCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5EAD2081F7F2D2A00B5F7C5 /* PersonCenter.storyboard */; };
+		A5EAD20C1F7F2D9100B5F7C5 /* MyWalletTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EAD20B1F7F2D9100B5F7C5 /* MyWalletTableViewController.m */; };
+		A5EAD20F1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EAD20E1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.m */; };
 		BA309ABD1F78DBCF00EE25D5 /* MainRouteRecommandView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */; };
 		BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */; };
 		BA309AC21F79E0C800EE25D5 /* MainLeftCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA309AC01F79E0C800EE25D5 /* MainLeftCateCell.m */; };
@@ -99,6 +102,11 @@
 		A53E2C3F1F74D4730008FE61 /* WXRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXRegistViewController.h; sourceTree = "<group>"; };
 		A53E2C401F74D4730008FE61 /* WXRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXRegistViewController.m; sourceTree = "<group>"; };
 		A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXRegistViewController.xib; sourceTree = "<group>"; };
+		A5EAD2081F7F2D2A00B5F7C5 /* PersonCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PersonCenter.storyboard; sourceTree = "<group>"; };
+		A5EAD20A1F7F2D9100B5F7C5 /* MyWalletTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletTableViewController.h; sourceTree = "<group>"; };
+		A5EAD20B1F7F2D9100B5F7C5 /* MyWalletTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletTableViewController.m; sourceTree = "<group>"; };
+		A5EAD20D1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+XQXibBorderColor.h"; sourceTree = "<group>"; };
+		A5EAD20E1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+XQXibBorderColor.m"; sourceTree = "<group>"; };
 		BA309ABA1F78DBCF00EE25D5 /* MainRouteRecommandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainRouteRecommandView.h; sourceTree = "<group>"; };
 		BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainRouteRecommandView.m; sourceTree = "<group>"; };
 		BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainRouteRecommandView.xib; sourceTree = "<group>"; };
@@ -263,6 +271,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5EAD2061F7F2BEE00B5F7C5 /* PersonCenter */ = {
+			isa = PBXGroup;
+			children = (
+				A5EAD2071F7F2C5100B5F7C5 /* Controller */,
+				A5EAD2081F7F2D2A00B5F7C5 /* PersonCenter.storyboard */,
+			);
+			path = PersonCenter;
+			sourceTree = "<group>";
+		};
+		A5EAD2071F7F2C5100B5F7C5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5EAD20A1F7F2D9100B5F7C5 /* MyWalletTableViewController.h */,
+				A5EAD20B1F7F2D9100B5F7C5 /* MyWalletTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B9C65842B7996E4E123B49F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +518,8 @@
 				BAB466A61F738F3400F7DBCD /* UIView+Help.m */,
 				BAB466FF1F7495E400F7DBCD /* UIImage+Help.h */,
 				BAB467001F7495E400F7DBCD /* UIImage+Help.m */,
+				A5EAD20D1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.h */,
+				A5EAD20E1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -518,6 +546,7 @@
 				BA309ADE1F7A541600EE25D5 /* Route */,
 				BAB466BE1F738F3400F7DBCD /* Login */,
 				BAB466C31F738F3400F7DBCD /* Main */,
+				A5EAD2061F7F2BEE00B5F7C5 /* PersonCenter */,
 				BA309AC41F79F3AF00EE25D5 /* Journey */,
 			);
 			path = VCs;
@@ -685,6 +714,7 @@
 				BAB467321F78D33900F7DBCD /* MainChannelCell.xib in Resources */,
 				BAB467191F78CAA900F7DBCD /* MainViewController.xib in Resources */,
 				BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */,
+				A5EAD2091F7F2D2A00B5F7C5 /* PersonCenter.storyboard in Resources */,
 				BAB466E71F738F3400F7DBCD /* Resource.xcassets in Resources */,
 				BAB4672B1F78D1F500F7DBCD /* MainBannerCell.xib in Resources */,
 				BA309AD71F7A4A6500EE25D5 /* QMapKit.bundle in Resources */,
@@ -774,9 +804,11 @@
 				BAC7D4FC1F7DE2EB0012898F /* QuCityModel.m in Sources */,
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
 				A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */,
+				A5EAD20C1F7F2D9100B5F7C5 /* MyWalletTableViewController.m in Sources */,
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,
 				BA309ACF1F79FBF900EE25D5 /* JourneyListCell.m in Sources */,
 				BAB466E81F738F3400F7DBCD /* AccountInfo.m in Sources */,
+				A5EAD20F1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.m in Sources */,
 				BAB466D31F738F3400F7DBCD /* UIColor+Gradient.m in Sources */,
 				BAB466C71F738F3400F7DBCD /* CHAlertView.m in Sources */,
 				BA309ACA1F79F41A00EE25D5 /* JourneyViewController.m in Sources */,
