@@ -17,6 +17,8 @@
                 <outlet property="leftTableView" destination="zT8-PS-ezz" id="WLr-aF-avL"/>
                 <outlet property="leftView" destination="gsk-KD-47E" id="wIH-sO-xxa"/>
                 <outlet property="mainCollectionView" destination="lqY-Bd-SU1" id="TeW-G6-HIw"/>
+                <outlet property="titleHeadLabel" destination="PJb-MA-bP7" id="u8L-Hd-btE"/>
+                <outlet property="titleHeadView" destination="EoW-TB-SX4" id="aam-sM-Pz8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -111,5 +113,46 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-95" y="614.5"/>
         </view>
+        <view contentMode="scaleToFill" id="EoW-TB-SX4">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5N-jJ-5UX">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+                    <connections>
+                        <action selector="titleClickAction:" destination="-1" eventType="touchUpInside" id="6tU-t3-cf9"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="苏州市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJb-MA-bP7">
+                    <rect key="frame" x="25.5" y="13" width="49" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_city_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="pUd-01-hLt">
+                    <rect key="frame" x="75" y="15" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="CwG-eK-jgr"/>
+                        <constraint firstAttribute="height" constant="15" id="NtB-gW-Lja"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="PJb-MA-bP7" firstAttribute="centerY" secondItem="EoW-TB-SX4" secondAttribute="centerY" id="0J2-TR-7AG"/>
+                <constraint firstItem="pUd-01-hLt" firstAttribute="centerY" secondItem="EoW-TB-SX4" secondAttribute="centerY" id="3k5-6f-Fcn"/>
+                <constraint firstAttribute="bottom" secondItem="w5N-jJ-5UX" secondAttribute="bottom" id="Kfo-7F-YnX"/>
+                <constraint firstItem="w5N-jJ-5UX" firstAttribute="top" secondItem="EoW-TB-SX4" secondAttribute="top" id="MbT-Td-8R8"/>
+                <constraint firstItem="w5N-jJ-5UX" firstAttribute="leading" secondItem="EoW-TB-SX4" secondAttribute="leading" id="XAx-ve-aJy"/>
+                <constraint firstItem="pUd-01-hLt" firstAttribute="leading" secondItem="PJb-MA-bP7" secondAttribute="trailing" id="i2I-cy-7gV"/>
+                <constraint firstAttribute="trailing" secondItem="w5N-jJ-5UX" secondAttribute="trailing" id="tD0-zv-81Z"/>
+                <constraint firstItem="PJb-MA-bP7" firstAttribute="centerX" secondItem="EoW-TB-SX4" secondAttribute="centerX" id="tvZ-8z-fH9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-121" y="1207"/>
+        </view>
     </objects>
+    <resources>
+        <image name="main_city_arrow" width="15" height="15"/>
+    </resources>
 </document>

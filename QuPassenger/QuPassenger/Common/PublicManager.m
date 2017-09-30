@@ -8,6 +8,8 @@
 
 #import "PublicManager.h"
 #import "CHAlertView.h"
+#import "RegexKitLite.h"
+#import "PinYin4Objc.h"
 
 /**
  获取字符串value的宽度
@@ -200,5 +202,81 @@ float WidthForString(NSString *value,float fontSize,float height)
     
     return scaledImage;   //返回的就是已经改变的图片
 }
+
++ (NSString *)getFullPinyinString:(NSString *)str {
+    
+    NSString *sTmp = nil;
+
+    if ([str isMatchedByRegex:@"[\u4e00-\u9fa5]"]){
+        
+        HanyuPinyinOutputFormat *outputFormat=[[HanyuPinyinOutputFormat alloc] init];
+        [outputFormat setToneType:ToneTypeWithoutTone];
+        [outputFormat setVCharType:VCharTypeWithV];
+        [outputFormat setCaseType:CaseTypeUppercase];
+        
+        sTmp = [PinyinHelper toHanyuPinyinStringWithNSString:str withHanyuPinyinOutputFormat:outputFormat withNSString:@""];
+        
+    }
+    else
+        sTmp = str;
+    
+    return sTmp;
+}
+
++ (NSString*)getFirsrPingyinString:(NSString *)str
+{
+    NSString *sTmp = @"";
+    
+    NSString *textStr = nil ;
+    
+    for (NSInteger i =0 ; i<[str length]; i++) {
+        
+        NSString *tempStr = [NSString stringWithFormat:@"%C",[str characterAtIndex:i]];
+        
+        if ([tempStr isMatchedByRegex:@"[\u4e00-\u9fa5]"])
+        {
+
+            HanyuPinyinOutputFormat *outputFormat=[[HanyuPinyinOutputFormat alloc] init];
+            [outputFormat setToneType:ToneTypeWithoutTone];
+            [outputFormat setVCharType:VCharTypeWithV];
+            [outputFormat setCaseType:CaseTypeUppercase];
+            
+            sTmp = [PinyinHelper toHanyuPinyinStringWithNSString:tempStr withHanyuPinyinOutputFormat:outputFormat withNSString:@""];
+            
+            if (sTmp.length > 0) {
+                sTmp = [sTmp substringToIndex:1];
+            }
+            
+        }
+        else
+        {
+            sTmp = [NSString stringWithFormat:@"%c",[str characterAtIndex:i]];
+        }
+        if (textStr == nil) {
+            textStr = sTmp;
+        }
+        else
+            textStr = [textStr stringByAppendingString:sTmp];
+        
+    }
+    
+    if ([str isEqualToString:@"长沙"]) {
+        return @"CS";
+    }
+    else if ([str isEqualToString:@"长治"]) {
+        return @"CZ";
+    }
+    else if ([str isEqualToString:@"重庆"]) {
+        return @"CQ";
+    }
+    else if ([str isEqualToString:@"长春"]) {
+        return @"CQ";
+    }
+    else if ([str isEqualToString:@"厦门"]) {
+        return @"XM";
+    }
+    return textStr;
+}
+
 
 @end

@@ -91,7 +91,7 @@
         [_titleLabel setTextColor:Qu_Nav_Title_Color];
         [_titleLabel setFont:Qu_Nav_Title_Font];
         [_titleLabel setTextAlignment:NSTextAlignmentCenter];
-        [self.contentView addSubview:_titleLabel];
+        
         self.titleView = _titleLabel;
         
     }
@@ -127,8 +127,8 @@
             make.height.mas_equalTo(leftView.qu_h);
         }];
         
-        if (_titleLabel) {
-            [_titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        if (_titleView) {
+            [_titleView mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.center.equalTo(self.contentView);
      
                 make.left.equalTo(_leftView.mas_right).offset(5);
@@ -156,8 +156,8 @@
             make.width.mas_equalTo(_rightView.qu_w);
             make.height.mas_equalTo(_rightView.qu_h);
         }];
-        if (_titleLabel) {
-            [_titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        if (_titleView) {
+            [_titleView mas_remakeConstraints:^(MASConstraintMaker *make) {
                 make.center.equalTo(self.contentView);
                 
                 make.right.equalTo(_rightView.mas_left).offset(-5);
@@ -181,20 +181,33 @@
             make.center.equalTo(self.contentView);
             
             if (_leftView) {
-                make.left.equalTo(_leftView.mas_right).offset(5);
-                
+                if (_rightView) {
+                    
+                    if (_leftView.qu_w > _rightView.qu_w) {
+                        make.left.equalTo(_leftView.mas_right).offset(5);
+                        
+                    }
+                    else{
+                        make.right.equalTo(_rightView.mas_left).offset(-5);
+                    }
+                }
+                else{
+                    
+                    make.left.equalTo(_leftView.mas_right).offset(5);
+                }
             }
             else{
-                make.left.equalTo(self.contentView).offset(5);
+                
+                if (_rightView) {
+                    
+          
+                    make.right.equalTo(_rightView.mas_left).offset(-5);
+                    
+                }
+                
             }
             
-            if (_rightView) {
-                make.right.equalTo(_rightView.mas_left).offset(-5);
-                
-            }
-            else{
-                make.right.equalTo(self.contentView).offset(5);
-            }
+
             
         }];
 

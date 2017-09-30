@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString *cityName;
 @property (strong, nonatomic) NSString *cityCode;
+@property (strong, nonatomic) NSString *provinceCode;
 
 @end

@@ -15,6 +15,7 @@
 #import "MainRouteRecommandView.h"
 #import "WXRegistViewController.h"
 #import "JourneyViewController.h"
+#import "CitySelectVC.h"
 #import "RouteSearchVC.h"
 
 #define CATEGORYWIDTH 188
@@ -23,6 +24,8 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *mainCollectionView;
 @property (strong, nonatomic) IBOutlet UIView *leftView;
+@property (strong, nonatomic) IBOutlet UIView *titleHeadView;
+@property (strong, nonatomic) IBOutlet UILabel *titleHeadLabel;
 @property (weak, nonatomic) IBOutlet UIView *leftHeaderView;
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UILabel *leftNameLabel;
@@ -40,7 +43,7 @@
     //使用自定义导航栏
     QuNavigationBar *bar = [QuNavigationBar showQuNavigationBarWithController:self];
     self.quNavBar = bar;
-    
+    self.quNavBar.titleView = self.titleHeadView;
 
     UIButton *leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     [leftBtn setImage:[UIImage imageNamed:@"main_person_icon"] forState:UIControlStateNormal];
@@ -96,7 +99,7 @@
     
     [[QuLocationManager shareManager]startUpdatingLocationWithSuccess:^(TencentLBSLocation *lbsLocation) {
         
-        weakSelf.quNavBar.title = lbsLocation.city;
+        weakSelf.titleHeadLabel.text = lbsLocation.city;
         cityModel.cityName = [lbsLocation.city replace:@"市" withString:@""];
 //        cityModel.cityCode = 
         
@@ -176,6 +179,13 @@
 }
 
 #pragma mark btnClickAction
+- (IBAction)titleClickAction:(id)sender
+{
+    CitySelectVC *vc = [[CitySelectVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
+
 - (void)leftBarButtonItemAction:(id)sender
 {
     if (!ACCOUNTINFO.isLogin) {

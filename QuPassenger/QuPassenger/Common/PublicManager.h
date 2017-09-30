@@ -45,4 +45,7 @@ float WidthForString(NSString *value,float fontSize,float height);
 //base64图片处理
 + (NSString *)base64ImageDataString:(UIImage *)photoImg;
 
++ (NSString *)getFullPinyinString:(NSString *)str;
++ (NSString *)getFirsrPingyinString:(NSString *)str;
+
 @end

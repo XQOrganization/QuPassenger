@@ -10,6 +10,7 @@ pod 'SDWebImage','~>4.0.0'
 pod 'SVProgressHUD'
 pod 'JPush'
 pod 'FMDB'
+pod 'MJNIndexView'
 pod 'DZNEmptyDataSet', '~> 1.8.1'
 pod 'UMengAnalytics-NO-IDFA'
 # 主模块(必须)
