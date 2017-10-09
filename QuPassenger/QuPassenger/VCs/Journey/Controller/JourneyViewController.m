@@ -75,7 +75,7 @@
 {
     
     
-    return CGSizeMake(SCREEN_SIZE.width - 20, 138);
+    return CGSizeMake(SCREEN_SIZE.width - 20, 117);
 
 }
 

@@ -9,6 +9,7 @@
 #import "RouteSearchVC.h"
 #import "RouteHistoryTabCell.h"
 #import "RouteBusTabCell.h"
+#import "TicketChooseVC.h"
 
 @interface RouteSearchVC ()<QMapViewDelegate>
 
@@ -138,6 +139,8 @@
         
         cell.routeBuyBlock = ^{
             
+            TicketChooseVC *vc = [[TicketChooseVC alloc]initWithNibName:@"TicketChooseVC" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
         };
         
         
