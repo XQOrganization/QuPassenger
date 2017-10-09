@@ -21,7 +21,9 @@
 
 - (IBAction)buyClickAction:(id)sender
 {
-    
+    if (self.routeBuyBlock) {
+        self.routeBuyBlock();
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

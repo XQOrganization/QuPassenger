@@ -30,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
 @property (weak, nonatomic) IBOutlet UILabel *leftNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *leftHeadImageView;
+@property (weak, nonatomic) IBOutlet UIButton *ticketBtn;
 @property (strong, nonatomic) UIButton *bgBlackBtn;
 @property (strong, nonatomic) NSArray *leftArray;
 
@@ -93,6 +94,7 @@
     
     [self.leftHeadImageView setCornerRadius:self.leftHeadImageView.mj_w/2 AndBorder:0 borderColor:nil];
 
+    [self.ticketBtn showShadowColorWithColor:HEXCOLOR(@"ff5c41") offset:CGSizeMake(0, 5) opacity:0.5 radius:3.0];
     
     WS(weakSelf)
     __weak QuCityModel *cityModel = [PublicManager shareManager].cityModel;
@@ -286,7 +288,7 @@
                 [self presentLoginWithComplection:nil];
                 return;
             }
-            MyWalletTableViewController *vc = [[UIStoryboard storyboardWithName:@"PersonCenter" bundle:nil]instantiateViewControllerWithIdentifier:@"MyWalletTableViewController"];
+            MyWalletVC *vc = [[UIStoryboard storyboardWithName:@"PersonCenter" bundle:nil]instantiateViewControllerWithIdentifier:@"MyWalletVC"];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
@@ -319,11 +321,8 @@
     
     NSInteger count = 1;
     
-    if (section == 0 || section == 1) {
+    if (section == 0 || section == 1 || section == 2) {
         count = 1;
-    }
-    else if (section == 2){
-        count = 2;
     }
     else{
         count = 3;
@@ -443,8 +442,7 @@
     }
     else if (indexPath.section == 2){
 
-        NSInteger count = 2;//暂时只有2个
-        return CGSizeMake((SCREEN_SIZE.width - (count + 1) * 10)/count, 90);
+        return CGSizeMake(SCREEN_SIZE.width - 20, 50);
     }
     else {
         

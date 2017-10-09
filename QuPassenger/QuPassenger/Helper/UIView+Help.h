@@ -25,4 +25,6 @@
 //展示阴影
 - (void)showShadowColor;
 
+- (void)showShadowColorWithColor:(UIColor *)color offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius;
+
 @end

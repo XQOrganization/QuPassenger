@@ -114,4 +114,14 @@
     self.layer.masksToBounds = NO;
 }
 
+- (void)showShadowColorWithColor:(UIColor *)color offset:(CGSize)offset opacity:(CGFloat)opacity radius:(CGFloat)radius
+{
+    
+    self.layer.shadowColor = color.CGColor;
+    self.layer.shadowOffset = offset;
+    self.layer.shadowOpacity = opacity;
+    self.layer.shadowRadius = radius;
+    self.layer.masksToBounds = NO;
+}
+
 @end

@@ -84,10 +84,20 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>WZLBadge.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>13</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>04CF549EBEEE7BC87AEAE35397184D94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0619B90F6905D287FDA197AD40410CB5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,12 +112,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4B7596D2717542473444CC3A0E6000EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5437890023F30CA85DFCA260CA914D48</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>573277FD7D00058FFE1368426C1F4C8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5A10AD317084BEF6053872EA27407F69</key>
 		<dict>
 			<key>primary</key>
 			<true/>

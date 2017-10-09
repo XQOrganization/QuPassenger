@@ -30,7 +30,7 @@
 #import "Masonry.h"
 #import "MJRefresh.h"
 #import "ThirdApiManager.h"
-//#import "WZLBadgeImport.h"
+#import "WZLBadgeImport.h"
 #import "IQKeyboardManager.h"
 #import "NSString+Help.h"
 #import "AccountInfo.h"
@@ -71,7 +71,7 @@
 #define SYSTEMFONT(FONTSIZE)    [UIFont systemFontOfSize:FONTSIZE]
 
 //腾讯地图AppKey
-#define TencentAppKey @"EGOBZ-LH43U-YATVV-BJQSB-XIFCH-47FNS"
+#define TencentAppKey @"XSBBZ-ZQMC6-MVBSX-MKZBR-K3D46-JOF6Q"
 
 //当前屏幕大小
 #define SCREEN_SIZE   [[UIScreen mainScreen] bounds].size

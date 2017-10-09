@@ -17,6 +17,7 @@
                 <outlet property="leftTableView" destination="zT8-PS-ezz" id="WLr-aF-avL"/>
                 <outlet property="leftView" destination="gsk-KD-47E" id="wIH-sO-xxa"/>
                 <outlet property="mainCollectionView" destination="lqY-Bd-SU1" id="TeW-G6-HIw"/>
+                <outlet property="ticketBtn" destination="IfR-cF-Nyj" id="Sne-Dr-GAt"/>
                 <outlet property="titleHeadLabel" destination="PJb-MA-bP7" id="u8L-Hd-btE"/>
                 <outlet property="titleHeadView" destination="EoW-TB-SX4" id="aam-sM-Pz8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -41,12 +42,22 @@
                         <outlet property="delegate" destination="-1" id="ilU-Gl-jre"/>
                     </connections>
                 </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfR-cF-Nyj">
+                    <rect key="frame" x="300" y="582" width="55" height="55"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="55" id="IMg-Uj-y0K"/>
+                        <constraint firstAttribute="height" constant="55" id="ucP-di-pN2"/>
+                    </constraints>
+                    <state key="normal" image="main_ticket_icon"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="lqY-Bd-SU1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1o6-Yc-rmF"/>
                 <constraint firstItem="lqY-Bd-SU1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A7T-IN-fQ2"/>
                 <constraint firstAttribute="bottom" secondItem="lqY-Bd-SU1" secondAttribute="bottom" id="KiU-Uk-t9s"/>
+                <constraint firstAttribute="bottom" secondItem="IfR-cF-Nyj" secondAttribute="bottom" constant="30" id="Vd7-Zq-Osp"/>
+                <constraint firstAttribute="trailing" secondItem="IfR-cF-Nyj" secondAttribute="trailing" constant="20" id="cl7-D2-bUn"/>
                 <constraint firstAttribute="trailing" secondItem="lqY-Bd-SU1" secondAttribute="trailing" id="np9-DC-6Tb"/>
             </constraints>
         </view>
@@ -154,5 +165,6 @@
     </objects>
     <resources>
         <image name="main_city_arrow" width="15" height="15"/>
+        <image name="main_ticket_icon" width="55" height="55"/>
     </resources>
 </document>
