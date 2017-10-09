@@ -1,12 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12121"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TicketChooseVC">
             <connections>
+                <outlet property="calendarContentView" destination="GnG-va-Dm6" id="rsz-Yo-YwB"/>
+                <outlet property="calendarMenuView" destination="YIy-1N-Ts0" id="z6P-rV-yjH"/>
+                <outlet property="calendarView" destination="w26-cQ-uIQ" id="6xE-ad-vFe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +21,43 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w26-cQ-uIQ">
+                    <rect key="frame" x="10" y="10" width="355" height="375"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YIy-1N-Ts0" customClass="JTCalendarMenuView">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="9ih-nQ-hMJ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GnG-va-Dm6" customClass="JTHorizontalCalendarView">
+                            <rect key="frame" x="0.0" y="40" width="355" height="335"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="335" id="i6h-Vt-OAS"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="GnG-va-Dm6" secondAttribute="trailing" id="3VC-Ab-NFO"/>
+                        <constraint firstAttribute="trailing" secondItem="YIy-1N-Ts0" secondAttribute="trailing" id="FWh-eE-lZL"/>
+                        <constraint firstItem="GnG-va-Dm6" firstAttribute="leading" secondItem="w26-cQ-uIQ" secondAttribute="leading" id="WWO-f3-dYk"/>
+                        <constraint firstItem="YIy-1N-Ts0" firstAttribute="top" secondItem="w26-cQ-uIQ" secondAttribute="top" id="b42-b0-7dO"/>
+                        <constraint firstAttribute="height" constant="375" id="ccj-Eq-SI0"/>
+                        <constraint firstItem="YIy-1N-Ts0" firstAttribute="leading" secondItem="w26-cQ-uIQ" secondAttribute="leading" id="dBA-2d-AaY"/>
+                        <constraint firstItem="GnG-va-Dm6" firstAttribute="top" secondItem="YIy-1N-Ts0" secondAttribute="bottom" id="gNU-iF-2IH"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="w26-cQ-uIQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="OGS-t5-8yB"/>
+                <constraint firstItem="w26-cQ-uIQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="PS1-ct-Ixo"/>
+                <constraint firstAttribute="trailing" secondItem="w26-cQ-uIQ" secondAttribute="trailing" constant="10" id="fN8-4x-9uF"/>
+            </constraints>
         </view>
     </objects>
 </document>
