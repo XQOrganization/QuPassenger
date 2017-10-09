@@ -17,7 +17,7 @@
 #import "JourneyViewController.h"
 #import "CitySelectVC.h"
 #import "RouteSearchVC.h"
-
+#import "MyWalletTableViewController.h"
 #define CATEGORYWIDTH 188
 
 @interface MainViewController ()
@@ -281,13 +281,12 @@
             break;
             
         case 1:{
-            //绑定认证
+            //钱包
             if (!ACCOUNTINFO.isLogin) {
                 [self presentLoginWithComplection:nil];
                 return;
             }
-        
-            WXRegistViewController *vc = [[WXRegistViewController alloc]initWithNibName:@"WXRegistViewController" bundle:nil];
+            MyWalletTableViewController *vc = [[UIStoryboard storyboardWithName:@"PersonCenter" bundle:nil]instantiateViewControllerWithIdentifier:@"MyWalletTableViewController"];
             [self.navigationController pushViewController:vc animated:YES];
         }
             break;
