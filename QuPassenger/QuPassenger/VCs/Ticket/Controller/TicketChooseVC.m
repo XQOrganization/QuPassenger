@@ -17,8 +17,6 @@
 
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 
-@property (strong, nonatomic) NSMutableDictionary *eventsByDate;
-    
 @property (strong, nonatomic) NSMutableArray *dateSelected;
 
 @end
@@ -41,7 +39,6 @@
     // Generate random events sort by date using a dateformatter for the demonstration
     [self createRandomEvents];
     
-    _calendarMenuView.contentRatio = .75;
     [self.calendarView showShadowColor];
     [self.calendarView setCornerRadius:4.0f AndBorder:0 borderColor:nil];
     [self.calendarMenuView setCornerRadius:4.0f AndBorder:0 borderColor:nil];
@@ -49,12 +46,13 @@
    
     _calendarManager.settings.weekDayFormat = JTCalendarWeekDayFormatSingle;
     _calendarManager.settings.zeroPaddedDayFormat = NO;
+//    _calendarManager.settings.showLeftBtn = NO;
     
     [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
     [_calendarManager setDate:[NSDate date]];
     
-    _dateSelected = [NSMutableArray new];
+    
 }
 
 #pragma mark - CalendarManager delegate
@@ -68,27 +66,22 @@
     // Other month
     if([dayView isFromAnotherMonth]){
         dayView.hidden = YES;
+        dayView.bottomColor = HEXCOLOR(@"777777");
     }
     // Selected date
     else if([self isInDatesSelected:dayView.date]){
         dayView.circleView.hidden = NO;
         dayView.circleView.backgroundColor = HEXCOLOR(@"ff5c41");
-        dayView.dotView.backgroundColor = [UIColor whiteColor];
+        dayView.bottomColor = [UIColor whiteColor];
         dayView.textLabel.textColor = [UIColor whiteColor];
     }
     // Another day of the current month
     else{
         dayView.circleView.hidden = YES;
-        dayView.dotView.backgroundColor = HEXCOLOR(@"ff5c41");
-        dayView.textLabel.textColor = [UIColor blackColor];
+        dayView.bottomColor = HEXCOLOR(@"777777");
+        dayView.textLabel.textColor = HEXCOLOR(@"404040");
     }
-    
-    if([self haveEventForDay:dayView.date]){
-        dayView.dotView.hidden = NO;
-    }
-    else{
-        dayView.dotView.hidden = YES;
-    }
+   
 }
 
 - (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
@@ -123,17 +116,7 @@
     if(_calendarManager.settings.weekModeEnabled){
         return;
     }
-    
-    // Load the previous or next page if touch a day from another month
-    
-    if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
-        if([_calendarContentView.date compare:dayView.date] == NSOrderedAscending){
-            [_calendarContentView loadNextPageWithAnimation];
-        }
-        else{
-            [_calendarContentView loadPreviousPageWithAnimation];
-        }
-    }
+
 
 }
 
@@ -150,16 +133,13 @@
     return label;
 }
 
-- (UIView *)calendarRightMenuItemView:(JTCalendarManager *)calendar
+- (void)calendarLeftClick
 {
-    UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [rightBtn setImage:[UIImage imageNamed:@"ticket_calendar_right"] forState:UIControlStateNormal];
-    [rightBtn addTarget:self action:@selector(calendarRightAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    return rightBtn;
+    [_calendarContentView loadPreviousPageWithAnimation];
 }
 
-- (void)calendarRightAction:(UIButton *)sender
+- (void)calendarRightClick
 {
     [_calendarContentView loadNextPageWithAnimation];
 }
@@ -226,35 +206,16 @@
     return dateFormatter;
 }
 
-- (BOOL)haveEventForDay:(NSDate *)date
-{
-    NSString *key = [[self dateFormatter] stringFromDate:date];
-    
-    if(_eventsByDate[key] && [_eventsByDate[key] count] > 0){
-        return YES;
-    }
-    
-    return NO;
-    
-}
-
 - (void)createRandomEvents
 {
-    _eventsByDate = [NSMutableDictionary new];
+    _dateSelected = [NSMutableArray new];
     
-    for(int i = 0; i < 30; ++i){
-        // Generate 30 random dates between now and 60 days later
-        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)) sinceDate:[NSDate date]];
-        
-        // Use the date as key for eventsByDate
-        NSString *key = [[self dateFormatter] stringFromDate:randomDate];
-        
-        if(!_eventsByDate[key]){
-            _eventsByDate[key] = [NSMutableArray new];
-        }
-        
-        [_eventsByDate[key] addObject:randomDate];
-    }
+//    for(int i = 0; i < 30; ++i){
+//        // Generate 30 random dates between now and 60 days later
+//        NSDate *randomDate = [NSDate dateWithTimeInterval:(rand() % (3600 * 24 * 60)) sinceDate:[NSDate date]];
+//        
+//        [_dateSelected addObject:randomDate];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {

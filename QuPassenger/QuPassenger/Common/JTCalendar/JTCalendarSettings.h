@@ -15,6 +15,9 @@ typedef NS_ENUM(NSInteger, JTCalendarWeekDayFormat) {
 
 @interface JTCalendarSettings : NSObject
 
+// Menu view
+@property (nonatomic) BOOL showLeftBtn;
+@property (nonatomic) BOOL showRightBtn;
 
 // Content view
 

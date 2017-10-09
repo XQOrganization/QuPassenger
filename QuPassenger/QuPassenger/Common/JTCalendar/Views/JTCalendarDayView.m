@@ -68,9 +68,11 @@
         _textLabel = [UILabel new];
         [self addSubview:_textLabel];
         
+        [_textLabel setNumberOfLines:0];
         _textLabel.textColor = [UIColor blackColor];
         _textLabel.textAlignment = NSTextAlignmentCenter;
         _textLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+  
     }
     
     {
@@ -122,8 +124,14 @@
     }
     [dateFormatter setDateFormat:self.dayFormat];
 
-    _textLabel.text = [ dateFormatter stringFromDate:_date];       
     [_manager.delegateManager prepareDayView:self];
+    
+    NSMutableAttributedString *carAttributeString = [[NSMutableAttributedString alloc] initWithString:[dateFormatter stringFromDate:_date]];
+    NSAttributedString *carTempAttributeString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n%@",@"5元"] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10],NSForegroundColorAttributeName:self.bottomColor}];
+    [carAttributeString appendAttributedString:carTempAttributeString];
+    
+    [_textLabel setAttributedText:carAttributeString];
+    
 }
 
 - (void)didTouch

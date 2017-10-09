@@ -13,10 +13,6 @@
 
 @property (nonatomic, weak) JTCalendarManager *manager;
 
-@property (nonatomic) CGFloat contentRatio;
-
-@property (nonatomic, readonly) UIScrollView *scrollView;
-
 /*!
  * Must be call if override the class
  */

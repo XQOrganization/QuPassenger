@@ -30,16 +30,18 @@
     return label;
 }
 
-- (UIView *)buildRightMenuItemView
+- (void)calendarLeftClick
 {
-    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendarRightMenuItemView:)]){
-        return [_manager.delegate calendarRightMenuItemView:self.manager];
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendarLeftClick)]){
+        return [_manager.delegate calendarLeftClick];
     }
-    
-    UILabel *label = [UILabel new];
-    label.textAlignment = NSTextAlignmentCenter;
-    
-    return label;
+}
+
+- (void)calendarRightClick
+{
+    if(_manager.delegate && [_manager.delegate respondsToSelector:@selector(calendarRightClick)]){
+        return [_manager.delegate calendarRightClick];
+    }
 }
 
 - (void)prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date

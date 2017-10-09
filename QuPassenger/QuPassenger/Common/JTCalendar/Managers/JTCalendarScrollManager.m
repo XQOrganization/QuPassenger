@@ -27,7 +27,7 @@
     }
     
     [_menuView updatePageMode:pageMode];
-    _menuView.scrollView.contentOffset = CGPointMake(percentage * _menuView.scrollView.contentSize.width, 0);
+//    _menuView.scrollView.contentOffset = CGPointMake(percentage * _menuView.scrollView.contentSize.width, 0);
 }
 
 - (void)updateHorizontalContentOffset:(CGFloat)percentage

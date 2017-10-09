@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) UIView *circleView;
 @property (nonatomic, readonly) UIView *dotView;
 @property (nonatomic, readonly) UILabel *textLabel;
-@property (nonatomic, readonly) UILabel *secondLabel;
+@property (nonatomic, strong) UIColor *bottomColor;
 
 @property (nonatomic) CGFloat circleRatio;
 @property (nonatomic) CGFloat dotRatio;

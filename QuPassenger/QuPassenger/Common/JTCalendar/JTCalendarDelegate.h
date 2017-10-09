@@ -27,9 +27,8 @@
  * Return an instance of `UILabel` by default.
  */
 - (UIView *)calendarBuildMenuItemView:(JTCalendarManager *)calendar;
-
-- (UIView *)calendarRightMenuItemView:(JTCalendarManager *)calendar;
-
+- (void)calendarLeftClick;
+- (void)calendarRightClick;
 /*!
  * Used to customize the menuItemView.
  * Set text attribute to the name of the month by default.

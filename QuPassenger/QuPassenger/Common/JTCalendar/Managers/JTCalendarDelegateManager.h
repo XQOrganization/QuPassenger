@@ -18,7 +18,8 @@
 // Menu view
 
 - (UIView *)buildMenuItemView;
-- (UIView *)buildRightMenuItemView;
+- (void)calendarLeftClick;
+- (void)calendarRightClick;
 - (void)prepareMenuItemView:(UIView *)menuItemView date:(NSDate *)date;
 
 // Content view

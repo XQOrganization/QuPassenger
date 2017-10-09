@@ -30,6 +30,8 @@
     _zeroPaddedDayFormat = YES;
     _weekModeEnabled = NO;
     _pageViewWeekModeNumberOfWeeks = 1;
+    _showLeftBtn = YES;
+    _showRightBtn = YES;
 }
 
 @end
