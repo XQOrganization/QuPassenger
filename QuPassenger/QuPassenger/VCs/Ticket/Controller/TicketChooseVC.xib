@@ -55,14 +55,14 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sve-Eh-glr">
-                    <rect key="frame" x="256" y="395" width="103" height="24"/>
+                    <rect key="frame" x="256" y="390" width="103" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                     <state key="normal" title="票不够？申请增加班次">
                         <color key="titleColor" red="1" green="0.36078431370000003" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7X-ap-KNe">
-                    <rect key="frame" x="10" y="395" width="116" height="24"/>
+                    <rect key="frame" x="10" y="390" width="116" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="Kvy-NN-ng8"/>
                     </constraints>
@@ -152,10 +152,10 @@
                 <constraint firstItem="Q7X-ap-KNe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="LVr-GV-eQY"/>
                 <constraint firstItem="w26-cQ-uIQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="OGS-t5-8yB"/>
                 <constraint firstItem="w26-cQ-uIQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="PS1-ct-Ixo"/>
-                <constraint firstItem="Sve-Eh-glr" firstAttribute="top" secondItem="w26-cQ-uIQ" secondAttribute="bottom" constant="10" id="VHf-Xg-CLN"/>
+                <constraint firstItem="Sve-Eh-glr" firstAttribute="top" secondItem="w26-cQ-uIQ" secondAttribute="bottom" constant="5" id="VHf-Xg-CLN"/>
                 <constraint firstItem="boE-2V-bqD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YX1-YY-QFs"/>
                 <constraint firstAttribute="trailing" secondItem="Sve-Eh-glr" secondAttribute="trailing" constant="16" id="dST-tv-fEB"/>
-                <constraint firstItem="Q7X-ap-KNe" firstAttribute="top" secondItem="w26-cQ-uIQ" secondAttribute="bottom" constant="10" id="dmf-QW-Ggp"/>
+                <constraint firstItem="Q7X-ap-KNe" firstAttribute="top" secondItem="w26-cQ-uIQ" secondAttribute="bottom" constant="5" id="dmf-QW-Ggp"/>
                 <constraint firstAttribute="trailing" secondItem="w26-cQ-uIQ" secondAttribute="trailing" constant="10" id="fN8-4x-9uF"/>
                 <constraint firstAttribute="trailing" secondItem="boE-2V-bqD" secondAttribute="trailing" id="pUF-eJ-od1"/>
             </constraints>

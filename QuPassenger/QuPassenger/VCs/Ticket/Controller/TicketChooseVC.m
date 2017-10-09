@@ -55,6 +55,18 @@
     [_calendarManager setContentView:_calendarContentView];
     [_calendarManager setDate:[NSDate date]];
     
+    NSMutableAttributedString *carAttributeString = [[NSMutableAttributedString alloc] initWithString:@"30"];
+    NSAttributedString *carTempAttributeString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"元"] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]}];
+    [carAttributeString appendAttributedString:carTempAttributeString];
+    
+    NSAttributedString *tempAttributeString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" 共6张"] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13],NSForegroundColorAttributeName:HEXCOLOR(@"777777")}];
+    [carAttributeString appendAttributedString:tempAttributeString];
+    
+    [self.priceLabel setAttributedText:carAttributeString];
+    
+    [self.ticketBtn showBadgeWithStyle:WBadgeStyleNumber value:6 animationType:WBadgeAnimTypeNone];
+    [self.ticketBtn setBadgeBgColor:HEXCOLOR(@"ff5c41")];
+    [self.ticketBtn setBadgeCenterOffset:CGPointMake(-8, 8)];
     
 }
 

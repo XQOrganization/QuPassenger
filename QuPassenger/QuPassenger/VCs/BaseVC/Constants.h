@@ -30,7 +30,7 @@
 #import "Masonry.h"
 #import "MJRefresh.h"
 #import "ThirdApiManager.h"
-//#import "WZLBadgeImport.h"
+#import "WZLBadgeImport.h"
 #import "IQKeyboardManager.h"
 #import "NSString+Help.h"
 #import "AccountInfo.h"
