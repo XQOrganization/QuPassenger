@@ -17,7 +17,7 @@
 #import "JourneyViewController.h"
 #import "CitySelectVC.h"
 #import "RouteSearchVC.h"
-#import "MyWalletTableViewController.h"
+#import "MyWalletVC.h"
 #define CATEGORYWIDTH 188
 
 @interface MainViewController ()

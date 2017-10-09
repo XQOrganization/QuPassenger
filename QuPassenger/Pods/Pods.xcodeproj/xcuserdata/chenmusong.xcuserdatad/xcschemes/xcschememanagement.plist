@@ -44,6 +44,11 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>MJNIndexView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -92,6 +97,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4AF93D0021B6AC34B0FB033AF8CE6B4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5437890023F30CA85DFCA260CA914D48</key>
 		<dict>
 			<key>primary</key>
@@ -103,6 +113,11 @@
 			<true/>
 		</dict>
 		<key>616842E9AF931B55A3CEDDD0812F27C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>66A0CC3F30AD1FFE10CFEB4EDC9845D2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -148,6 +163,16 @@
 			<true/>
 		</dict>
 		<key>D0A578AE46ED0277A43CD998F5E96500</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D1D20120D93E2B058A242B0D237BD789</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E58540B45B4A730159BC10B113E7395A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
