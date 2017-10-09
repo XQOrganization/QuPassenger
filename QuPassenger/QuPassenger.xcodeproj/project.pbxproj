@@ -1052,11 +1052,9 @@
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
 				A5E008871F8B580200F5B619 /* MyWalletTableViewCell.m in Sources */,
 				A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */,
-<<<<<<< HEAD
-=======
+
 				BAC7D5811F8B44D00012898F /* JTCalendarDelegateManager.m in Sources */,
 				A5EAD20C1F7F2D9100B5F7C5 /* MyWalletTableViewController.m in Sources */,
->>>>>>> 3ab12babb90c1992434b8b2e42762b477f9e5780
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,
 				BAC7D5021F7F25550012898F /* QuDBManager.m in Sources */,
 				BA309ACF1F79FBF900EE25D5 /* JourneyListCell.m in Sources */,
