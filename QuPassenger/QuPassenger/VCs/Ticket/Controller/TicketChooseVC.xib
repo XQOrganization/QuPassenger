@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,6 +14,9 @@
                 <outlet property="calendarContentView" destination="GnG-va-Dm6" id="rsz-Yo-YwB"/>
                 <outlet property="calendarMenuView" destination="YIy-1N-Ts0" id="z6P-rV-yjH"/>
                 <outlet property="calendarView" destination="w26-cQ-uIQ" id="6xE-ad-vFe"/>
+                <outlet property="priceLabel" destination="ooA-jt-6Iy" id="jo2-N2-KUZ"/>
+                <outlet property="ticketBtn" destination="1yq-fi-mcJ" id="Mhi-IB-NmK"/>
+                <outlet property="tipView" destination="bCZ-w6-rib" id="1oS-o3-Ktv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -51,13 +54,116 @@
                         <constraint firstItem="GnG-va-Dm6" firstAttribute="top" secondItem="YIy-1N-Ts0" secondAttribute="bottom" id="gNU-iF-2IH"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sve-Eh-glr">
+                    <rect key="frame" x="256" y="395" width="103" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title="票不够？申请增加班次">
+                        <color key="titleColor" red="1" green="0.36078431370000003" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7X-ap-KNe">
+                    <rect key="frame" x="10" y="395" width="116" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="Kvy-NN-ng8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <state key="normal" title=" 购票、退票、改签规则" image="ticket_tip_icon">
+                        <color key="titleColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boE-2V-bqD">
+                    <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCZ-w6-rib">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通勤班次可购多天多次班线，当天任意乘坐。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQ2-ia-ckr">
+                                    <rect key="frame" x="85" y="4.5" width="204.5" height="12"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="gQ2-ia-ckr" firstAttribute="centerY" secondItem="bCZ-w6-rib" secondAttribute="centerY" id="Xvc-1S-t5f"/>
+                                <constraint firstAttribute="height" constant="20" id="cmg-B1-6qc"/>
+                                <constraint firstItem="gQ2-ia-ckr" firstAttribute="centerX" secondItem="bCZ-w6-rib" secondAttribute="centerX" id="vZL-hD-Joz"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t80-pL-9Py">
+                            <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwA-Sf-dks">
+                                    <rect key="frame" x="265" y="0.0" width="110" height="50"/>
+                                    <color key="backgroundColor" red="1" green="0.36078431370000003" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="110" id="TDK-Ac-XVe"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <state key="normal" title="确认">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yq-fi-mcJ">
+                                    <rect key="frame" x="10" y="-15" width="55" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="55" id="CR5-D0-n1K"/>
+                                        <constraint firstAttribute="width" constant="55" id="YEd-f2-ria"/>
+                                    </constraints>
+                                    <state key="normal" image="ticket_count_icon"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30元共6张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooA-jt-6Iy">
+                                    <rect key="frame" x="73" y="16" width="184" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <color key="textColor" red="1" green="0.36078431370000003" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="HwA-Sf-dks" firstAttribute="top" secondItem="t80-pL-9Py" secondAttribute="top" id="0aK-Mo-Ypo"/>
+                                <constraint firstItem="ooA-jt-6Iy" firstAttribute="leading" secondItem="1yq-fi-mcJ" secondAttribute="trailing" constant="8" id="4A0-Ge-5eN"/>
+                                <constraint firstAttribute="bottom" secondItem="HwA-Sf-dks" secondAttribute="bottom" id="5CK-Yy-1W2"/>
+                                <constraint firstAttribute="trailing" secondItem="HwA-Sf-dks" secondAttribute="trailing" id="KPs-d0-DyK"/>
+                                <constraint firstAttribute="bottom" secondItem="1yq-fi-mcJ" secondAttribute="bottom" constant="10" id="aEo-ww-xa5"/>
+                                <constraint firstAttribute="bottom" secondItem="ooA-jt-6Iy" secondAttribute="bottom" constant="10" id="b0e-S5-y8C"/>
+                                <constraint firstAttribute="height" constant="50" id="rqc-zz-jc8"/>
+                                <constraint firstItem="HwA-Sf-dks" firstAttribute="leading" secondItem="ooA-jt-6Iy" secondAttribute="trailing" constant="8" id="vGA-ie-ino"/>
+                                <constraint firstItem="1yq-fi-mcJ" firstAttribute="leading" secondItem="t80-pL-9Py" secondAttribute="leading" constant="10" id="w6Q-Wf-xSf"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="bCZ-w6-rib" secondAttribute="trailing" id="Org-Bw-SMv"/>
+                        <constraint firstAttribute="height" constant="70" id="Y8w-5d-0cU"/>
+                        <constraint firstItem="t80-pL-9Py" firstAttribute="leading" secondItem="boE-2V-bqD" secondAttribute="leading" id="jGF-lk-Tz6"/>
+                        <constraint firstAttribute="bottom" secondItem="t80-pL-9Py" secondAttribute="bottom" id="lYa-hA-cCR"/>
+                        <constraint firstItem="bCZ-w6-rib" firstAttribute="top" secondItem="boE-2V-bqD" secondAttribute="top" id="p0K-cn-xP8"/>
+                        <constraint firstAttribute="trailing" secondItem="t80-pL-9Py" secondAttribute="trailing" id="u4x-jR-WqO"/>
+                        <constraint firstItem="bCZ-w6-rib" firstAttribute="leading" secondItem="boE-2V-bqD" secondAttribute="leading" id="v2B-Fc-XgK"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="boE-2V-bqD" secondAttribute="bottom" id="7O5-QV-xWw"/>
+                <constraint firstItem="Q7X-ap-KNe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="LVr-GV-eQY"/>
                 <constraint firstItem="w26-cQ-uIQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="OGS-t5-8yB"/>
                 <constraint firstItem="w26-cQ-uIQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="PS1-ct-Ixo"/>
+                <constraint firstItem="Sve-Eh-glr" firstAttribute="top" secondItem="w26-cQ-uIQ" secondAttribute="bottom" constant="10" id="VHf-Xg-CLN"/>
+                <constraint firstItem="boE-2V-bqD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YX1-YY-QFs"/>
+                <constraint firstAttribute="trailing" secondItem="Sve-Eh-glr" secondAttribute="trailing" constant="16" id="dST-tv-fEB"/>
+                <constraint firstItem="Q7X-ap-KNe" firstAttribute="top" secondItem="w26-cQ-uIQ" secondAttribute="bottom" constant="10" id="dmf-QW-Ggp"/>
                 <constraint firstAttribute="trailing" secondItem="w26-cQ-uIQ" secondAttribute="trailing" constant="10" id="fN8-4x-9uF"/>
+                <constraint firstAttribute="trailing" secondItem="boE-2V-bqD" secondAttribute="trailing" id="pUF-eJ-od1"/>
             </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="ticket_count_icon" width="55" height="55"/>
+        <image name="ticket_tip_icon" width="10" height="10"/>
+    </resources>
 </document>

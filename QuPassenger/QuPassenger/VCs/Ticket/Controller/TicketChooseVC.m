@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIView *calendarView;
 @property (weak, nonatomic) IBOutlet JTCalendarMenuView *calendarMenuView;
 @property (weak, nonatomic) IBOutlet JTHorizontalCalendarView *calendarContentView;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *ticketBtn;
+@property (weak, nonatomic) IBOutlet UIView *tipView;
 
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 
