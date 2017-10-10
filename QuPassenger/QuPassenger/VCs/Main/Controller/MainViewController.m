@@ -109,6 +109,19 @@
         
     }];
  
+    self.mainCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        // 进入刷新状态就会回调这个Block
+        
+        
+    }];
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    [self.mainCollectionView setContentOffset:CGPointMake(0, 80)];
 }
 
 #pragma mark gestureRecognizer
