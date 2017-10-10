@@ -19,9 +19,11 @@
 #import "CitySelectVC.h"
 #import "RouteSearchVC.h"
 #import "MyWalletVC.h"
+#import "RouteDetailVC.h"
 #import "SettingVC.h"
 #import "MessageVC.h"
 #import "PayTheTicketVC.h"
+
 #define CATEGORYWIDTH 188
 
 @interface MainViewController ()
@@ -526,6 +528,10 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
 //    [self showLeftView];
+    if (indexPath.section == 3) {
+        RouteDetailVC *vc = [[RouteDetailVC alloc]initWithNibName:@"RouteDetailVC" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 
