@@ -10,6 +10,7 @@
 		5B091DA924F825195E46FFA0 /* libPods-QuPassenger.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */; };
 		A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E2C401F74D4730008FE61 /* WXRegistViewController.m */; };
 		A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */; };
+		A56046CA1F8C580F00A52371 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A56046C91F8C580F00A52371 /* SettingVC.m */; };
 		A5E0087E1F8B464500F5B619 /* MyWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0087D1F8B464500F5B619 /* MyWalletVC.m */; };
 		A5E008871F8B580200F5B619 /* MyWalletTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E008851F8B580200F5B619 /* MyWalletTableViewCell.m */; };
 		A5E008881F8B580200F5B619 /* MyWalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E008861F8B580200F5B619 /* MyWalletTableViewCell.xib */; };
@@ -129,6 +130,8 @@
 		A53E2C3F1F74D4730008FE61 /* WXRegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXRegistViewController.h; sourceTree = "<group>"; };
 		A53E2C401F74D4730008FE61 /* WXRegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXRegistViewController.m; sourceTree = "<group>"; };
 		A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXRegistViewController.xib; sourceTree = "<group>"; };
+		A56046C81F8C580F00A52371 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		A56046C91F8C580F00A52371 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 		A5E0087C1F8B464500F5B619 /* MyWalletVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletVC.h; sourceTree = "<group>"; };
 		A5E0087D1F8B464500F5B619 /* MyWalletVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletVC.m; sourceTree = "<group>"; };
 		A5E008841F8B580200F5B619 /* MyWalletTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletTableViewCell.h; sourceTree = "<group>"; };
@@ -390,6 +393,8 @@
 			children = (
 				A5E0087C1F8B464500F5B619 /* MyWalletVC.h */,
 				A5E0087D1F8B464500F5B619 /* MyWalletVC.m */,
+				A56046C81F8C580F00A52371 /* SettingVC.h */,
+				A56046C91F8C580F00A52371 /* SettingVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1052,11 +1057,10 @@
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
 				A5E008871F8B580200F5B619 /* MyWalletTableViewCell.m in Sources */,
 				A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */,
-
 				BAC7D5811F8B44D00012898F /* JTCalendarDelegateManager.m in Sources */,
-				A5EAD20C1F7F2D9100B5F7C5 /* MyWalletTableViewController.m in Sources */,
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,
 				BAC7D5021F7F25550012898F /* QuDBManager.m in Sources */,
+				A56046CA1F8C580F00A52371 /* SettingVC.m in Sources */,
 				BA309ACF1F79FBF900EE25D5 /* JourneyListCell.m in Sources */,
 				BAB466E81F738F3400F7DBCD /* AccountInfo.m in Sources */,
 				A5EAD20F1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.m in Sources */,

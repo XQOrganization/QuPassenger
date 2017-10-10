@@ -18,6 +18,7 @@
 #import "CitySelectVC.h"
 #import "RouteSearchVC.h"
 #import "MyWalletVC.h"
+#import "SettingVC.h"
 #define CATEGORYWIDTH 188
 
 @interface MainViewController ()
@@ -301,6 +302,9 @@
             
         case 3:{
             //设置
+            SettingVC *vc = [[UIStoryboard storyboardWithName:@"PersonCenter" bundle:nil]instantiateViewControllerWithIdentifier:@"SettingVC"];
+            [self.navigationController pushViewController:vc animated:YES];
+            
      
         }
             break;
