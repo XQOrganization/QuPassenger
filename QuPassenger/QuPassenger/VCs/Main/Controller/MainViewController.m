@@ -294,7 +294,10 @@
             break;
             
         case 2:{
-            //关于我们
+            //客服
+            BaseWebViewController *vc = [[BaseWebViewController alloc]init];
+            vc.url = @"http://www.baidu.com";
+            [self.navigationController pushViewController:vc animated:YES];
             
         }
             break;

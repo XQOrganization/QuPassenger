@@ -41,6 +41,7 @@
 #import "CHAlertView.h"
 #import "QuHudHelper.h"
 #import "BaseNavigationController.h"
+#import "BaseWebViewController.h"
 #import "NetWorkRequestModel.h"
 #import "LoginViewController.h"
 #import "NetWorkReqManager.h"
