@@ -11,6 +11,8 @@
 		A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E2C401F74D4730008FE61 /* WXRegistViewController.m */; };
 		A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */; };
 		A56046CA1F8C580F00A52371 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A56046C91F8C580F00A52371 /* SettingVC.m */; };
+		A571D4371F8C69C20078535F /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D4351F8C69C20078535F /* MessageVC.m */; };
+		A571D4381F8C69C20078535F /* MessageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D4361F8C69C20078535F /* MessageVC.xib */; };
 		A5E0087E1F8B464500F5B619 /* MyWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0087D1F8B464500F5B619 /* MyWalletVC.m */; };
 		A5E008871F8B580200F5B619 /* MyWalletTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E008851F8B580200F5B619 /* MyWalletTableViewCell.m */; };
 		A5E008881F8B580200F5B619 /* MyWalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E008861F8B580200F5B619 /* MyWalletTableViewCell.xib */; };
@@ -132,6 +134,9 @@
 		A53E2C411F74D4730008FE61 /* WXRegistViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WXRegistViewController.xib; sourceTree = "<group>"; };
 		A56046C81F8C580F00A52371 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		A56046C91F8C580F00A52371 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
+		A571D4341F8C69C20078535F /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVC.h; sourceTree = "<group>"; };
+		A571D4351F8C69C20078535F /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
+		A571D4361F8C69C20078535F /* MessageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageVC.xib; sourceTree = "<group>"; };
 		A5E0087C1F8B464500F5B619 /* MyWalletVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletVC.h; sourceTree = "<group>"; };
 		A5E0087D1F8B464500F5B619 /* MyWalletVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletVC.m; sourceTree = "<group>"; };
 		A5E008841F8B580200F5B619 /* MyWalletTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletTableViewCell.h; sourceTree = "<group>"; };
@@ -729,6 +734,9 @@
 				BAB467151F78CAA900F7DBCD /* MainViewController.h */,
 				BAB467161F78CAA900F7DBCD /* MainViewController.m */,
 				BAB467171F78CAA900F7DBCD /* MainViewController.xib */,
+				A571D4341F8C69C20078535F /* MessageVC.h */,
+				A571D4351F8C69C20078535F /* MessageVC.m */,
+				A571D4361F8C69C20078535F /* MessageVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -967,6 +975,7 @@
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
 				BAC7D5471F7F41220012898F /* unicode_to_hanyu_pinyin.txt in Resources */,
+				A571D4381F8C69C20078535F /* MessageVC.xib in Resources */,
 				BAC7D5591F7F99360012898F /* TicketChooseVC.xib in Resources */,
 				BA309B131F7CD1D100EE25D5 /* RouteBusTabCell.xib in Resources */,
 				A5E008881F8B580200F5B619 /* MyWalletTableViewCell.xib in Resources */,
@@ -1052,6 +1061,7 @@
 				BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */,
 				BAC7D51C1F7F33FD0012898F /* RegexKitLite.m in Sources */,
 				BAB467361F78D3FA00F7DBCD /* MainBusRouteCell.m in Sources */,
+				A571D4371F8C69C20078535F /* MessageVC.m in Sources */,
 				BAC7D5861F8B44D00012898F /* JTCalendarWeekDayView.m in Sources */,
 				BAC7D4FC1F7DE2EB0012898F /* QuCityModel.m in Sources */,
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
