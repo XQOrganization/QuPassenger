@@ -1,5 +1,5 @@
 //
-//  MessageVC.h
+//  PayTheTicketVC.h
 //  QuPassenger
 //
 //  Created by Chenmusong on 2017/10/10.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MessageVC : BasicVC
+@interface PayTheTicketVC : BasicVC
 
 @end

@@ -241,7 +241,7 @@
                         <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="支付宝" translatesAutoresizingMaskIntoConstraints="NO" id="zAV-zc-gb1">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="支付宝支付" translatesAutoresizingMaskIntoConstraints="NO" id="zAV-zc-gb1">
                         <rect key="frame" x="15" y="270.5" width="28" height="28"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付宝支付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJW-lC-bGv">
@@ -316,6 +316,6 @@
         <image name="i15 单选未选中" width="15" height="15"/>
         <image name="i15 单选选中" width="15" height="15"/>
         <image name="微信支付" width="28" height="28"/>
-        <image name="支付宝" width="28" height="28"/>
+        <image name="支付宝支付" width="28" height="28"/>
     </resources>
 </document>

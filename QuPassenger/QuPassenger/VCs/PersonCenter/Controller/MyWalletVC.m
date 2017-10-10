@@ -63,7 +63,6 @@
     return view;
 }
 - (void)rightBarButtonItemAction:(id)sender{
-    
 }
 //去充值
 -(void)goRechargeButClick{
