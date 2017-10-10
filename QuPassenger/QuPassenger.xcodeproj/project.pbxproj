@@ -121,6 +121,8 @@
 		BAC7D5871F8B44D00012898F /* JTCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D5791F8B44D00012898F /* JTCalendarWeekView.m */; };
 		BAC7D5881F8B44D00012898F /* JTHorizontalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D57B1F8B44D00012898F /* JTHorizontalCalendarView.m */; };
 		BAC7D5891F8B44D00012898F /* JTVerticalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D57D1F8B44D00012898F /* JTVerticalCalendarView.m */; };
+		BAC7D58D1F8C64970012898F /* MainNoneRouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D58B1F8C64970012898F /* MainNoneRouteCell.m */; };
+		BAC7D58E1F8C64970012898F /* MainNoneRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D58C1F8C64970012898F /* MainNoneRouteCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -326,6 +328,9 @@
 		BAC7D57B1F8B44D00012898F /* JTHorizontalCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTHorizontalCalendarView.m; sourceTree = "<group>"; };
 		BAC7D57C1F8B44D00012898F /* JTVerticalCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTVerticalCalendarView.h; sourceTree = "<group>"; };
 		BAC7D57D1F8B44D00012898F /* JTVerticalCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTVerticalCalendarView.m; sourceTree = "<group>"; };
+		BAC7D58A1F8C64970012898F /* MainNoneRouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNoneRouteCell.h; sourceTree = "<group>"; };
+		BAC7D58B1F8C64970012898F /* MainNoneRouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNoneRouteCell.m; sourceTree = "<group>"; };
+		BAC7D58C1F8C64970012898F /* MainNoneRouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNoneRouteCell.xib; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -743,6 +748,9 @@
 				BAB467331F78D3FA00F7DBCD /* MainBusRouteCell.h */,
 				BAB467341F78D3FA00F7DBCD /* MainBusRouteCell.m */,
 				BAB467351F78D3FA00F7DBCD /* MainBusRouteCell.xib */,
+				BAC7D58A1F8C64970012898F /* MainNoneRouteCell.h */,
+				BAC7D58B1F8C64970012898F /* MainNoneRouteCell.m */,
+				BAC7D58C1F8C64970012898F /* MainNoneRouteCell.xib */,
 				BA309ABA1F78DBCF00EE25D5 /* MainRouteRecommandView.h */,
 				BA309ABB1F78DBCF00EE25D5 /* MainRouteRecommandView.m */,
 				BA309ABC1F78DBCF00EE25D5 /* MainRouteRecommandView.xib */,
@@ -955,6 +963,7 @@
 				BAB467191F78CAA900F7DBCD /* MainViewController.xib in Resources */,
 				BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */,
 				A5EAD2091F7F2D2A00B5F7C5 /* PersonCenter.storyboard in Resources */,
+				BAC7D58E1F8C64970012898F /* MainNoneRouteCell.xib in Resources */,
 				BAB466E71F738F3400F7DBCD /* Resource.xcassets in Resources */,
 				BAB4672B1F78D1F500F7DBCD /* MainBannerCell.xib in Resources */,
 				BA309AD71F7A4A6500EE25D5 /* QMapKit.bundle in Resources */,
@@ -1052,12 +1061,11 @@
 				BAB466D71F738F3400F7DBCD /* UIColor+Web.m in Sources */,
 				A5E008871F8B580200F5B619 /* MyWalletTableViewCell.m in Sources */,
 				A53E2C421F74D4730008FE61 /* WXRegistViewController.m in Sources */,
-
 				BAC7D5811F8B44D00012898F /* JTCalendarDelegateManager.m in Sources */,
-				A5EAD20C1F7F2D9100B5F7C5 /* MyWalletTableViewController.m in Sources */,
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,
 				BAC7D5021F7F25550012898F /* QuDBManager.m in Sources */,
 				BA309ACF1F79FBF900EE25D5 /* JourneyListCell.m in Sources */,
+				BAC7D58D1F8C64970012898F /* MainNoneRouteCell.m in Sources */,
 				BAB466E81F738F3400F7DBCD /* AccountInfo.m in Sources */,
 				A5EAD20F1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.m in Sources */,
 				BAB466D31F738F3400F7DBCD /* UIColor+Gradient.m in Sources */,
