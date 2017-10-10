@@ -124,6 +124,8 @@
 		BAC7D5891F8B44D00012898F /* JTVerticalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D57D1F8B44D00012898F /* JTVerticalCalendarView.m */; };
 		BAC7D58D1F8C64970012898F /* MainNoneRouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D58B1F8C64970012898F /* MainNoneRouteCell.m */; };
 		BAC7D58E1F8C64970012898F /* MainNoneRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D58C1F8C64970012898F /* MainNoneRouteCell.xib */; };
+		BAC7D5921F8C6E1E0012898F /* RouteDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D5901F8C6E1E0012898F /* RouteDetailVC.m */; };
+		BAC7D5931F8C6E1E0012898F /* RouteDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D5911F8C6E1E0012898F /* RouteDetailVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -334,6 +336,9 @@
 		BAC7D58A1F8C64970012898F /* MainNoneRouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNoneRouteCell.h; sourceTree = "<group>"; };
 		BAC7D58B1F8C64970012898F /* MainNoneRouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNoneRouteCell.m; sourceTree = "<group>"; };
 		BAC7D58C1F8C64970012898F /* MainNoneRouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNoneRouteCell.xib; sourceTree = "<group>"; };
+		BAC7D58F1F8C6E1E0012898F /* RouteDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDetailVC.h; sourceTree = "<group>"; };
+		BAC7D5901F8C6E1E0012898F /* RouteDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDetailVC.m; sourceTree = "<group>"; };
+		BAC7D5911F8C6E1E0012898F /* RouteDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteDetailVC.xib; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -480,6 +485,9 @@
 				BA309AE61F7A547C00EE25D5 /* RouteSearchVC.h */,
 				BA309AE71F7A547C00EE25D5 /* RouteSearchVC.m */,
 				BA309AE81F7A547C00EE25D5 /* RouteSearchVC.xib */,
+				BAC7D58F1F8C6E1E0012898F /* RouteDetailVC.h */,
+				BAC7D5901F8C6E1E0012898F /* RouteDetailVC.m */,
+				BAC7D5911F8C6E1E0012898F /* RouteDetailVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -974,6 +982,7 @@
 				BA309AD71F7A4A6500EE25D5 /* QMapKit.bundle in Resources */,
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
+				BAC7D5931F8C6E1E0012898F /* RouteDetailVC.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
 				BAC7D5471F7F41220012898F /* unicode_to_hanyu_pinyin.txt in Resources */,
 				BAC7D5591F7F99360012898F /* TicketChooseVC.xib in Resources */,
@@ -1089,6 +1098,7 @@
 				BAB466D11F738F3400F7DBCD /* UIView+SDExtension.m in Sources */,
 				BAB467311F78D33900F7DBCD /* MainChannelCell.m in Sources */,
 				BA309AD31F7A288E00EE25D5 /* QuNavigationBar.m in Sources */,
+				BAC7D5921F8C6E1E0012898F /* RouteDetailVC.m in Sources */,
 				BAB466CE1F738F3400F7DBCD /* TAPageControl.m in Sources */,
 				BAC7D5451F7F41220012898F /* PinyinFormatter.m in Sources */,
 				BAC7D5821F8B44D00012898F /* JTCalendarScrollManager.m in Sources */,
