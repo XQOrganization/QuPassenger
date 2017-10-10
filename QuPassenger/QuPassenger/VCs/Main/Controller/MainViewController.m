@@ -11,6 +11,7 @@
 #import "MainBannerCell.h"
 #import "MainSearchCell.h"
 #import "MainBusRouteCell.h"
+#import "MainNoneRouteCell.h"
 #import "MainLeftCateCell.h"
 #import "MainRouteRecommandView.h"
 #import "WXRegistViewController.h"
@@ -122,7 +123,7 @@
 {
     [super viewWillLayoutSubviews];
     
-    [self.mainCollectionView setContentOffset:CGPointMake(0, 80)];
+    [self.mainCollectionView setContentOffset:CGPointMake(0, ScreenWidthRatio * 80)];
 }
 
 #pragma mark gestureRecognizer
