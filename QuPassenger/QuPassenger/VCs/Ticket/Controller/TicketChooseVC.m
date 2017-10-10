@@ -7,6 +7,7 @@
 //
 
 #import "TicketChooseVC.h"
+#import "TicketChooseCell.h"
 #import "JTCalendar.h"
 
 @interface TicketChooseVC ()<JTCalendarDelegate>
@@ -17,6 +18,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UIButton *ticketBtn;
 @property (weak, nonatomic) IBOutlet UIView *tipView;
+@property (strong, nonatomic) UIButton *bgBlackBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (weak, nonatomic) IBOutlet UITableView *buyTableView;
 
 @property (strong, nonatomic) JTCalendarManager *calendarManager;
 
@@ -68,6 +72,16 @@
     [self.ticketBtn setBadgeBgColor:HEXCOLOR(@"ff5c41")];
     [self.ticketBtn setBadgeCenterOffset:CGPointMake(-8, 8)];
     
+    [self.buyTableView registerNib:[UINib nibWithNibName:@"TicketChooseCell" bundle:nil] forCellReuseIdentifier:@"TicketChooseCell"];
+    
+    UIButton *blackBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [blackBtn setFrame:CGRectMake(0, 0, SCREEN_SIZE.width, SCREEN_SIZE.height)];
+    blackBtn.alpha = 0.0f;
+    [blackBtn addTarget:self action:@selector(ticketBackAction:) forControlEvents:UIControlEventTouchUpInside];
+    blackBtn.backgroundColor = [UIColor blackColor];
+    [self.view insertSubview:blackBtn belowSubview:self.buyTableView];
+    [self.view insertSubview:self.quNavBar belowSubview:blackBtn];
+    self.bgBlackBtn = blackBtn;
 }
 
 #pragma mark - CalendarManager delegate
@@ -232,6 +246,82 @@
 //        [_dateSelected addObject:randomDate];
 //    }
 }
+
+#pragma mark BtnClickAction
+- (IBAction)ticketClickAction:(id)sender
+{
+    [UIView animateWithDuration:0.2f
+                          delay:0.f
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         
+                         self.bgBlackBtn.alpha = 0.3f;
+                         self.bottomConstraint.constant = 0;
+                         [self.view layoutIfNeeded];
+                     }
+     
+                     completion:^(BOOL finished) {
+                         
+                     }];
+}
+
+- (void)ticketBackAction:(UIButton *)sender
+{
+    [UIView animateWithDuration:0.2f
+                          delay:0.f
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         
+                         self.bgBlackBtn.alpha = 0.0f;
+                         self.bottomConstraint.constant = -180;
+                         [self.view layoutIfNeeded];
+                     }
+     
+                     completion:^(BOOL finished) {
+                         
+                     }];
+}
+
+#pragma mark UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    return 60.0f;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    TicketChooseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TicketChooseCell"];
+    
+    cell.ticketSubBlock = ^{
+        
+    };
+    
+    cell.ticketSubBlock = ^{
+        
+    };
+    
+    return cell;
+    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TicketChooseVC">
             <connections>
+                <outlet property="bottomConstraint" destination="B4L-Tg-vaC" id="bM7-SM-Zmf"/>
+                <outlet property="buyTableView" destination="fiD-PW-ts4" id="421-Ha-BmC"/>
                 <outlet property="calendarContentView" destination="GnG-va-Dm6" id="rsz-Yo-YwB"/>
                 <outlet property="calendarMenuView" destination="YIy-1N-Ts0" id="z6P-rV-yjH"/>
                 <outlet property="calendarView" destination="w26-cQ-uIQ" id="6xE-ad-vFe"/>
@@ -71,6 +73,17 @@
                         <color key="titleColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fiD-PW-ts4">
+                    <rect key="frame" x="0.0" y="597" width="375" height="180"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="7MG-lU-0cC"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="49E-Je-9TG"/>
+                        <outlet property="delegate" destination="-1" id="WZl-g0-IDs"/>
+                    </connections>
+                </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="boE-2V-bqD">
                     <rect key="frame" x="0.0" y="597" width="375" height="70"/>
                     <subviews>
@@ -112,6 +125,9 @@
                                         <constraint firstAttribute="width" constant="55" id="YEd-f2-ria"/>
                                     </constraints>
                                     <state key="normal" image="ticket_count_icon"/>
+                                    <connections>
+                                        <action selector="ticketClickAction:" destination="-1" eventType="touchUpInside" id="83n-dJ-4Nn"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30元共6张" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooA-jt-6Iy">
                                     <rect key="frame" x="73" y="16" width="184" height="24"/>
@@ -149,6 +165,8 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="boE-2V-bqD" secondAttribute="bottom" id="7O5-QV-xWw"/>
+                <constraint firstAttribute="trailing" secondItem="fiD-PW-ts4" secondAttribute="trailing" id="A21-kl-D8A"/>
+                <constraint firstItem="boE-2V-bqD" firstAttribute="top" secondItem="fiD-PW-ts4" secondAttribute="bottom" constant="-180" id="B4L-Tg-vaC"/>
                 <constraint firstItem="Q7X-ap-KNe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="LVr-GV-eQY"/>
                 <constraint firstItem="w26-cQ-uIQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="OGS-t5-8yB"/>
                 <constraint firstItem="w26-cQ-uIQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="PS1-ct-Ixo"/>
@@ -157,6 +175,7 @@
                 <constraint firstAttribute="trailing" secondItem="Sve-Eh-glr" secondAttribute="trailing" constant="16" id="dST-tv-fEB"/>
                 <constraint firstItem="Q7X-ap-KNe" firstAttribute="top" secondItem="w26-cQ-uIQ" secondAttribute="bottom" constant="5" id="dmf-QW-Ggp"/>
                 <constraint firstAttribute="trailing" secondItem="w26-cQ-uIQ" secondAttribute="trailing" constant="10" id="fN8-4x-9uF"/>
+                <constraint firstItem="fiD-PW-ts4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nM8-io-Mbh"/>
                 <constraint firstAttribute="trailing" secondItem="boE-2V-bqD" secondAttribute="trailing" id="pUF-eJ-od1"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>

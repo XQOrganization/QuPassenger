@@ -130,6 +130,8 @@
 		BAC7D5931F8C6E1E0012898F /* RouteDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D5911F8C6E1E0012898F /* RouteDetailVC.xib */; };
 		BAC7D5971F8C96F50012898F /* RouteDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D5951F8C96F50012898F /* RouteDetailCell.m */; };
 		BAC7D5981F8C96F50012898F /* RouteDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D5961F8C96F50012898F /* RouteDetailCell.xib */; };
+		BAC7D59C1F8CBBD10012898F /* TicketChooseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D59A1F8CBBD10012898F /* TicketChooseCell.m */; };
+		BAC7D59D1F8CBBD10012898F /* TicketChooseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D59B1F8CBBD10012898F /* TicketChooseCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -349,6 +351,9 @@
 		BAC7D5941F8C96F50012898F /* RouteDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDetailCell.h; sourceTree = "<group>"; };
 		BAC7D5951F8C96F50012898F /* RouteDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDetailCell.m; sourceTree = "<group>"; };
 		BAC7D5961F8C96F50012898F /* RouteDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteDetailCell.xib; sourceTree = "<group>"; };
+		BAC7D5991F8CBBD10012898F /* TicketChooseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketChooseCell.h; sourceTree = "<group>"; };
+		BAC7D59A1F8CBBD10012898F /* TicketChooseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketChooseCell.m; sourceTree = "<group>"; };
+		BAC7D59B1F8CBBD10012898F /* TicketChooseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketChooseCell.xib; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -847,6 +852,9 @@
 		BAC7D5541F7F98480012898F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAC7D5991F8CBBD10012898F /* TicketChooseCell.h */,
+				BAC7D59A1F8CBBD10012898F /* TicketChooseCell.m */,
+				BAC7D59B1F8CBBD10012898F /* TicketChooseCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -989,6 +997,7 @@
 				BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */,
 				BAB466EE1F738F3400F7DBCD /* LoginViewController.xib in Resources */,
 				BAB467321F78D33900F7DBCD /* MainChannelCell.xib in Resources */,
+				BAC7D59D1F8CBBD10012898F /* TicketChooseCell.xib in Resources */,
 				BAB467191F78CAA900F7DBCD /* MainViewController.xib in Resources */,
 				BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */,
 				A5EAD2091F7F2D2A00B5F7C5 /* PersonCenter.storyboard in Resources */,
@@ -1098,6 +1107,7 @@
 				BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */,
 				BAC7D5021F7F25550012898F /* QuDBManager.m in Sources */,
 				A56046CA1F8C580F00A52371 /* SettingVC.m in Sources */,
+				BAC7D59C1F8CBBD10012898F /* TicketChooseCell.m in Sources */,
 				BA309ACF1F79FBF900EE25D5 /* JourneyListCell.m in Sources */,
 				BAC7D58D1F8C64970012898F /* MainNoneRouteCell.m in Sources */,
 				BAB466E81F738F3400F7DBCD /* AccountInfo.m in Sources */,
