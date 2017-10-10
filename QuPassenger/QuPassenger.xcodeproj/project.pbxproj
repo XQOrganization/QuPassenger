@@ -126,10 +126,10 @@
 		BAC7D5891F8B44D00012898F /* JTVerticalCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D57D1F8B44D00012898F /* JTVerticalCalendarView.m */; };
 		BAC7D58D1F8C64970012898F /* MainNoneRouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D58B1F8C64970012898F /* MainNoneRouteCell.m */; };
 		BAC7D58E1F8C64970012898F /* MainNoneRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D58C1F8C64970012898F /* MainNoneRouteCell.xib */; };
-
 		BAC7D5921F8C6E1E0012898F /* RouteDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D5901F8C6E1E0012898F /* RouteDetailVC.m */; };
 		BAC7D5931F8C6E1E0012898F /* RouteDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D5911F8C6E1E0012898F /* RouteDetailVC.xib */; };
-
+		BAC7D5971F8C96F50012898F /* RouteDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC7D5951F8C96F50012898F /* RouteDetailCell.m */; };
+		BAC7D5981F8C96F50012898F /* RouteDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC7D5961F8C96F50012898F /* RouteDetailCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -343,11 +343,12 @@
 		BAC7D58A1F8C64970012898F /* MainNoneRouteCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNoneRouteCell.h; sourceTree = "<group>"; };
 		BAC7D58B1F8C64970012898F /* MainNoneRouteCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNoneRouteCell.m; sourceTree = "<group>"; };
 		BAC7D58C1F8C64970012898F /* MainNoneRouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainNoneRouteCell.xib; sourceTree = "<group>"; };
-
 		BAC7D58F1F8C6E1E0012898F /* RouteDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDetailVC.h; sourceTree = "<group>"; };
 		BAC7D5901F8C6E1E0012898F /* RouteDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDetailVC.m; sourceTree = "<group>"; };
 		BAC7D5911F8C6E1E0012898F /* RouteDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteDetailVC.xib; sourceTree = "<group>"; };
-
+		BAC7D5941F8C96F50012898F /* RouteDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteDetailCell.h; sourceTree = "<group>"; };
+		BAC7D5951F8C96F50012898F /* RouteDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteDetailCell.m; sourceTree = "<group>"; };
+		BAC7D5961F8C96F50012898F /* RouteDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RouteDetailCell.xib; sourceTree = "<group>"; };
 		DD96972F2DD409AFBCF0085D /* libPods-QuPassenger.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QuPassenger.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -510,6 +511,9 @@
 				BA309B0F1F7CD1D100EE25D5 /* RouteBusTabCell.h */,
 				BA309B101F7CD1D100EE25D5 /* RouteBusTabCell.m */,
 				BA309B111F7CD1D100EE25D5 /* RouteBusTabCell.xib */,
+				BAC7D5941F8C96F50012898F /* RouteDetailCell.h */,
+				BAC7D5951F8C96F50012898F /* RouteDetailCell.m */,
+				BAC7D5961F8C96F50012898F /* RouteDetailCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -995,6 +999,7 @@
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
 				BAC7D5931F8C6E1E0012898F /* RouteDetailVC.xib in Resources */,
+				BAC7D5981F8C96F50012898F /* RouteDetailCell.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
 				BAC7D5471F7F41220012898F /* unicode_to_hanyu_pinyin.txt in Resources */,
 				A571D4381F8C69C20078535F /* MessageVC.xib in Resources */,
@@ -1136,6 +1141,7 @@
 				A5E0087E1F8B464500F5B619 /* MyWalletVC.m in Sources */,
 				BAB466EB1F738F3400F7DBCD /* BaseWebViewController.m in Sources */,
 				BAB466D61F738F3400F7DBCD /* UIColor+Random.m in Sources */,
+				BAC7D5971F8C96F50012898F /* RouteDetailCell.m in Sources */,
 				BAB4664A1F73626C00F7DBCD /* main.m in Sources */,
 				BAC7D5801F8B44D00012898F /* JTDateHelper.m in Sources */,
 				BAB466DF1F738F3400F7DBCD /* NSString+Help.m in Sources */,
