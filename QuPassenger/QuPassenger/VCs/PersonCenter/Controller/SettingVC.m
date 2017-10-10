@@ -76,5 +76,10 @@
     cell.textLabel.text = titleArr[indexPath.section][indexPath.row];
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
+
+    
 @end
