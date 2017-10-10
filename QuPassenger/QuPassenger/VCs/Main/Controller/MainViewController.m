@@ -110,6 +110,19 @@
         
     }];
  
+    self.mainCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        
+        // 进入刷新状态就会回调这个Block
+        
+        
+    }];
+}
+
+- (void)viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    
+    [self.mainCollectionView setContentOffset:CGPointMake(0, 80)];
 }
 
 #pragma mark gestureRecognizer
@@ -295,7 +308,10 @@
             break;
             
         case 2:{
-            //关于我们
+            //客服
+            BaseWebViewController *vc = [[BaseWebViewController alloc]init];
+            vc.url = @"http://www.baidu.com";
+            [self.navigationController pushViewController:vc animated:YES];
             
         }
             break;
