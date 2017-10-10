@@ -20,6 +20,8 @@
 #import "RouteSearchVC.h"
 #import "MyWalletVC.h"
 #import "SettingVC.h"
+#import "MessageVC.h"
+#import "PayTheTicketVC.h"
 #define CATEGORYWIDTH 188
 
 @interface MainViewController ()
@@ -214,6 +216,10 @@
 
 - (void)rightBarButtonItemAction:(id)sender
 {
+//    MessageVC *vc = [[MessageVC alloc]initWithNibName:@"MessageVC" bundle:nil];
+//    [self.navigationController pushViewController:vc animated:YES];
+    PayTheTicketVC *vc =[[PayTheTicketVC alloc]initWithNibName:@"PayTheTicketVC" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

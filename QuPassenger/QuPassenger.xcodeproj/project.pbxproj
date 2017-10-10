@@ -13,6 +13,16 @@
 		A56046CA1F8C580F00A52371 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A56046C91F8C580F00A52371 /* SettingVC.m */; };
 		A571D4371F8C69C20078535F /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D4351F8C69C20078535F /* MessageVC.m */; };
 		A571D4381F8C69C20078535F /* MessageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D4361F8C69C20078535F /* MessageVC.xib */; };
+		A571D4441F8C712B0078535F /* MessgeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D4421F8C712B0078535F /* MessgeCell.m */; };
+		A571D4451F8C712B0078535F /* MessgeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D4431F8C712B0078535F /* MessgeCell.xib */; };
+		A571D44D1F8C9B060078535F /* PayTheTicketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D44B1F8C9B060078535F /* PayTheTicketVC.m */; };
+		A571D44E1F8C9B060078535F /* PayTheTicketVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D44C1F8C9B060078535F /* PayTheTicketVC.xib */; };
+		A571D4521F8C9D530078535F /* PayTheTicketCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D4501F8C9D530078535F /* PayTheTicketCell.m */; };
+		A571D4531F8C9D530078535F /* PayTheTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D4511F8C9D530078535F /* PayTheTicketCell.xib */; };
+		A571D4571F8CC1190078535F /* CouponListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D4551F8CC1190078535F /* CouponListVC.m */; };
+		A571D4581F8CC1190078535F /* CouponListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D4561F8CC1190078535F /* CouponListVC.xib */; };
+		A571D45C1F8CC2340078535F /* CouponListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D45A1F8CC2340078535F /* CouponListCell.m */; };
+		A571D45D1F8CC2340078535F /* CouponListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D45B1F8CC2340078535F /* CouponListCell.xib */; };
 		A5E0087E1F8B464500F5B619 /* MyWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0087D1F8B464500F5B619 /* MyWalletVC.m */; };
 		A5E008871F8B580200F5B619 /* MyWalletTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E008851F8B580200F5B619 /* MyWalletTableViewCell.m */; };
 		A5E008881F8B580200F5B619 /* MyWalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E008861F8B580200F5B619 /* MyWalletTableViewCell.xib */; };
@@ -139,6 +149,21 @@
 		A571D4341F8C69C20078535F /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVC.h; sourceTree = "<group>"; };
 		A571D4351F8C69C20078535F /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
 		A571D4361F8C69C20078535F /* MessageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageVC.xib; sourceTree = "<group>"; };
+		A571D4411F8C712B0078535F /* MessgeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessgeCell.h; sourceTree = "<group>"; };
+		A571D4421F8C712B0078535F /* MessgeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessgeCell.m; sourceTree = "<group>"; };
+		A571D4431F8C712B0078535F /* MessgeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessgeCell.xib; sourceTree = "<group>"; };
+		A571D44A1F8C9B060078535F /* PayTheTicketVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayTheTicketVC.h; sourceTree = "<group>"; };
+		A571D44B1F8C9B060078535F /* PayTheTicketVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayTheTicketVC.m; sourceTree = "<group>"; };
+		A571D44C1F8C9B060078535F /* PayTheTicketVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayTheTicketVC.xib; sourceTree = "<group>"; };
+		A571D44F1F8C9D530078535F /* PayTheTicketCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayTheTicketCell.h; sourceTree = "<group>"; };
+		A571D4501F8C9D530078535F /* PayTheTicketCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayTheTicketCell.m; sourceTree = "<group>"; };
+		A571D4511F8C9D530078535F /* PayTheTicketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayTheTicketCell.xib; sourceTree = "<group>"; };
+		A571D4541F8CC1190078535F /* CouponListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponListVC.h; sourceTree = "<group>"; };
+		A571D4551F8CC1190078535F /* CouponListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponListVC.m; sourceTree = "<group>"; };
+		A571D4561F8CC1190078535F /* CouponListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponListVC.xib; sourceTree = "<group>"; };
+		A571D4591F8CC2340078535F /* CouponListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponListCell.h; sourceTree = "<group>"; };
+		A571D45A1F8CC2340078535F /* CouponListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponListCell.m; sourceTree = "<group>"; };
+		A571D45B1F8CC2340078535F /* CouponListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponListCell.xib; sourceTree = "<group>"; };
 		A5E0087C1F8B464500F5B619 /* MyWalletVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletVC.h; sourceTree = "<group>"; };
 		A5E0087D1F8B464500F5B619 /* MyWalletVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletVC.m; sourceTree = "<group>"; };
 		A5E008841F8B580200F5B619 /* MyWalletTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletTableViewCell.h; sourceTree = "<group>"; };
@@ -370,6 +395,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A571D4461F8C9ABA0078535F /* Pay */ = {
+			isa = PBXGroup;
+			children = (
+				A571D4471F8C9ABA0078535F /* Controller */,
+				A571D4481F8C9ABA0078535F /* MOdel */,
+				A571D4491F8C9ABA0078535F /* Views */,
+			);
+			path = Pay;
+			sourceTree = "<group>";
+		};
+		A571D4471F8C9ABA0078535F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A571D44A1F8C9B060078535F /* PayTheTicketVC.h */,
+				A571D44B1F8C9B060078535F /* PayTheTicketVC.m */,
+				A571D44C1F8C9B060078535F /* PayTheTicketVC.xib */,
+				A571D4541F8CC1190078535F /* CouponListVC.h */,
+				A571D4551F8CC1190078535F /* CouponListVC.m */,
+				A571D4561F8CC1190078535F /* CouponListVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A571D4481F8C9ABA0078535F /* MOdel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MOdel;
+			sourceTree = "<group>";
+		};
+		A571D4491F8C9ABA0078535F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A571D44F1F8C9D530078535F /* PayTheTicketCell.h */,
+				A571D4501F8C9D530078535F /* PayTheTicketCell.m */,
+				A571D4511F8C9D530078535F /* PayTheTicketCell.xib */,
+				A571D4591F8CC2340078535F /* CouponListCell.h */,
+				A571D45A1F8CC2340078535F /* CouponListCell.m */,
+				A571D45B1F8CC2340078535F /* CouponListCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A5E0087F1F8B57A200F5B619 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -670,6 +738,7 @@
 		BAB466B11F738F3400F7DBCD /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				A571D4461F8C9ABA0078535F /* Pay */,
 				BAB466B21F738F3400F7DBCD /* BaseVC */,
 				BAC7D5521F7F98480012898F /* Ticket */,
 				BA309ADE1F7A541600EE25D5 /* Route */,
@@ -770,6 +839,9 @@
 				BA309ABF1F79E0C800EE25D5 /* MainLeftCateCell.h */,
 				BA309AC01F79E0C800EE25D5 /* MainLeftCateCell.m */,
 				BA309AC11F79E0C800EE25D5 /* MainLeftCateCell.xib */,
+				A571D4411F8C712B0078535F /* MessgeCell.h */,
+				A571D4421F8C712B0078535F /* MessgeCell.m */,
+				A571D4431F8C712B0078535F /* MessgeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -977,17 +1049,22 @@
 				BA309ABE1F78DBCF00EE25D5 /* MainRouteRecommandView.xib in Resources */,
 				A5EAD2091F7F2D2A00B5F7C5 /* PersonCenter.storyboard in Resources */,
 				BAC7D58E1F8C64970012898F /* MainNoneRouteCell.xib in Resources */,
+				A571D4531F8C9D530078535F /* PayTheTicketCell.xib in Resources */,
 				BAB466E71F738F3400F7DBCD /* Resource.xcassets in Resources */,
+				A571D4581F8CC1190078535F /* CouponListVC.xib in Resources */,
 				BAB4672B1F78D1F500F7DBCD /* MainBannerCell.xib in Resources */,
 				BA309AD71F7A4A6500EE25D5 /* QMapKit.bundle in Resources */,
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
+				A571D45D1F8CC2340078535F /* CouponListCell.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
 				BAC7D5471F7F41220012898F /* unicode_to_hanyu_pinyin.txt in Resources */,
+				A571D44E1F8C9B060078535F /* PayTheTicketVC.xib in Resources */,
 				A571D4381F8C69C20078535F /* MessageVC.xib in Resources */,
 				BAC7D5591F7F99360012898F /* TicketChooseVC.xib in Resources */,
 				BA309B131F7CD1D100EE25D5 /* RouteBusTabCell.xib in Resources */,
 				A5E008881F8B580200F5B619 /* MyWalletTableViewCell.xib in Resources */,
+				A571D4451F8C712B0078535F /* MessgeCell.xib in Resources */,
 				BAC7D5491F7F459A0012898F /* City.db in Resources */,
 				BA309AEA1F7A547C00EE25D5 /* RouteSearchVC.xib in Resources */,
 				BAB4672D1F78D1F500F7DBCD /* MainSearchCell.xib in Resources */,
@@ -1066,6 +1143,7 @@
 				BA309ABD1F78DBCF00EE25D5 /* MainRouteRecommandView.m in Sources */,
 				BAC7D5511F7F76730012898F /* CitySelectVC.m in Sources */,
 				BAB466ED1F738F3400F7DBCD /* LoginViewController.m in Sources */,
+				A571D4521F8C9D530078535F /* PayTheTicketCell.m in Sources */,
 				BAB466CB1F738F3400F7DBCD /* TAAbstractDotView.m in Sources */,
 				BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */,
 				BAC7D51C1F7F33FD0012898F /* RegexKitLite.m in Sources */,
@@ -1084,12 +1162,14 @@
 				BAC7D58D1F8C64970012898F /* MainNoneRouteCell.m in Sources */,
 				BAB466E81F738F3400F7DBCD /* AccountInfo.m in Sources */,
 				A5EAD20F1F7F34BD00B5F7C5 /* CALayer+XQXibBorderColor.m in Sources */,
+				A571D4441F8C712B0078535F /* MessgeCell.m in Sources */,
 				BAB466D31F738F3400F7DBCD /* UIColor+Gradient.m in Sources */,
 				BAB466C71F738F3400F7DBCD /* CHAlertView.m in Sources */,
 				BA309ACA1F79F41A00EE25D5 /* JourneyViewController.m in Sources */,
 				BA309AE91F7A547C00EE25D5 /* RouteSearchVC.m in Sources */,
 				BAC7D5831F8B44D00012898F /* JTCalendarDayView.m in Sources */,
 				BAB466D51F738F3400F7DBCD /* UIColor+Modify.m in Sources */,
+				A571D45C1F8CC2340078535F /* CouponListCell.m in Sources */,
 				BAC7D5581F7F99360012898F /* TicketChooseVC.m in Sources */,
 				BAB466E01F738F3400F7DBCD /* UITableView+FooterBlank.m in Sources */,
 				BAB466D01F738F3400F7DBCD /* SDCycleScrollView.m in Sources */,
@@ -1101,6 +1181,7 @@
 				BA309AD31F7A288E00EE25D5 /* QuNavigationBar.m in Sources */,
 				BAB466CE1F738F3400F7DBCD /* TAPageControl.m in Sources */,
 				BAC7D5451F7F41220012898F /* PinyinFormatter.m in Sources */,
+				A571D4571F8CC1190078535F /* CouponListVC.m in Sources */,
 				BAC7D5821F8B44D00012898F /* JTCalendarScrollManager.m in Sources */,
 				BAB466E61F738F3400F7DBCD /* NetWorkRequestModel.m in Sources */,
 				BAB4672A1F78D1F500F7DBCD /* MainBannerCell.m in Sources */,
@@ -1111,6 +1192,7 @@
 				BAC7D5431F7F41220012898F /* HanyuPinyinOutputFormat.m in Sources */,
 				BA309B181F7CFB8000EE25D5 /* QuLocationManager.m in Sources */,
 				BAC7D5881F8B44D00012898F /* JTHorizontalCalendarView.m in Sources */,
+				A571D44D1F8C9B060078535F /* PayTheTicketVC.m in Sources */,
 				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,
 				BAC7D5871F8B44D00012898F /* JTCalendarWeekView.m in Sources */,
 				BAB466D41F738F3400F7DBCD /* UIColor+HEX.m in Sources */,
