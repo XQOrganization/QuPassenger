@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -223,8 +224,8 @@
                         <color key="textColor" red="0.25108465552330017" green="0.25107929110527039" blue="0.25108295679092407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47Y-14-uHE">
-                        <rect key="frame" x="345" y="250" width="15" height="22"/>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47Y-14-uHE">
+                        <rect key="frame" x="50" y="250" width="310" height="22"/>
                         <state key="normal" image="i15 单选未选中"/>
                         <state key="selected" image="i15 单选选中"/>
                         <connections>
@@ -250,8 +251,8 @@
                         <color key="textColor" red="0.25108465549999998" green="0.25107929109999999" blue="0.25108295679999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4p-jI-GMT">
-                        <rect key="frame" x="345" y="302.5" width="15" height="22"/>
+                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4p-jI-GMT">
+                        <rect key="frame" x="58" y="302.5" width="302" height="22"/>
                         <state key="normal" image="i15 单选未选中"/>
                         <state key="selected" image="i15 单选选中"/>
                         <connections>
@@ -341,9 +342,11 @@
                     <constraint firstItem="Fwh-qH-rqG" firstAttribute="leading" secondItem="chp-q6-QeB" secondAttribute="trailing" constant="15" id="jQi-1Q-a9O"/>
                     <constraint firstAttribute="trailing" secondItem="VLP-2A-CQ6" secondAttribute="trailing" constant="15" id="lAe-ca-nUO"/>
                     <constraint firstItem="i7M-aF-k7j" firstAttribute="top" secondItem="0sB-Rs-Ptz" secondAttribute="top" constant="15" id="mt2-sN-2m6"/>
+                    <constraint firstItem="K4p-jI-GMT" firstAttribute="leading" secondItem="0sB-Rs-Ptz" secondAttribute="leadingMargin" constant="50" id="sYD-FL-aGY"/>
                     <constraint firstItem="hcQ-Ub-KxB" firstAttribute="centerY" secondItem="Cv6-NG-3sc" secondAttribute="centerY" id="scb-6L-Emm"/>
                     <constraint firstItem="Yl7-gT-meg" firstAttribute="centerY" secondItem="Cv6-NG-3sc" secondAttribute="centerY" id="vPU-gd-EKf"/>
                     <constraint firstItem="uHN-Hx-Rsp" firstAttribute="leading" secondItem="Cv6-NG-3sc" secondAttribute="leading" id="wFV-eV-1Kg"/>
+                    <constraint firstItem="47Y-14-uHE" firstAttribute="leading" secondItem="0sB-Rs-Ptz" secondAttribute="leading" constant="50" id="wVv-yk-rYf"/>
                     <constraint firstAttribute="trailing" secondItem="Yl7-gT-meg" secondAttribute="trailing" constant="15" id="xVE-6Z-wLM"/>
                     <constraint firstItem="HRZ-Sv-0cW" firstAttribute="top" secondItem="chp-q6-QeB" secondAttribute="bottom" constant="11" id="xt0-yn-aRt"/>
                     <constraint firstItem="Yl7-gT-meg" firstAttribute="height" secondItem="Cv6-NG-3sc" secondAttribute="height" id="yof-x6-LgP"/>
@@ -362,7 +365,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P6h-Cv-gLL" id="DTx-CQ-pGe">
-                <rect key="frame" x="0.0" y="0.0" width="341" height="49.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的优惠券" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqF-Ym-B4P">
