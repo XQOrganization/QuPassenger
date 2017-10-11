@@ -23,6 +23,7 @@
 		A571D4581F8CC1190078535F /* CouponListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D4561F8CC1190078535F /* CouponListVC.xib */; };
 		A571D45C1F8CC2340078535F /* CouponListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D45A1F8CC2340078535F /* CouponListCell.m */; };
 		A571D45D1F8CC2340078535F /* CouponListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D45B1F8CC2340078535F /* CouponListCell.xib */; };
+		A571D4601F8DBE420078535F /* CustomerServiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D45F1F8DBE420078535F /* CustomerServiceVC.m */; };
 		A5E0087E1F8B464500F5B619 /* MyWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0087D1F8B464500F5B619 /* MyWalletVC.m */; };
 		A5E008871F8B580200F5B619 /* MyWalletTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E008851F8B580200F5B619 /* MyWalletTableViewCell.m */; };
 		A5E008881F8B580200F5B619 /* MyWalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E008861F8B580200F5B619 /* MyWalletTableViewCell.xib */; };
@@ -170,6 +171,8 @@
 		A571D4591F8CC2340078535F /* CouponListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponListCell.h; sourceTree = "<group>"; };
 		A571D45A1F8CC2340078535F /* CouponListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponListCell.m; sourceTree = "<group>"; };
 		A571D45B1F8CC2340078535F /* CouponListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponListCell.xib; sourceTree = "<group>"; };
+		A571D45E1F8DBE420078535F /* CustomerServiceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerServiceVC.h; sourceTree = "<group>"; };
+		A571D45F1F8DBE420078535F /* CustomerServiceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerServiceVC.m; sourceTree = "<group>"; };
 		A5E0087C1F8B464500F5B619 /* MyWalletVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletVC.h; sourceTree = "<group>"; };
 		A5E0087D1F8B464500F5B619 /* MyWalletVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletVC.m; sourceTree = "<group>"; };
 		A5E008841F8B580200F5B619 /* MyWalletTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletTableViewCell.h; sourceTree = "<group>"; };
@@ -488,6 +491,8 @@
 				A5E0087D1F8B464500F5B619 /* MyWalletVC.m */,
 				A56046C81F8C580F00A52371 /* SettingVC.h */,
 				A56046C91F8C580F00A52371 /* SettingVC.m */,
+				A571D45E1F8DBE420078535F /* CustomerServiceVC.h */,
+				A571D45F1F8DBE420078535F /* CustomerServiceVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1220,6 +1225,7 @@
 				BAB466EC1F738F3400F7DBCD /* BasicVC.m in Sources */,
 				BAC7D5431F7F41220012898F /* HanyuPinyinOutputFormat.m in Sources */,
 				BA309B181F7CFB8000EE25D5 /* QuLocationManager.m in Sources */,
+				A571D4601F8DBE420078535F /* CustomerServiceVC.m in Sources */,
 				BAC7D5881F8B44D00012898F /* JTHorizontalCalendarView.m in Sources */,
 				A571D44D1F8C9B060078535F /* PayTheTicketVC.m in Sources */,
 				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,

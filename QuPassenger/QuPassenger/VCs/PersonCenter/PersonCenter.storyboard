@@ -84,5 +84,42 @@
             </objects>
             <point key="canvasLocation" x="728.79999999999995" y="222.63868065967017"/>
         </scene>
+        <!--Customer ServiceVC-->
+        <scene sceneID="vQi-3V-oSh">
+            <objects>
+                <viewController storyboardIdentifier="CustomerServiceVC" id="HMv-y1-Y7z" customClass="CustomerServiceVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0In-Vf-sT4"/>
+                        <viewControllerLayoutGuide type="bottom" id="fqm-65-tDI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ru9-dy-yOa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k1t-cO-CJp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="HMv-y1-Y7z" id="js0-Re-VpJ"/>
+                                    <outlet property="delegate" destination="HMv-y1-Y7z" id="VS0-Ps-wSg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k1t-cO-CJp" firstAttribute="leading" secondItem="ru9-dy-yOa" secondAttribute="leading" id="eiN-wk-Vsu"/>
+                            <constraint firstItem="k1t-cO-CJp" firstAttribute="top" secondItem="ru9-dy-yOa" secondAttribute="top" id="flr-2s-RKn"/>
+                            <constraint firstItem="fqm-65-tDI" firstAttribute="top" secondItem="k1t-cO-CJp" secondAttribute="bottom" id="gRh-j7-ICD"/>
+                            <constraint firstAttribute="trailing" secondItem="k1t-cO-CJp" secondAttribute="trailing" id="x8V-pE-CI8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="k1t-cO-CJp" id="lZn-yb-cdm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1Y-kU-Kaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1436" y="218.1409295352324"/>
+        </scene>
     </scenes>
 </document>

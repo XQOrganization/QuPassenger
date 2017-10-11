@@ -23,7 +23,7 @@
 #import "SettingVC.h"
 #import "MessageVC.h"
 #import "PayTheTicketVC.h"
-
+#import "CustomerServiceVC.h"
 #define CATEGORYWIDTH 188
 
 @interface MainViewController ()
@@ -316,8 +316,7 @@
             
         case 2:{
             //客服
-            BaseWebViewController *vc = [[BaseWebViewController alloc]init];
-            vc.url = @"http://www.baidu.com";
+            CustomerServiceVC *vc = [[UIStoryboard storyboardWithName:@"PersonCenter" bundle:nil]instantiateViewControllerWithIdentifier:@"CustomerServiceVC"];
             [self.navigationController pushViewController:vc animated:YES];
             
         }
