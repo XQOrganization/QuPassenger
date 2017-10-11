@@ -75,6 +75,9 @@
                     <constraint firstItem="qZb-S9-mP2" firstAttribute="leading" secondItem="0ca-hf-fxb" secondAttribute="trailing" constant="8" id="ykt-tb-foG"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="countLabel" destination="223-AD-wf9" id="yhZ-nY-8yz"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>

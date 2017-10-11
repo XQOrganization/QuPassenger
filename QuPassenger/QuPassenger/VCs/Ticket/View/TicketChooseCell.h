@@ -10,7 +10,9 @@
 
 @interface TicketChooseCell : UITableViewCell
 
-@property (copy, nonatomic) void (^ticketAddBlock) (void);
-@property (copy, nonatomic) void (^ticketSubBlock) (void);
+@property (copy, nonatomic) void (^ticketAddBlock) (UILabel *label);
+@property (copy, nonatomic) void (^ticketSubBlock) (UILabel *label);
+
+@property (weak, nonatomic) IBOutlet UILabel *countLabel;
 
 @end

@@ -282,6 +282,12 @@
                      }];
 }
 
+- (IBAction)comfirmClickAction:(id)sender
+{
+    PayTheTicketVC *vc = [[PayTheTicketVC alloc]initWithNibName:@"PayTheTicketVC" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -304,12 +310,24 @@
     
     TicketChooseCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TicketChooseCell"];
     
-    cell.ticketSubBlock = ^{
+    __block NSInteger totalNum = 1;
+    cell.ticketAddBlock = ^(UILabel *label){
+        
+        if (totalNum < 99) {
+            totalNum++;
+            label.text = [NSString stringWithFormat:@"%ld",(long)totalNum];
+            
+        }
         
     };
     
-    cell.ticketSubBlock = ^{
+    cell.ticketSubBlock = ^(UILabel *label){
         
+        if (totalNum > 1) {
+            totalNum--;
+            label.text = [NSString stringWithFormat:@"%ld",(long)totalNum];
+            
+        }
     };
     
     return cell;
