@@ -79,7 +79,7 @@
     self.mapView.delegate = self;
 //    self.mapView.showsUserLocation = YES;
     //    self.mapView.userTrackingMode = QUserTrackingModeFollow;
-//    [self.mapView setZoomLevel:11.01 animated:NO];
+    [self.mapView setZoomLevel:12.01 animated:NO];
     [self.view insertSubview:self.mapView atIndex:0];
     
     [self setupAnnotations];
@@ -106,25 +106,11 @@
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake((annotation1.coordinate.latitude + annotation2.coordinate.latitude) / 2, (annotation2.coordinate.longitude + annotation1.coordinate.longitude) / 2);
     [self.mapView setCenterCoordinate:center];
     
-//    QCoordinateSpan span = QCoordinateSpanMake(fabs(annotation1.coordinate.latitude - annotation2.coordinate.latitude), fabs(annotation1.coordinate.longitude - annotation1.coordinate.longitude));
+//    QCoordinateSpan span = QCoordinateSpanMake(fabs(annotation1.coordinate.latitude - annotation2.coordinate.latitude), fabs(annotation1.coordinate.longitude - annotation2.coordinate.longitude));
 //    
 //    QCoordinateRegion region = [self.mapView regionThatFits:QCoordinateRegionMake(center, span)];
 //    [self.mapView setRegion:region animated:YES];
     
-    QMapPoint point1 = QMapPointForCoordinate(annotation1.coordinate);
-    QMapPoint point2 = QMapPointForCoordinate(annotation2.coordinate);
-    double distance = QMetersBetweenMapPoints(point1, point2);
- 
-    //这个数组就是百度地图比例尺对应的物理距离，其中2000000对应的比例是3，5对应的是21；可能有出入可以根据情况累加
-    NSArray *zoomLevelArr = [[NSArray alloc]initWithObjects:@"2000000", @"1000000", @"500000", @"200000", @"100000", @"50000", @"25000", @"20000", @"10000", @"5000", @"2000", @"1000", @"500", @"200", @"100", @"50", @"20", @"10", @"5", nil];
-    for (int j=0; j<zoomLevelArr.count; j++) {
-        if (j + 1 < zoomLevelArr.count) {
-            if (distance < [zoomLevelArr[j] intValue] && distance > [zoomLevelArr[j+1] intValue] ) {
-                [_mapView setZoomLevel:j+5.01];
-                break;
-            }
-        }
-    }
     
 }
 
