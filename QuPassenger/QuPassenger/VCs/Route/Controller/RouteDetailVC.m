@@ -22,10 +22,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *downBtn;
 @property (weak, nonatomic) IBOutlet UITableView *routeTableView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 
 @property (assign, nonatomic) BOOL isDown;
 
 @property (assign, nonatomic) NSInteger routeNum;
+@property (assign, nonatomic) BOOL isLocationSuccess;//是否定位成功
 
 @end
 
@@ -55,9 +57,15 @@
     [self.tabHeadLabel setCornerRadius:10.0f AndBorder:0 borderColor:nil];
     self.tabHeadLabel.layer.masksToBounds = YES;
     
+    [self.routeTableView setCornerRadius:4.0f AndBorder:0 borderColor:nil];
     self.routeTableView.clipsToBounds = YES;
   
     [self.routeTableView registerNib:[UINib nibWithNibName:@"RouteDetailCell" bundle:nil] forCellReuseIdentifier:@"RouteDetailCell"];
+    
+    NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:@"5"];
+    NSAttributedString *tempAttributeString = [[NSAttributedString alloc] initWithString:@"元" attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10]}];
+    [attributeString appendAttributedString:tempAttributeString];
+    self.priceLabel.attributedText = attributeString;
     
 }
 
@@ -67,10 +75,37 @@
     QMapView *mapView = [[QMapView alloc] initWithFrame:CGRectMake(0, 64, frame.size.width, SCREEN_HEIGHT - 64)];
     self.mapView = mapView;
     self.mapView.delegate = self;
-    self.mapView.showsUserLocation = NO;
+    self.mapView.showsUserLocation = YES;
     //    self.mapView.userTrackingMode = QUserTrackingModeFollow;
-    [self.mapView setZoomLevel:15.01 animated:YES];
+    [self.mapView setZoomLevel:15.01 animated:NO];
     [self.view insertSubview:self.mapView atIndex:0];
+}
+
+#pragma mark QMapViewDelegate
+- (void)mapViewWillStartLocatingUser:(QMapView *)mapView
+{
+    //获取开始定位的状态
+}
+
+- (void)mapViewDidStopLocatingUser:(QMapView *)mapView
+{
+    //获取停止定位的状态
+}
+
+- (void)mapView:(QMapView *)mapView didUpdateUserLocation:(QUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation {
+    NSLog(@"coordinate:%f,%f, heading:%f", userLocation.coordinate.latitude, userLocation.coordinate.longitude, userLocation.heading.trueHeading);
+    
+    if (!self.isLocationSuccess) {
+        self.isLocationSuccess = YES;
+        [mapView setUserTrackingMode:QUserTrackingModeFollowWithHeading animated:YES];
+    }
+    
+    
+}
+
+- (void)mapView:(QMapView *)mapView didFailToLocateUserWithError:(NSError *)error
+{
+    NSLog(@"定位失败");
 }
 
 #pragma mark BtnClickAction
@@ -104,7 +139,7 @@
         }];
         
     }
-    [self.routeTableView setCornerRadius:4.0f AndBorder:0 borderColor:nil];
+//    [self.routeTableView setCornerRadius:4.0f AndBorder:0 borderColor:nil];
   
 
     self.isDown = !self.isDown;

@@ -24,15 +24,16 @@
 - (IBAction)addClickAction:(id)sender
 {
     if (self.ticketAddBlock) {
-        self.ticketAddBlock();
+        self.ticketAddBlock(self.countLabel);
     }
 }
 
 - (IBAction)subClickAction:(id)sender
 {
     if (self.ticketSubBlock) {
-        self.ticketSubBlock();
+        self.ticketSubBlock(self.countLabel);
     }
 }
+
 
 @end

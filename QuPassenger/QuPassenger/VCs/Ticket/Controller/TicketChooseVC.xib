@@ -117,6 +117,9 @@
                                     <state key="normal" title="确认">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="comfirmClickAction:" destination="-1" eventType="touchUpInside" id="IpF-Sn-mp7"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yq-fi-mcJ">
                                     <rect key="frame" x="10" y="-15" width="55" height="55"/>
