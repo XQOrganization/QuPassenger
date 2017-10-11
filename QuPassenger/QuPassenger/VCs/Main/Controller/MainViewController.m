@@ -218,11 +218,9 @@
 
 - (void)rightBarButtonItemAction:(id)sender
 {
-//    MessageVC *vc = [[MessageVC alloc]initWithNibName:@"MessageVC" bundle:nil];
-//    [self.navigationController pushViewController:vc animated:YES];
-    PayTheTicketVC *vc =[[PayTheTicketVC alloc]initWithNibName:@"PayTheTicketVC" bundle:nil];
+    MessageVC *vc = [[MessageVC alloc]initWithNibName:@"MessageVC" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
-    
+  
 }
 
 - (void)categoryBackAction:(UIButton *)sender
