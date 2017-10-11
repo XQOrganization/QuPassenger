@@ -8,6 +8,7 @@
 
 #import "MyWalletVC.h"
 #import "MyWalletTableViewCell.h"
+#import "CouponListVC.h"
 @interface MyWalletVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myWalletTabView;
 
@@ -47,45 +48,45 @@
     [but setTitleColor:HEXCOLOR(@"#777777") forState:UIControlStateNormal];
     but.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:10];
     
-    UIButton *goRechargeBut = [UIButton buttonWithType:UIButtonTypeCustom];
-    [goRechargeBut addTarget:self action:@selector(goRechargeButClick) forControlEvents:UIControlEventTouchUpInside];
-    goRechargeBut.clipsToBounds = YES;
-    goRechargeBut.layer.cornerRadius = 2;
-    goRechargeBut.frame = CGRectMake(10, view.mj_size.height -54,SCREEN_WIDTH - 20 , 44);
-    [goRechargeBut setTitle:@"充值" forState:UIControlStateNormal];
-    goRechargeBut.backgroundColor = HEXCOLOR(@"#FFFF5C41");
-    [goRechargeBut setTitleColor:HEXCOLOR(@"#FFFFFFFF") forState:UIControlStateNormal];
-    goRechargeBut.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:16];
+//    UIButton *goRechargeBut = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [goRechargeBut addTarget:self action:@selector(goRechargeButClick) forControlEvents:UIControlEventTouchUpInside];
+//    goRechargeBut.clipsToBounds = YES;
+//    goRechargeBut.layer.cornerRadius = 2;
+//    goRechargeBut.frame = CGRectMake(10, view.mj_size.height -54,SCREEN_WIDTH - 20 , 44);
+//    [goRechargeBut setTitle:@"充值" forState:UIControlStateNormal];
+//    goRechargeBut.backgroundColor = HEXCOLOR(@"#FFFF5C41");
+//    [goRechargeBut setTitleColor:HEXCOLOR(@"#FFFFFFFF") forState:UIControlStateNormal];
+//    goRechargeBut.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Medium" size:16];
     [view addSubview:img];
     [view addSubview:but];
-    [view addSubview:goRechargeBut];
+    //-----废弃
+//    [view addSubview:goRechargeBut];
     
     return view;
 }
 - (void)rightBarButtonItemAction:(id)sender{
 }
-//去充值
--(void)goRechargeButClick{
-    
-}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
    
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section == 0) {
+    if (section == 0 || section == 1) {
         return 10;
     }
     return 0.1;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        return 130;
+        return 110;
+    }else if (indexPath.section == 1){
+        return 50;
     }
-    return 320;
+    return 414;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MyWalletTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyWalletCell"];
@@ -93,7 +94,10 @@
     if (indexPath.section == 0) {
         cell =[[NSBundle mainBundle]loadNibNamed:@"MyWalletTableViewCell" owner:nil options:nil][0];
     }else if (indexPath.section  ==1){
+        cell =[[NSBundle mainBundle]loadNibNamed:@"MyWalletTableViewCell" owner:nil options:nil][2];
+    }else{
         cell =[[NSBundle mainBundle]loadNibNamed:@"MyWalletTableViewCell" owner:nil options:nil][1];
+        [cell.ibGoPayBtn addTarget:self action:@selector(goPayClick:) forControlEvents:UIControlEventTouchUpInside];
     }
    //选择金额block
     cell.picBlock = ^(NSInteger pic) {
@@ -105,6 +109,16 @@
    };
     return cell;
 }
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.view endEditing: YES];
+    if (indexPath.section == 1) {
+        CouponListVC *vc = [[CouponListVC alloc]initWithNibName:@"CouponListVC" bundle:nil];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+//MARK:------去充值
+- (void)goPayClick:(UIButton *)sender{
+    
+}
 
 @end

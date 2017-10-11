@@ -11,4 +11,6 @@
 @interface MyWalletTableViewCell : UITableViewCell
 @property(nonatomic,copy)void (^picBlock) (NSInteger pic);
 @property(nonatomic,copy)void (^PayTypeBlock) (NSInteger payType);
+@property (weak, nonatomic) IBOutlet UITextField *ibEnteramountTf;
+@property (weak, nonatomic) IBOutlet UIButton *ibGoPayBtn;
 @end
