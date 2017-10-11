@@ -118,7 +118,7 @@
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="ibSureBtnClick:" destination="-1" eventType="touchUpInside" id="Aks-87-kc6"/>
+                                        <action selector="comfirmClickAction:" destination="-1" eventType="touchUpInside" id="6tV-eu-iGR"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yq-fi-mcJ">

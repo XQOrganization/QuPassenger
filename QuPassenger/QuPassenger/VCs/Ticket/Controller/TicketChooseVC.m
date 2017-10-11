@@ -281,6 +281,7 @@
                          
                      }];
 }
+//MARK:----------确认购票
 
 - (IBAction)comfirmClickAction:(id)sender
 {
@@ -338,12 +339,6 @@
 {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-//MARK:----------确认购票
-- (IBAction)ibSureBtnClick:(id)sender {
-    
-    PayTheTicketVC *vc =[[PayTheTicketVC alloc]initWithNibName:@"PayTheTicketVC" bundle:nil];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
