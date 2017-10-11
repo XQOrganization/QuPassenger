@@ -59,7 +59,7 @@
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
 //    self.mapView.userTrackingMode = QUserTrackingModeFollow;
-    [self.mapView setZoomLevel:15.01 animated:YES];
+    [self.mapView setZoomLevel:15.01 animated:NO];
     [self.view insertSubview:self.mapView atIndex:0];
 }
 

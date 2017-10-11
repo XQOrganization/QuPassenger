@@ -29,6 +29,8 @@
 @property (assign, nonatomic) NSInteger routeNum;
 @property (assign, nonatomic) BOOL isLocationSuccess;//是否定位成功
 
+@property (nonatomic, strong) NSMutableArray *annotations;
+
 @end
 
 @implementation RouteDetailVC
@@ -75,10 +77,55 @@
     QMapView *mapView = [[QMapView alloc] initWithFrame:CGRectMake(0, 64, frame.size.width, SCREEN_HEIGHT - 64)];
     self.mapView = mapView;
     self.mapView.delegate = self;
-    self.mapView.showsUserLocation = YES;
+//    self.mapView.showsUserLocation = YES;
     //    self.mapView.userTrackingMode = QUserTrackingModeFollow;
-    [self.mapView setZoomLevel:15.01 animated:NO];
+//    [self.mapView setZoomLevel:11.01 animated:NO];
     [self.view insertSubview:self.mapView atIndex:0];
+    
+    [self setupAnnotations];
+    [self.mapView addAnnotations:self.annotations];
+//    [self.mapView showAnnotations:self.annotations animated:YES];
+    
+    
+}
+
+- (void)setupAnnotations
+{
+    self.annotations = [NSMutableArray array];
+    
+    QPointAnnotation *annotation1 = [[QPointAnnotation alloc] init];
+    annotation1.coordinate = CLLocationCoordinate2DMake(31.3207208243,120.7133102417);
+    
+    [self.annotations addObject:annotation1];
+    
+    QPointAnnotation *annotation2 = [[QPointAnnotation alloc] init];
+    annotation2.coordinate = CLLocationCoordinate2DMake(31.2796511847,120.6376075745);
+    
+    [self.annotations addObject:annotation2];
+    
+    CLLocationCoordinate2D center = CLLocationCoordinate2DMake((annotation1.coordinate.latitude + annotation2.coordinate.latitude) / 2, (annotation2.coordinate.longitude + annotation1.coordinate.longitude) / 2);
+    [self.mapView setCenterCoordinate:center];
+    
+//    QCoordinateSpan span = QCoordinateSpanMake(fabs(annotation1.coordinate.latitude - annotation2.coordinate.latitude), fabs(annotation1.coordinate.longitude - annotation1.coordinate.longitude));
+//    
+//    QCoordinateRegion region = [self.mapView regionThatFits:QCoordinateRegionMake(center, span)];
+//    [self.mapView setRegion:region animated:YES];
+    
+    QMapPoint point1 = QMapPointForCoordinate(annotation1.coordinate);
+    QMapPoint point2 = QMapPointForCoordinate(annotation2.coordinate);
+    double distance = QMetersBetweenMapPoints(point1, point2);
+ 
+    //这个数组就是百度地图比例尺对应的物理距离，其中2000000对应的比例是3，5对应的是21；可能有出入可以根据情况累加
+    NSArray *zoomLevelArr = [[NSArray alloc]initWithObjects:@"2000000", @"1000000", @"500000", @"200000", @"100000", @"50000", @"25000", @"20000", @"10000", @"5000", @"2000", @"1000", @"500", @"200", @"100", @"50", @"20", @"10", @"5", nil];
+    for (int j=0; j<zoomLevelArr.count; j++) {
+        if (j + 1 < zoomLevelArr.count) {
+            if (distance < [zoomLevelArr[j] intValue] && distance > [zoomLevelArr[j+1] intValue] ) {
+                [_mapView setZoomLevel:j+5.01];
+                break;
+            }
+        }
+    }
+    
 }
 
 #pragma mark QMapViewDelegate
@@ -106,6 +153,31 @@
 - (void)mapView:(QMapView *)mapView didFailToLocateUserWithError:(NSError *)error
 {
     NSLog(@"定位失败");
+}
+
+- (QAnnotationView *)mapView:(QMapView *)mapView
+           viewForAnnotation:(id<QAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[QPointAnnotation class]]) {
+        //设置复用标识
+        static NSString *pointReuseIdentifier = @"pointReuseIdentifier";
+        QAnnotationView *annotationView = [self.mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIdentifier];
+        if (annotationView == nil) {
+            annotationView = [[QAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIdentifier];
+        }
+        
+        // 可拖拽.
+        annotationView.draggable = NO;
+        // 开启下落动画
+//        annotationView.animatesDrop = YES;
+        //显示气泡
+        [annotationView setCanShowCallout:YES];
+        //设置图标
+        [annotationView setImage:[UIImage imageNamed:@"map_up_icon"]];
+        
+        return annotationView;
+    }
+    return nil;
 }
 
 #pragma mark BtnClickAction
