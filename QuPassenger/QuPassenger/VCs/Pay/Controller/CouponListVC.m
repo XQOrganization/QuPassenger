@@ -42,7 +42,7 @@
     [but setTitle:@"趣约车优惠券使用规则" forState:UIControlStateNormal];
     [but setTitleColor:HEXCOLOR(@"#777777") forState:UIControlStateNormal];
     but.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:10];
-   
+    
     [view addSubview:img];
     [view addSubview:but];
     
@@ -57,6 +57,10 @@
     if (cell == nil) {
         cell = [[NSBundle mainBundle]loadNibNamed:@"CouponListCell" owner:nil options:nil][0];
     }
+    
+    if (_isChooseCoupon) {
+        cell.isChooseCouponBtn.hidden = YES;
+    }
     //默认选择第一章优惠券
     if (indexPath.row == 0) {
         cell.isChooseCouponBtn.selected = YES;
@@ -66,6 +70,7 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //
     NSIndexPath *idex = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section];
     CouponListCell *cell = [tableView cellForRowAtIndexPath:idex];
     

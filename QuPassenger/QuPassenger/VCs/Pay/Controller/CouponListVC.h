@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CouponListVC : BasicVC
+@property(nonatomic)BOOL isChooseCoupon;//是否可以选择优惠券
 
 @end

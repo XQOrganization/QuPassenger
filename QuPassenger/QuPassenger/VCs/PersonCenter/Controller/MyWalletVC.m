@@ -113,6 +113,7 @@
     [self.view endEditing: YES];
     if (indexPath.section == 1) {
         CouponListVC *vc = [[CouponListVC alloc]initWithNibName:@"CouponListVC" bundle:nil];
+        vc.isChooseCoupon = YES;
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

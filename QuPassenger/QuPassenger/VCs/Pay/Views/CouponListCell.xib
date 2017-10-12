@@ -46,9 +46,8 @@
                         <color key="textColor" red="0.46674254539999999" green="0.46673330660000001" blue="0.46673956509999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sQ-Op-WIS">
-                        <rect key="frame" x="324" y="52" width="22" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sQ-Op-WIS">
+                        <rect key="frame" x="328" y="54" width="22" height="22"/>
                         <state key="normal" image="ticket_NoChoose"/>
                         <state key="selected" image="ticket_Choose"/>
                     </button>
@@ -63,9 +62,11 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="tV9-rB-KJZ" secondAttribute="bottom" id="0Rb-uM-R65"/>
                     <constraint firstItem="vCA-e8-22o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="34" id="4mu-Da-6Vh"/>
+                    <constraint firstItem="0sQ-Op-WIS" firstAttribute="centerY" secondItem="tV9-rB-KJZ" secondAttribute="centerY" id="5Zu-kN-Gcd"/>
                     <constraint firstItem="aE3-4E-xYa" firstAttribute="leading" secondItem="M1a-ZQ-UvT" secondAttribute="leading" id="77Y-9j-xCR"/>
                     <constraint firstItem="y0L-Oi-DbW" firstAttribute="top" secondItem="aE3-4E-xYa" secondAttribute="bottom" constant="4" id="9Uu-O4-rOf"/>
                     <constraint firstItem="M1a-ZQ-UvT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="Dsz-VW-Wb3"/>
+                    <constraint firstAttribute="trailing" secondItem="0sQ-Op-WIS" secondAttribute="trailing" constant="25" id="Htj-Nf-mBB"/>
                     <constraint firstItem="NSS-qz-DcP" firstAttribute="leading" secondItem="vCA-e8-22o" secondAttribute="trailing" constant="3" id="Oby-bn-FUl"/>
                     <constraint firstItem="vCA-e8-22o" firstAttribute="centerY" secondItem="tV9-rB-KJZ" secondAttribute="centerY" id="Rce-Sm-S4S"/>
                     <constraint firstItem="aE3-4E-xYa" firstAttribute="top" secondItem="M1a-ZQ-UvT" secondAttribute="bottom" constant="16" id="U2e-Nr-2Ph"/>
