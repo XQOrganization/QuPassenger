@@ -26,7 +26,7 @@
     [[IQKeyboardManager sharedManager] setEnable:YES];
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:YES];
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
-    [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:NO];
+    [[IQKeyboardManager sharedManager] setShouldShowToolbarPlaceholder:NO];
     
 }
 
@@ -36,7 +36,7 @@
     [[IQKeyboardManager sharedManager] setEnable:NO];
     [[IQKeyboardManager sharedManager] setEnableAutoToolbar:NO];
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:NO];
-    [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:YES];
+    [[IQKeyboardManager sharedManager] setShouldShowToolbarPlaceholder:YES];
     
 }
 

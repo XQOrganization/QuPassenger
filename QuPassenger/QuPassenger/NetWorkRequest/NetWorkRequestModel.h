@@ -26,6 +26,7 @@
 
 @end
 
+//获取验证码
 @interface GetCodeReq : BaseRequest
 
 @property (strong, nonatomic) NSString *phone;
@@ -36,6 +37,7 @@
 
 @end
 
+//验证码登录
 @interface CheckCodeReq : BaseRequest
 
 @property (strong, nonatomic) NSString *phone;
@@ -54,6 +56,7 @@
 @property (strong, nonatomic) NSString *idCard;
 
 @property (strong, nonatomic) NSString *phone;
+@property (strong, nonatomic) NSString *phoneCode;
 @property (strong, nonatomic) NSString *sex;
 @property (strong, nonatomic) NSString *headImg;
 @property (strong, nonatomic) NSString *travelNum;
