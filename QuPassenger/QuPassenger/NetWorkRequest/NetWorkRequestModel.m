@@ -18,9 +18,9 @@
 {
     if (self = [super init]) {
 
-        self.version = CLIENT_VERSION;
+        self.versionNo = CLIENT_VERSION;
         self.channelNo = @"iOS";
-
+        self.device = [PublicManager getDeviceId];
 
     }
     return self;
@@ -38,11 +38,6 @@
 
 @end
 
-@implementation GetCodeRsp
-
-
-@end
-
 @implementation CheckCodeReq
 
 
@@ -54,6 +49,16 @@
 @end
 
 @implementation CheckCodeRsp
+
+
+@end
+
+@implementation BindWeChatReq
+
+
+@end
+
+@implementation BindWeChatRsp
 
 
 @end

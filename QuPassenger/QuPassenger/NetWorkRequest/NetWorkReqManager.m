@@ -37,16 +37,13 @@
         NSLog(@"返回数据:%@",responseObject);
         BaseResponse *response = [BaseResponse mj_objectWithKeyValues:responseObject];
 
-        if ([response.code isEqualToString:@"1"]) {
-            responseBlock(responseObject);
-  
-        }
-        else if ([response.code isEqualToString:@"1001"]){
+        if (response.code == 1001){
             //预留token过期处理
 
         }
         else{
-            errorBlock(response.message);
+            responseBlock(responseObject);
+//            errorBlock(response.message);
         }
     } withFailureBlock:errorBlock progress:nil];
 }
@@ -71,16 +68,13 @@
         NSLog(@"返回数据:%@",responseObject);
         BaseResponse *response = [BaseResponse mj_objectWithKeyValues:responseObject];
         
-        if ([response.code isEqualToString:@"1"]) {
-            responseBlock(responseObject);
-            
-        }
-        else if ([response.code isEqualToString:@"1001"]){
+        if (response.code == 1001){
             //预留token过期处理
 
         }
         else{
-            errorBlock(response.message);
+            responseBlock(responseObject);
+//            errorBlock(response.message);
         }
     } withFailureBlock:errorBlock progress:nil];
 }

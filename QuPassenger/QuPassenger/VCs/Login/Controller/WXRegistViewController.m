@@ -46,6 +46,40 @@
     }
 }
 
+#pragma mark Request
+//微信登录
+- (void)requestWXBindLogin
+{
+    BindWeChatReq *req = [[BindWeChatReq alloc]init];
+    req.winXinKey = self.wxUid;
+    req.phone = self.ibPhoneTf.text;
+    req.nick = self.nickName;
+    req.headImage = self.imageUrl;
+    
+    [NetWorkReqManager requestDataWithApiName:bindWeChat params:req response:^(NSDictionary *responseObject) {
+        
+        BindWeChatRsp *rsp = [BindWeChatRsp mj_objectWithKeyValues:responseObject];
+        
+        if (rsp.code == 1) {
+            
+            ACCOUNTINFO.isLogin = YES;
+            ACCOUNTINFO.userInfo = rsp.data;
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }
+        else{
+            [QuHudHelper qu_showMessage:rsp.message];
+        }
+        
+        
+    } errorResponse:^(NSString *error) {
+        
+        
+    }];
+    
+}
+
 - (void)phoneTfChange{
     
     if (_ibPhoneTf.text.length >11) {
@@ -78,6 +112,8 @@
 }
 //确认
 - (IBAction)sureClick:(id)sender {
+    
+    [self requestWXBindLogin];
 
 }
 // 开启倒计时

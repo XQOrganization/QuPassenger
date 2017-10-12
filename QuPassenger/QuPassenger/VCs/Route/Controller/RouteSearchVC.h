@@ -10,6 +10,6 @@
 
 @interface RouteSearchVC : BaseInputVC
 
-@property (assign, nonatomic) NSInteger from;//判断从出发地还是目的地进入
+@property (assign, nonatomic) NSInteger choosefrom;//判断从出发地还是目的地进入 1:从出发地进入 2:从目的地进入
 
 @end

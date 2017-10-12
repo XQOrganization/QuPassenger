@@ -388,13 +388,14 @@
         cell.routeSearchBlock = ^(NSString *start, NSString *end) {
             
             RouteSearchVC *vc = [[RouteSearchVC alloc]initWithNibName:@"RouteSearchVC" bundle:nil];
+            vc.choosefrom = 1;
             [self.navigationController pushViewController:vc animated:YES];
         };
         
         cell.routeEditBlock  = ^(NSString *start, NSString *end,NSInteger from) {
             
             RouteSearchVC *vc = [[RouteSearchVC alloc]initWithNibName:@"RouteSearchVC" bundle:nil];
-            vc.from = from;
+            vc.choosefrom = from;
             [self.navigationController pushViewController:vc animated:YES];
         };
         
