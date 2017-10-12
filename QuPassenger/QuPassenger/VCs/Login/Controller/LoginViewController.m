@@ -82,7 +82,18 @@
         [QuHudHelper sv_showErrorWithStatus:@"请输入正确的11位手机号码"];
         return ;
     }
-    [self openCountdown];
+    
+    GetCodeReq *req = [[GetCodeReq alloc]init];
+    req.phone = _ibPhoneTf.text;
+    
+    [NetWorkReqManager requestDataWithApiName:getCode params:req response:^(NSDictionary *responseObject) {
+        
+        [self openCountdown];
+        
+    } errorResponse:^(NSString *error) {
+        
+    }];
+    
 }
 //登录方法
 - (IBAction)loginBtnClick:(id)sender {

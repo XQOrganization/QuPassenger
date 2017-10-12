@@ -23,6 +23,8 @@ float WidthForString(NSString *value,float fontSize,float height);
 //+ (void)saveMainDataToLocalWithDictionary:(NSDictionary *)dictionary;
 //
 //+ (void)removeUserLocalToken;
+//获取设备号
++ (NSString *)getDeviceId;
 
 //判断是否是偶数
 + (BOOL)evenNumberWithNumber:(NSInteger)number;

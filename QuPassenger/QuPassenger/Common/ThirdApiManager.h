@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, QuPayType) {
+    
+    QuPayType_Alipay,   //支付宝支付
+    QuPayType_WX,      //微信支付
+    
+};
+
 @interface ThirdApiManager : NSObject
 
 @property (copy, nonatomic) void (^thirdPaySuccessBlock)(void);
@@ -19,7 +26,7 @@
 - (void)registerThirdApi;
 
 //发送第三方支付
-- (void)sendThirdPayWithReq:(id)payModel success:(void (^)(void))paySuccessBlock fail:(void (^)(void))payFailBlock;
+- (void)sendThirdPayReqWithPayType:(QuPayType)payType payModel:(id)payModel success:(void (^)(void))paySuccessBlock fail:(void (^)(void))payFailBlock;
 
 //第三方授权登录
 - (void)getThirdUserInfoCompletion:(void (^)(NSString *uid))userBlock;

@@ -10,6 +10,7 @@
 #import "CHAlertView.h"
 #import "RegexKitLite.h"
 #import "PinYin4Objc.h"
+#import "SAMKeychain.h"
 
 /**
  获取字符串value的宽度
@@ -79,6 +80,20 @@ float WidthForString(NSString *value,float fontSize,float height)
     return self;
 }
 
++ (NSString *)getDeviceId
+{
+    NSString *currentDeviceUUIDStr = [SAMKeychain passwordForService:BUNDLE_ID account:@"uuid"];
+    if (currentDeviceUUIDStr == nil || currentDeviceUUIDStr.length == 0){
+        
+        currentDeviceUUIDStr = [[NSUUID UUID] UUIDString];
+//        currentDeviceUUIDStr = [currentDeviceUUIDStr stringByReplacingOccurrencesOfString:@"-" withString:@""];
+//        currentDeviceUUIDStr = [currentDeviceUUIDStr lowercaseString];
+        [SAMKeychain setPassword: currentDeviceUUIDStr forService:BUNDLE_ID account:@"uuid"];
+    }
+    return currentDeviceUUIDStr;
+    
+
+}
 
 //+ (NSDictionary *)getMainDataFromLocal
 //{

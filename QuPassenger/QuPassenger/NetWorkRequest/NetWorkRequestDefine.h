@@ -10,7 +10,8 @@
 
 //接口名
 typedef NS_ENUM(NSInteger,XQApiName) {
-    Get_token,          //token获取
+    getCode,          //获取验证码
+    checkCode,        //验证码登录
     
 };
 NSString *XQApiNameEnum(XQApiName name);

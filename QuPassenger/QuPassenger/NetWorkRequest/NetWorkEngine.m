@@ -18,10 +18,10 @@
 #import <AVFoundation/AVMediaFormat.h>
 
 #ifdef DEBUG
-#define HOSTNAME @"http://www.725sl.com/shopapi.php"
+#define HOSTNAME @"http://192.168.1.122:8081/api/code/"
 
 #else
-#define HOSTNAME @"http://www.725sl.com/shopapi.php"
+#define HOSTNAME @"http://192.168.1.122:8081/api/code/"
 #endif
 
 // http://wx.ucoolbox.com/doc.php 文档地址
@@ -45,7 +45,7 @@
     
     dispatch_once(&onceToken, ^{
         
-        manager = [[self alloc] initWithBaseURL:[NSURL URLWithString:HOSTNAME]];
+        manager = [[self alloc] init];
         
     });
     
@@ -57,16 +57,13 @@
 /**
  *
  *
- *  @param url baseUrl
  *
  *  @return 通过重写夫类的initWithBaseURL方法,返回网络请求类的实例
  */
--(instancetype)initWithBaseURL:(NSURL *)url{
+-(instancetype)init{
     
-    if (self = [super initWithBaseURL:url]) {
+    if (self = [super init]) {
         
-        //#warning 可根据具体情况进行设置
-        NSAssert(url,@"您需要为您的请求设置baseUrl");
         
         [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
         
@@ -116,11 +113,13 @@
     NSLog(@"请求URL：%@%@",HOSTNAME,urlString);
     NSLog(@"请求参数：%@",paraments);
     
+    NSString *url = [HOSTNAME stringByAppendingString:urlString];
+    
     switch (type) {
             
         case HttpRequestTypeGet:
         {
-            [[NetWorkEngine shareManager] GET:urlString parameters:paraments progress:^(NSProgress * _Nonnull downloadProgress) {
+            [[NetWorkEngine shareManager] GET:url parameters:paraments progress:^(NSProgress * _Nonnull downloadProgress) {
                 if (progress) {
                     progress(downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
                 }
@@ -142,7 +141,7 @@
         case HttpRequestTypePost:
         {
             
-            [[NetWorkEngine shareManager] POST:urlString parameters:paraments progress:^(NSProgress * _Nonnull uploadProgress) {
+            [[NetWorkEngine shareManager] POST:url parameters:paraments progress:^(NSProgress * _Nonnull uploadProgress) {
                 if (progress) {
                     progress(uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
                 }

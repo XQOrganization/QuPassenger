@@ -11,7 +11,9 @@
 NSString *XQApiNameEnum(XQApiName name)
 {
     switch (name) {
-        case Get_token:return @"Get_token";
+        case getCode:return @"getCode";
+            break;
+        case checkCode:return @"checkCode";
             break;
         default:return @"";
             break;
