@@ -57,6 +57,9 @@
         _ibPhoneTf.text = [_ibPhoneTf.text substringToIndex:11];
         
     }
+    if (_ibPhoneTf.text.length == 11) {
+        [_ibGetCodeBtn setTitleColor:HEXCOLOR(@"#FF5C41") forState:UIControlStateNormal];
+    }
 }
 - (void)codeTfChange{
     
@@ -114,7 +117,7 @@
     
     [NetWorkReqManager requestDataWithApiName:checkCode params:req response:^(NSDictionary *responseObject) {
         
-        CheckCodeRsp *rsp = [CheckCodeRsp mj_objectWithKeyValues:responseObject];
+        CheckCodeRsp *rsp = [CheckCodeRsp mj_objectWithKeyValues:responseObject];   
         
         ACCOUNTINFO.isLogin = YES;
         ACCOUNTINFO.userInfo = rsp.data;
