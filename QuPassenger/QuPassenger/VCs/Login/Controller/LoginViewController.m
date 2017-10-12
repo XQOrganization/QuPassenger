@@ -59,6 +59,8 @@
     }
     if (_ibPhoneTf.text.length == 11) {
         [_ibGetCodeBtn setTitleColor:HEXCOLOR(@"#FF5C41") forState:UIControlStateNormal];
+    }else{
+         [_ibGetCodeBtn setTitleColor:HEXCOLOR(@"#DBDBDB") forState:UIControlStateNormal];
     }
 }
 - (void)codeTfChange{
