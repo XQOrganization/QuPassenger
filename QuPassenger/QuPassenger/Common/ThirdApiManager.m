@@ -89,21 +89,26 @@
     }];
 }
 
-- (void)sendThirdPayWithReq:(id)payModel success:(void (^)(void))paySuccessBlock fail:(void (^)(void))payFailBlock
+- (void)sendThirdPayReqWithPayType:(QuPayType)payType payModel:(id)payModel success:(void (^)(void))paySuccessBlock fail:(void (^)(void))payFailBlock
 {
-    self.thirdPaySuccessBlock = paySuccessBlock;
-    self.thirdPayFailBlock = payFailBlock;
-    
-    WXPayModel *pay = (WXPayModel *)payModel;
-    
-    PayReq *request = [[PayReq alloc]init];
-    request.partnerId = pay.partnerid;
-    request.prepayId = pay.prepayid;
-    request.package = pay.package;
-    request.nonceStr = pay.noncestr;
-    request.timeStamp = pay.timestamp;
-    request.sign = pay.sign;
-    [WXApi sendReq:request];
+    if (payType == QuPayType_WX) {
+        self.thirdPaySuccessBlock = paySuccessBlock;
+        self.thirdPayFailBlock = payFailBlock;
+        
+//        WXPayModel *pay = (WXPayModel *)payModel;
+//        
+//        PayReq *request = [[PayReq alloc]init];
+//        request.partnerId = pay.partnerid;
+//        request.prepayId = pay.prepayid;
+//        request.package = pay.package;
+//        request.nonceStr = pay.noncestr;
+//        request.timeStamp = pay.timestamp;
+//        request.sign = pay.sign;
+//        [WXApi sendReq:request];
+    }
+    else{
+        
+    }
 }
 
 

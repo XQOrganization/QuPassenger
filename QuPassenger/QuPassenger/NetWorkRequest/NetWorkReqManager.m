@@ -41,16 +41,17 @@
         NSLog(@"返回数据:%@",responseObject);
         BaseResponse *response = [BaseResponse mj_objectWithKeyValues:responseObject];
 
-        if ([response.code isEqualToString:@"1000"]) {
+        if ([response.code isEqualToString:@"1"]) {
             responseBlock(responseObject);
   
         }
         else if ([response.code isEqualToString:@"1001"]){
-            ACCOUNTINFO.token = @"";
-            [NetWorkReqManager getTokenRequestWithResponse:^(NSDictionary *responseObject) {
-                //重新获取token后需要重新请求一次接口
-                [self postRequestWithResponse:responseBlock errorResponse:errorBlock];
-            }];
+            //预留token过期处理
+//            ACCOUNTINFO.token = @"";
+//            [NetWorkReqManager getTokenRequestWithResponse:^(NSDictionary *responseObject) {
+//                //重新获取token后需要重新请求一次接口
+//                [self postRequestWithResponse:responseBlock errorResponse:errorBlock];
+//            }];
         }
         else{
             errorBlock(response.message);
@@ -100,11 +101,8 @@
     else{
         muParams = [NSMutableDictionary new];
     }
-    [muParams setObject:XQApiNameEnum(apiName) forKey:@"F_type"];
-    if (ACCOUNTINFO.token.length > 0) {
-        [muParams setObject:ACCOUNTINFO.token forKey:@"token"];
-    }
-    [NetWorkEngine requestWithType:HttpRequestTypePost withUrlString:@"" withParaments:muParams withSuccessBlock:responseBlock withFailureBlock:errorBlock progress:nil];
+   
+    [NetWorkEngine requestWithType:HttpRequestTypePost withUrlString:XQApiNameEnum(apiName) withParaments:muParams withSuccessBlock:responseBlock withFailureBlock:errorBlock progress:nil];
 }
 
 @end
