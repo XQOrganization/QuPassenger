@@ -14,7 +14,6 @@
 
 @property (assign, nonatomic) XQApiName apiName;
 @property (strong, nonatomic) id params;
-@property (assign, nonatomic) NSInteger tokenRequestCount;//可用于token请求次数
 
 //实例方法请求
 - (instancetype)initWithApiName:(XQApiName)apiName params:(id)params;

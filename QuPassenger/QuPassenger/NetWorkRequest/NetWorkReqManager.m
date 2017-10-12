@@ -47,44 +47,13 @@
         }
         else if ([response.code isEqualToString:@"1001"]){
             //预留token过期处理
-//            ACCOUNTINFO.token = @"";
-//            [NetWorkReqManager getTokenRequestWithResponse:^(NSDictionary *responseObject) {
-//                //重新获取token后需要重新请求一次接口
-//                [self postRequestWithResponse:responseBlock errorResponse:errorBlock];
-//            }];
+
         }
         else{
             errorBlock(response.message);
         }
     } withFailureBlock:errorBlock progress:nil];
 }
-
-//获取token
-+ (void)getTokenRequestWithResponse:(requestSuccess)responseBlock{
-    
-    if (ACCOUNTINFO.token.length > 0) {
-        responseBlock(@{@"token":ACCOUNTINFO.token});
-    }
-    else{
- 
-        [NetWorkEngine requestWithType:HttpRequestTypePost withUrlString:@"" withParaments:@{@"secret":@"9417cb1c5b9280d778a2b513fbc236ef",@"appid":@"shop215500",@"F_type":@"Get_token"} withSuccessBlock:^(NSDictionary *responseObject) {
-            
-            BaseResponse *response = [BaseResponse mj_objectWithKeyValues:responseObject];
-            if ([response.code isEqualToString:@"1000"]) {
-                NSString *toke = responseObject[@"token"];
-                ACCOUNTINFO.token = toke;
-                if (responseBlock) {
-                    responseBlock(responseObject);
-                }
-            }
-         
-        } withFailureBlock:^(NSString *error) {
-            //token 获取失败处理
-            
-        } progress:nil];
-    }
-}
-
 
 + (void)requestDataWithApiName:(XQApiName)apiName params:(id)params response:(requestSuccess)responseBlock errorResponse:(requestFailure)errorBlock
 {
@@ -102,7 +71,22 @@
         muParams = [NSMutableDictionary new];
     }
    
-    [NetWorkEngine requestWithType:HttpRequestTypePost withUrlString:XQApiNameEnum(apiName) withParaments:muParams withSuccessBlock:responseBlock withFailureBlock:errorBlock progress:nil];
+    [NetWorkEngine requestWithType:HttpRequestTypePost withUrlString:XQApiNameEnum(apiName) withParaments:muParams withSuccessBlock:^(NSDictionary *responseObject) {
+        NSLog(@"返回数据:%@",responseObject);
+        BaseResponse *response = [BaseResponse mj_objectWithKeyValues:responseObject];
+        
+        if ([response.code isEqualToString:@"1"]) {
+            responseBlock(responseObject);
+            
+        }
+        else if ([response.code isEqualToString:@"1001"]){
+            //预留token过期处理
+
+        }
+        else{
+            errorBlock(response.message);
+        }
+    } withFailureBlock:errorBlock progress:nil];
 }
 
 @end
