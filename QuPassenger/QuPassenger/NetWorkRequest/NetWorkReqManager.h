@@ -19,9 +19,6 @@
 - (instancetype)initWithApiName:(XQApiName)apiName params:(id)params;
 - (void)postRequestWithResponse:(requestSuccess)responseBlock errorResponse:(requestFailure)errorBlock;
 
-//获取token
-+ (void)getTokenRequestWithResponse:(requestSuccess)responseBlock;
-
 
 //类方法请求
 /**

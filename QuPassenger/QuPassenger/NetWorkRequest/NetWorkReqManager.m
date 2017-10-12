@@ -14,7 +14,6 @@
 {
     _apiName = apiName;
     _params = params;
-    _tokenRequestCount = 1;
     return [self init];
 }
 
