@@ -15,7 +15,7 @@
 @interface BaseRequest : NSObject
 
 @property (strong, nonatomic) NSString *version;
-@property (strong, nonatomic) NSString *source;
+@property (strong, nonatomic) NSString *channelNo;
 
 @end
 

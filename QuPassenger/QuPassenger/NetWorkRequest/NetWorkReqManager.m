@@ -32,10 +32,7 @@
     else{
         muParams = [NSMutableDictionary new];
     }
-    [muParams setObject:XQApiNameEnum(self.apiName) forKey:@"F_type"];
-    if (ACCOUNTINFO.token.length > 0) {
-        [muParams setObject:ACCOUNTINFO.token forKey:@"token"];
-    }
+   
     [NetWorkEngine requestWithType:HttpRequestTypePost withUrlString:@"" withParaments:muParams withSuccessBlock:^(NSDictionary *responseObject) {
         NSLog(@"返回数据:%@",responseObject);
         BaseResponse *response = [BaseResponse mj_objectWithKeyValues:responseObject];

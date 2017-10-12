@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuPassenger/NetWorkRequest/NetWorkReqManager.m"
-            timestampString = "529471059.996508"
+            timestampString = "529471488.368517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "-postRequestWithResponse:errorResponse:"
             landmarkType = "7">
          </BreakpointContent>

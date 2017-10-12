@@ -10,7 +10,7 @@
 
 @interface AccountInfo : NSObject
 
-@property (strong, nonatomic) NSString *token;
+@property (strong, nonatomic) QuUserInfo *userInfo;
 @property (assign, nonatomic) BOOL isLogin;
 
 + (AccountInfo *)shareRsp;

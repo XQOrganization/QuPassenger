@@ -55,7 +55,7 @@
 }
 - (void)codeTfChange{
     
-    if (_ibCodeTf.text.length > 4) {
+    if (_ibCodeTf.text.length > 3) {
        
         _ibLoginBtn.backgroundColor = HEXCOLOR(@"#FF5C41");
     }else{
@@ -92,11 +92,31 @@
         
     } errorResponse:^(NSString *error) {
         
+        [QuHudHelper qu_showMessage:error];
     }];
     
 }
 //登录方法
 - (IBAction)loginBtnClick:(id)sender {
+    
+    CheckCodeReq *req = [[CheckCodeReq alloc]init];
+    req.phone = _ibPhoneTf.text;
+    req.device = [PublicManager getDeviceId];
+    req.code = _ibCodeTf.text;
+    
+    [NetWorkReqManager requestDataWithApiName:checkCode params:req response:^(NSDictionary *responseObject) {
+        
+        CheckCodeRsp *rsp = [CheckCodeRsp mj_objectWithKeyValues:responseObject];
+        
+        ACCOUNTINFO.isLogin = YES;
+        ACCOUNTINFO.userInfo = rsp.data;
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
+    } errorResponse:^(NSString *error) {
+        
+        [QuHudHelper qu_showMessage:error];
+    }];
 }
 // 开启倒计时
 -(void)openCountdown{

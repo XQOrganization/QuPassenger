@@ -19,7 +19,7 @@
     if (self = [super init]) {
 
         self.version = CLIENT_VERSION;
-        self.source = @"iOS";
+        self.channelNo = @"iOS";
 
 
     }
