@@ -24,9 +24,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //使用自定义导航栏
+    QuNavigationBar *bar = [QuNavigationBar showQuNavigationBarWithController:self];
+    self.quNavBar = bar;
+    
     [_ibPhoneTf addTarget:self action:@selector(phoneTfChange) forControlEvents:UIControlEventEditingChanged];
     _ibPhoneTf.clearButtonMode=UITextFieldViewModeWhileEditing;
     [_ibCodeTf addTarget:self action:@selector(codeTfChange) forControlEvents:UIControlEventEditingChanged];
+    
+    if (self.imageUrl.length > 0) {
+        [self.ibWxUserIconImg sd_setImageWithURL:[NSURL URLWithString:self.imageUrl]];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -41,7 +49,7 @@
 - (void)phoneTfChange{
     
     if (_ibPhoneTf.text.length >11) {
-        [QuHudHelper sv_showErrorWithStatus:@"手机号码超出范围"];
+        [QuHudHelper qu_showMessage:@"手机号码超出范围"];
         [_ibPhoneTf endEditing:YES];
         _ibPhoneTf.text = [_ibPhoneTf.text substringToIndex:11];
         
@@ -63,7 +71,7 @@
     //验证手机号码
     if (_ibPhoneTf.text.length != 11) {
         
-        [QuHudHelper sv_showErrorWithStatus:@"请输入正确的11位手机号码"];
+        [QuHudHelper qu_showMessage:@"请输入正确的11位手机号码"];
         return ;
     }
     [self openCountdown];

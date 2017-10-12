@@ -10,4 +10,8 @@
 
 @interface WXRegistViewController : BasicVC
 
+@property (strong, nonatomic) NSString *nickName;
+@property (strong, nonatomic) NSString *imageUrl;
+@property (strong, nonatomic) NSString *wxUid;
+
 @end

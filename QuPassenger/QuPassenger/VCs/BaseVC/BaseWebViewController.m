@@ -18,8 +18,11 @@
     [super viewDidLoad];
     
     [self initWebView];
-    [self loadUrlWithString:self.url];
     
+    if (self.url.trim.length > 0) {
+        [self loadUrlWithString:self.url];
+    }
+
     //使用自定义导航栏
     QuNavigationBar *bar = [QuNavigationBar showQuNavigationBarWithController:self];
     self.quNavBar = bar;

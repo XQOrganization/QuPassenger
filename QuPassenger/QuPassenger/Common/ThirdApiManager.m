@@ -66,7 +66,7 @@
 
 }
 
-- (void)getThirdUserInfoCompletion:(void (^)(NSString *uid))userBlock
+- (void)getThirdUserInfoCompletion:(void (^)(NSString *uid,NSString *nickName,NSString *headUrl))userBlock
 {
     if ([ShareSDK hasAuthorized:SSDKPlatformTypeWechat]) {
         [ShareSDK cancelAuthorize:SSDKPlatformTypeWechat];
@@ -75,12 +75,12 @@
         
         if (state == SSDKResponseStateSuccess){
             
-            NSLog(@"uid=%@",user.uid);
-            NSLog(@"%@",user.credential);
-            NSLog(@"token=%@",user.credential.token);
-            NSLog(@"nickname=%@",user.nickname);
+//            NSLog(@"uid=%@",user.uid);
+//            NSLog(@"%@",user.credential);
+//            NSLog(@"token=%@",user.credential.token);
+//            NSLog(@"nickname=%@",user.nickname);
             if (userBlock) {
-                userBlock(user.uid);
+                userBlock(user.uid,user.nickname,user.icon);
             }
         }
         else{

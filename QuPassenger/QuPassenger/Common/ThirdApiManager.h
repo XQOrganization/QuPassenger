@@ -29,6 +29,6 @@ typedef NS_ENUM(NSUInteger, QuPayType) {
 - (void)sendThirdPayReqWithPayType:(QuPayType)payType payModel:(id)payModel success:(void (^)(void))paySuccessBlock fail:(void (^)(void))payFailBlock;
 
 //第三方授权登录
-- (void)getThirdUserInfoCompletion:(void (^)(NSString *uid))userBlock;
+- (void)getThirdUserInfoCompletion:(void (^)(NSString *uid,NSString *nickName,NSString *headUrl))userBlock;
 
 @end
