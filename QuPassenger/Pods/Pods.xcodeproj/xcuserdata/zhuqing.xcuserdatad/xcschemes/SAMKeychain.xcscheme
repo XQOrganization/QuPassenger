@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'ADA829981BDA24ADAA100291560020E4'
-               BlueprintName = 'WZLBadge'
+               BlueprintIdentifier = 'D53143F6A7EB2931901AEA1B9533A214'
+               BlueprintName = 'SAMKeychain'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libWZLBadge.a'>
+               BuildableName = 'libSAMKeychain.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
