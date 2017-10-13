@@ -78,8 +78,8 @@
                         <color key="textColor" red="0.70200610160827637" green="0.70199263095855713" blue="0.70200175046920776" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THJ-qa-ChD">
-                        <rect key="frame" x="345" y="12.5" width="15" height="22"/>
+                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THJ-qa-ChD">
+                        <rect key="frame" x="0.0" y="12.5" width="360" height="22"/>
                         <state key="normal" image="i15 单选未选中"/>
                         <state key="selected" image="i15 单选选中"/>
                     </button>
@@ -87,6 +87,7 @@
                 <constraints>
                     <constraint firstItem="MdW-Qp-C3j" firstAttribute="leading" secondItem="a95-5N-sLZ" secondAttribute="trailing" constant="15" id="29J-AB-I4v"/>
                     <constraint firstItem="6Gf-gG-3AK" firstAttribute="centerY" secondItem="MdW-Qp-C3j" secondAttribute="centerY" id="8dk-GZ-TDn"/>
+                    <constraint firstItem="THJ-qa-ChD" firstAttribute="leading" secondItem="bW9-hL-c4M" secondAttribute="leading" id="FMP-8r-HnC"/>
                     <constraint firstAttribute="trailing" secondItem="THJ-qa-ChD" secondAttribute="trailing" constant="15" id="H9D-7N-kXp"/>
                     <constraint firstItem="a95-5N-sLZ" firstAttribute="centerY" secondItem="bW9-hL-c4M" secondAttribute="centerY" id="Nyc-mk-5Kg"/>
                     <constraint firstItem="MdW-Qp-C3j" firstAttribute="centerY" secondItem="a95-5N-sLZ" secondAttribute="centerY" id="VcR-rk-QCV"/>
