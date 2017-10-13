@@ -47,8 +47,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [QuHudHelper mb_loading];
- 
     //使用自定义导航栏
     QuNavigationBar *bar = [QuNavigationBar showQuNavigationBarWithController:self];
     self.quNavBar = bar;
