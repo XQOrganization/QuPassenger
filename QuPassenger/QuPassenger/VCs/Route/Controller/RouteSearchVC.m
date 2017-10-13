@@ -24,6 +24,11 @@
 @property (assign, nonatomic) BOOL isLocationSuccess;//是否定位成功
 @property (assign, nonatomic) NSInteger reloadState;//加载是哪一种cell 0://历史记录 1://班次
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *startBottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *endTopConstraint;
+
+@property (assign, nonatomic) BOOL isCurrentTop;//当前位置在顶部
+
 @end
 
 @implementation RouteSearchVC
@@ -35,15 +40,19 @@
     
     [self.searchView setCornerRadius:4.0f AndBorder:0 borderColor:nil];
     [self.searchView showShadowColor];
-    
-    if (self.from == 1) {
+
+    if (self.choosefrom == 1) {
+        
         [self.topBtn setImage:[UIImage imageNamed:@"base_back_icon"] forState:UIControlStateNormal];
         [self.bottomBtn setImage:[UIImage imageNamed:@"route_red_icon"] forState:UIControlStateNormal];
     }
     else{
+        
         [self.topBtn setImage:[UIImage imageNamed:@"route_green_icon"] forState:UIControlStateNormal];
         [self.bottomBtn setImage:[UIImage imageNamed:@"base_back_icon"] forState:UIControlStateNormal];
     }
+    self.isCurrentTop = YES;
+    
     self.startTextField.borderStyle = UITextBorderStyleNone;
     self.endTextField.borderStyle = UITextBorderStyleNone;
     
@@ -94,6 +103,57 @@
 - (IBAction)leftClickAction:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)exchangeClickAction:(id)sender
+{
+    if (self.isCurrentTop) {
+        
+        [UIView animateWithDuration:0.2f animations:^{
+            
+            self.startBottomConstraint.constant = -49.5;
+            self.endTopConstraint.constant = -49.5;
+            [self.searchView layoutIfNeeded];
+        }];
+        
+        
+    }
+    else{
+        
+        [UIView animateWithDuration:0.2f animations:^{
+            
+            self.startBottomConstraint.constant = 0.5;
+            self.endTopConstraint.constant = 0.5;
+            [self.searchView layoutIfNeeded];
+        }];
+        
+    }
+    self.isCurrentTop = !self.isCurrentTop;
+    
+    if (self.choosefrom == 2) {
+        
+        if (self.isCurrentTop) {
+            [self.topBtn setImage:[UIImage imageNamed:@"route_green_icon"] forState:UIControlStateNormal];
+            [self.bottomBtn setImage:[UIImage imageNamed:@"base_back_icon"] forState:UIControlStateNormal];
+        }
+        else{
+            [self.topBtn setImage:[UIImage imageNamed:@"base_back_icon"] forState:UIControlStateNormal];
+            [self.bottomBtn setImage:[UIImage imageNamed:@"route_red_icon"] forState:UIControlStateNormal];
+        }
+    }
+    else{
+        
+        if (self.isCurrentTop) {
+            
+            [self.topBtn setImage:[UIImage imageNamed:@"base_back_icon"] forState:UIControlStateNormal];
+            [self.bottomBtn setImage:[UIImage imageNamed:@"route_red_icon"] forState:UIControlStateNormal];
+
+        }
+        else{
+            [self.topBtn setImage:[UIImage imageNamed:@"route_green_icon"] forState:UIControlStateNormal];
+            [self.bottomBtn setImage:[UIImage imageNamed:@"base_back_icon"] forState:UIControlStateNormal];
+        }
+    }
 }
 
 #pragma mark UITableViewDataSource

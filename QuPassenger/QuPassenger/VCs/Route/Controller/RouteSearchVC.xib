@@ -13,8 +13,10 @@
             <connections>
                 <outlet property="bottomBtn" destination="OZb-6u-R5G" id="sCO-RN-NoE"/>
                 <outlet property="endTextField" destination="Esw-aJ-3G3" id="9Ya-NL-rLh"/>
+                <outlet property="endTopConstraint" destination="fPz-H6-N0e" id="Heq-VG-FOi"/>
                 <outlet property="routeTableView" destination="srt-nm-uaq" id="iWh-k9-8Yk"/>
                 <outlet property="searchView" destination="Nrh-fP-yB6" id="SML-l4-we9"/>
+                <outlet property="startBottomConstraint" destination="Duc-A2-CqH" id="gyx-uH-hMg"/>
                 <outlet property="startTextField" destination="gos-W7-d3n" id="vUc-uN-Wn6"/>
                 <outlet property="topBtn" destination="zvM-4E-t9w" id="Aqz-9O-rY6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,6 +37,9 @@
                                 <constraint firstAttribute="width" constant="44" id="kTv-Ts-ugl"/>
                             </constraints>
                             <state key="normal" image="main_turn_icon"/>
+                            <connections>
+                                <action selector="exchangeClickAction:" destination="-1" eventType="touchUpInside" id="dEf-iQ-Wrb"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZb-6u-R5G">
                             <rect key="frame" x="0.0" y="50" width="44" height="50"/>

@@ -14,15 +14,16 @@
 
 @interface BaseRequest : NSObject
 
-@property (strong, nonatomic) NSString *version;
+@property (strong, nonatomic) NSString *versionNo;
 @property (strong, nonatomic) NSString *channelNo;
+@property (strong, nonatomic) NSString *device;
 
 @end
 
 @interface BaseResponse : NSObject
 
 @property (strong, nonatomic) NSString *message;
-@property (strong, nonatomic) NSString *code;
+@property (assign, nonatomic) NSInteger code;
 
 @end
 
@@ -33,16 +34,12 @@
 
 @end
 
-@interface GetCodeRsp : BaseResponse
-
-@end
-
 //验证码登录
 @interface CheckCodeReq : BaseRequest
 
 @property (strong, nonatomic) NSString *phone;
 @property (strong, nonatomic) NSString *code;
-@property (strong, nonatomic) NSString *device;
+
 
 @end
 
@@ -77,6 +74,22 @@
 @end
 
 @interface CheckCodeRsp : BaseResponse
+
+@property (strong, nonatomic) QuUserInfo *data;
+
+@end
+
+//微信登录绑定手机号
+@interface BindWeChatReq : BaseRequest
+
+@property (strong, nonatomic) NSString *phone;
+@property (strong, nonatomic) NSString *winXinKey;
+@property (strong, nonatomic) NSString *nick;
+@property (strong, nonatomic) NSString *headImage;
+
+@end
+
+@interface BindWeChatRsp : BaseResponse
 
 @property (strong, nonatomic) QuUserInfo *data;
 

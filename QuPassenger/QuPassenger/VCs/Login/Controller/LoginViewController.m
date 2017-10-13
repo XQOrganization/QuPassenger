@@ -49,6 +49,102 @@
     }
 }
 
+#pragma mark Request
+//获取验证码
+- (void)requestVertrifyCode
+{
+    GetCodeReq *req = [[GetCodeReq alloc]init];
+    req.phone = _ibPhoneTf.text;
+    
+    [NetWorkReqManager requestDataWithApiName:getCode params:req response:^(NSDictionary *responseObject) {
+        
+        BaseResponse *rsp = [BaseResponse mj_objectWithKeyValues:responseObject];
+        
+        if (rsp.code == 1) {
+            
+            [self openCountdown];
+        }
+        else{
+            [QuHudHelper qu_showMessage:rsp.message];
+        }
+        
+    } errorResponse:^(NSString *error) {
+        
+        
+    }];
+}
+
+//验证码登录
+- (void)requestVertrifyLogin
+{
+    CheckCodeReq *req = [[CheckCodeReq alloc]init];
+    req.phone = _ibPhoneTf.text;
+    req.code = _ibCodeTf.text;
+    
+    [NetWorkReqManager requestDataWithApiName:checkCode params:req response:^(NSDictionary *responseObject) {
+        
+        CheckCodeRsp *rsp = [CheckCodeRsp mj_objectWithKeyValues:responseObject];
+        
+        if (rsp.code == 1) {
+            
+            ACCOUNTINFO.isLogin = YES;
+            ACCOUNTINFO.userInfo = rsp.data;
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        else{
+            [QuHudHelper qu_showMessage:rsp.message];
+        }
+        
+    } errorResponse:^(NSString *error) {
+        
+        
+    }];
+
+}
+
+//微信登录
+- (void)requestWXLoginWithUid:(NSString *)uid nickName:(NSString *)nickName headUrl:(NSString *)headUrl
+{
+    BindWeChatReq *req = [[BindWeChatReq alloc]init];
+    req.winXinKey = uid;
+    req.phone = @"";
+    req.nick = @"";
+    req.headImage = @"";
+    
+    [NetWorkReqManager requestDataWithApiName:bindWeChat params:req response:^(NSDictionary *responseObject) {
+        
+        BindWeChatRsp *rsp = [BindWeChatRsp mj_objectWithKeyValues:responseObject];
+        
+        if (rsp.code == 1) {
+            
+            ACCOUNTINFO.isLogin = YES;
+            ACCOUNTINFO.userInfo = rsp.data;
+            
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }
+        else if (rsp.code == 3){
+            
+            WXRegistViewController *vc = [[WXRegistViewController alloc]initWithNibName:@"WXRegistViewController" bundle:nil];
+            vc.wxUid = uid;
+            vc.nickName = nickName;
+            vc.imageUrl = headUrl;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else{
+            [QuHudHelper qu_showMessage:rsp.message];
+        }
+        
+        
+    } errorResponse:^(NSString *error) {
+        
+        
+    }];
+
+}
+
+
 - (void)phoneTfChange{
   
     if (_ibPhoneTf.text.length >11) {
@@ -79,11 +175,7 @@
     WS(weakSelf)
     [[ThirdApiManager shareManager]getThirdUserInfoCompletion:^(NSString *uid,NSString *nickName,NSString *headUrl) {
         
-        WXRegistViewController *vc = [[WXRegistViewController alloc]initWithNibName:@"WXRegistViewController" bundle:nil];
-        vc.wxUid = uid;
-        vc.nickName = nickName;
-        vc.imageUrl = headUrl;
-        [weakSelf.navigationController pushViewController:vc animated:YES];
+        [weakSelf requestWXLoginWithUid:uid nickName:nickName headUrl:headUrl];
 
     }];
 }
@@ -96,41 +188,16 @@
         return ;
     }
     
-    GetCodeReq *req = [[GetCodeReq alloc]init];
-    req.phone = _ibPhoneTf.text;
+    [self requestVertrifyCode];
     
-    [NetWorkReqManager requestDataWithApiName:getCode params:req response:^(NSDictionary *responseObject) {
-        
-        [self openCountdown];
-        
-    } errorResponse:^(NSString *error) {
-        
-        [QuHudHelper qu_showMessage:error];
-    }];
     
 }
 //登录方法
 - (IBAction)loginBtnClick:(id)sender {
     
-    CheckCodeReq *req = [[CheckCodeReq alloc]init];
-    req.phone = _ibPhoneTf.text;
-    req.device = [PublicManager getDeviceId];
-    req.code = _ibCodeTf.text;
-    
-    [NetWorkReqManager requestDataWithApiName:checkCode params:req response:^(NSDictionary *responseObject) {
-        
-        CheckCodeRsp *rsp = [CheckCodeRsp mj_objectWithKeyValues:responseObject];   
-        
-        ACCOUNTINFO.isLogin = YES;
-        ACCOUNTINFO.userInfo = rsp.data;
-        
-        [self dismissViewControllerAnimated:YES completion:nil];
-        
-    } errorResponse:^(NSString *error) {
-        
-        [QuHudHelper qu_showMessage:error];
-    }];
+    [self requestVertrifyLogin];
 }
+
 // 开启倒计时
 -(void)openCountdown{
     
