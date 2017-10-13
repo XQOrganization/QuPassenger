@@ -95,30 +95,30 @@ float WidthForString(NSString *value,float fontSize,float height)
 
 }
 
-//+ (NSDictionary *)getMainDataFromLocal
-//{
-//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    
-//    return [userDefaults objectForKey:@"MainData"];
-//}
-//
-//+ (void)saveMainDataToLocalWithDictionary:(NSDictionary *)dictionary
-//{
-//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    [userDefaults setObject:dictionary forKey:@"MainData"];
-//    //将数据即时写入
-//    [userDefaults synchronize];
-//    
-//}
-//
-//+ (void)removeUserLocalToken
-//{
-//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    [userDefaults removeObjectForKey:@"MainData"];
-//    //将数据即时写入
-//    [userDefaults synchronize];
-//    
-//}
++ (NSString *)getLocalUserId
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    return [userDefaults objectForKey:@"userId"];
+}
+
++ (void)saveUserUdToLocalWithId:(NSString *)userId
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:userId forKey:@"userId"];
+    //将数据即时写入
+    [userDefaults synchronize];
+    
+}
+
++ (void)removelocalUserId
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:@"userId"];
+    //将数据即时写入
+    [userDefaults synchronize];
+    
+}
 
 
 + (BOOL)evenNumberWithNumber:(NSInteger)number

@@ -111,6 +111,19 @@
 
 @end
 
+//自动登录
+@interface AutoLoginReq : BaseRequest
+
+@property (strong, nonatomic) NSString *userId;
+
+@end
+
+@interface AutoLoginRsp : BaseResponse
+
+@property (strong, nonatomic) QuUserInfo *data;
+
+@end
+
 @interface MainReq : BaseRequest
 
 @end

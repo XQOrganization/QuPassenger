@@ -20,7 +20,7 @@
 - (void)setLeftBarItemWithButton:(UIButton *)btn;
 - (void)setRightBarItemWithButton:(UIButton *)btn;
 
-- (void)jumpWithTid:(NSInteger)eventId url:(NSString *)params;
+- (void)jumpWithEventd:(NSInteger)eventId params:(NSString *)params;
 
 
 

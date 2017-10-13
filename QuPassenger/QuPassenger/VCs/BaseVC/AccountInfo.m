@@ -22,5 +22,16 @@
     return shared;
 }
 
+- (void)setUserInfo:(QuUserInfo *)userInfo
+{
+    _userInfo = userInfo;
+    
+    if (userInfo) {
+        [PublicManager saveUserUdToLocalWithId:userInfo.memberID];
+    }
+    else{
+        [PublicManager removelocalUserId];
+    }
+}
 
 @end

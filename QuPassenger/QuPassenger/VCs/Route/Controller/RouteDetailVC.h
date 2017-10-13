@@ -10,4 +10,6 @@
 
 @interface RouteDetailVC : BasicVC
 
+@property (strong, nonatomic) NSString *routeId;
+
 @end

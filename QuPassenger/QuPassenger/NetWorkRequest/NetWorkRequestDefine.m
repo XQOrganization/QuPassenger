@@ -19,6 +19,8 @@ NSString *XQApiNameEnum(XQApiName name)
             break;
         case checkWeChatCode:return @"checkWeChatCode";
             break;
+        case autoLand:return @"autoLand";
+            break;
         default:return @"";
             break;
     }

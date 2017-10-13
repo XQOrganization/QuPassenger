@@ -7,6 +7,7 @@
 //
 
 #import "BasicVC.h"
+#import "RouteDetailVC.h"
 #import "LoginViewController.h"
 
 @interface BasicVC ()<UIGestureRecognizerDelegate>
@@ -94,107 +95,39 @@
 }
 
 
-#pragma mark 根据t_id和url跳转
-- (void)jumpWithTid:(NSInteger)eventId url:(NSString *)params
+#pragma mark 根据eventId和params跳转
+- (void)jumpWithEventd:(NSInteger)eventId params:(NSString *)params
 {
     
-//    switch (eventId) {
-//            
-//        case 1:{
-//            //url传的是分类
-//            GoodsListVC *vc = [[GoodsListVC alloc]initWithNibName:@"GoodsListVC" bundle:nil];
-//            vc.menuId = params;
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
-//            break;
-//            
-//        case 2:{
-//            //url传的是搜索关键字
-//            GoodsListVC *vc = [[GoodsListVC alloc]initWithNibName:@"GoodsListVC" bundle:nil];
-//            vc.keyWords = params;
-//            [self.navigationController pushViewController:vc animated:YES];
-//           
-//        }
-//            break;
-//            
-//        case 3:{
-//            //商品详情单品唯一id
-//            GoodsDetailVC *vc = [[GoodsDetailVC alloc]initWithNibName:@"GoodsDetailVC" bundle:nil];
-//            vc.goodsId = params;
-//            [self.navigationController pushViewController:vc animated:YES];
-//            
-//        }
-//            break;
-//        case 4:{
-//            //单页广告页
-//            MainAdvertiseViewController *vc = [MainAdvertiseViewController new];
-//            vc.adId = params;
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
-//            break;
-//            
-//        case 5:{
-//            //webView
-//            CommonWebViewController *vc = [[CommonWebViewController alloc]initWithNibName:@"CommonWebViewController" bundle:nil];
-//            vc.webUrl = params;
-//            [self.navigationController pushViewController:vc animated:YES];
-//        }
-//            break;
-//            
-//        case 6:{
-//            //app中一些跳转
-//            switch ([params integerValue]) {
-//                case 1:{
-//                    //我的订单
-//                    if (!ACCOUNTINFO.isLogin) {
-//                        [self presentLoginWithComplection:nil];
-//                        return;
-//                    }
-//                    MyOrderVC *vc = [[MyOrderVC alloc]init];
-//                    [self.navigationController pushViewController:vc animated:YES];
-//                }
-//                    break;
-//                    
-//                case 2:{
-//                    //轻松退货
-//                    if (!ACCOUNTINFO.isLogin) {
-//                        [self presentLoginWithComplection:nil];
-//                        return;
-//                    }
-//                    MainRefundVC *vc = [[MainRefundVC alloc]init];
-//                    [self.navigationController pushViewController:vc animated:YES];
-//                }
-//                    break;
-//                    
-//                case 3:{
-//                    //签到送积分
-//                    if (!ACCOUNTINFO.isLogin) {
-//                        [self presentLoginWithComplection:nil];
-//                        return;
-//                    }
-//                    [self requestSignForScore];
-//                }
-//                    break;
-//                    
-//                case 4:{
-//                    
-//                    //充值
-//                    MainRechargeVC *vc = [[MainRechargeVC alloc]initWithNibName:@"MainRechargeVC" bundle:nil];
-//                    
-//                    [self.navigationController pushViewController:vc animated:YES];
-//                }
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
-//        }
-//            break;
-//            
-//        default:
-//            [MBHudHelper tipMessage:@"抱歉，暂不支持此功能"];
-//            break;
-//    }
+    switch (eventId) {
+            
+        case 1:{
+            //路线详情
+            RouteDetailVC *vc = [[RouteDetailVC alloc]initWithNibName:@"GoodsListVC" bundle:nil];
+            vc.routeId = params;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        case 2:{
+            
+            //webView
+            BaseWebViewController *vc = [[BaseWebViewController alloc]init];
+            vc.url = params;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        case 3:{
+            //登录
+            [self presentLoginWithComplection:nil];
+        }
+            break;
+            
+        default:
+            [QuHudHelper qu_showMessage:@"抱歉，暂不支持此功能"];
+            break;
+    }
     
     //    NSLog(@"协议号--- %ld",eventId);
 }

@@ -102,6 +102,11 @@
 
     [self.ticketBtn showShadowColorWithColor:HEXCOLOR(@"ff5c41") offset:CGSizeMake(0, 5) opacity:0.5 radius:3.0];
     
+    NSString *uid = [PublicManager getLocalUserId];
+    if (uid.length > 0) {
+        [self autoLoginRequestWithId:uid];
+    }
+    
     WS(weakSelf)
     __weak QuCityModel *cityModel = [PublicManager shareManager].cityModel;
     
@@ -139,6 +144,34 @@
         [self.leftHeadImageView sd_setImageWithURL:[NSURL URLWithString:ACCOUNTINFO.userInfo.headImg]];
         [self.leftNameLabel setText:ACCOUNTINFO.userInfo.nickName];
     }
+}
+
+#pragma mark Request
+//自动登录
+- (void)autoLoginRequestWithId:(NSString *)uid
+{
+    
+    AutoLoginReq *req = [[AutoLoginReq alloc]init];
+    req.userId = uid;
+    
+    [NetWorkReqManager requestDataWithApiName:autoLand params:req response:^(NSDictionary *responseObject) {
+        
+        AutoLoginRsp *rsp = [AutoLoginRsp mj_objectWithKeyValues:responseObject];
+        
+        if (rsp.code == 1) {
+            
+            ACCOUNTINFO.isLogin = YES;
+            ACCOUNTINFO.userInfo = rsp.data;
+            
+            [self.leftHeadImageView sd_setImageWithURL:[NSURL URLWithString:ACCOUNTINFO.userInfo.headImg]];
+            [self.leftNameLabel setText:ACCOUNTINFO.userInfo.nickName];
+            
+        }
+        
+        
+    } errorResponse:^(NSString *error) {
+        
+    }];
 }
 
 #pragma mark gestureRecognizer

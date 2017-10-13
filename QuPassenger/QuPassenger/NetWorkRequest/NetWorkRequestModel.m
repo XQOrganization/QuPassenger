@@ -73,6 +73,16 @@
 
 @end
 
+@implementation AutoLoginReq
+
+
+@end
+
+@implementation AutoLoginRsp
+
+
+@end
+
 @implementation MainReq
 
 @end

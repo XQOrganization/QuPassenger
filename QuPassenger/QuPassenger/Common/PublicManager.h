@@ -18,11 +18,11 @@ float WidthForString(NSString *value,float fontSize,float height);
 
 + (PublicManager *)shareManager;
 
-//+ (NSDictionary *)getMainDataFromLocal;
-//
-//+ (void)saveMainDataToLocalWithDictionary:(NSDictionary *)dictionary;
-//
-//+ (void)removeUserLocalToken;
+//保存本地userId
++ (NSString *)getLocalUserId;
++ (void)saveUserUdToLocalWithId:(NSString *)userId;
++ (void)removelocalUserId;
+
 //获取设备号
 + (NSString *)getDeviceId;
 
