@@ -158,5 +158,41 @@
     }
 }
 
+- (NSString *)getTheProvinceCodeWithCityName:(NSString *)cityName
+{
+    @synchronized(self){
+        [self.db open];
+        __block NSString *provinceCode= @"";
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE city_name='%@'",CITY_SELECT_TABLE,cityName];
+        [self.queue inDatabase:^(FMDatabase *db){
+            FMResultSet *rs = [db executeQuery:sql];
+            while ([rs next]) {
+                provinceCode = [rs stringForColumn:@"parent_region"];//region_code
+            }
+            [rs close];
+        }];
+        [self.db close];
+        return provinceCode;
+    }
+}
+
+- (NSString *)getTheCityCodeWithCityName:(NSString *) cityName
+{
+    @synchronized(self){
+        [self.db open];
+        __block NSString *provinceCode= @"";
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE city_name='%@'",CITY_SELECT_TABLE,cityName];
+        [self.queue inDatabase:^(FMDatabase *db){
+            FMResultSet *rs = [db executeQuery:sql];
+            while ([rs next]) {
+                provinceCode = [rs stringForColumn:@"region_code"];//region_code
+            }
+            [rs close];
+        }];
+        [self.db close];
+        return provinceCode;
+    }
+    
+}
 
 @end

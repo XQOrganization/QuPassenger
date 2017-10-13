@@ -51,6 +51,7 @@
 #import <SVProgressHUD.h>
 #import <QMapKit/QMapKit.h>
 #import <QMapSearchKit/QMapSearchKit.h>
+#import "QuDBManager.h"
 #import "QuLocationManager.h"
 
 #define ScreenWidthRatio [[UIScreen mainScreen] bounds].size.width/375

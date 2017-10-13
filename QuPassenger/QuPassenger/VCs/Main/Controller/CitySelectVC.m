@@ -187,6 +187,36 @@
     
 }
 
+//添加开通城市
+- (NSArray *)addSupportCity
+{
+    
+    QuCityModel *model = [[QuCityModel alloc]init];
+ 
+    model.cityName = @"苏州";
+    model.cityCode = @"320500";
+    model.provinceCode = @"3200000";
+    
+    NSArray *array = [NSArray arrayWithObject:model];
+    
+    return array;
+}
+
+//添加定位城市
+- (NSArray *)addLocationCity
+{
+    
+    QuCityModel *model = [[QuCityModel alloc]init];
+    
+    model.cityName = @"苏州";
+    model.cityCode = @"320500";
+    model.provinceCode = @"3200000";
+    
+    NSArray *array = [NSArray arrayWithObject:model];
+    
+    return array;
+}
+
 //属性table
 - (void)refreshTable
 {
@@ -199,10 +229,83 @@
     self.alphaString = [[NSMutableString alloc]initWithCapacity:0];
     self.sectionArray = [[NSMutableArray alloc]initWithCapacity:0];
     
+//    NSMutableArray *ary = [NSMutableArray arrayWithObject:[self addLocationCity]];
+//    //添加定位城市
+//    if (LOCATION.areaCode.length > 0) {
+//        
+//        [self.sectionArray addObject:ary];
+//        [self.alphaString appendString:@"定位"];
+//        
+//        //添加最近访问
+//        ary = [self addRecentlyCitys];
+//        if ([ary count] > 0) {
+//            [self.sectionArray addObject:ary];
+//            [self.alphaString appendString:@",最近"];
+//        }
+//        
+//        //添加省内其他城市
+//        CityAreaModel *model=[self addLocationCity];
+//        
+//        if([model.provinceCode isEqualToString:@"320000"])
+//        {
+//            ary = [self addotherProvinceCitys:model.provinceCode];
+//            
+//            for(int i=0;i<[ary count];i++)
+//            {
+//                CityAreaModel *tempmodel = [ary objectAtIndex:i];
+//                if([tempmodel.cityCode isEqualToString:model.cityCode])
+//                {
+//                    [ary removeObjectAtIndex:i];
+//                    break;
+//                }
+//            }
+//            if ([ary count] > 0) {
+//                [self.sectionArray addObject:ary];
+//                //加逗号为了方便取索引数组
+//                [self.alphaString appendString:@",省内"];
+//            }
+//        }
+//        else
+//        {
+//            //添加热门城市
+//            CityAreaModel *model=[self addLocationCity];
+//            ary = [self addHotCitys:model.provinceCode];
+//            if ([ary count] > 0) {
+//                [self.sectionArray addObject:ary];
+//                //加逗号为了方便取索引数组
+//                [self.alphaString appendString:@",热门"];
+//            }
+//            
+//        }
+//        
+//    }
+//    else{
+//        CityAreaModel *modelLocation = [[CityAreaModel alloc]init];
+//        if(LOCATION.isloading){
+//            modelLocation.cityName = @"定位中...";
+//            
+//        }
+//        else{
+//            modelLocation.cityName = @"定位失败，请点击重试";
+//            
+//        }
+//        NSArray *ary = [NSMutableArray arrayWithObject:modelLocation];
+//        [self.sectionArray addObject:ary];
+//        [self.alphaString appendString:@"定位"];
+//
+//        
+//    }
+    
+    //添加开通城市
+    NSArray *supportAry = [self addSupportCity];
+    if ([supportAry count] > 0) {
+        [self.sectionArray addObject:supportAry];
+        [self.alphaString appendString:@",开通"];
+    }
     
     //添加地市
     [self.sectionArray addObjectsFromArray:[self sortFirstLettersInArray:rawCrayons]];
-    
+
     [self.tableView reloadData];
     [self.tableView reloadSectionIndexTitles];
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:[self.sectionArray count] -1] atScrollPosition:UITableViewScrollPositionTop animated:NO];
@@ -350,7 +453,7 @@
     }
     else{
         
-        if([[self firstLetter:indexPath.section] isEqualToString:@"开通城市"]||[[self firstLetter:indexPath.section] isEqualToString:@"省内"])
+        if([[self firstLetter:indexPath.section] isEqualToString:@"开通城市"])
         {
             NSInteger btCount = [(NSMutableArray*)self.sectionArray[indexPath.section] count];
             
@@ -402,22 +505,11 @@
     UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(10, 0, SCREEN_SIZE.width, 20)];
     bgView.backgroundColor = [UIColor colorWithHexString:@"#f2f2f2"];
     UILabel *labelHeaderView = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, SCREEN_SIZE.width, 20)];
+    labelHeaderView.font = [UIFont systemFontOfSize:13.0f];
     
-    if([[self firstLetter:section]isEqualToString:@"最近"])
+    if ([[self firstLetter:section]isEqualToString:@"开通"])
     {
-        labelHeaderView.text = [NSString stringWithFormat:@"最近访问城市"];
-        labelHeaderView.font = [UIFont systemFontOfSize:12.0f];
-    }
-    else if ([[self firstLetter:section]isEqualToString:@"热门"])
-    {
-        
-        labelHeaderView.text = [NSString stringWithFormat:@"热门推荐城市"];
-        labelHeaderView.font = [UIFont systemFontOfSize:12.0f];
-    }
-    else if ([[self firstLetter:section]isEqualToString:@"省内"])
-    {
-        labelHeaderView.text = [NSString stringWithFormat:@"省内其他城市"];
-        labelHeaderView.font = [UIFont systemFontOfSize:12.0f];
+        labelHeaderView.text = [NSString stringWithFormat:@"开通城市"];
     }
     else if ([[self firstLetter:section]isEqualToString:@"定位"])
     {
@@ -427,12 +519,11 @@
     else
     {
         labelHeaderView.text = [NSString stringWithFormat:@"%@",[self firstLetter:section]];
-        labelHeaderView.font = [UIFont systemFontOfSize:12.0f];
         
     }
     
     labelHeaderView.backgroundColor = [UIColor colorWithHexString:@"#f2f2f2"];
-    labelHeaderView.textColor = [UIColor colorWithHexString:@"#a5a5a5"];
+    labelHeaderView.textColor = [UIColor colorWithHexString:@"#777777"];
     [bgView addSubview:labelHeaderView];
     
     return bgView;
@@ -448,8 +539,7 @@
         if (cell == nil) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
-        cell.selectionStyle =  UITableViewCellSelectionStyleNone;
-        
+
         for (UIView *view in [cell.contentView subviews]) {
             [view removeFromSuperview];
         }
@@ -459,10 +549,8 @@
         
         cell.textLabel.font = [UIFont systemFontOfSize:15.0f];
         cell.textLabel.text = [NSString stringWithFormat:@"%@",model.cityName];
+        cell.textLabel.textColor = HEXCOLOR(@"404040");
         cell.textLabel.backgroundColor = [UIColor clearColor];
-        
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
-        cell.contentView.backgroundColor = [UIColor clearColor];
         
         return cell;
     }
@@ -507,17 +595,14 @@
             if (cell == nil) {
                 cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
             }
-            cell.selectionStyle =  UITableViewCellSelectionStyleNone;
-            
+          
             
             QuCityModel *model = [self categoryNameAtIndexPath:indexPath];
             cell.textLabel.font = [UIFont systemFontOfSize:15.0f];
             cell.textLabel.text = [NSString stringWithFormat:@"%@",model.cityName];
             cell.textLabel.backgroundColor = [UIColor clearColor];
-            //            cell.textLabel.textColor = self.tableTextColor;
-            //            cell.contentView.backgroundColor = self.tableColor;
-            cell.selectionStyle = UITableViewCellSelectionStyleGray;
-            cell.contentView.backgroundColor = [UIColor clearColor];
+            cell.textLabel.textColor = HEXCOLOR(@"404040");
+           
             return cell;
             
             
@@ -543,7 +628,7 @@
     }
     if([tableView isEqual:self.tableView])
     {
-        if([[self firstLetter:indexPath.section] isEqualToString:@"热门"]||[[self firstLetter:indexPath.section] isEqualToString:@"最近"]||[[self firstLetter:indexPath.section] isEqualToString:@"定位"]||[[self firstLetter:indexPath.section] isEqualToString:@"省内"])
+        if([[self firstLetter:indexPath.section] isEqualToString:@"定位"]||[[self firstLetter:indexPath.section] isEqualToString:@"开通"])
         {
             return;
         }

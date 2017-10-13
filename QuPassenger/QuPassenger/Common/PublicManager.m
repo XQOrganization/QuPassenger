@@ -71,9 +71,10 @@ float WidthForString(NSString *value,float fontSize,float height)
     self = [super init];
     if(self){
         
-        _cityModel = [[QuCityModel alloc]init];
-        _cityModel.cityName = @"苏州";
-        _cityModel.cityCode = @"320500";
+        _selectCityModel = [[QuCityModel alloc]init];
+        _selectCityModel.cityName = @"苏州";
+        _selectCityModel.cityCode = @"320500";
+        _selectCityModel.provinceCode = @"320000";
         
         
     }

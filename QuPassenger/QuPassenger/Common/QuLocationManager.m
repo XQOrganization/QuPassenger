@@ -83,6 +83,16 @@
     
     self.lbsLocation = location;
     NSLog(@"%@, %@, %@", location.location, location.name, location.address);
+    
+    [PublicManager shareManager].latitude = [NSString stringWithFormat:@"%f",location.location.coordinate.latitude];
+    [PublicManager shareManager].longitude = [NSString stringWithFormat:@"%f",location.location.coordinate.longitude];
+    
+    QuCityModel *cityModel = [[QuCityModel alloc]init];
+    cityModel.cityName = [location.city replace:@"市" withString:@""];
+    cityModel.cityCode = [[QuDBManager shareDataManger]getTheCityCodeWithCityName:cityModel.cityName];
+    cityModel.provinceCode = [[QuDBManager shareDataManger]getTheProvinceCodeWithCityName:cityModel.cityName];
+    [PublicManager shareManager].locationCityModel = cityModel;
+    
     if (self.locationSuccessBlock) {
         self.locationSuccessBlock(location);
     }

@@ -20,5 +20,9 @@
 
 //获取所有城市
 - (NSMutableArray *)getTheCityAreaCodeWithProvinceCode:(NSString *)provinceCode;
+//根据城市名获取省code
+- (NSString *)getTheProvinceCodeWithCityName:(NSString *)cityName;
+//根据城市名获取城市code
+- (NSString *)getTheCityCodeWithCityName:(NSString *)cityName;
 
 @end

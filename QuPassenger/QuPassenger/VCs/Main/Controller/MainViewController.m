@@ -108,13 +108,14 @@
     }
     
     WS(weakSelf)
-    __weak QuCityModel *cityModel = [PublicManager shareManager].cityModel;
+    __weak QuCityModel *cityModel = [PublicManager shareManager].selectCityModel;
     
     [[QuLocationManager shareManager]startUpdatingLocationWithSuccess:^(TencentLBSLocation *lbsLocation) {
         
         weakSelf.titleHeadLabel.text = lbsLocation.city;
         cityModel.cityName = [lbsLocation.city replace:@"市" withString:@""];
-//        cityModel.cityCode = 
+        cityModel.cityCode = [[QuDBManager shareDataManger]getTheCityCodeWithCityName:cityModel.cityName];
+        cityModel.provinceCode = [[QuDBManager shareDataManger]getTheProvinceCodeWithCityName:cityModel.cityName];
         
     } fail:^{
         
