@@ -166,10 +166,8 @@
     //遮蔽物
     self.indexView.curtainColor = nil;
     self.indexView.curtainFade = 0.0;
-    self.indexView.curtainStays = NO;
     self.indexView.curtainMoves = YES;
-    self.indexView.curtainMargins = NO;
-    self.indexView.ergonomicHeight = NO;
+//    self.indexView.ergonomicHeight = NO;
     //距离上边距边缘
     self.indexView.upperMargin = 44.0;
     //距离下边距边缘
@@ -181,9 +179,9 @@
     self.indexView.maxItemDeflection = 50.0;
     self.indexView.rangeOfDeflection = 5;
     //非选择字体颜色
-    self.indexView.fontColor = [UIColor colorWithHexString:@"#3990ff"];
+    self.indexView.fontColor = [UIColor colorWithHexString:@"404040"];
     //选择字体颜色
-    self.indexView.selectedItemFontColor = [UIColor colorWithHexString:@"#3990ff"];
+    self.indexView.selectedItemFontColor = [UIColor blackColor];
     self.indexView.darkening = NO;
     self.indexView.fading = YES;
     
