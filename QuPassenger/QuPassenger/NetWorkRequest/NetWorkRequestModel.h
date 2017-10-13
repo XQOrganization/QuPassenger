@@ -31,6 +31,7 @@
 @interface GetCodeReq : BaseRequest
 
 @property (strong, nonatomic) NSString *phone;
+@property (assign, nonatomic) NSInteger type; //1:手机登陆 type 2:微信绑定
 
 @end
 
@@ -79,17 +80,32 @@
 
 @end
 
-//微信登录绑定手机号
+//微信登录
 @interface BindWeChatReq : BaseRequest
+
+@property (strong, nonatomic) NSString *winXinKey;
+@property (strong, nonatomic) NSString *phone;
+
+@end
+
+@interface BindWeChatRsp : BaseResponse
+
+@property (strong, nonatomic) QuUserInfo *data;
+
+@end
+
+//微信绑定手机号
+@interface CheckWeChatCodeReq : BaseRequest
 
 @property (strong, nonatomic) NSString *phone;
 @property (strong, nonatomic) NSString *winXinKey;
 @property (strong, nonatomic) NSString *nick;
 @property (strong, nonatomic) NSString *headImage;
+@property (strong, nonatomic) NSString *code;
 
 @end
 
-@interface BindWeChatRsp : BaseResponse
+@interface CheckWeChatCodeRsp : BaseResponse
 
 @property (strong, nonatomic) QuUserInfo *data;
 

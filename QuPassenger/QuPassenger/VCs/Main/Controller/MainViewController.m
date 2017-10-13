@@ -46,6 +46,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [QuHudHelper mb_loading];
  
     //使用自定义导航栏
     QuNavigationBar *bar = [QuNavigationBar showQuNavigationBarWithController:self];
@@ -128,6 +130,17 @@
     [super viewWillLayoutSubviews];
     
     [self.mainCollectionView setContentOffset:CGPointMake(0, ScreenWidthRatio * 80)];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if (ACCOUNTINFO.isLogin) {
+        
+        [self.leftHeadImageView sd_setImageWithURL:[NSURL URLWithString:ACCOUNTINFO.userInfo.headImg]];
+        [self.leftNameLabel setText:ACCOUNTINFO.userInfo.nickName];
+    }
 }
 
 #pragma mark gestureRecognizer

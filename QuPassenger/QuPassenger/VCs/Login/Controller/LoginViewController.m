@@ -55,6 +55,7 @@
 {
     GetCodeReq *req = [[GetCodeReq alloc]init];
     req.phone = _ibPhoneTf.text;
+    req.type = 1;
     
     [NetWorkReqManager requestDataWithApiName:getCode params:req response:^(NSDictionary *responseObject) {
         
@@ -77,11 +78,15 @@
 //验证码登录
 - (void)requestVertrifyLogin
 {
+    [QuHudHelper mb_loading];
+    
     CheckCodeReq *req = [[CheckCodeReq alloc]init];
     req.phone = _ibPhoneTf.text;
     req.code = _ibCodeTf.text;
     
     [NetWorkReqManager requestDataWithApiName:checkCode params:req response:^(NSDictionary *responseObject) {
+        
+        [QuHudHelper mb_dismiss];
         
         CheckCodeRsp *rsp = [CheckCodeRsp mj_objectWithKeyValues:responseObject];
         
@@ -98,7 +103,7 @@
         
     } errorResponse:^(NSString *error) {
         
-        
+        [QuHudHelper mb_dismiss];
     }];
 
 }
@@ -106,13 +111,15 @@
 //微信登录
 - (void)requestWXLoginWithUid:(NSString *)uid nickName:(NSString *)nickName headUrl:(NSString *)headUrl
 {
+    [QuHudHelper mb_loading];
+    
     BindWeChatReq *req = [[BindWeChatReq alloc]init];
     req.winXinKey = uid;
     req.phone = @"";
-    req.nick = @"";
-    req.headImage = @"";
-    
+ 
     [NetWorkReqManager requestDataWithApiName:bindWeChat params:req response:^(NSDictionary *responseObject) {
+        
+        [QuHudHelper mb_dismiss];
         
         BindWeChatRsp *rsp = [BindWeChatRsp mj_objectWithKeyValues:responseObject];
         
@@ -139,7 +146,7 @@
         
     } errorResponse:^(NSString *error) {
         
-        
+        [QuHudHelper mb_dismiss];
     }];
 
 }

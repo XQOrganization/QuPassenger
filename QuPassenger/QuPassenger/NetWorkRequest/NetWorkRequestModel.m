@@ -63,6 +63,16 @@
 
 @end
 
+@implementation CheckWeChatCodeReq
+
+
+@end
+
+@implementation CheckWeChatCodeRsp
+
+
+@end
+
 @implementation MainReq
 
 @end

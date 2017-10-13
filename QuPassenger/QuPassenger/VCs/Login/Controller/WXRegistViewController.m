@@ -47,18 +47,48 @@
 }
 
 #pragma mark Request
+//获取验证码
+- (void)requestVertrifyCode
+{
+    GetCodeReq *req = [[GetCodeReq alloc]init];
+    req.phone = _ibPhoneTf.text;
+    req.type = 2;
+    
+    [NetWorkReqManager requestDataWithApiName:getCode params:req response:^(NSDictionary *responseObject) {
+        
+        BaseResponse *rsp = [BaseResponse mj_objectWithKeyValues:responseObject];
+        
+        if (rsp.code == 1) {
+            
+            [self openCountdown];
+        }
+        else{
+            [QuHudHelper qu_showMessage:rsp.message];
+        }
+        
+    } errorResponse:^(NSString *error) {
+        
+        
+    }];
+}
+
 //微信登录
 - (void)requestWXBindLogin
 {
-    BindWeChatReq *req = [[BindWeChatReq alloc]init];
+    [QuHudHelper mb_loading];
+    
+    CheckWeChatCodeReq *req = [[CheckWeChatCodeReq alloc]init];
     req.winXinKey = self.wxUid;
     req.phone = self.ibPhoneTf.text;
     req.nick = self.nickName;
     req.headImage = self.imageUrl;
+    req.code = self.ibCodeTf.text;
     
-    [NetWorkReqManager requestDataWithApiName:bindWeChat params:req response:^(NSDictionary *responseObject) {
+    [NetWorkReqManager requestDataWithApiName:checkWeChatCode params:req response:^(NSDictionary *responseObject) {
         
-        BindWeChatRsp *rsp = [BindWeChatRsp mj_objectWithKeyValues:responseObject];
+        [QuHudHelper mb_dismiss];
+        
+        CheckWeChatCodeRsp *rsp = [CheckWeChatCodeRsp mj_objectWithKeyValues:responseObject];
         
         if (rsp.code == 1) {
             
@@ -75,7 +105,7 @@
         
     } errorResponse:^(NSString *error) {
         
-        
+        [QuHudHelper mb_dismiss];
     }];
     
 }
@@ -108,7 +138,7 @@
         [QuHudHelper qu_showMessage:@"请输入正确的11位手机号码"];
         return ;
     }
-    [self openCountdown];
+    [self requestVertrifyCode];
 }
 //确认
 - (IBAction)sureClick:(id)sender {

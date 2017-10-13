@@ -12,7 +12,8 @@
 typedef NS_ENUM(NSInteger,XQApiName) {
     getCode,          //获取验证码
     checkCode,        //验证码登录
-    bindWeChat,       //微信绑定手机号
+    bindWeChat,       //微信登录
+    checkWeChatCode,       //微信绑定手机号
     
 };
 NSString *XQApiNameEnum(XQApiName name);

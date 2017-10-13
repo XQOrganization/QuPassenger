@@ -17,6 +17,8 @@ NSString *XQApiNameEnum(XQApiName name)
             break;
         case bindWeChat:return @"bindWeChat";
             break;
+        case checkWeChatCode:return @"checkWeChatCode";
+            break;
         default:return @"";
             break;
     }

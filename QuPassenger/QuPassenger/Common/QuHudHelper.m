@@ -25,7 +25,9 @@
 {
     UIView *inView = view ? view : [UIApplication sharedApplication].keyWindow;
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:inView];
-    
+//    hud.bezelView.color = [UIColor blackColor];
+//    [UIActivityIndicatorView appearanceWhenContainedIn:[MBProgressHUD class], nil].color = [UIColor whiteColor];
+//    
     dispatch_async(dispatch_get_main_queue(), ^{
         
         NSString *string = [msg stringByReplacingOccurrencesOfString:@" " withString:@""];
