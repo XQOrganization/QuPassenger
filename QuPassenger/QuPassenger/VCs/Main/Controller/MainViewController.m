@@ -448,11 +448,7 @@
     else if (indexPath.section == 2){
         static NSString *bIdentifier = @"MainChannelCell";
         MainChannelCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:bIdentifier forIndexPath:indexPath];
-        
-//        MainSmallModel *model = self.mainRsp.small_pic[indexPath.item];
-//        [cell.channelLabel setText:model.name];
-//        [cell.channelImageView sd_setImageWithURL:[NSURL URLWithString:model.pic]];
-        
+
         return cell;
     }
     else {
@@ -569,8 +565,13 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [self showLeftView];
-    if (indexPath.section == 3) {
+
+    if (indexPath.section == 2) {
+        
+        BaseWebViewController *vc = [[BaseWebViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if (indexPath.section == 3) {
         RouteDetailVC *vc = [[RouteDetailVC alloc]initWithNibName:@"RouteDetailVC" bundle:nil];
         [self.navigationController pushViewController:vc animated:YES];
     }
