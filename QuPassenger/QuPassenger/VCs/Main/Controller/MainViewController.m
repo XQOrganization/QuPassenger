@@ -249,6 +249,9 @@
 - (IBAction)titleClickAction:(id)sender
 {
     CitySelectVC *vc = [[CitySelectVC alloc]initWithNibName:@"CitySelectVC" bundle:nil];
+    vc.selectCityBlock = ^(QuCityModel *model) {
+        
+    };
     [self.navigationController pushViewController:vc animated:YES];
     
 }

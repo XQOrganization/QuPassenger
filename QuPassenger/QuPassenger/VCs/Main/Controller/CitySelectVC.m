@@ -80,44 +80,17 @@
 - (void)citySelectWithCityModel:(QuCityModel *)model
 {
     
-//    [[UnitMetiodManager share] setSELECT_CIYT:model.cityName];
-//    [[UnitMetiodManager share] setSELECT_CODE:model.areaCode];
-//    [[UnitMetiodManager share] setPROVINCE_CODE:model.provinceCode];
-//    [[UnitMetiodManager share] setCITY_CODE:model.cityCode];
-//
-//    if (ACCOUNT.accountInfo) {
-//        //如果是切换的是相同城市，则无任何操作
-//        if ([model.cityName isEqualToString:ACCOUNT.accountInfo.cityName]) {
-//            if (self.navigationController)
-//            {
-//              [self performSelector:@selector(rollOutSideBar) withObject:nil afterDelay:0.1];
-//              [self dismissViewControllerAnimated:NO completion:nil];
-//            }
-//            return;
-//        }
-//
-//        ACCOUNT.accountInfo.cityName = model.cityName;
-//        ACCOUNT.accountInfo.areaCode = model.areaCode;
-//        ACCOUNT.accountInfo.ll_m=model.provinceCode;
-//        [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-//        //ACCOUNT.accountInfo.ProvinceCode =model.provinceCode;
-//
-//    }
-//
-//
-//    //保存
-//    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:2];
-//    [dic setObject:model.cityName forKey:AREA_CITY];
-//    [dic setObject:model.areaCode forKey:AREA_CODE];
-//    [dic setObject:model.provinceCode forKey:@"PROVINCE_CODE"];
-//    if (model.cityCode.length > 0) {
-//        [dic setObject:model.cityCode forKey:@"CITY_CODE"];
-//    }
-//    [[NSFloderManager share]writeDataToFloder:dic withKey:CITY_SELECT_KEY];
-//
-//    if (self.selectComplete) {
-//        self.selectComplete(model);
-//    }
+    //如果是切换的是相同城市，则无任何操作
+    if ([model.cityName isEqualToString:[PublicManager shareManager].selectCityModel.cityName]) {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        return;
+    }
+    [[PublicManager shareManager] setSelectCityModel:model];
+
+    if (self.selectCityBlock) {
+        self.selectCityBlock(model);
+    }
 
 
     [self.navigationController popViewControllerAnimated:YES];
