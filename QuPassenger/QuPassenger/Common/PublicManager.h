@@ -15,10 +15,7 @@ float WidthForString(NSString *value,float fontSize,float height);
 @interface PublicManager : NSObject
 
 @property (strong, nonatomic) QuCityModel *selectCityModel;
-@property (strong, nonatomic) QuCityModel *locationCityModel;
 
-@property (strong, nonatomic) NSString *latitude;//纬度
-@property (strong, nonatomic) NSString *longitude;//经度
 
 + (PublicManager *)shareManager;
 

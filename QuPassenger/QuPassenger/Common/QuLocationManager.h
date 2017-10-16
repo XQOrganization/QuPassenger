@@ -15,6 +15,11 @@
 @property (copy, nonatomic) void(^locationSuccessBlock)(TencentLBSLocation *lbsLocation);
 @property (copy, nonatomic) void(^locationFailBlock)(void);
 
+@property (strong, nonatomic) QuCityModel *locationCityModel;
+@property (assign, nonatomic) BOOL isLocating;//正在定位中
+@property (strong, nonatomic) NSString *latitude;//纬度
+@property (strong, nonatomic) NSString *longitude;//经度
+
 + (QuLocationManager *)shareManager;
 
 - (void)startUpdatingLocationWithSuccess:(void(^)(TencentLBSLocation *lbsLocation))successBlock fail:(void(^)(void))failBlock;

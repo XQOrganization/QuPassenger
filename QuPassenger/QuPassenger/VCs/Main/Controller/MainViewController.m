@@ -247,7 +247,7 @@
 #pragma mark btnClickAction
 - (IBAction)titleClickAction:(id)sender
 {
-    CitySelectVC *vc = [[CitySelectVC alloc]init];
+    CitySelectVC *vc = [[CitySelectVC alloc]initWithNibName:@"CitySelectVC" bundle:nil];
     [self.navigationController pushViewController:vc animated:YES];
     
 }
