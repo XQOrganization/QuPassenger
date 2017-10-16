@@ -99,6 +99,7 @@
     NSArray *array = [LocalDataModel arrayForMainLeftCategory];
     self.leftArray = array;
     
+    [self.leftHeadImageView.layer setMasksToBounds:YES];
     [self.leftHeadImageView setCornerRadius:self.leftHeadImageView.mj_w/2 AndBorder:0 borderColor:nil];
 
     [self.ticketBtn showShadowColorWithColor:HEXCOLOR(@"ff5c41") offset:CGSizeMake(0, 5) opacity:0.5 radius:3.0];
