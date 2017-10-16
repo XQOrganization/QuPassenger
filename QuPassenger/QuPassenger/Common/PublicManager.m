@@ -236,6 +236,21 @@ float WidthForString(NSString *value,float fontSize,float height)
     else
         sTmp = str;
     
+    if ([str isEqualToString:@"长沙"]) {
+        sTmp = @"CS";
+    }
+    else if ([str isEqualToString:@"长治"]) {
+        sTmp = @"CZ";
+    }
+    else if ([str isEqualToString:@"重庆"]) {
+        sTmp = @"CQ";
+    }
+    else if ([str isEqualToString:@"长春"]) {
+        sTmp = @"CQ";
+    }
+    else if ([str isEqualToString:@"厦门"]) {
+        sTmp = @"XM";
+    }
     return sTmp;
 }
 
