@@ -101,6 +101,11 @@
     
     switch (eventId) {
             
+        case 0:{
+            //不带任务操作
+        }
+            break;
+            
         case 1:{
             //路线详情
             RouteDetailVC *vc = [[RouteDetailVC alloc]initWithNibName:@"GoodsListVC" bundle:nil];

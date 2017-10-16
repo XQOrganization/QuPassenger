@@ -20,7 +20,7 @@
 
 @interface NSString (Help)
 
-
++ (NSString *)swithDate:(NSDate *)date toFormatDate:(NSString *)format;
 /**
  默认时间格式转化 原始格式 yyyy-MM-dd HH:mm:ss
 

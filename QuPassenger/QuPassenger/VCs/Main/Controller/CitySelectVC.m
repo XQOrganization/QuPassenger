@@ -34,6 +34,8 @@
 // search
 @property (weak, nonatomic) IBOutlet UITableView *searchTableView;
 
+@property (strong, nonatomic) NSMutableArray *openCityArray;
+
 @property (nonatomic, strong) NSMutableArray *searchResultAry;   //搜索结果数组
 @property (nonatomic, strong) NSString *searchString;            //搜索关键字
 
@@ -78,14 +80,21 @@
     
 }
 
+- (NSMutableArray *)openCityArray
+{
+    if (!_openCityArray) {
+        _openCityArray = [[NSMutableArray alloc]init];
+    }
+    return _openCityArray;
+}
+
 #pragma mark Request
 - (void)requestOpenCityList
 {
     [QuHudHelper mb_loading];
     
     GetCityReq *req = [[GetCityReq alloc]init];
-    req.time = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]];
-  
+    
     [NetWorkReqManager requestDataWithApiName:getCity params:req response:^(NSDictionary *responseObject) {
         
         [QuHudHelper mb_dismiss];
@@ -94,7 +103,9 @@
         
         if (rsp.code == 1) {
             
+            [self.openCityArray addObjectsFromArray:rsp.data];
             
+            [self refreshTable];
             
         }
         else{
@@ -169,33 +180,14 @@
     
 }
 
-//添加开通城市
-- (NSArray *)addSupportCity
-{
-    
-    QuCityModel *model = [[QuCityModel alloc]init];
- 
-    model.cityName = @"苏州";
-    model.cityCode = @"320500";
-    model.provinceCode = @"3200000";
-    
-    NSArray *array = [NSArray arrayWithObject:model];
-    
-    return array;
-}
-
 //添加定位城市
 - (NSArray *)addLocationCity
 {
-    
-    QuCityModel *model = [[QuCityModel alloc]init];
-    
-    model.cityName = @"苏州";
-    model.cityCode = @"320500";
-    model.provinceCode = @"320000";
-    
-    NSArray *array = [NSArray arrayWithObject:model];
-    
+    NSArray *array;
+    if ([QuLocationManager shareManager].locationCityModel.cityCode.length > 0) {
+        array = [NSArray arrayWithObject:[QuLocationManager shareManager].locationCityModel];
+    }
+
     return array;
 }
 
@@ -213,7 +205,7 @@
     
     NSArray *ary = [self addLocationCity];
     //添加定位城市
-    if ([QuLocationManager shareManager].latitude.length > 0) {
+    if (ary) {
         
         [self.sectionArray addObject:ary];
         [self.alphaString appendString:@"定位"];
@@ -238,9 +230,8 @@
     }
     
     //添加开通城市
-    NSArray *supportAry = [self addSupportCity];
-    if ([supportAry count] > 0) {
-        [self.sectionArray addObject:supportAry];
+    if ([self.openCityArray count] > 0) {
+        [self.sectionArray addObject:self.openCityArray];
         [self.alphaString appendString:@",开通"];
     }
     
@@ -249,9 +240,7 @@
 
     [self.tableView reloadData];
     [self.tableView reloadSectionIndexTitles];
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:[self.sectionArray count] -1] atScrollPosition:UITableViewScrollPositionTop animated:NO];
-    
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+
 }
 
 //匹配拼音搜索

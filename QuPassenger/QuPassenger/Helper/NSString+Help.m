@@ -147,6 +147,14 @@
 
 @implementation NSString (Help)
 
++ (NSString *)swithDate:(NSDate *)date toFormatDate:(NSString *)format
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    NSDate *timeIntervalDate = date;
+    [formatter setDateFormat:format];
+    return [formatter stringFromDate:timeIntervalDate];
+}
+
 - (NSString *)timeIntervalDefaultFormatToFormatDate:(NSString *)format
 {
     return  [self timeIntervalOrigalFormat:@"yyyy-MM-dd HH:mm:ss" toFormatDate:format];

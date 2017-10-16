@@ -119,6 +119,8 @@
         cityModel.cityCode = [[QuDBManager shareDataManger]getTheCityCodeWithCityName:cityModel.cityName];
         cityModel.provinceCode = [[QuDBManager shareDataManger]getTheProvinceCodeWithCityName:cityModel.cityName];
         
+        [weakSelf requestMainDataWithCityCode:cityModel.cityCode];
+        
     } fail:^{
         
     }];
@@ -177,14 +179,14 @@
     }];
 }
 
-- (void)requestMainData
+- (void)requestMainDataWithCityCode:(NSString *)cityCode
 {
     [QuHudHelper mb_loading];
     
     MainReq *req = [[MainReq alloc]init];
-    req.cityCode = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]];
+    req.cityCode = cityCode;
     
-    [NetWorkReqManager requestDataWithApiName:getCity params:req response:^(NSDictionary *responseObject) {
+    [NetWorkReqManager requestDataWithApiName:openCityData params:req response:^(NSDictionary *responseObject) {
         
         [QuHudHelper mb_dismiss];
         

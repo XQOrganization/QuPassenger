@@ -127,13 +127,11 @@
 //获取城市
 @interface GetCityReq : BaseRequest
 
-@property (strong, nonatomic) NSString *time;
-
 @end
 
 @interface GetCityRsp : BaseResponse
 
-@property (strong, nonatomic) QuUserInfo *data;
+@property (strong, nonatomic) NSArray *data;
 
 @end
 
