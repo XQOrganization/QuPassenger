@@ -65,6 +65,10 @@
 		BA8B88EE1F90A4F300E0DD88 /* openssl_wrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8B88E71F90A4F300E0DD88 /* openssl_wrapper.m */; };
 		BA8B88EF1F90A4F300E0DD88 /* RSADataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8B88E91F90A4F300E0DD88 /* RSADataSigner.m */; };
 		BA8B88F01F90A4F300E0DD88 /* RSADataVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8B88EB1F90A4F300E0DD88 /* RSADataVerifier.m */; };
+		BA8B88F31F94427100E0DD88 /* CitySelectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8B88F21F94427100E0DD88 /* CitySelectButton.m */; };
+		BA8B88F71F94486A00E0DD88 /* CitySelectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8B88F51F94486A00E0DD88 /* CitySelectCell.m */; };
+		BA8B88F81F94486A00E0DD88 /* CitySelectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8B88F61F94486A00E0DD88 /* CitySelectCell.xib */; };
+		BA8B88FA1F94586A00E0DD88 /* CitySelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA8B88F91F94586A00E0DD88 /* CitySelectVC.xib */; };
 		BAB4664A1F73626C00F7DBCD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB466491F73626C00F7DBCD /* main.m */; };
 		BAB4664D1F73626C00F7DBCD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB4664C1F73626C00F7DBCD /* AppDelegate.m */; };
 		BAB466551F73626C00F7DBCD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAB466541F73626C00F7DBCD /* Assets.xcassets */; };
@@ -321,6 +325,12 @@
 		BA8B88E91F90A4F300E0DD88 /* RSADataSigner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataSigner.m; sourceTree = "<group>"; };
 		BA8B88EA1F90A4F300E0DD88 /* RSADataVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSADataVerifier.h; sourceTree = "<group>"; };
 		BA8B88EB1F90A4F300E0DD88 /* RSADataVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSADataVerifier.m; sourceTree = "<group>"; };
+		BA8B88F11F94427100E0DD88 /* CitySelectButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySelectButton.h; sourceTree = "<group>"; };
+		BA8B88F21F94427100E0DD88 /* CitySelectButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySelectButton.m; sourceTree = "<group>"; };
+		BA8B88F41F94486A00E0DD88 /* CitySelectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySelectCell.h; sourceTree = "<group>"; };
+		BA8B88F51F94486A00E0DD88 /* CitySelectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySelectCell.m; sourceTree = "<group>"; };
+		BA8B88F61F94486A00E0DD88 /* CitySelectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitySelectCell.xib; sourceTree = "<group>"; };
+		BA8B88F91F94586A00E0DD88 /* CitySelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitySelectVC.xib; sourceTree = "<group>"; };
 		BAB466451F73626C00F7DBCD /* QuPassenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuPassenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAB466491F73626C00F7DBCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAB4664B1F73626C00F7DBCD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1068,6 +1078,7 @@
 			children = (
 				BAC7D54F1F7F76730012898F /* CitySelectVC.h */,
 				BAC7D5501F7F76730012898F /* CitySelectVC.m */,
+				BA8B88F91F94586A00E0DD88 /* CitySelectVC.xib */,
 				BAB467151F78CAA900F7DBCD /* MainViewController.h */,
 				BAB467161F78CAA900F7DBCD /* MainViewController.m */,
 				BAB467171F78CAA900F7DBCD /* MainViewController.xib */,
@@ -1108,6 +1119,11 @@
 				A571D4411F8C712B0078535F /* MessgeCell.h */,
 				A571D4421F8C712B0078535F /* MessgeCell.m */,
 				A571D4431F8C712B0078535F /* MessgeCell.xib */,
+				BA8B88F41F94486A00E0DD88 /* CitySelectCell.h */,
+				BA8B88F51F94486A00E0DD88 /* CitySelectCell.m */,
+				BA8B88F61F94486A00E0DD88 /* CitySelectCell.xib */,
+				BA8B88F11F94427100E0DD88 /* CitySelectButton.h */,
+				BA8B88F21F94427100E0DD88 /* CitySelectButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1326,12 +1342,14 @@
 				A571D4581F8CC1190078535F /* CouponListVC.xib in Resources */,
 				BAB4672B1F78D1F500F7DBCD /* MainBannerCell.xib in Resources */,
 				BA309AD71F7A4A6500EE25D5 /* QMapKit.bundle in Resources */,
+				BA8B88FA1F94586A00E0DD88 /* CitySelectVC.xib in Resources */,
 				A53E2C431F74D4730008FE61 /* WXRegistViewController.xib in Resources */,
 				BAB467371F78D3FA00F7DBCD /* MainBusRouteCell.xib in Resources */,
 				A571D45D1F8CC2340078535F /* CouponListCell.xib in Resources */,
 				BAC7D5931F8C6E1E0012898F /* RouteDetailVC.xib in Resources */,
 				BAC7D5981F8C96F50012898F /* RouteDetailCell.xib in Resources */,
 				BA309ACB1F79F41A00EE25D5 /* JourneyViewController.xib in Resources */,
+				BA8B88F81F94486A00E0DD88 /* CitySelectCell.xib in Resources */,
 				BAC7D5471F7F41220012898F /* unicode_to_hanyu_pinyin.txt in Resources */,
 				A571D44E1F8C9B060078535F /* PayTheTicketVC.xib in Resources */,
 				A571D4381F8C69C20078535F /* MessageVC.xib in Resources */,
@@ -1460,6 +1478,7 @@
 				BAB466D01F738F3400F7DBCD /* SDCycleScrollView.m in Sources */,
 				BAB466CA1F738F3400F7DBCD /* PublicManager.m in Sources */,
 				BAB466C81F738F3400F7DBCD /* LocalDataModel.m in Sources */,
+				BA8B88F71F94486A00E0DD88 /* CitySelectCell.m in Sources */,
 				BAB466E41F738F3400F7DBCD /* NetWorkReqManager.m in Sources */,
 				BAB466D11F738F3400F7DBCD /* UIView+SDExtension.m in Sources */,
 				BAB467311F78D33900F7DBCD /* MainChannelCell.m in Sources */,
@@ -1480,6 +1499,7 @@
 				A571D4601F8DBE420078535F /* CustomerServiceVC.m in Sources */,
 				BAC7D5881F8B44D00012898F /* JTHorizontalCalendarView.m in Sources */,
 				A571D44D1F8C9B060078535F /* PayTheTicketVC.m in Sources */,
+				BA8B88F31F94427100E0DD88 /* CitySelectButton.m in Sources */,
 				BAB467011F7495E400F7DBCD /* UIImage+Help.m in Sources */,
 				BAC7D5871F8B44D00012898F /* JTCalendarWeekView.m in Sources */,
 				BAB466D41F738F3400F7DBCD /* UIColor+HEX.m in Sources */,

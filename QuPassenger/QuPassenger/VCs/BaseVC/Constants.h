@@ -98,7 +98,7 @@
 //判断是否大于ios几
 #define IOS(a) ([[[UIDevice currentDevice] systemVersion] floatValue] >= a)
 
-#define TABBAR_SELECTED_NOTIFICATION  @"TABBAR_SELECTED_NOTIFICATION"
+#define LOCATION_SUCCESS_NOTIFICATION  @"LOCATION_SUCCESS_NOTIFICATION"
 #define TABBAR_BADGE_NOTIFICATION  @"TABBAR_BADGE_NOTIFICATION"
 
 #endif /* Constants_h */

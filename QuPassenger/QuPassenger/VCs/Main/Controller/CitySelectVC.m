@@ -10,11 +10,14 @@
 #import "MJNIndexView.h"
 #import "RegexKitLite.h"
 #import "QuDBManager.h"
+#import "CitySelectButton.h"
+#import "CitySelectCell.h"
+#import "UITableView+FooterBlank.h"
 
 #define APPEND_CITY_STRING @"开通"
 #define STANDARD_STRING @"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-@interface CitySelectVC ()<UITableViewDataSource,UITableViewDelegate,MJNIndexViewDataSource,UISearchBarDelegate,UISearchDisplayDelegate>
+@interface CitySelectVC ()<UITableViewDataSource,UITableViewDelegate,MJNIndexViewDataSource,UITextFieldDelegate,UISearchDisplayDelegate>
 
 
 @property (nonatomic, strong) NSMutableString *alphaString;    //索引显示字符串
@@ -25,12 +28,11 @@
 // MJNIndexView
 @property (nonatomic, strong) MJNIndexView *indexView;
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
 
-
+@property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 // search
-@property (nonatomic, strong) UISearchBar *mSearchBar;
-@property (nonatomic, strong) UISearchDisplayController *searchController;
+@property (weak, nonatomic) IBOutlet UITableView *searchTableView;
 
 @property (nonatomic, strong) NSMutableArray *searchResultAry;   //搜索结果数组
 @property (nonatomic, strong) NSString *searchString;            //搜索关键字
@@ -45,58 +47,32 @@
     [super viewDidLoad];
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
-    
-    //使用自定义导航栏
-    QuNavigationBar *bar = [QuNavigationBar showQuNavigationBarWithController:self];
-    self.quNavBar = bar;
-    self.quNavBar.title = @"选择城市";
-    
+  
     [self tableAttribute];
     
+    [self.searchTextField setDelegate:self];
+    [self.searchTextField setBackgroundColor:HEXCOLOR(@"f2f2f2")];
+    [self.searchTextField setCornerRadius:4.0f AndBorder:0.0f borderColor:nil];
+    [self.searchTextField setLeftContentMarginWithMargin:10.0f];
     
-    //初始化搜索条
-    self.mSearchBar = [[UISearchBar alloc]init];
-    
-    self.mSearchBar.backgroundColor = [UIColor clearColor];
-    
-    [self.mSearchBar setPlaceholder:@"请输入城市中文名称或拼音"];
-    self.mSearchBar.delegate = self;
-    [self.mSearchBar sizeToFit];
-    [self.view addSubview:self.mSearchBar];
-    
-    [self.mSearchBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.quNavBar.mas_bottom);
-        make.left.equalTo(self.view);
-        make.right.equalTo(self.view);
-        make.height.mas_equalTo(44);
-    }];
-    
-    //初始化UISearchDisplayController
-    self.searchController =[[UISearchDisplayController alloc]initWithSearchBar:self.mSearchBar contentsController:self];
-    self.searchController.searchResultsDelegate= self;
-    self.searchController.searchResultsDataSource = self;
-    self.searchController.delegate = self;
-    
-    //初始化列表
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 108, self.view.bounds.size.width, self.view.bounds.size.height - 108)];
-    
-    
-    [self.tableView registerClass:[UITableViewCell class]forCellReuseIdentifier:@"cell"];
-    [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"header"];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.showsVerticalScrollIndicator = NO;
-    
-    [self.view addSubview:self.tableView];
+    [self.tableView setTableFooterViewBlank];
+    [self.searchTableView setTableFooterViewBlank];
     
     //初始化索引条
-    self.indexView = [[MJNIndexView alloc]initWithFrame:self.tableView.frame];
+    self.indexView = [[MJNIndexView alloc]initWithFrame:CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
     self.indexView.backgroundColor = [UIColor redColor];
     self.indexView.dataSource = self;
     [self indexTalbeAttributesForMJNIndexView];
     [self.view addSubview:self.indexView];
     
+    //UITextFiled输入监听
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textFiledEditChanged:) name:UITextFieldTextDidChangeNotification
+                                              object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(locationSuccessNotification:) name:LOCATION_SUCCESS_NOTIFICATION object:nil];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"CitySelectCell" bundle:nil] forCellReuseIdentifier:@"CitySelectCell"];
+    
+    [self.searchTableView registerNib:[UINib nibWithNibName:@"CitySelectCell" bundle:nil] forCellReuseIdentifier:@"CitySelectCell"];
     
 }
 
@@ -210,7 +186,7 @@
     
     model.cityName = @"苏州";
     model.cityCode = @"320500";
-    model.provinceCode = @"3200000";
+    model.provinceCode = @"320000";
     
     NSArray *array = [NSArray arrayWithObject:model];
     
@@ -229,72 +205,31 @@
     self.alphaString = [[NSMutableString alloc]initWithCapacity:0];
     self.sectionArray = [[NSMutableArray alloc]initWithCapacity:0];
     
-//    NSMutableArray *ary = [NSMutableArray arrayWithObject:[self addLocationCity]];
-//    //添加定位城市
-//    if (LOCATION.areaCode.length > 0) {
-//        
-//        [self.sectionArray addObject:ary];
-//        [self.alphaString appendString:@"定位"];
-//        
-//        //添加最近访问
-//        ary = [self addRecentlyCitys];
-//        if ([ary count] > 0) {
-//            [self.sectionArray addObject:ary];
-//            [self.alphaString appendString:@",最近"];
-//        }
-//        
-//        //添加省内其他城市
-//        CityAreaModel *model=[self addLocationCity];
-//        
-//        if([model.provinceCode isEqualToString:@"320000"])
-//        {
-//            ary = [self addotherProvinceCitys:model.provinceCode];
-//            
-//            for(int i=0;i<[ary count];i++)
-//            {
-//                CityAreaModel *tempmodel = [ary objectAtIndex:i];
-//                if([tempmodel.cityCode isEqualToString:model.cityCode])
-//                {
-//                    [ary removeObjectAtIndex:i];
-//                    break;
-//                }
-//            }
-//            if ([ary count] > 0) {
-//                [self.sectionArray addObject:ary];
-//                //加逗号为了方便取索引数组
-//                [self.alphaString appendString:@",省内"];
-//            }
-//        }
-//        else
-//        {
-//            //添加热门城市
-//            CityAreaModel *model=[self addLocationCity];
-//            ary = [self addHotCitys:model.provinceCode];
-//            if ([ary count] > 0) {
-//                [self.sectionArray addObject:ary];
-//                //加逗号为了方便取索引数组
-//                [self.alphaString appendString:@",热门"];
-//            }
-//            
-//        }
-//        
-//    }
-//    else{
-//        CityAreaModel *modelLocation = [[CityAreaModel alloc]init];
-//        if(LOCATION.isloading){
-//            modelLocation.cityName = @"定位中...";
-//            
-//        }
-//        else{
-//            modelLocation.cityName = @"定位失败，请点击重试";
-//            
-//        }
-//        NSArray *ary = [NSMutableArray arrayWithObject:modelLocation];
-//        [self.sectionArray addObject:ary];
-//        [self.alphaString appendString:@"定位"];
-//
-//        
-//    }
+    NSArray *ary = [self addLocationCity];
+    //添加定位城市
+    if ([QuLocationManager shareManager].latitude.length > 0) {
+        
+        [self.sectionArray addObject:ary];
+        [self.alphaString appendString:@"定位"];
+
+                
+    }
+    else{
+        QuCityModel *modelLocation = [[QuCityModel alloc]init];
+        if([QuLocationManager shareManager].isLocating){
+            modelLocation.cityName = @"正在定位";
+            
+        }
+        else{
+            modelLocation.cityName = @"定位失败，请点击重试";
+            
+        }
+        NSArray *ary = [NSMutableArray arrayWithObject:modelLocation];
+        [self.sectionArray addObject:ary];
+        [self.alphaString appendString:@"定位"];
+
+        
+    }
     
     //添加开通城市
     NSArray *supportAry = [self addSupportCity];
@@ -427,7 +362,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if ([tableView isEqual:self.searchController.searchResultsTableView]) {
+    if ([tableView isEqual:self.searchTableView]) {
         return 1;
     }
     return [self.sectionArray count];
@@ -435,9 +370,18 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
-    if ([tableView isEqual:self.searchController.searchResultsTableView]) {
+    if ([tableView isEqual:self.searchTableView]) {
         
         return 0;
+        
+    }
+    else{
+        
+        if([[self firstLetter:section] isEqualToString:@"定位"]){
+            
+            return 10;
+            
+        }
         
     }
     return 20;
@@ -446,18 +390,18 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([tableView isEqual:self.searchController.searchResultsTableView]) {
+    if ([tableView isEqual:self.searchTableView]) {
         
         return 44;
         
     }
     else{
         
-        if([[self firstLetter:indexPath.section] isEqualToString:@"开通城市"])
+        if([[self firstLetter:indexPath.section] isEqualToString:@"开通"])
         {
             NSInteger btCount = [(NSMutableArray*)self.sectionArray[indexPath.section] count];
             
-            float cellHight = 10+45*ceilf(btCount/3.0);
+            float cellHight = 10+50*ceilf(btCount/3.0);
             return cellHight;
         }
         else
@@ -472,13 +416,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([tableView isEqual:self.searchController.searchResultsTableView]) {
+    if ([tableView isEqual:self.searchTableView]) {
         if (self.searchString.length == 0) {
             return 0;
         }
         return [self.searchResultAry count];
     }
-    if([[self firstLetter:section] isEqualToString:@"开通城市"])
+    if([[self firstLetter:section] isEqualToString:@"开通"])
     {
         return 1;
     }
@@ -492,29 +436,23 @@
 
 - (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    if ([tableView isEqual:self.searchController.searchResultsTableView]) {
+    if ([tableView isEqual:self.searchTableView]) {
         return nil;
     }
-    
-    //    UITableViewHeaderFooterView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"header"];
-    //    headerView.tintColor = self.tableHeaderColor;
-    //    headerView.textLabel.textColor = self.tableHeaderTextColor;
-    //    [[headerView textLabel] setText:[NSString stringWithFormat:@"     %@",[self firstLetter:section]]];
-    //    headerView.textLabel.font = [UIFont boldSystemFontOfSize:12.0f];
+
     
     UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(10, 0, SCREEN_SIZE.width, 20)];
     bgView.backgroundColor = [UIColor colorWithHexString:@"#f2f2f2"];
     UILabel *labelHeaderView = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, SCREEN_SIZE.width, 20)];
     labelHeaderView.font = [UIFont systemFontOfSize:13.0f];
     
-    if ([[self firstLetter:section]isEqualToString:@"开通"])
-    {
+    if ([[self firstLetter:section]isEqualToString:@"开通"]){
         labelHeaderView.text = [NSString stringWithFormat:@"开通城市"];
     }
-    else if ([[self firstLetter:section]isEqualToString:@"定位"])
-    {
+    else if ([[self firstLetter:section]isEqualToString:@"定位"]){
         labelHeaderView.text = [NSString stringWithFormat:@" "];
-        bgView.frame= CGRectMake(0, 0, 0.1f, 0.1f);
+        bgView.frame= CGRectMake(0, 0, 0.1f, 10);
+        labelHeaderView.frame= CGRectMake(0, 0, 0.1f, 0.1f);
     }
     else
     {
@@ -532,33 +470,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if ([tableView isEqual:self.searchController.searchResultsTableView]) {
+    if ([tableView isEqual:self.searchTableView]) {
         
-        static NSString *identifier = @"citySelectCell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-        }
+        CitySelectCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CitySelectCell"];
 
-        for (UIView *view in [cell.contentView subviews]) {
-            [view removeFromSuperview];
-        }
         NSObject *obj = [self.searchResultAry objectAtIndex:indexPath.row];
         
         QuCityModel *model = (QuCityModel *)obj;
         
-        cell.textLabel.font = [UIFont systemFontOfSize:15.0f];
-        cell.textLabel.text = [NSString stringWithFormat:@"%@",model.cityName];
-        cell.textLabel.textColor = HEXCOLOR(@"404040");
-        cell.textLabel.backgroundColor = [UIColor clearColor];
+        cell.nameLabel.text = [NSString stringWithFormat:@"%@",model.cityName];
+        [cell.subLabel setHidden:YES];
         
         return cell;
     }
     else
     {
         
-        if([[self firstLetter:indexPath.section] isEqualToString:@"开通城市"])
-        {
+        if([[self firstLetter:indexPath.section] isEqualToString:@"开通"]){
+            
             static NSString *identifier = @"HeaderSelectCell";
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
             if (cell == nil) {
@@ -568,40 +497,45 @@
             cell.contentView.backgroundColor = [UIColor clearColor];
             cell.backgroundColor = [UIColor clearColor];
             
+            for (UIView *view in [cell.contentView subviews]) {
+                [view removeFromSuperview];
+            }
+            
             NSInteger btnCount = [(NSMutableArray*)self.sectionArray[indexPath.section] count];
             
             [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
             
-            //            for(int i = 0;i<btnCount;i++)
-            //            {
-            //                CitySelectHeaderCellBtn *tempBtn = [CitySelectHeaderCellBtn buttonWithType:UIButtonTypeCustom];
-            //                tempBtn.frame = CGRectMake(10+(i%3)*((SCREEN_SIZE.width-40)/3), 10+45*(i/3), (SCREEN_SIZE.width-40)/3-10, 35);
-            //                [tempBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            //                tempBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
-            //                NSArray *currentItems = self.sectionArray[indexPath.section];
-            //                CityAreaModel *model = currentItems[i];
-            //                [tempBtn setTitle:model.cityName forState:UIControlStateNormal];
-            //                tempBtn.backgroundColor = [UIColor whiteColor];
-            //                [tempBtn addTarget:self action:@selector(headercityBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-            //                tempBtn.btnIndexpath = [NSIndexPath indexPathForRow:i inSection:indexPath.section];
-            //                [cell.contentView addSubview:tempBtn];
-            //            }
+            for(int i = 0;i<btnCount;i++){
+                CitySelectButton *tempBtn = [CitySelectButton buttonWithType:UIButtonTypeCustom];
+                tempBtn.frame = CGRectMake(20 + (i%3) * ((SCREEN_SIZE.width-60)/3 + 10), 10+50*(i/3), (SCREEN_SIZE.width-60)/3-10, 40);
+                [tempBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+                tempBtn.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+                [tempBtn setCornerRadius:4.0f AndBorder:1.0f borderColor:HEXCOLOR(@"dbdbdb")];
+                NSArray *currentItems = self.sectionArray[indexPath.section];
+                QuCityModel *model = currentItems[i];
+                [tempBtn setTitle:model.cityName forState:UIControlStateNormal];
+                tempBtn.backgroundColor = [UIColor whiteColor];
+                [tempBtn addTarget:self action:@selector(headercityBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+                tempBtn.btnIndexpath = [NSIndexPath indexPathForRow:i inSection:indexPath.section];
+                [cell.contentView addSubview:tempBtn];
+            }
             return cell;
         }
         else{
-            
-            static NSString *identifier = @"citySelectCell";
-            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-            if (cell == nil) {
-                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-            }
-          
-            
+     
+            CitySelectCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CitySelectCell"];
+
             QuCityModel *model = [self categoryNameAtIndexPath:indexPath];
-            cell.textLabel.font = [UIFont systemFontOfSize:15.0f];
-            cell.textLabel.text = [NSString stringWithFormat:@"%@",model.cityName];
-            cell.textLabel.backgroundColor = [UIColor clearColor];
-            cell.textLabel.textColor = HEXCOLOR(@"404040");
+            
+            cell.nameLabel.text = [NSString stringWithFormat:@"%@",model.cityName];
+            
+            if ([[self firstLetter:indexPath.section] isEqualToString:@"定位"]) {
+                [cell.subLabel setHidden:NO];
+                [cell.subLabel setText:@"当前定位城市"];
+            }
+            else{
+                [cell.subLabel setHidden:YES];
+            }
            
             return cell;
             
@@ -616,8 +550,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    WS(weakSelf)
+    
     QuCityModel *model;
-    if ([tableView isEqual:self.searchController.searchResultsTableView]) {
+    if ([tableView isEqual:self.searchTableView]) {
         NSObject *obj = [self.searchResultAry objectAtIndex:indexPath.row];
         
         model = (QuCityModel *)obj;
@@ -628,14 +565,44 @@
     }
     if([tableView isEqual:self.tableView])
     {
-        if([[self firstLetter:indexPath.section] isEqualToString:@"定位"]||[[self firstLetter:indexPath.section] isEqualToString:@"开通"])
-        {
+        if([[self firstLetter:indexPath.section] isEqualToString:@"开通"]){
             return;
         }
         
+        if ([[self firstLetter:indexPath.section] isEqualToString:@"定位"]) {
+            
+            if([model.cityName isEqualToString:@"定位失败，请点击重试"]){
+                if ([CLLocationManager locationServicesEnabled] &&
+                    ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse
+                     || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways)) {
+                        //定位功能可用，开始定位
+                        [[QuLocationManager shareManager]startUpdatingLocationWithSuccess:^(TencentLBSLocation *lbsLocation) {
+                            
+                            [weakSelf.tableView reloadData];
+                            
+                        } fail:^{
+                            
+                        }];
+                        
+                    }
+                else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied){
+                    
+                    
+                    [QuHudHelper qu_showMessage:@"定位未开启，请到设置中开启定位"];
+                    
+                }
+            }
+            else{
+                
+                [self citySelectWithCityModel:model];
+                
+            }
+
+        }
+        
+        
     }
-    
-    [self citySelectWithCityModel:model];
+
     
     
     
@@ -654,24 +621,50 @@
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:index] atScrollPosition: UITableViewScrollPositionTop animated:self.indexView.getSelectedItemsAfterPanGestureIsFinished];
 }
 
-#pragma mark UISearchDisplay delegate
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+#pragma mark UITextFieldDelegate
+- (void)textFiledEditChanged:(NSNotification *)obj
 {
-    return YES;
-}
-
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
-{
-    //如果是汉字搜索
-    if ([searchString isMatchedByRegex:@"[\u4e00-\u9fa5]"]){
-        self.searchResultAry = [self fifiterSearchResultWithStr:searchString];
-        self.pinYinSearchString = @"";
-    }
-    else{
-        self.searchResultAry = [self fifiterPinYinSearchResultWithStr:searchString];
+    UITextField *textField = (UITextField *)obj.object;
+    
+    NSString *toBeString = textField.text;
+    
+    if (textField == self.searchTextField) {
+        if (toBeString.length == 0) {
+            
+            [self.searchTableView setHidden:YES];
+            [textField resignFirstResponder];
+        }
+        else{
+         
+            [self.searchTableView setHidden:NO];
+            [self.view bringSubviewToFront:self.searchTableView];
+            
+            NSString *string = toBeString.trim;
+            
+            if (string.length > 0) {
+                //如果是汉字搜索
+                if ([string isMatchedByRegex:@"[\u4e00-\u9fa5]"]){
+                    self.searchResultAry = [self fifiterSearchResultWithStr:string];
+                    self.pinYinSearchString = @"";
+                }
+                else{
+                    self.searchResultAry = [self fifiterPinYinSearchResultWithStr:string];
+                }
+                
+                self.searchString = string;
+                
+                [self.searchTableView reloadData];
+            }
+            
+        }
+        
     }
     
-    self.searchString = searchString;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
     return YES;
 }
 
@@ -683,48 +676,23 @@
     return model;
 }
 
-//-(void)headercityBtnClick:(CitySelectHeaderCellBtn *)sender
-//{
-//    CityAreaModel *model;
-//    model = [self categoryNameAtIndexPath:sender.btnIndexpath];
-//
-//    if([model.cityName isEqualToString:@"定位失败，请点击重试"])
-//    {
-//        if ([CLLocationManager locationServicesEnabled] &&
-//            ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized
-//             || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)) {
-//                //定位功能可用，开始定位
-//                [[BMKLocationManager share] updateLocation];
-//
-//            }
-//        else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied){
-//
-//
-//            [OMGToast showWithText:@"定位未开启，请到设置中开启定位"];
-//
-//        }
-//    }
-//    else
-//    {
-//        if (self.busCityBlock) {
-//            self.busCityBlock(model);
-//            if (self.navigationController) {
-//                [self dismissViewControllerAnimated:YES completion:nil];
-//            }
-//            else{
-//                [self dismissViewControllerAnimated:NO completion:nil];
-//            }
-//            
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshview" object:Nil userInfo:nil];
-//        }else{
-//            [self citySelectWithCityModel:model];
-//            [[NSNotificationCenter defaultCenter] postNotificationName:@"ChannelReload" object:Nil userInfo:nil];
-//        }
-//
-//    }
-//    
-//
-//}
+- (void)headercityBtnClick:(CitySelectButton *)sender
+{
+    QuCityModel *model = [self categoryNameAtIndexPath:sender.btnIndexpath];
+
+    [self citySelectWithCityModel:model];
+
+}
+
+- (IBAction)closeClickAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)locationSuccessNotification:(NSNotification *)notifi
+{
+    [self.tableView reloadData];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
