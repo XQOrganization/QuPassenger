@@ -24,6 +24,7 @@
 #import "MessageVC.h"
 #import "PayTheTicketVC.h"
 #import "CustomerServiceVC.h"
+#import "SweepCodeVC.h"
 #define CATEGORYWIDTH 188
 
 @interface MainViewController ()
@@ -297,6 +298,11 @@
          
     }];
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+}
+//扫码验票
+- (IBAction)sweepCodeBtnClick:(id)sender {
+    SweepCodeVC *vc =[[SweepCodeVC alloc]initWithNibName:@"SweepCodeVC" bundle:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark UITableViewDataSource

@@ -24,6 +24,8 @@
 		A571D45C1F8CC2340078535F /* CouponListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D45A1F8CC2340078535F /* CouponListCell.m */; };
 		A571D45D1F8CC2340078535F /* CouponListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D45B1F8CC2340078535F /* CouponListCell.xib */; };
 		A571D4601F8DBE420078535F /* CustomerServiceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D45F1F8DBE420078535F /* CustomerServiceVC.m */; };
+		A571D46D1F945BBD0078535F /* SweepCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A571D46B1F945BBD0078535F /* SweepCodeVC.m */; };
+		A571D46E1F945BBD0078535F /* SweepCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A571D46C1F945BBD0078535F /* SweepCodeVC.xib */; };
 		A5E0087E1F8B464500F5B619 /* MyWalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0087D1F8B464500F5B619 /* MyWalletVC.m */; };
 		A5E008871F8B580200F5B619 /* MyWalletTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E008851F8B580200F5B619 /* MyWalletTableViewCell.m */; };
 		A5E008881F8B580200F5B619 /* MyWalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E008861F8B580200F5B619 /* MyWalletTableViewCell.xib */; };
@@ -184,6 +186,9 @@
 		A571D45B1F8CC2340078535F /* CouponListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponListCell.xib; sourceTree = "<group>"; };
 		A571D45E1F8DBE420078535F /* CustomerServiceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerServiceVC.h; sourceTree = "<group>"; };
 		A571D45F1F8DBE420078535F /* CustomerServiceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerServiceVC.m; sourceTree = "<group>"; };
+		A571D46A1F945BBD0078535F /* SweepCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweepCodeVC.h; sourceTree = "<group>"; };
+		A571D46B1F945BBD0078535F /* SweepCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SweepCodeVC.m; sourceTree = "<group>"; };
+		A571D46C1F945BBD0078535F /* SweepCodeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SweepCodeVC.xib; sourceTree = "<group>"; };
 		A5E0087C1F8B464500F5B619 /* MyWalletVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletVC.h; sourceTree = "<group>"; };
 		A5E0087D1F8B464500F5B619 /* MyWalletVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWalletVC.m; sourceTree = "<group>"; };
 		A5E008841F8B580200F5B619 /* MyWalletTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWalletTableViewCell.h; sourceTree = "<group>"; };
@@ -1069,6 +1074,9 @@
 				A571D4341F8C69C20078535F /* MessageVC.h */,
 				A571D4351F8C69C20078535F /* MessageVC.m */,
 				A571D4361F8C69C20078535F /* MessageVC.xib */,
+				A571D46A1F945BBD0078535F /* SweepCodeVC.h */,
+				A571D46B1F945BBD0078535F /* SweepCodeVC.m */,
+				A571D46C1F945BBD0078535F /* SweepCodeVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1327,6 +1335,7 @@
 				BAC7D5471F7F41220012898F /* unicode_to_hanyu_pinyin.txt in Resources */,
 				A571D44E1F8C9B060078535F /* PayTheTicketVC.xib in Resources */,
 				A571D4381F8C69C20078535F /* MessageVC.xib in Resources */,
+				A571D46E1F945BBD0078535F /* SweepCodeVC.xib in Resources */,
 				BAC7D5591F7F99360012898F /* TicketChooseVC.xib in Resources */,
 				BA309B131F7CD1D100EE25D5 /* RouteBusTabCell.xib in Resources */,
 				A5E008881F8B580200F5B619 /* MyWalletTableViewCell.xib in Resources */,
@@ -1370,6 +1379,7 @@
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+				"${PODS_ROOT}/SGQRCode/SGQRCode/SGQRCode.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Required/ShareSDK.bundle",
 				"${PODS_ROOT}/ShareSDK3/SDK/ShareSDK/Support/Optional/ShareSDKUI.bundle",
@@ -1411,6 +1421,7 @@
 				BAC7D7671F8E1FE40012898F /* RouteNoneTabCell.m in Sources */,
 				BAC7D5511F7F76730012898F /* CitySelectVC.m in Sources */,
 				BAB466ED1F738F3400F7DBCD /* LoginViewController.m in Sources */,
+				A571D46D1F945BBD0078535F /* SweepCodeVC.m in Sources */,
 				A571D4521F8C9D530078535F /* PayTheTicketCell.m in Sources */,
 				BAB466CB1F738F3400F7DBCD /* TAAbstractDotView.m in Sources */,
 				BAB467041F74AB7D00F7DBCD /* ThirdApiManager.m in Sources */,
