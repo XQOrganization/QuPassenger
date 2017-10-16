@@ -74,6 +74,39 @@
     
     [self.searchTableView registerNib:[UINib nibWithNibName:@"CitySelectCell" bundle:nil] forCellReuseIdentifier:@"CitySelectCell"];
     
+    [self requestOpenCityList];
+    
+}
+
+#pragma mark Request
+- (void)requestOpenCityList
+{
+    [QuHudHelper mb_loading];
+    
+    GetCityReq *req = [[GetCityReq alloc]init];
+    req.time = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]];
+  
+    [NetWorkReqManager requestDataWithApiName:getCity params:req response:^(NSDictionary *responseObject) {
+        
+        [QuHudHelper mb_dismiss];
+        
+        GetCityRsp *rsp = [GetCityRsp mj_objectWithKeyValues:responseObject];
+        
+        if (rsp.code == 1) {
+            
+            
+            
+        }
+        else{
+            [QuHudHelper qu_showMessage:rsp.message];
+        }
+        
+        
+    } errorResponse:^(NSString *error) {
+        
+        [QuHudHelper mb_dismiss];
+    }];
+
 }
 
 #pragma mark--城市选择后的跳转

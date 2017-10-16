@@ -18,10 +18,10 @@
 #import <AVFoundation/AVMediaFormat.h>
 
 #ifdef DEBUG
-#define HOSTNAME @"http://192.168.1.122:8081/api/code/"
+#define HOSTNAME @"http://192.168.1.122:8081/api/"
 
 #else
-#define HOSTNAME @"http://192.168.1.122:8081/api/code/"
+#define HOSTNAME @"http://192.168.1.122:8081/api/"
 #endif
 
 // http://wx.ucoolbox.com/doc.php 文档地址

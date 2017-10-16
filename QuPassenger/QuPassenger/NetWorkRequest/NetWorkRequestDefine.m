@@ -11,15 +11,19 @@
 NSString *XQApiNameEnum(XQApiName name)
 {
     switch (name) {
-        case getCode:return @"getCode";
+        case getCode:return @"code/getCode";
             break;
-        case checkCode:return @"checkCode";
+        case checkCode:return @"code/checkCode";
             break;
-        case bindWeChat:return @"bindWeChat";
+        case bindWeChat:return @"code/bindWeChat";
             break;
-        case checkWeChatCode:return @"checkWeChatCode";
+        case checkWeChatCode:return @"code/checkWeChatCode";
             break;
-        case autoLand:return @"autoLand";
+        case autoLand:return @"code/autoLand";
+            break;
+        case getCity:return @"city/getCity";
+            break;
+        case openCityData:return @"city/openCityData";
             break;
         default:return @"";
             break;

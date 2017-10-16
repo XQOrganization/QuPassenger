@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -77,8 +77,9 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRq-eo-qkv">
-                    <rect key="frame" x="40" y="211" width="102" height="44"/>
+                    <rect key="frame" x="40" y="211" width="110" height="44"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="110" id="KFN-GL-1Ho"/>
                         <constraint firstAttribute="height" constant="44" id="uNJ-LN-dLX"/>
                     </constraints>
                     <nil key="textColor"/>
@@ -98,8 +99,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJC-QS-GRP">
-                    <rect key="frame" x="258" y="217.5" width="77" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJC-QS-GRP">
+                    <rect key="frame" x="170" y="217.5" width="165" height="30"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                     <state key="normal" title="获取验证码">
                         <color key="titleColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -168,6 +169,7 @@
                 <constraint firstItem="HlN-64-eZO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZGa-2a-aKD"/>
                 <constraint firstItem="6An-ee-V32" firstAttribute="top" secondItem="41D-kN-Ci4" secondAttribute="bottom" constant="30" id="alS-LD-A0q"/>
                 <constraint firstItem="1eu-Yu-VZV" firstAttribute="top" secondItem="6An-ee-V32" secondAttribute="bottom" constant="10" id="dMB-sM-17i"/>
+                <constraint firstItem="OJC-QS-GRP" firstAttribute="leading" secondItem="VRq-eo-qkv" secondAttribute="trailing" constant="20" id="do9-aL-3Ym"/>
                 <constraint firstItem="zcI-SO-Zbc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="fyI-aX-IPl"/>
                 <constraint firstAttribute="bottom" secondItem="HlN-64-eZO" secondAttribute="bottom" constant="29" id="gMa-tc-N8S"/>
                 <constraint firstAttribute="trailing" secondItem="OJC-QS-GRP" secondAttribute="trailing" constant="40" id="yaA-GD-vct"/>

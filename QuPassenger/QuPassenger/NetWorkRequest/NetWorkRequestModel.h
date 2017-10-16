@@ -124,7 +124,22 @@
 
 @end
 
+//获取城市
+@interface GetCityReq : BaseRequest
+
+@property (strong, nonatomic) NSString *time;
+
+@end
+
+@interface GetCityRsp : BaseResponse
+
+@property (strong, nonatomic) QuUserInfo *data;
+
+@end
+
 @interface MainReq : BaseRequest
+
+@property (strong, nonatomic) NSString *cityCode;
 
 @end
 

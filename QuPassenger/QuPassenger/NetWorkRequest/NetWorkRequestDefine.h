@@ -15,6 +15,8 @@ typedef NS_ENUM(NSInteger,XQApiName) {
     bindWeChat,       //微信登录
     checkWeChatCode,       //微信绑定手机号
     autoLand,       //自动登录
+    getCity,        //获取城市
+    openCityData,   //首页
     
 };
 NSString *XQApiNameEnum(XQApiName name);
