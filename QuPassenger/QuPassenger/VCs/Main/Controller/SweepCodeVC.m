@@ -8,7 +8,8 @@
 
 #import "SweepCodeVC.h"
 #import "SGQRCodeGenerateManager.h"
-@interface SweepCodeVC ()
+#import <MessageUI/MessageUI.h>
+@interface SweepCodeVC ()<MFMessageComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *ibCodeImg;
 
 @end
@@ -31,20 +32,49 @@
 }
 //发送短信二维码
 - (IBAction)sendMessageBtnClick:(id)sender {
+    [self showMessageView:@[] title:@"购票二维码" body:@"购票二维码:XQ6666"];
+    
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//MARK:-----MFMessageComposeViewControllerDelegate{
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    switch (result) {
+        case MessageComposeResultSent:
+            //信息传送成功
+            
+            break;
+        case MessageComposeResultFailed:
+            //信息传送失败
+            
+            break;
+        case MessageComposeResultCancelled:
+            //信息被用户取消传送
+            
+            break;
+        default:
+            break;
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)showMessageView:(NSArray *)phones title:(NSString *)title body:(NSString *)body
+{
+    if( [MFMessageComposeViewController canSendText] )
+    {
+        MFMessageComposeViewController * controller = [[MFMessageComposeViewController alloc] init];
+        controller.recipients = phones;
+        controller.navigationBar.tintColor = [UIColor redColor];
+        controller.body = body;
+        controller.messageComposeDelegate = self;
+        [self presentViewController:controller animated:YES completion:nil];
+        [[[[controller viewControllers] lastObject] navigationItem] setTitle:title];//修改短信界面标题
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示信息"
+                                                        message:@"该设备不支持短信功能"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
-*/
-
 @end
