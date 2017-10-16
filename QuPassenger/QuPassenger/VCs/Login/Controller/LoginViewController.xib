@@ -77,7 +77,7 @@
                     </connections>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VRq-eo-qkv">
-                    <rect key="frame" x="40" y="211" width="102" height="44"/>
+                    <rect key="frame" x="40" y="211" width="110" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="102" id="LSF-JV-k1k"/>
                         <constraint firstAttribute="height" constant="44" id="uNJ-LN-dLX"/>
@@ -156,6 +156,7 @@
                 <constraint firstAttribute="trailing" secondItem="zcI-SO-Zbc" secondAttribute="trailing" constant="40" id="9Eh-TT-8GB"/>
                 <constraint firstItem="JkD-tR-kGn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="9w9-z9-UmT"/>
                 <constraint firstItem="cuB-1Q-mga" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="D9c-as-Dy1"/>
+                <constraint firstItem="OJC-QS-GRP" firstAttribute="leading" secondItem="VRq-eo-qkv" secondAttribute="trailing" constant="116" id="EgY-OP-6Zz"/>
                 <constraint firstItem="41D-kN-Ci4" firstAttribute="top" secondItem="VRq-eo-qkv" secondAttribute="bottom" constant="0.5" id="FaY-x7-VZh"/>
                 <constraint firstItem="JkD-tR-kGn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="Fe4-1x-Hyh"/>
                 <constraint firstAttribute="trailing" secondItem="cuB-1Q-mga" secondAttribute="trailing" constant="40" id="KAJ-e9-D4z"/>
@@ -169,6 +170,7 @@
                 <constraint firstItem="HlN-64-eZO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZGa-2a-aKD"/>
                 <constraint firstItem="6An-ee-V32" firstAttribute="top" secondItem="41D-kN-Ci4" secondAttribute="bottom" constant="30" id="alS-LD-A0q"/>
                 <constraint firstItem="1eu-Yu-VZV" firstAttribute="top" secondItem="6An-ee-V32" secondAttribute="bottom" constant="10" id="dMB-sM-17i"/>
+                <constraint firstItem="OJC-QS-GRP" firstAttribute="leading" secondItem="VRq-eo-qkv" secondAttribute="trailing" constant="20" id="do9-aL-3Ym"/>
                 <constraint firstItem="zcI-SO-Zbc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="fyI-aX-IPl"/>
                 <constraint firstAttribute="bottom" secondItem="HlN-64-eZO" secondAttribute="bottom" constant="29" id="gMa-tc-N8S"/>
                 <constraint firstAttribute="trailing" secondItem="OJC-QS-GRP" secondAttribute="trailing" constant="40" id="yaA-GD-vct"/>

@@ -99,6 +99,7 @@
     NSArray *array = [LocalDataModel arrayForMainLeftCategory];
     self.leftArray = array;
     
+    [self.leftHeadImageView.layer setMasksToBounds:YES];
     [self.leftHeadImageView setCornerRadius:self.leftHeadImageView.mj_w/2 AndBorder:0 borderColor:nil];
 
     [self.ticketBtn showShadowColorWithColor:HEXCOLOR(@"ff5c41") offset:CGSizeMake(0, 5) opacity:0.5 radius:3.0];
@@ -174,6 +175,36 @@
     } errorResponse:^(NSString *error) {
         
     }];
+}
+
+- (void)requestMainData
+{
+    [QuHudHelper mb_loading];
+    
+    MainReq *req = [[MainReq alloc]init];
+    req.cityCode = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970]];
+    
+    [NetWorkReqManager requestDataWithApiName:getCity params:req response:^(NSDictionary *responseObject) {
+        
+        [QuHudHelper mb_dismiss];
+        
+        GetCityRsp *rsp = [GetCityRsp mj_objectWithKeyValues:responseObject];
+        
+        if (rsp.code == 1) {
+            
+            
+            
+        }
+        else{
+            [QuHudHelper qu_showMessage:rsp.message];
+        }
+        
+        
+    } errorResponse:^(NSString *error) {
+        
+        [QuHudHelper mb_dismiss];
+    }];
+    
 }
 
 #pragma mark gestureRecognizer

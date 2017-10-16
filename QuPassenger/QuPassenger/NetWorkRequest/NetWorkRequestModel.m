@@ -83,6 +83,16 @@
 
 @end
 
+@implementation GetCityReq
+
+
+@end
+
+@implementation GetCityRsp
+
+
+@end
+
 @implementation MainReq
 
 @end
