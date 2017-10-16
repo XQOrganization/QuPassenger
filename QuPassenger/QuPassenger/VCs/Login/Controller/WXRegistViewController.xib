@@ -54,8 +54,9 @@
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cdV-Lf-dXc">
-                    <rect key="frame" x="40" y="238" width="102" height="44"/>
+                    <rect key="frame" x="40" y="238" width="120" height="44"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="120" id="mKu-Gr-yzL"/>
                         <constraint firstAttribute="height" constant="44" id="nU7-Zl-W2b"/>
                     </constraints>
                     <nil key="textColor"/>
@@ -104,8 +105,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvz-vS-TXV">
-                    <rect key="frame" x="253" y="244" width="82" height="32"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvz-vS-TXV">
+                    <rect key="frame" x="180" y="244" width="155" height="32"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <state key="normal" title="获取验证码">
                         <color key="titleColor" red="0.8588484525680542" green="0.85883229970932007" blue="0.85884326696395874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -156,6 +157,7 @@
                 <constraint firstItem="Gn7-Bn-bqt" firstAttribute="leading" secondItem="t5r-aE-Eql" secondAttribute="leading" id="hAV-eE-V32"/>
                 <constraint firstItem="9kp-19-32F" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="l6P-hQ-X0V"/>
                 <constraint firstItem="p5P-yx-h3M" firstAttribute="top" secondItem="cdV-Lf-dXc" secondAttribute="bottom" constant="1" id="noc-H8-tMZ"/>
+                <constraint firstItem="cvz-vS-TXV" firstAttribute="leading" secondItem="cdV-Lf-dXc" secondAttribute="trailing" constant="20" id="qWB-pk-yEz"/>
                 <constraint firstItem="p5P-yx-h3M" firstAttribute="leading" secondItem="t5r-aE-Eql" secondAttribute="leading" id="rNe-Kp-4EM"/>
                 <constraint firstItem="cdV-Lf-dXc" firstAttribute="leading" secondItem="t5r-aE-Eql" secondAttribute="leading" id="rhn-71-8tV"/>
                 <constraint firstItem="9kp-19-32F" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="vbB-hx-Uca"/>
