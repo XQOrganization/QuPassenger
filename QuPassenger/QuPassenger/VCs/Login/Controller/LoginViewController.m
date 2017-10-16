@@ -56,8 +56,7 @@
     GetCodeReq *req = [[GetCodeReq alloc]init];
     req.phone = _ibPhoneTf.text;
     req.type = 1;
-    /////
-    //////
+   
     [NetWorkReqManager requestDataWithApiName:getCode params:req response:^(NSDictionary *responseObject) {
         
         BaseResponse *rsp = [BaseResponse mj_objectWithKeyValues:responseObject];
