@@ -17,6 +17,8 @@ typedef NS_ENUM(NSInteger,XQApiName) {
     autoLand,       //自动登录
     getCity,        //获取城市
     openCityData,   //首页
+    siteMatch,//获取附近站点
+    getFighting,//匹配线路获取班次
     
 };
 NSString *XQApiNameEnum(XQApiName name);

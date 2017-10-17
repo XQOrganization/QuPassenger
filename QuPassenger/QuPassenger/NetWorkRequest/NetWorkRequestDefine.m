@@ -25,6 +25,10 @@ NSString *XQApiNameEnum(XQApiName name)
             break;
         case openCityData:return @"city/openCityData";
             break;
+        case siteMatch:return @"site/siteMatch";
+            break;
+        case getFighting:return @"site/getFighting";
+            break;
         default:return @"";
             break;
     }
