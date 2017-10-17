@@ -48,6 +48,28 @@
     //MARK:-----退出登录
 - (void)logOutClick:(UIButton *)sender{
     
+    UIAlertController * altController = [UIAlertController alertControllerWithTitle:@"是否退出账号" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"否" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [altController addAction:cancelAction];
+    
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0) {
+        [cancelAction setValue:[UIColor grayColor] forKey:@"titleTextColor"];
+    }
+    UIAlertAction * yesAction = [UIAlertAction actionWithTitle:@"是" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+        [self logOut];
+    }];
+    
+    [altController addAction:yesAction];
+    [self presentViewController:altController animated:YES completion:nil];
+   
+}
+- (void)logOut{
+    ACCOUNTINFO.userInfo = nil;
+    ACCOUNTINFO.isLogin = NO;
+    [self goMainVc:nil];
+  
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 10)];

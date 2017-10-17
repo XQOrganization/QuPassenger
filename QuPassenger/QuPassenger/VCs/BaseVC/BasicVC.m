@@ -9,7 +9,7 @@
 #import "BasicVC.h"
 #import "RouteDetailVC.h"
 #import "LoginViewController.h"
-
+#import "MainViewController.h"
 @interface BasicVC ()<UIGestureRecognizerDelegate>
 
 @end
@@ -91,6 +91,11 @@
 //    LoginViewController *controller = nav.viewControllers[0];
 //    controller.loginCompletionBlock = complectionBlock;
     [self presentViewController:nav animated:YES completion:nil];
+    
+}
+- (void)goMainVc:(void (^)(void))complectrionBlock{
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    window.rootViewController = [MainViewController navigationControllerContainSelf];
     
 }
 

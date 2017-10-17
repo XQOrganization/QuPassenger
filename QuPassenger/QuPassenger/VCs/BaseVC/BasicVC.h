@@ -16,6 +16,7 @@
 + (BaseNavigationController *)navigationControllerContainSelf;
 - (void)presentLoginWithComplection:(void(^)(void))complectionBlock;
 
+- (void)goMainVc:(void(^)(void))complectrionBlock;
 
 - (void)setLeftBarItemWithButton:(UIButton *)btn;
 - (void)setRightBarItemWithButton:(UIButton *)btn;
