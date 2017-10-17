@@ -11,7 +11,7 @@
 #import "RouteBusTabCell.h"
 #import "TicketChooseVC.h"
 
-@interface RouteSearchVC ()<QMapViewDelegate>
+@interface RouteSearchVC ()<QMapViewDelegate,QMSSearchDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (weak, nonatomic) IBOutlet UITextField *startTextField;
@@ -23,6 +23,8 @@
 @property (strong, nonatomic) QMapView *mapView;
 @property (assign, nonatomic) BOOL isLocationSuccess;//是否定位成功
 @property (assign, nonatomic) NSInteger reloadState;//加载是哪一种cell 0://历史记录 1://班次
+
+@property(strong,nonatomic)QMSGeoCodeSearchOption *geocoder;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *startBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *endTopConstraint;
@@ -70,13 +72,37 @@
 //    self.mapView.userTrackingMode = QUserTrackingModeFollow;
     [self.mapView setZoomLevel:15.01 animated:NO];
     [self.view insertSubview:self.mapView atIndex:0];
-}
+    
+    QMSSearcher * searcher= [[QMSSearcher alloc] init];
+   
+    [searcher setDelegate:self];
+    self.geocoder = [[QMSGeoCodeSearchOption alloc] init];
+    [self.geocoder setRegion:[PublicManager shareManager].selectCityModel.cityName];
+   
 
+  
+}
+//当前位置正在编辑中
+- (IBAction)currentPositionTfChange:(UITextField *)sender {
+      [self.geocoder setAddress:sender.text];
+}
+//目的地正在编辑中
+- (IBAction)destinationTfChange:(id)sender {
+    
+}
+#pragma mark QMSSearchDelegate
+//地址解析(地址转坐标)结果回调接口
+- (void)searchWithGeoCodeSearchOption:(QMSGeoCodeSearchOption *)geoCodeSearchOption didReceiveResult:(QMSGeoCodeSearchResult *)geoCodeSearchResult{
+    
+    
+    
+}
 #pragma mark QMapViewDelegate
 - (void)mapViewWillStartLocatingUser:(QMapView *)mapView
 {
     //获取开始定位的状态
 }
+
 
 - (void)mapViewDidStopLocatingUser:(QMapView *)mapView
 {

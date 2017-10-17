@@ -119,7 +119,7 @@
         cityModel.cityCode = [[QuDBManager shareDataManger]getTheCityCodeWithCityName:cityModel.cityName];
         cityModel.provinceCode = [[QuDBManager shareDataManger]getTheProvinceCodeWithCityName:cityModel.cityName];
         
-        [weakSelf requestMainDataWithCityCode:cityModel.cityCode];
+//        [weakSelf requestMainDataWithCityCode:cityModel.cityCode];
         
     } fail:^{
         
