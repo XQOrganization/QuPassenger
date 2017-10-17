@@ -79,7 +79,7 @@
     self.mapView.delegate = self;
 //    self.mapView.showsUserLocation = YES;
     //    self.mapView.userTrackingMode = QUserTrackingModeFollow;
-    [self.mapView setZoomLevel:12.01 animated:NO];
+//    [self.mapView setZoomLevel:12.01 animated:NO];
     [self.view insertSubview:self.mapView atIndex:0];
     
     [self setupAnnotations];
@@ -106,10 +106,10 @@
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake((annotation1.coordinate.latitude + annotation2.coordinate.latitude) / 2, (annotation2.coordinate.longitude + annotation1.coordinate.longitude) / 2);
     [self.mapView setCenterCoordinate:center];
     
-//    QCoordinateSpan span = QCoordinateSpanMake(fabs(annotation1.coordinate.latitude - annotation2.coordinate.latitude), fabs(annotation1.coordinate.longitude - annotation2.coordinate.longitude));
-//    
-//    QCoordinateRegion region = [self.mapView regionThatFits:QCoordinateRegionMake(center, span)];
-//    [self.mapView setRegion:region animated:YES];
+    QCoordinateSpan span = QCoordinateSpanMake(fabs(annotation1.coordinate.latitude - annotation2.coordinate.latitude) + 0.051, fabs(annotation1.coordinate.longitude - annotation2.coordinate.longitude) + 0.051);
+    
+    QCoordinateRegion region = [self.mapView regionThatFits:QCoordinateRegionMake(center, span)];
+    [self.mapView setRegion:region animated:YES];
     
     
 }

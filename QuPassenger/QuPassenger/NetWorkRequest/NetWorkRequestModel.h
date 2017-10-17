@@ -132,6 +132,7 @@
 @interface GetCityRsp : BaseResponse
 
 @property (strong, nonatomic) NSArray *data;
+@property (strong, nonatomic) NSArray *data1;
 
 @end
 
