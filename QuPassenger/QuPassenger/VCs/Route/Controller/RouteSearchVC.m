@@ -26,7 +26,6 @@
 
 @property(strong,nonatomic)QMSGeoCodeSearchOption *geocoder;
 @property(strong,nonatomic)QMSSearcher * searcher;
-@property(strong,nonatomic)QMSGeoCodeSearchResult *geoResult;//检索结果
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *startBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *endTopConstraint;
@@ -98,16 +97,15 @@
 //地址解析(地址转坐标)结果回调接口
 - (void)searchWithGeoCodeSearchOption:(QMSGeoCodeSearchOption *)geoCodeSearchOption didReceiveResult:(QMSGeoCodeSearchResult *)geoCodeSearchResult{
     
-    self.geoResult = geoCodeSearchResult;
-    [self requestSiteMatch];
+    [self requestSiteMatch:geoCodeSearchResult];
     
     
 }
 //MARK:-----检索路线请求
-- (void)requestSiteMatch{
+- (void)requestSiteMatch:(QMSGeoCodeSearchResult *)geoResult{
     SiteMatchReq * req = [[SiteMatchReq alloc]init];
-    req.lat = [NSString stringWithFormat:@"%f",self.geoResult.location.latitude];
-    req.longitude = [NSString stringWithFormat:@"%f",self.geoResult.location.longitude];
+    req.lat = [NSString stringWithFormat:@"%f",geoResult.location.latitude];
+    req.longitude = [NSString stringWithFormat:@"%f",geoResult.location.longitude];
     req.cityCode = [PublicManager shareManager].selectCityModel.cityCode;
     [NetWorkReqManager requestDataWithApiName:siteMatch params:req response:^(NSDictionary *responseObject) {
         
