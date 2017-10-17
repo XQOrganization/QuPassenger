@@ -195,3 +195,13 @@
 @property (strong, nonatomic) NSArray *goods_data;
 
 @end
+
+//MARK:-----检索附近地址
+@interface SiteMatchReq : BaseRequest
+
+@property (strong, nonatomic) NSString *longitude;
+@property (strong, nonatomic) NSString *lat;
+@property (strong, nonatomic) NSString *cityCode;
+@property (strong, nonatomic) NSArray *searchStr;
+
+@end

@@ -25,6 +25,8 @@
 @property (assign, nonatomic) NSInteger reloadState;//加载是哪一种cell 0://历史记录 1://班次
 
 @property(strong,nonatomic)QMSGeoCodeSearchOption *geocoder;
+@property(strong,nonatomic)QMSSearcher * searcher;
+@property(strong,nonatomic)QMSGeoCodeSearchResult *geoResult;//检索结果
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *startBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *endTopConstraint;
@@ -73,18 +75,20 @@
     [self.mapView setZoomLevel:15.01 animated:NO];
     [self.view insertSubview:self.mapView atIndex:0];
     
-    QMSSearcher * searcher= [[QMSSearcher alloc] init];
-   
-    [searcher setDelegate:self];
+    //地图检索初始化
+    self.searcher= [[QMSSearcher alloc] init];
+    [self.searcher setDelegate:self];
+    
     self.geocoder = [[QMSGeoCodeSearchOption alloc] init];
     [self.geocoder setRegion:[PublicManager shareManager].selectCityModel.cityName];
-   
+    [self.searcher searchWithGeoCodeSearchOption:self.geocoder];
 
-  
 }
 //当前位置正在编辑中
 - (IBAction)currentPositionTfChange:(UITextField *)sender {
-      [self.geocoder setAddress:sender.text];
+    [self.geocoder setAddress:sender.text];
+    [self.searcher searchWithGeoCodeSearchOption:self.geocoder];
+
 }
 //目的地正在编辑中
 - (IBAction)destinationTfChange:(id)sender {
@@ -94,8 +98,22 @@
 //地址解析(地址转坐标)结果回调接口
 - (void)searchWithGeoCodeSearchOption:(QMSGeoCodeSearchOption *)geoCodeSearchOption didReceiveResult:(QMSGeoCodeSearchResult *)geoCodeSearchResult{
     
+    self.geoResult = geoCodeSearchResult;
+    [self requestSiteMatch];
     
     
+}
+//MARK:-----检索路线请求
+- (void)requestSiteMatch{
+    SiteMatchReq * req = [[SiteMatchReq alloc]init];
+    req.lat = [NSString stringWithFormat:@"%f",self.geoResult.location.latitude];
+    req.longitude = [NSString stringWithFormat:@"%f",self.geoResult.location.longitude];
+    req.cityCode = [PublicManager shareManager].selectCityModel.cityCode;
+    [NetWorkReqManager requestDataWithApiName:siteMatch params:req response:^(NSDictionary *responseObject) {
+        
+    } errorResponse:^(NSString *error) {
+        
+    }];
 }
 #pragma mark QMapViewDelegate
 - (void)mapViewWillStartLocatingUser:(QMapView *)mapView
