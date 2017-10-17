@@ -93,7 +93,8 @@
 - (id)init{
     if (self = [super init]) {
         [GetCityRsp mj_setupObjectClassInArray:^NSDictionary *{
-            return @{@"data" : @"QuCityModel"};
+            return @{@"data" : @"QuCityModel",
+                     @"data1" : @"QuCityModel"};
         }];
     }
     return self;

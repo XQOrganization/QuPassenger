@@ -50,7 +50,7 @@
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
   
-    [self tableAttribute];
+    [self refreshTableWithNewestData:nil];
     
     [self.searchTextField setDelegate:self];
     [self.searchTextField setBackgroundColor:HEXCOLOR(@"f2f2f2")];
@@ -91,13 +91,10 @@
 #pragma mark Request
 - (void)requestOpenCityList
 {
-    [QuHudHelper mb_loading];
     
     GetCityReq *req = [[GetCityReq alloc]init];
     
     [NetWorkReqManager requestDataWithApiName:getCity params:req response:^(NSDictionary *responseObject) {
-        
-        [QuHudHelper mb_dismiss];
         
         GetCityRsp *rsp = [GetCityRsp mj_objectWithKeyValues:responseObject];
         
@@ -105,7 +102,7 @@
             
             [self.openCityArray addObjectsFromArray:rsp.data];
             
-            [self refreshTable];
+            [self refreshTableWithNewestData:rsp.data1];
             
         }
         else{
@@ -114,8 +111,7 @@
         
         
     } errorResponse:^(NSString *error) {
-        
-        [QuHudHelper mb_dismiss];
+      
     }];
 
 }
@@ -139,13 +135,6 @@
 
     [self.navigationController popViewControllerAnimated:YES];
     
-}
-
-//table属性
-- (void)tableAttribute
-{
-    
-    [self refreshTable];
 }
 
 //设置indexview属性
@@ -192,10 +181,16 @@
 }
 
 //属性table
-- (void)refreshTable
+- (void)refreshTableWithNewestData:(NSArray *)newestData
 {
+    NSMutableArray *rawCrayons;
     
-    NSMutableArray *rawCrayons = [[QuDBManager shareDataManger]getTheCityAreaCodeWithProvinceCode:nil];
+    if (!newestData) {
+        rawCrayons = [[QuDBManager shareDataManger]getTheCityAreaCodeWithProvinceCode:nil];
+    }
+    else{
+        rawCrayons = [NSMutableArray arrayWithArray:newestData];
+    }
     
     self.searchResultAry = rawCrayons;
     self.crayons = rawCrayons;

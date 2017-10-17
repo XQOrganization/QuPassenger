@@ -7,9 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "WXApi.h"
+#import <AlipaySDK/AlipaySDK.h>
 #import "MainViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
@@ -32,6 +34,95 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+
+//9.0前的方法，为了适配低版本 保留
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    if ([url.host isEqualToString:@"safepay"]) {
+        // 支付跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            if (resultDic){
+                if ([@"9000" isEqualToString:[resultDic objectForKey:@"resultStatus"]]){
+                    
+        
+                }
+                else{
+    
+                    
+                }
+               
+            }
+            else{
+              
+                
+            }
+        }];
+        return YES;
+        
+    }
+    
+    return [WXApi handleOpenURL:url delegate:self];
+}
+
+//9.0后的方法
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options{
+    
+    if ([url.host isEqualToString:@"safepay"]) {
+        // 支付跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+            if (resultDic){
+                if ([@"9000" isEqualToString:[resultDic objectForKey:@"resultStatus"]]){
+                    
+                    
+                }
+                else{
+                    
+                    
+                }
+                
+            }
+            else{
+                
+                
+            }
+        }];
+        return YES;
+        
+    }
+    //这里判断是否发起的请求为微信支付，如果是的话，用WXApi的方法调起微信客户端的支付页面（://pay 之前的那串字符串就是你的APPID，）
+    return  [WXApi handleOpenURL:url delegate:self];
+}
+
+- (void)onResp:(BaseResp *)resp{
+    if ([resp isKindOfClass:[PayResp class]]){
+        PayResp *response = (PayResp *)resp;
+        switch(response.errCode){
+            case WXSuccess:
+                //服务器端查询支付通知或查询API返回的结果再提示成功
+                NSLog(@"支付成功");
+                
+                if ([ThirdApiManager shareManager].thirdPaySuccessBlock) {
+                    [ThirdApiManager shareManager].thirdPaySuccessBlock();
+                }
+                
+                break;
+            default:
+                NSLog(@"支付失败，retcode=%d",resp.errCode);
+                
+                if ([ThirdApiManager shareManager].thirdPayFailBlock) {
+                    [ThirdApiManager shareManager].thirdPayFailBlock();
+                }
+                break;
+        }
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
