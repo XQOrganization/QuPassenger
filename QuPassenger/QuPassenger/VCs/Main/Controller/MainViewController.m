@@ -40,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *ticketBtn;
 @property (strong, nonatomic) UIButton *bgBlackBtn;
 @property (strong, nonatomic) NSArray *leftArray;
+@property (strong, nonatomic) MainRsp *mainRsp;
 
 @end
 
@@ -119,7 +120,7 @@
         cityModel.cityCode = [[QuDBManager shareDataManger]getTheCityCodeWithCityName:cityModel.cityName];
         cityModel.provinceCode = [[QuDBManager shareDataManger]getTheProvinceCodeWithCityName:cityModel.cityName];
         
-//        [weakSelf requestMainDataWithCityCode:cityModel.cityCode];
+        [weakSelf requestMainDataWithCityCode:cityModel.cityCode];
         
     } fail:^{
         
@@ -128,7 +129,7 @@
     self.mainCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         // 进入刷新状态就会回调这个Block
-        
+        [weakSelf requestMainDataWithCityCode:cityModel.cityCode];
         
     }];
     
@@ -186,16 +187,19 @@
     
     MainReq *req = [[MainReq alloc]init];
     req.cityCode = cityCode;
+    req.longitude = [QuLocationManager shareManager].longitude;
+    req.lat = [QuLocationManager shareManager].latitude;
     
     [NetWorkReqManager requestDataWithApiName:openCityData params:req response:^(NSDictionary *responseObject) {
         
         [QuHudHelper mb_dismiss];
         
-        GetCityRsp *rsp = [GetCityRsp mj_objectWithKeyValues:responseObject];
+        MainRsp *rsp = [MainRsp mj_objectWithKeyValues:responseObject];
         
         if (rsp.code == 1) {
             
-            
+            self.mainRsp = rsp;
+            [self.mainCollectionView reloadData];
             
         }
         else{
@@ -461,11 +465,11 @@
         static NSString *dIdentifier = @"MainBannerCell";
         MainBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:dIdentifier forIndexPath:indexPath];
         
-//        [cell addBannerWithArray:self.mainRsp.data clickBlock:^(MainBannerModel *itemModel) {
+        [cell addBannerWithArray:self.mainRsp.data clickBlock:^(MainBannerModel *itemModel) {
 //            NSInteger eventId = [itemModel.t_id integerValue];
 //            NSString *jumpId = itemModel.url;
 //            [weakSelf jumpWithTid:eventId url:jumpId];
-//        }];
+        }];
         
         return cell;
     }
