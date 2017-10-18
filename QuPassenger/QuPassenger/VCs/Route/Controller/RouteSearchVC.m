@@ -102,6 +102,14 @@
 - (IBAction)currentPositionTfChange:(UITextField *)sender {
     [self.geocoder setAddress:sender.text];
     [self.searcher searchWithGeoCodeSearchOption:self.geocoder];
+    
+    //配置搜索参数
+    QMSSuggestionSearchOption *suggetionOption = [[QMSSuggestionSearchOption alloc] init];
+    [suggetionOption setKeyword:sender.text];
+    [suggetionOption setRegion:[PublicManager shareManager].selectCityModel.cityName];
+    
+    [self.searcher searchWithSuggestionSearchOption:suggetionOption];
+
 
 }
 //目的地正在编辑中
@@ -112,14 +120,13 @@
 {
     NSLog(@"suggest result:%@", suggestionSearchResult);
     self.suggestionResut = suggestionSearchResult;
-    
     [self.routeTableView reloadData];
 }
 #pragma mark QMSSearchDelegate
 //地址解析(地址转坐标)结果回调接口
 - (void)searchWithGeoCodeSearchOption:(QMSGeoCodeSearchOption *)geoCodeSearchOption didReceiveResult:(QMSGeoCodeSearchResult *)geoCodeSearchResult{
     
-    [self requestSiteMatch:geoCodeSearchResult];
+//    [self requestSiteMatch:geoCodeSearchResult];
     
     
 }
