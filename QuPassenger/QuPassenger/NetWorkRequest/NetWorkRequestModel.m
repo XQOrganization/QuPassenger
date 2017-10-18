@@ -113,7 +113,7 @@
     if (self = [super init]) {
         [MainRsp mj_setupObjectClassInArray:^NSDictionary *{
             return @{@"data" : @"MainBannerModel",
-                     @"data_bottom" : @"MainBannerModel",
+                     @"data1" : @"MainBannerModel",
                      @"data_floor" : @"MainFloorModel",
                      @"data_xsqg" : @"MainBuyModel",
                      @"small_pic" : @"MainSmallModel"};
@@ -121,12 +121,6 @@
     }
     return self;
 }
-
-@end
-
-@implementation MainSmallModel
-
-
 
 @end
 

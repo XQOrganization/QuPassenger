@@ -139,37 +139,23 @@
 @interface MainReq : BaseRequest
 
 @property (strong, nonatomic) NSString *cityCode;
+@property (strong, nonatomic) NSString *longitude;
+@property (strong, nonatomic) NSString *lat;
 
 @end
 
 @interface MainRsp : BaseResponse
 
 @property (strong, nonatomic) NSArray *data;
-@property (strong, nonatomic) NSArray *data_bottom;
-@property (strong, nonatomic) NSArray *data_floor;
-@property (strong, nonatomic) NSArray *data_xsqg;
-@property (strong, nonatomic) NSArray *small_pic;
+@property (strong, nonatomic) NSArray *data1;
+@property (assign, nonatomic) NSInteger isOpen;
 
-@end
-
-@interface MainSmallModel : NSObject
-
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *pic;
-@property (strong, nonatomic) NSString *url;
-@property (strong, nonatomic) NSString *t_id;
 
 @end
 
 @interface MainBannerModel : NSObject
 
-@property (strong, nonatomic) NSString *pic;
-@property (strong, nonatomic) NSString *price;
-@property (strong, nonatomic) NSString *url;
-@property (strong, nonatomic) NSString *t_id;
-@property (strong, nonatomic) NSString *goods_id;
-@property (strong, nonatomic) NSString *unit;
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *bannerUrl;
 
 @end
 

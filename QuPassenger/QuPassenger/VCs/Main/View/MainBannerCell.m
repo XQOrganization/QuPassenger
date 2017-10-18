@@ -34,7 +34,7 @@
         NSMutableArray *adImgAry = [[NSMutableArray alloc]initWithCapacity:0];
         if (array.count>0) {
             for (MainBannerModel *model in array) {
-                [adImgAry addObject:model.pic];
+                [adImgAry addObject:model.bannerUrl];
             }
         }
         

@@ -19,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QuPassenger/Common/PublicManager.m"
-            timestampString = "529581733.669365"
+            filePath = "QuPassenger/VCs/Main/View/MainBannerCell.m"
+            timestampString = "529985181.083166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "+removelocalUserId"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "-addBannerWithArray:clickBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
