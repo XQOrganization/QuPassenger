@@ -27,10 +27,16 @@
 @property(strong,nonatomic)QMSGeoCodeSearchOption *geocoder;
 @property(strong,nonatomic)QMSSearcher * searcher;
 
+@property (nonatomic, strong) QMSSuggestionResult *suggestionResut;
+
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *startBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *endTopConstraint;
 
 @property (assign, nonatomic) BOOL isCurrentTop;//当前位置在顶部
+
+
+@property(nonatomic,strong)SiteMatchRsp * rsp;
 
 @end
 
@@ -79,8 +85,17 @@
     [self.searcher setDelegate:self];
     
     self.geocoder = [[QMSGeoCodeSearchOption alloc] init];
+      //可选字段，设置所属城市
     [self.geocoder setRegion:[PublicManager shareManager].selectCityModel.cityName];
     [self.searcher searchWithGeoCodeSearchOption:self.geocoder];
+  
+  
+    QMSReverseGeoCodeSearchOption *regeocoder = [[QMSReverseGeoCodeSearchOption alloc] init];
+    [regeocoder setLocation:[NSString stringWithFormat:@"%@,%@",[QuLocationManager shareManager].longitude,[QuLocationManager shareManager].latitude]];
+    //返回坐标点附近poi列表
+    [regeocoder setGet_poi:YES];
+    //设置坐标所属坐标系，以返回正确地址，默认为腾讯所用坐标系
+    [regeocoder setCoord_type:QMSReverseGeoCodeCoordinateTencentGoogleGaodeType];
 
 }
 //当前位置正在编辑中
@@ -92,6 +107,13 @@
 //目的地正在编辑中
 - (IBAction)destinationTfChange:(id)sender {
     
+}
+- (void)searchWithSuggestionSearchOption:(QMSSuggestionSearchOption *)suggestionSearchOption didReceiveResult:(QMSSuggestionResult *)suggestionSearchResult
+{
+    NSLog(@"suggest result:%@", suggestionSearchResult);
+    self.suggestionResut = suggestionSearchResult;
+    
+    [self.routeTableView reloadData];
 }
 #pragma mark QMSSearchDelegate
 //地址解析(地址转坐标)结果回调接口
@@ -107,7 +129,19 @@
     req.lat = [NSString stringWithFormat:@"%f",geoResult.location.latitude];
     req.longitude = [NSString stringWithFormat:@"%f",geoResult.location.longitude];
     req.cityCode = [PublicManager shareManager].selectCityModel.cityCode;
+    req.str = _startTextField.text;
+    
     [NetWorkReqManager requestDataWithApiName:siteMatch params:req response:^(NSDictionary *responseObject) {
+        
+        _rsp = [SiteMatchRsp mj_objectWithKeyValues:responseObject];
+        if (_rsp.code == 1) {
+            
+            
+            
+        }
+        else{
+            [QuHudHelper qu_showMessage:_rsp.message];
+        }
         
     } errorResponse:^(NSString *error) {
         
@@ -206,7 +240,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    return self.suggestionResut.dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -225,8 +259,13 @@
         RouteHistoryTabCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RouteHistoryTabCell"];
         
         [cell.iconImageView setImage:[UIImage imageNamed:@"route_history_icon"]];
-        [cell.nameLabel setText:@"国际科技园"];
-        [cell.addressLabel setText:@"江苏省苏州市工业园区金鸡湖大道2135号"];
+//        [cell.nameLabel setText:@"国际科技园"];
+//        [cell.addressLabel setText:@"江苏省苏州市工业园区金鸡湖大道2135号"];
+        QMSSuggestionPoiData *poi = [self.suggestionResut.dataArray objectAtIndex:[indexPath row]];
+        
+        [cell.nameLabel setText:poi.title];
+        [cell.addressLabel setText:poi.address];
+
         
         
         return cell;
