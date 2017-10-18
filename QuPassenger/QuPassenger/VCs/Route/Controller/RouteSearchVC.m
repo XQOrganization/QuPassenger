@@ -103,7 +103,7 @@
     [self.geocoder setAddress:sender.text];
     [self.searcher searchWithGeoCodeSearchOption:self.geocoder];
     
-    //配置搜索参数
+    //配置搜索参数/////
     QMSSuggestionSearchOption *suggetionOption = [[QMSSuggestionSearchOption alloc] init];
     [suggetionOption setKeyword:sender.text];
     [suggetionOption setRegion:[PublicManager shareManager].selectCityModel.cityName];
