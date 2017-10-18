@@ -162,3 +162,21 @@
 
 
 @end
+
+@implementation SiteMatchRsp
+-(instancetype)init{
+    if (self == [super init]) {
+        [SiteMatchRsp mj_setupObjectClassInArray:^NSDictionary *{
+            return @{@"data" : @"SiteInfoModel"};
+        }];
+    }
+    return self;
+}
+
+
+@end
+@implementation SiteInfoModel
+
+
+
+@end

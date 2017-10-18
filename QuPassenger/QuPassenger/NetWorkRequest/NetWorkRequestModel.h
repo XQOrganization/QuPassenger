@@ -196,12 +196,33 @@
 
 @end
 
-//MARK:-----检索附近地址
+//MARK:-----检索附近地址请求MOdel
 @interface SiteMatchReq : BaseRequest
 
 @property (strong, nonatomic) NSString *longitude;
 @property (strong, nonatomic) NSString *lat;
 @property (strong, nonatomic) NSString *cityCode;
-@property (strong, nonatomic) NSArray *searchStr;
+@property (strong, nonatomic) NSString  *str;
+
+@end
+//MARK:-----检索附近地址返回Model
+
+@interface SiteMatchRsp : BaseResponse
+
+
+@property (strong, nonatomic) NSArray *data;
+
+
+@end
+//MARK:-----检索附近地址数据解析Model
+@interface SiteInfoModel : BaseResponse
+
+@property (strong, nonatomic) NSString *id;
+@property (strong, nonatomic) NSString *siteName;
+@property (strong, nonatomic) NSString *cityCode;
+@property (strong, nonatomic) NSString *longitude;
+@property (strong, nonatomic) NSString *lat;
+@property (strong, nonatomic) NSString *cityName;
+
 
 @end
